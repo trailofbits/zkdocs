@@ -16,15 +16,6 @@
     </item>
     
     <item>
-      <title>A title</title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/template/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/template/</guid>
-      <description>A summary that ends in a period.</description>
-    </item>
-    
-    <item>
       <title>Notation &amp; Definitions</title>
       <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -61,35 +52,12 @@
     </item>
     
     <item>
-      <title>Fujisaki-Okamoto commitments</title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fujisaki-okamoto/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fujisaki-okamoto/</guid>
-      <description>Fujisaki-Okamoto commitments #  </description>
-    </item>
-    
-    <item>
       <title>Number is square-free</title>
       <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/</guid>
       <description>Proves that a number is square-free.</description>
-    </item>
-    
-    <item>
-      <title>ZK-STARK</title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/generic-zero-knowledge-systems/stark/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/generic-zero-knowledge-systems/stark/</guid>
-      <description>ZK-STARK #   boundary checking is important   References #    Vitalik, STARKs, Part I: Proofs with Polynomials
-  Vitalik, STARKs, Part II: Thank Goodness It&amp;rsquo;s FRI-day
-  STARKs, Part 3: Into the Weeds
-  Ben-Sasson, E., Bentov, I., Horesh, Y., &amp;amp; Riabzev, M. (2018). Scalable, transparent, and post-quantum secure computational integrity. IACR Cryptol. ePrint Arch., 2018, 46.
-  FFT
-  https://github.</description>
     </item>
     
     <item>
@@ -117,15 +85,6 @@
       
       <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/</guid>
       <description>A statistical zero-knowledge proof for discrete-logarithm in a composite modulo.</description>
-    </item>
-    
-    <item>
-      <title>Paillier range proofs</title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/range-proofs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/range-proofs/</guid>
-      <description>Range proofs with Paillier.</description>
     </item>
     
     <item>
@@ -198,78 +157,6 @@
       
       <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/</guid>
       <description>All references</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/columns/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/columns/</guid>
-      <description>Columns #  Columns help organize shorter pieces of content horizontally for readability.
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  {{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; # Left Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Mid Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Right Content Lorem markdownum insigne... {{&amp;lt; /columns &amp;gt;}}   Example #  Left Content #  Lorem markdownum insigne.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/details/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/details/</guid>
-      <description>Details #  Details shortcode is a helper for details html5 element. It is going to replace expand shortcode.
-Example #  1 2 3 4  {{&amp;lt; details &amp;#34;Title&amp;#34; [open] &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}}   1 2 3 4  {{&amp;lt; details title=&amp;#34;Title&amp;#34; open=true &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}}   Title Markdown content #  Lorem markdownum insigne&amp;hellip;   </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/expand/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/expand/</guid>
-      <description>Expand #  Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
-Example #  Default #  1 2 3 4  {{&amp;lt; expand &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}}     Expand ↕  Markdown content Lorem markdownum insigne&amp;hellip;    With Custom Label #  1 2 3 4  {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/hints/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/hints/</guid>
-      <description>Hints #  Hint shortcode can be used as hint/alerts/notification block.
-There are 3 colors to choose: info, warning and danger.
-1 2 3 4 5  {{&amp;lt; hint [info|warning|danger] &amp;gt;}} **Markdown content** Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa {{&amp;lt; /hint &amp;gt;}}   Example #  Markdown content
-Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter!</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/first-page/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/first-page/</guid>
-      <description>First page #  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/second-page/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/second-page/</guid>
-      <description>Second Page #  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/tabs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/tabs/</guid>
-      <description>Tabs #  Tabs let you organize content by context, for example installation instructions for each supported platform.
-1 2 3 4 5  {{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}}   Example #  MacOS MacOS #  This is tab MacOS content.</description>
     </item>
     
   </channel>
