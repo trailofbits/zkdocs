@@ -13,7 +13,7 @@
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.3b063e2d2626e2b9d003df1ce289bdf648c0aef095ec2abe2c32e53068a4f0a3.css integrity="sha256-OwY+LSYm4rnQA98c4om99kjArvCV7Cq+LDLlMGik8KM=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.68d8998ff4b1338488ddb84250644186ce438f73b7af768431bd6f3b5ef65eae.js integrity="sha256-aNiZj/SxM4SI3bhCUGRBhs5Dj3O3r3aEMb1vO172Xq4=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.0f1107e181a14f4c4217a19b3ed488fb7ed40121206eb148ab2ebfb13641db87.js integrity="sha256-DxEH4YGhT0xCF6GbPtSI+37UASEgbrFIqy6/sTZB24c=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -202,7 +202,7 @@ $\newcommand{\false}{\mathsf{false}}$
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#sets-groups-and-special-functions>Sets, Groups and Special Functions</a></li>
+<li><a href=#sets-groups-and-special-functions>Sets, Groups, and Special Functions</a></li>
 <li><a href=#number-theory>Number-theory</a></li>
 <li><a href=#sampling>Sampling</a></li>
 <li><a href=#assertions>Assertions</a></li>
@@ -218,7 +218,7 @@ Notation and Definitions
 </h1>
 <p>This page is a glossary for notation and concepts present in the documentation.</p>
 <h2 id=sets-groups-and-special-functions>
-Sets, Groups and Special Functions
+Sets, Groups, and Special Functions
 <a class=anchor href=#sets-groups-and-special-functions>#</a>
 </h2>
 <ul>
@@ -227,43 +227,44 @@ Sets, Groups and Special Functions
 <li>$\range{b}$ is the finite set of integers $\{0, \ldots, b-1\}$.</li>
 <li>$\gcd(n, m)$ is the nonnegative <a href=https://en.wikipedia.org/wiki/Greatest_common_divisor>greatest common divisor</a> of integers $n$ and $m$; when $\gcd(n, m) = 1$, $n$ and $m$ are said to be <em>coprime</em>.</li>
 <li>$\z{n}$ are the integers modulo $n$, a set associated with the equivalence classes of integers $\{0, 1, \ldots, n-1\}$.</li>
-<li>$\zns{n}$ is the multiplicative group of integers modulo $n$: an element $e$ from $\z{n}$ is in $\zns{n}$ iff $\gcd(e, n) = 1$, that is $\zns{n} = \{e \in \z{n}: \gcd(e, n) = 1\}$. When $n$ is prime, then $\zns{n} = \{e : 1 \leq e \leq n-1\}$.</li>
+<li>$\zns{n}$ is the multiplicative group of integers modulo $n$: an element $e$ from $\z{n}$ is in $\zns{n}$ iff $\gcd(e, n) = 1$, that is $\zns{n} = \{e \in \z{n}: \gcd(e, n) = 1\}$. When $n$ is prime, then $\zns{n} = \{1, \ldots, n-1\}$.</li>
 <li>$\field{p}$ is the finite field of order $p$; when $p$ is a prime number, these are the integers modulo $p$, $\z{p}$; when $p$ is a prime power $q^k$, these are <a href=https://en.wikipedia.org/wiki/Finite_field>Galois fields</a>.</li>
-<li>$\varphi(n)$ is Euler&rsquo;s <a href=https://en.wikipedia.org/wiki/Euler%27s_totient_function>totient function</a>; for $n\geq 1$, it&rsquo;s the number of integers in $\{1,\ldots, n\}$ coprime with $n$.</li>
-<li>$|S|$ is the <em>order</em> of a set $S$, its number of elements; $|\zns{n}| = \varphi(n)$; for prime $n$, $|\zns{n}| = n-1$.</li>
+<li>$\varphi(n)$ is Euler&rsquo;s <a href=https://en.wikipedia.org/wiki/Euler%27s_totient_function>totient function</a>; for $n\geq 1$, it is the number of integers in $\{1,\ldots, n\}$ coprime with $n.$</li>
+<li>$|S|$ is the <em>order</em> of a set $S$, i.e., its number of elements. For example, $|\zns{n}| = \varphi(n)$, and for a prime $n$, $|\zns{n}| = n-1$.</li>
 </ul>
 <h2 id=number-theory>
 Number-theory
 <a class=anchor href=#number-theory>#</a>
 </h2>
 <ul>
-<li>$J(w, n)$ is the <a href=https://en.wikipedia.org/wiki/Jacobi_symbol>Jacobi symbol</a> of $w$ modulo $n$, only defined for positive and odd $n$; $J_n$ is the set of elements of $\zns{n}$ with Jacobi symbol $1$.</li>
-<li>$QR_n$ is the set of quadratic residues modulo $n$; quadratic residues modulo $n$ are elements that have a square-root: $\{e \in \z{n} : \exists r. r^2 = e \mod n\}$.</li>
+<li>$J(w, n)\in \{-1, 0, 1\}$ is the <a href=https://en.wikipedia.org/wiki/Jacobi_symbol>Jacobi symbol</a> of $w$ modulo $n$, only defined for positive and odd $n$.</li>
+<li>$J_n$ is the set of elements of $\zns{n}$ with Jacobi symbol $1$.</li>
+<li>$QR_n$ is the set of quadratic residues modulo $n$, which are elements that have a square-root, i.e., $QR_n = \{e \in \z{n} : \exists r . r^2 = e \mod n\}$.</li>
 </ul>
 <h2 id=sampling>
 Sampling
 <a class=anchor href=#sampling>#</a>
 </h2>
-<p>In protocols, we will often need to uniformly sample elements from sets and use the following notation</p>
+<p>In protocol specifications, we will often need to uniformly sample elements from sets. We will use the following notation:</p>
 <ul>
-<li>$\sampleGeneric{x}{X}$ to mean that $x$ is uniformly sampled from the set $X$.</li>
+<li>$\sampleGeneric{x}{X}$, where $x$ is uniformly sampled from the set $X$.</li>
 </ul>
-<p>Consider reading <a href=/docs/zkdocs/protocol-primitives/random-sampling/>Random sampling</a> to learn how to correctly uniformly sample using rejection sampling, avoiding the modulo bias issue.</p>
+<p>Consider reading the section on <a href=/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a> to learn how to correctly sample a number uniformly using rejection sampling, avoiding the modulo-bias issue.</p>
 <h2 id=assertions>
 Assertions
 <a class=anchor href=#assertions>#</a>
 </h2>
-<p>We will use assertions in protocol descriptions; when they do not hold, the protocol must abort, risking leaking secret information if not.</p>
+<p>We will use assertions in protocol descriptions. When the assertions do not hold, the protocol must abort to avoid leaking secret information.</p>
 <ul>
-<li>$a \equalQ b$ requires $a=b$ and aborts otherwise</li>
-<li>$a \gQ b$ requires $a>b$ and aborts otherwise</li>
-<li>$a \inQ S$ requires that $a$ is in the set $S$, and aborts otherwise.</li>
+<li>$a \equalQ b$, requires $a=b$, and aborts otherwise</li>
+<li>$a \gQ b$, requires $a>b$, and aborts otherwise</li>
+<li>$a \inQ S$, requires that $a$ is in the set $S$, and aborts otherwise.</li>
 </ul>
 <h2 id=implementations-of-number-theoretic-algorithms>
 Implementations of number-theoretic algorithms
 <a class=anchor href=#implementations-of-number-theoretic-algorithms>#</a>
 </h2>
-<p>In general, we highly recommend the <a href=https://cacr.uwaterloo.ca/hac/>Handbook of applied cryptography</a>, which has detailed descriptions of most algorithms.</p>
+<p>In general, we highly recommend the <a href=https://cacr.uwaterloo.ca/hac/>Handbook of Applied Cryptography</a>, which has detailed descriptions of most algorithms.</p>
 <h2 id=hash-functions>
 Hash Functions
 <a class=anchor href=#hash-functions>#</a>
@@ -275,7 +276,7 @@ Hash Functions
 <p>Find more details on the particular hash functions in <a href=/docs/zkdocs/protocol-primitives/nums/#hash-function-choice>Nothing-up-my-sleeve constructions</a></p>
 <h2>References <a class=anchor href=#references>#</a></h2>
 <ul>
-<li>[HOC] <a href=https://cacr.uwaterloo.ca/hac/ title="Menezes, A. J., Van Oorschot, P. C., & Vanstone, S. A. (2018). Handbook of applied cryptography. CRC press." target=_blank>Handbook of applied cryptography</a> (2018).</li>
+<li>[HOC] <a href=https://cacr.uwaterloo.ca/hac/ title="Menezes, A. J., Van Oorschot, P. C., & Vanstone, S. A. (2018). Handbook of Applied Cryptography. CRC press." target=_blank>Handbook of Applied Cryptography</a> (2018).</li>
 </ul>
 </article>
 <footer class=book-footer>
@@ -300,7 +301,7 @@ Hash Functions
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#sets-groups-and-special-functions>Sets, Groups and Special Functions</a></li>
+<li><a href=#sets-groups-and-special-functions>Sets, Groups, and Special Functions</a></li>
 <li><a href=#number-theory>Number-theory</a></li>
 <li><a href=#sampling>Sampling</a></li>
 <li><a href=#assertions>Assertions</a></li>

@@ -13,7 +13,7 @@
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.3b063e2d2626e2b9d003df1ce289bdf648c0aef095ec2abe2c32e53068a4f0a3.css integrity="sha256-OwY+LSYm4rnQA98c4om99kjArvCV7Cq+LDLlMGik8KM=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.68d8998ff4b1338488ddb84250644186ce438f73b7af768431bd6f3b5ef65eae.js integrity="sha256-aNiZj/SxM4SI3bhCUGRBhs5Dj3O3r3aEMb1vO172Xq4=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.0f1107e181a14f4c4217a19b3ed488fb7ed40121206eb148ab2ebfb13641db87.js integrity="sha256-DxEH4YGhT0xCF6GbPtSI+37UASEgbrFIqy6/sTZB24c=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -216,7 +216,7 @@ $\newcommand{\false}{\mathsf{false}}$
 Paillier-Blum Modulus
 <a class=anchor href=#paillier-blum-modulus>#</a>
 </h1>
-<p>This protocol allows the prover to show that a public modulus is the product of two $3 \; \mathsf{mod}\; 4$ prime numbers. Since <em>safe-primes</em> &ndash; primes of the form $p = 2q + 1$ where $q$ is also prime &ndash; are congruent with $3\; \mathsf{mod}\; 4$, this proof system can be used in those cases. Similar to the proof for <a href=../product-of-two-primes>Product of two primes</a>, this system also uses the proof of <a href=../square-freeness>Square freeness</a>. Additionally, this proof system is much more efficient than the one for the product of two primes.</p>
+<p>This protocol allows the prover to show that a public modulus is the product of two $3 \; \mathsf{mod}\; 4$ prime numbers. Since <em>safe-primes</em> &ndash; primes of the form $p = 2q + 1$ where $q$ is also prime &ndash; are congruent with $3\; \mathsf{mod}\; 4$, this proof system can be used in those cases. Similar to the proof for <a href=../product-of-two-primes>Product of two primes</a>, this system also uses the proof of <a href=../square-freeness>Square freeness</a>. This proof system is also much more efficient than the one for the <a href=../product-of-two-primes>Product of two primes</a>.</p>
 <blockquote class="book-hint info">
 <strong>Goal:</strong>
 $\varprover$ convinces $\varverifier$ that $\varN$ is the product of two primes congruent with $3\; \mathsf{mod}\; 4$, and that $\gcd(\varN, \varphi(\varN)) = 1$, without revealing its factorization.
@@ -288,7 +288,7 @@ Security pitfalls
 </h2>
 <ul>
 <li><strong>Using the interactive protocol in a malicious verifier context:</strong> high severity issue which allows factoring the modulus $\varN$; see <a href=/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>.</li>
-<li><strong>Not checking that $\varN \mod 2 \equalQ 1$ and $\varN \gQ 1$ before computing the Jacobi symbol $J(\varw, \varN)$</strong>: the Jacobi symbol is only defined when $\varN$ is an odd positive integer. Failing to verify this might lead to a program panic as in the <a href="https://cs.opensource.google/go/go/+/refs/tags/go1.17.5:src/math/big/int.go;l=838">Go library</a>.</li>
+<li><strong>Not checking that $\varN \mod 2 \equalQ 1$ and $\varN \gQ 1$ before computing the Jacobi symbol $J(\varw, \varN)$</strong>: the Jacobi symbol is only defined when $\varN$ is an odd positive integer. Failing to verify this might lead to a program panic, as in the <a href="https://cs.opensource.google/go/go/+/refs/tags/go1.17.5:src/math/big/int.go;l=838">Go library</a>.</li>
 <li><strong>Verifier trusting prover on the non-interactive protocol:</strong>
 <ul>
 <li>$\varverifier$ does not check that $J(\varw, \varN) = -1$: high severity issue since this allows $\varprover$ to submit a proof forgery with $\varw = 0$ and $\varx_i = 0$.</li>
@@ -323,7 +323,7 @@ Auxiliary algorithms
 <a class=anchor href=#auxiliary-algorithms>#</a>
 </h2>
 <ul>
-<li>The function $J(\varw, \varN)$ is the <a href=https://en.wikipedia.org/wiki/Jacobi_symbol>Jacobi symbol</a> of $\varw$ modulo $\varN$. To implement it use Algorithm 2.149 of the <a href=https://cacr.uwaterloo.ca/hac/>Handbook of applied cryptography</a>.</li>
+<li>The function $J(\varw, \varN)$ is the <a href=https://en.wikipedia.org/wiki/Jacobi_symbol>Jacobi symbol</a> of $\varw$ modulo $\varN$. To implement it use Algorithm 2.149 of the <a href=https://cacr.uwaterloo.ca/hac/>Handbook of Applied Cryptography</a>.</li>
 <li>Compute modular fourth-roots using [<a href=https://cacr.uwaterloo.ca/hac/>HOC</a> - Fact 2.160]: if $x$ is a quadratic residue modulo $\varN = p q$ (and $p,q$ are $3\mod 4$) then $\sqrt[4]{x} = x^{(\varphi + 4)/8} \mod \varN$, where $\varphi = (p-1)\cdot(q-1)$.</li>
 <li>The prover has to check if an element is a quadratic residue modulo $\varN$. To do this, use [<a href=https://cacr.uwaterloo.ca/hac/>HOC</a> - Fact 2.137]: $x$ is a quadratic residue modulo $\varN = pq$ if and only if it is a quadratic residue modulo $p$ and modulo $q$. A number $x$ is a quadratic residue modulo a prime $p$, if $x^{(p-1)/2} = 1$. Thus, $x$ is a quadratic residue modulo $\varN = pq$ if and only if $x^{(p-1)/2} = 1$ and $x^{(q-1)/2} = 1$.</li>
 <li>Most libraries will have a primality testing routine for the $\mathsf{isPrime}$ function.</li>
@@ -333,7 +333,7 @@ Auxiliary algorithms
 <li>[GG21] <a href=https://eprint.iacr.org/2021/060.pdf title="Canetti, R., Gennaro, R., Goldfeder, S., Makriyannis, N., & Peled, U. (2020, October). UC non-interactive, proactive, threshold ECDSA with identifiable aborts. In Proceedings of the 2020 ACM SIGSAC Conference on Computer and Communications Security (pp. 1769-1787)." target=_blank>UC non-interactive, proactive, threshold ECDSA with identifiable aborts</a> (2020).</li>
 </ul>
 <ul>
-<li>[HOC] <a href=https://cacr.uwaterloo.ca/hac/ title="Menezes, A. J., Van Oorschot, P. C., & Vanstone, S. A. (2018). Handbook of applied cryptography. CRC press." target=_blank>Handbook of applied cryptography</a> (2018).</li>
+<li>[HOC] <a href=https://cacr.uwaterloo.ca/hac/ title="Menezes, A. J., Van Oorschot, P. C., & Vanstone, S. A. (2018). Handbook of Applied Cryptography. CRC press." target=_blank>Handbook of Applied Cryptography</a> (2018).</li>
 </ul>
 </article>
 <footer class=book-footer>
