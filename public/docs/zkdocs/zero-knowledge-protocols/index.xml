@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Zero-knowledge protocols on ZKDocs</title>
+    <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/</link>
+    <description>Recent content in Zero-knowledge protocols on ZKDocs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/docs/zkdocs/zero-knowledge-protocols/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Schnorr&#39;s identification protocol</title>
+      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr/</guid>
+      <description>The zero-knowledge proof for a discrete-logarithm in a prime modulo.</description>
+    </item>
+    
+    <item>
+      <title>Variants of Schnorr&#39;s identification protocol</title>
+      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/</guid>
+      <description>Common variants of Schnorr&amp;rsquo;s protocol.</description>
+    </item>
+    
+    <item>
+      <title>Girault&#39;s identification protocol</title>
+      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/girault-identification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/girault-identification/</guid>
+      <description>A statistical zero-knowledge proof for discrete-logarithm in a composite modulo.</description>
+    </item>
+    
+    <item>
+      <title>Paillier range proofs</title>
+      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/range-proofs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/range-proofs/</guid>
+      <description>Range proofs with Paillier.</description>
+    </item>
+    
+    <item>
+      <title>Short factoring proofs</title>
+      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/</guid>
+      <description>Proof of knowledge of the factorization of an integer.</description>
+    </item>
+    
+  </channel>
+</rss>

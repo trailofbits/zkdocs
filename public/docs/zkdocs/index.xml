@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on ZKDocs</title>
+    <link>http://example.org/docs/zkdocs/</link>
+    <description>Recent content in Introduction on ZKDocs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/docs/zkdocs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A title</title>
+      <link>http://example.org/docs/zkdocs/template/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/template/</guid>
+      <description>A summary that ends in a period.</description>
+    </item>
+    
+    <item>
+      <title>Notation &amp; Definitions</title>
+      <link>http://example.org/docs/zkdocs/notation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/notation/</guid>
+      <description>Common notation and definitions used in the documentation.</description>
+    </item>
+    
+    <item>
+      <title>Bibliography</title>
+      <link>http://example.org/docs/zkdocs/bibliography/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/bibliography/</guid>
+      <description>All references</description>
+    </item>
+    
+  </channel>
+</rss>

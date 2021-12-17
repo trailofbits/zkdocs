@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Protocol primitives on ZKDocs</title>
+    <link>http://example.org/docs/zkdocs/generic-zero-knowledge-systems/</link>
+    <description>Recent content in Protocol primitives on ZKDocs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/docs/zkdocs/generic-zero-knowledge-systems/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ZK-STARK</title>
+      <link>http://example.org/docs/zkdocs/generic-zero-knowledge-systems/stark/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/generic-zero-knowledge-systems/stark/</guid>
+      <description>ZK-STARK #   boundary checking is important   References #    Vitalik, STARKs, Part I: Proofs with Polynomials
+  Vitalik, STARKs, Part II: Thank Goodness It&amp;rsquo;s FRI-day
+  STARKs, Part 3: Into the Weeds
+  Ben-Sasson, E., Bentov, I., Horesh, Y., &amp;amp; Riabzev, M. (2018). Scalable, transparent, and post-quantum secure computational integrity. IACR Cryptol. ePrint Arch., 2018, 46.
+  FFT
+  https://github.</description>
+    </item>
+    
+  </channel>
+</rss>

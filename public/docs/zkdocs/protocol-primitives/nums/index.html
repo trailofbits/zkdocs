@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Generic, honest, and deterministic method to sample elements.">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="Nothing-up-my-sleeve constructions" />
+<meta property="og:description" content="Generic, honest, and deterministic method to sample elements." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/zkdocs/protocol-primitives/nums/" /><meta property="article:section" content="docs" />
+
+
+
+<title>Nothing-up-my-sleeve constructions | ZKDocs</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.cb29ef23964b7447b575f956b7722c60d044bd85de64b492255d7a53f41f3bcc.css" integrity="sha256-yynvI5ZLdEe1dflWt3IsYNBEvYXeZLSSJV16U/QfO8w=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.9c12fb2de5fbf368defad91dacfa194faad78e0a783ce6c2b67e62eac83ac832.js" integrity="sha256-nBL7LeX782je&#43;tkdrPoZT6rXjgp4PObCtn5i6sg6yDI=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>ZKDocs</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/" class="">Introduction</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/template/" class="">A title</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/notation/" class="">Notation &amp; Definitions</a>
+  
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/" class="">Zero-knowledge protocols</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr/" class="">Schnorr&#39;s identification protocol</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/" class="">Variants of Schnorr&#39;s identification protocol</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/" class="">Number is product of two primes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/" class="">Number is square-free</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/" class="">Two prime divisors</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/" class="">Product of two primes</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/" class="">Paillier-Blum Modulus</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/girault-identification/" class="">Girault&#39;s identification protocol</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/range-proofs/" class="">Paillier range proofs</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/" class="">Short factoring proofs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/security-of-zkps/" class="">Security of ZKPs</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/security-of-zkps/when-to-use-hvzk/" class="">Using HVZKP in the wrong context</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/generic-zero-knowledge-systems/" class="">Protocol primitives</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/generic-zero-knowledge-systems/stark/" class="">ZK-STARK</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/protocol-primitives/" class="">Protocol primitives</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/protocol-primitives/random-sampling/" class="">Random Sampling</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/protocol-primitives/fiat-shamir/" class="">Fiat-Shamir transformation</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/protocol-primitives/fujisaki-okamoto/" class="">Fujisaki-Okamoto commitments</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/protocol-primitives/nums/" class=" active">Nothing-up-my-sleeve constructions</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/protocol-primitives/shamir/" class="">Shamir&#39;s Secret Sharing and its Pitfalls</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/" class="">Feldman&#39;s Verifiable Secret Sharing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/protocol-primitives/alt-shamir/" class="">Alternative versions of Shamir&#39;s Secret Sharing scheme</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/zkdocs/bibliography/" class="">Bibliography</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9370f1a5d0248572ac505e0c6d4ad190" class="toggle"  />
+    <label for="section-9370f1a5d0248572ac505e0c6d4ad190" class="flex justify-between">
+      <a role="button" class="">Shortcodes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/columns/" class="">Columns</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/details/" class="">Details</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/expand/" class="">Expand</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/hints/" class="">Hints</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="http://example.org/docs/shortcodes/section/" class="">Section</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/first-page/" class="">First Page</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/second-page/" class="">Second Page</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/tabs/" class="">Tabs</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  $\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+$\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
+$\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
+$\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
+$\newcommand{\work}[2]{#1 & & #2\\}$
+$\newcommand{\allwork}[1]{ & #1 & \\}$
+$\newcommand{\aliceseparator}{-------&&\\}$
+$\newcommand{\bobseparator}{&&-------\\}$
+$\newcommand{\foo}{\phantom{\text{bigarrowfitsallthis}}}$
+$\newcommand{\ra}[1]{%
+\vphantom{\xrightarrow{asd}}%
+\smash{\xrightarrow[\foo]{#1}}%
+}$
+$\newcommand{\la}[1]{%
+\vphantom{\xleftarrow{asd}}%
+\smash{\xleftarrow[\foo]{#1}}%
+}$
+$\newcommand{\z}[1]{\mathbb{Z}_{#1}}$
+$\newcommand{\zq}{\mathbb{Z}_\varq}$
+$\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
+$\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
+$\require{action}
+\newcommand{\sampleSymb}{
+  {\overset{\$}{\leftarrow}}
+}$
+$\newcommand{\field}[1]{\mathbb{F}_{#1}}$
+$\newcommand{\sample}[1]{#1\sampleSymb\zq}$
+$\newcommand{\sampleGeneric}[2]{#1\sampleSymb#2}$
+$\newcommand{\sampleInterval}[2]{#1\sampleSymb\interval{#2}}$
+$\newcommand{\sampleRange}[2]{#1\sampleSymb\range{#2}}$
+$\newcommand{\samplezqs}[1]{\class{hover}{#1\sampleSymb\zqs}}$
+$\newcommand{\sampleN}[2]{\class{hover}{#1\sampleSymb\z{#2}}}$
+$\newcommand{\sampleNs}[2]{\class{hover}{#1\sampleSymb\z{#2}^\ast}}$
+$\newcommand{\equalQ}{\overset{?}{=}}$
+$\newcommand{\gQ}{\overset{?}{>}}$
+$\newcommand{\inQ}{\overset{?}{\in}}$
+$\newcommand{\cgroup}{\mathbb{G}}$
+$\newcommand{\hash}[1]{\mathsf{Hash}({#1})}$
+$\newcommand{\hashbit}[2]{\mathsf{Hash}({#1})\verb+[0:#2]+}$
+$\newcommand{\naturals}{\mathbb{N}}$
+$\newcommand{\sqfree}{L_\mathsf{square-free}}$
+$\newcommand{\ceil}[1]{\lceil #1 \rceil}$
+$\newcommand{\sampleSet}[2]{\class{hover}{#1\sampleSymb#2}}$
+$\newcommand{\bunch}[1]{\{ #1_i\}_{i=1}^m}$
+$\newcommand{\bunchi}[1]{\{ #1\}_{i=1}^m}$
+$\newcommand{\forb}{\text{ for }i=1,\ldots,m}$
+$\newcommand{\interval}[1]{[0, #1[}$
+
+$\newcommand{\range}[1]{[#1]}$
+$\newcommand{\rangeone}[1]{\{1, \dots,#1 -1 \}}$
+
+
+
+$\newcommand{\vara}{\class{var var_a}{a}}$
+$\newcommand{\varb}{\class{var var_b}{b}}$
+$\newcommand{\varc}{\class{var var_c}{c}}$
+$\newcommand{\vard}{\class{var var_d}{d}}$
+$\newcommand{\varh}{\class{var var_h}{h}}$
+$\newcommand{\varg}{\class{var var_g}{g}}$
+$\newcommand{\varu}{\class{var var_u}{u}}$
+$\newcommand{\varx}{\class{var var_x}{x}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varz}{\class{var var_z}{z}}$
+$\newcommand{\varr}{\class{var var_r}{r}}$
+$\newcommand{\varq}{\class{var var_q}{q}}$
+$\newcommand{\varp}{\class{var var_p}{p}}$
+$\newcommand{\vare}{\class{var var_e}{e}}$
+$\newcommand{\vary}{\class{var var_y}{y}}$
+$\newcommand{\varw}{\class{var var_w}{w}}$
+
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
+$\newcommand{\varN}{\class{var var_N}{N}}$
+$\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
+$\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
+$\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
+$\newcommand{\muvar}{\class{var var_μ}{\mu}}$
+
+
+
+$\newcommand{\true}{\mathsf{true}}$
+$\newcommand{\false}{\mathsf{false}}$
+
+
+
+
+
+<div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Nothing-up-my-sleeve constructions</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#hash-function-choice">Hash function choice</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="nothing-up-my-sleeve-constructions">
+  Nothing-up-my-sleeve constructions
+  <a class="anchor" href="#nothing-up-my-sleeve-constructions">#</a>
+</h1>
+<p>Protocols often require using public but random group elements or alternative generators. If these were simply randomly sampled, other participants could be suspicious that the party did not honestly generate them.</p>
+<p>To generate the elements you require:</p>
+<ul>
+<li><strong>membership:</strong> know how to check membership in the sample space</li>
+<li><strong>bit-size:</strong> know the bit-size of the elements</li>
+<li><strong>binding parameters:</strong> the protocol&rsquo;s public values other binding parameters like an index</li>
+<li><strong>salt</strong></li>
+</ul>
+<blockquote class="book-hint info">
+  <p><strong>Example:</strong> In the <a href="/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/#non-interactive-protocol">Short factoring proofs</a> non-interactive protocol, we need to generate values $\varz_i \in \zns{\varN}$. Our ingredients are:</p>
+<ul>
+<li><strong>membership:</strong> to check if an element $e$ is in $\zns{\varN}$, we check that $\gcd(e, \varN) = 1$</li>
+<li><strong>bit-size:</strong> the element bit-size will be $|\varN|$</li>
+<li><strong>binding parameters:</strong> $\varN$ and $i$</li>
+<li><strong>salt:</strong> the salt can be $\mathsf{&ldquo;shortfactoringproof&rdquo;}$</li>
+</ul>
+
+</blockquote>
+
+<p>The construction is generic: start a counter and sample an element with an extendible-output hash function over the binding parameters and the counter; if the generated element is in the sample space, we return it; otherwise, we increment the counter and sample again.</p>
+<div class="highlight"><div style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">DS <span style="color:#666">=</span> <span style="color:#4070a0">&#39;|&#39;</span>
+
+<span style="color:#60a0b0;font-style:italic"># Rejection sampling using a counter and binding parameters of the protocol</span>
+<span style="color:#007020;font-weight:bold">def</span> <span style="color:#06287e">gen_element</span>(sample_space_predicate, bitsize, param_list, salt):
+  counter <span style="color:#666">=</span> <span style="color:#40a070">0</span>
+  <span style="color:#007020;font-weight:bold">while</span> <span style="color:#007020;font-weight:bold">True</span>:
+
+    <span style="color:#60a0b0;font-style:italic"># elements to hash</span>
+    elements <span style="color:#666">=</span> param_list <span style="color:#666">+</span> [salt, counter]
+
+    <span style="color:#60a0b0;font-style:italic"># add each element&#39;s length</span>
+    to_hash <span style="color:#666">=</span> [<span style="color:#007020">len</span>(s) <span style="color:#666">+</span> s <span style="color:#007020;font-weight:bold">for</span> s <span style="color:#007020;font-weight:bold">in</span> elements]
+
+    <span style="color:#60a0b0;font-style:italic"># domain separated elements</span>
+    to_hash <span style="color:#666">=</span> DS <span style="color:#666">+</span> DS<span style="color:#666">.</span>join(to_hash)
+
+    <span style="color:#60a0b0;font-style:italic"># generate bitsize element with extendible-output hash function</span>
+    e <span style="color:#666">=</span> hash_xof(to_hash, bitsize)
+
+    <span style="color:#60a0b0;font-style:italic"># check that e is in sample_space</span>
+    <span style="color:#007020;font-weight:bold">if</span> sample_space_predicate(e):
+      <span style="color:#007020;font-weight:bold">return</span> e
+
+    <span style="color:#60a0b0;font-style:italic"># increment counter</span>
+    counter <span style="color:#666">+=</span> <span style="color:#40a070">1</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="hash-function-choice">
+  Hash function choice
+  <a class="anchor" href="#hash-function-choice">#</a>
+</h2>
+<p>The hash function used here must be an extendible-output function (XOF). These hash functions can generate an output of arbitrary length. We must use these functions since the elements we are sampling can have an arbitrary number of bits, and failing to achieve that size can cause security issues. An example is $\mathsf{SHAKE256}$, which provides 256-bit security against collision attacks when at least 512 bits are sampled.</p>
+<p>An alternative is using $\mathsf{TupleHash}$ which does not require manually domain-separating the elements to be hashed.</p>
+
+    <h2>References <a class="anchor" href="#references">#</a></h2>
+      
+              
+              <ul>
+                  <li>[SHA3] <a href="https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-185.pdf" title="Kelsey, J., Chang, S. J., &amp; Perlner, R. (2016). SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash. NIST special publication, 800, 185." target="_blank">SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash</a> (2016).</li>
+              </ul>
+      
+    
+
+  </article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+    loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
+    tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
+  });
+  </script>
+
+  
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+
+
+
+  
+  <script language="javascript" type="text/javascript" src="/js/interactive_variables.js"></script>
+
+  
+  <script>
+    MathJax.Hub.Queue(function () {
+      setupInteractiveVariables()
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+  
+      
+
+      
+
+  
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#hash-function-choice">Hash function choice</a></li>
+  </ul>
+</nav>
+
+
+ 
+
+        
+        <br>
+        <br>
+        
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security of ZKPs on ZKDocs</title>
+    <link>http://example.org/docs/zkdocs/security-of-zkps/</link>
+    <description>Recent content in Security of ZKPs on ZKDocs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/docs/zkdocs/security-of-zkps/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using HVZKP in the wrong context</title>
+      <link>http://example.org/docs/zkdocs/security-of-zkps/when-to-use-hvzk/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/zkdocs/security-of-zkps/when-to-use-hvzk/</guid>
+      <description>Potential attacks when honest verifier zero-knowledge proofs are used in the context of a malicious verifier.</description>
+    </item>
+    
+  </channel>
+</rss>
