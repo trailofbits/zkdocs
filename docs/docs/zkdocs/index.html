@@ -2,8 +2,8 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Introduction #  Zero-knowledge protocols #  This resource provides comprehensive, detailed, and interactive documentation on zero-knowledge proof systems and related primitives.
-Comprehensive #  The resource aims to be both self-contained and comprehensive in the topics related to zero-knowledge proof systems, including descriptions of simple systems like Schnorr’s identification protocol, to complex proof systems like Bulletproofs. We also cover topics related to these protocols: random sampling, Fiat-Shamir transformation, Shamir&rsquo;s Secret Sharing, among others.">
+<meta name=description content="Introduction #  Zero-knowledge protocols #  ZKDocs provides comprehensive, detailed, and interactive documentation on zero-knowledge proof systems and related primitives.
+At Trail of Bits, we audit many implementations of non-standardized cryptographic protocols and often find the same issues. As we discovered more instances of these bugs, we wanted to find a way to prevent them in the future. Unfortunately, for these protocols, the burden is on the developers to figure out all of the low-level implementation details and security pitfalls.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content="Introduction">
 <meta property="og:description" content>
@@ -12,9 +12,9 @@ Comprehensive #  The resource aims to be both self-contained and comprehensive i
 <title>Introduction | ZKDocs</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/book.min.cb29ef23964b7447b575f956b7722c60d044bd85de64b492255d7a53f41f3bcc.css integrity="sha256-yynvI5ZLdEe1dflWt3IsYNBEvYXeZLSSJV16U/QfO8w=" crossorigin=anonymous>
+<link rel=stylesheet href=/book.min.3b063e2d2626e2b9d003df1ce289bdf648c0aef095ec2abe2c32e53068a4f0a3.css integrity="sha256-OwY+LSYm4rnQA98c4om99kjArvCV7Cq+LDLlMGik8KM=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.1aa7e36cceac1796fce63cd9f5f14562ac441d7f37697c8e320f42769415b237.js integrity="sha256-GqfjbM6sF5b85jzZ9fFFYqxEHX83aXyOMg9CdpQVsjc=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.68d8998ff4b1338488ddb84250644186ce438f73b7af768431bd6f3b5ef65eae.js integrity="sha256-aNiZj/SxM4SI3bhCUGRBhs5Dj3O3r3aEMb1vO172Xq4=" crossorigin=anonymous></script>
 <link rel=alternate type=application/rss+xml href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/index.xml title=ZKDocs>
 </head>
 <body dir=ltr>
@@ -222,41 +222,46 @@ Introduction
 Zero-knowledge protocols
 <a class=anchor href=#zero-knowledge-protocols>#</a>
 </h2>
-<p>This resource provides comprehensive, detailed, and interactive documentation on zero-knowledge proof systems and related primitives.</p>
+<p>ZKDocs provides comprehensive, detailed, and interactive documentation on zero-knowledge proof systems and related primitives.</p>
+<p>At <a href=https://www.trailofbits.com/>Trail of Bits</a>, we audit many implementations of non-standardized cryptographic protocols and often find the same issues. As we discovered more instances of these bugs, we wanted to find a way to prevent them in the future. Unfortunately, for these protocols, the burden is on the developers to figure out all of the low-level implementation details and security pitfalls.</p>
+<p>We hope that ZKDocs can fill in this gap and benefit the larger cryptography community.</p>
 <div class="book-columns flex flex-wrap">
 <div class="flex-even markdown-inner">
 <h3 id=comprehensive>
 Comprehensive
 <a class=anchor href=#comprehensive>#</a>
 </h3>
-<p>The resource aims to be both self-contained and comprehensive in the topics related to zero-knowledge proof systems, including descriptions of simple systems like Schnorr’s identification protocol, to complex proof systems like Bulletproofs. We also cover topics related to these protocols: random sampling, Fiat-Shamir transformation, Shamir&rsquo;s Secret Sharing, among others.
+<p>We aim to be both self-contained and comprehensive in the topics related to zero-knowledge proof systems, from descriptions of simple systems like <a href=/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr’s identification protocol</a>, to complex proof systems like <a href=/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum modulus</a>. We also cover cryptographic primitives such as: <a href=/docs/zkdocs/protocol-primitives/random-sampling/>random sampling</a>, <a href=/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a>, and <a href=/docs/zkdocs/protocol-primitives/shamir/>Shamir&rsquo;s Secret Sharing</a>.
 </div>
 <div class="flex-even markdown-inner">
 <h3 id=detailed>
 Detailed
 <a class=anchor href=#detailed>#</a>
 </h3>
-<p>We describe each protocol in great detail, including all necessary setup, sanity-checks, auxiliary algorithms, further references, and potential security pitfalls and associated severity.
+<p>We describe each protocol in great detail, including all necessary setup, sanity-checks, auxiliary algorithms, further references, and potential security pitfalls with their associated severity.
 </div>
 </div>
 <h3 id=interactive>
 Interactive
 <a class=anchor href=#interactive>#</a>
 </h3>
-<p>The protocol descriptions are interactive and allow modifying variable names. This ability eases comparing the source code of implementations with the specification and easily find potential bugs and missing assertions.</p>
+<p>The protocol descriptions are interactive and let you modify variable names. This allows you to easily match the protocol specification against an implementation, to find potential bugs and missing assertions.</p>
 <p>The following gif showcases the interactivity features:</p>
 <ul>
 <li>clicking on a name highlights that variable across the document</li>
-<li>you can type or paste text to edit a variable name</li>
-<li>clicking anywhere, pressing <code>Enter</code> or <code>Escape</code> will stop editing</li>
-<li>pressing the <code>Reset variables names</code> button will reset names on the current page. Variable names are independent across different pages.</li>
+<li>typing or pasting text edits a variable name</li>
+<li>pressing <code>Enter</code> or <code>Escape</code> will stop editing</li>
+<li>pressing the <code>Reset variables names</code> button will reset names on the current page (variable names are independent across different pages)</li>
 </ul>
-<p><img src=/figs/demo.gif alt="Basic interactivity usage"></p>
+<blockquote class=book-box>
+<img src=/figs/demo.gif alt="Basic interactivity usage">
+</blockquote>
 <h3 id=contribute>
 Contribute
 <a class=anchor href=#contribute>#</a>
 </h3>
-<p>Feel free to open issues and suggest new protocols that you would like to see added in our repository.</p>
+<p>We will continue to add more proof systems like Range proofs, STARK, and Bulletproofs.</p>
+<p>Feel free to open issues and suggest new protocols that you would like to see added in ZKDocs.</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
