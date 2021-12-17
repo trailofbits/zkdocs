@@ -1,410 +1,121 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html><html lang=en dir=ltr>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Secret sharing alternatives which do not hide the secret in the constant term of the polynomial.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Alternative versions of Shamir&#39;s Secret Sharing scheme" />
-<meta property="og:description" content="Secret sharing alternatives which do not hide the secret in the constant term of the polynomial." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/" /><meta property="article:section" content="docs" />
-
-
-
-<title>Alternative versions of Shamir&#39;s Secret Sharing scheme | ZKDocs</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.cb29ef23964b7447b575f956b7722c60d044bd85de64b492255d7a53f41f3bcc.css" integrity="sha256-yynvI5ZLdEe1dflWt3IsYNBEvYXeZLSSJV16U/QfO8w=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a2da3ff1f1cdfb439cb717a2ab25cd83985879ac0fce7f3681ed5652deaecbab.js" integrity="sha256-oto/8fHN&#43;0OctxeiqyXNg5hYeawPzn82ge1WUt6uy6s=" crossorigin="anonymous"></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Secret sharing alternatives which do not hide the secret in the constant term of the polynomial.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Alternative versions of Shamir's Secret Sharing scheme">
+<meta property="og:description" content="Secret sharing alternatives which do not hide the secret in the constant term of the polynomial.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/"><meta property="article:section" content="docs">
+<title>Alternative versions of Shamir's Secret Sharing scheme | ZKDocs</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.cb29ef23964b7447b575f956b7722c60d044bd85de64b492255d7a53f41f3bcc.css integrity="sha256-yynvI5ZLdEe1dflWt3IsYNBEvYXeZLSSJV16U/QfO8w=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.1aa7e36cceac1796fce63cd9f5f14562ac441d7f37697c8e320f42769415b237.js integrity="sha256-GqfjbM6sF5b85jzZ9fFFYqxEHX83aXyOMg9CdpQVsjc=" crossorigin=anonymous></script>
 </head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>ZKDocs</span>
-  </a>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><span>ZKDocs</span>
+</a>
 </h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <ul>
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/" class="">Introduction</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/" class="">Notation &amp; Definitions</a>
-  
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/" class="">Zero-knowledge protocols</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/" class="">Schnorr&#39;s identification protocol</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/" class="">Variants of Schnorr&#39;s identification protocol</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/" class="">Number is product of two primes</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/" class="">Number is square-free</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/" class="">Two prime divisors</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/" class="">Product of two primes</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/" class="">Paillier-Blum Modulus</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/" class="">Girault&#39;s identification protocol</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/" class="">Short factoring proofs</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/" class="">Security of ZKPs</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/" class="">Using HVZKP in the wrong context</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/" class="">Protocol primitives</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/" class="">Random Sampling</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/" class="">Fiat-Shamir transformation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/" class="">Nothing-up-my-sleeve constructions</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/" class="">Shamir&#39;s Secret Sharing and its Pitfalls</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/" class="">Feldman&#39;s Verifiable Secret Sharing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/" class=" active">Alternative versions of Shamir&#39;s Secret Sharing scheme</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/" class="">Bibliography</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<ul>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/>Introduction</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/>Notation & Definitions</a>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/>Security of ZKPs</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/>Protocol primitives</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing and its Pitfalls</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/ class=active>Alternative versions of Shamir's Secret Sharing scheme</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/>Bibliography</a>
+</li>
+</ul>
+</li>
+</ul>
 </nav>
-
-
-
-
-  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  $\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
 $\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
 $\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
 $\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
@@ -427,7 +138,7 @@ $\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
 $\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
 $\require{action}
 \newcommand{\sampleSymb}{
-  {\overset{\$}{\leftarrow}}
+{\overset{\$}{\leftarrow}}
 }$
 $\newcommand{\field}[1]{\mathbb{F}_{#1}}$
 $\newcommand{\sample}[1]{#1\sampleSymb\zq}$
@@ -451,12 +162,8 @@ $\newcommand{\bunch}[1]{\{ #1_i\}_{i=1}^m}$
 $\newcommand{\bunchi}[1]{\{ #1\}_{i=1}^m}$
 $\newcommand{\forb}{\text{ for }i=1,\ldots,m}$
 $\newcommand{\interval}[1]{[0, #1[}$
-
 $\newcommand{\range}[1]{[#1]}$
 $\newcommand{\rangeone}[1]{\{1, \dots,#1 -1 \}}$
-
-
-
 $\newcommand{\vara}{\class{var var_a}{a}}$
 $\newcommand{\varb}{\class{var var_b}{b}}$
 $\newcommand{\varc}{\class{var var_c}{c}}$
@@ -473,7 +180,6 @@ $\newcommand{\varp}{\class{var var_p}{p}}$
 $\newcommand{\vare}{\class{var var_e}{e}}$
 $\newcommand{\vary}{\class{var var_y}{y}}$
 $\newcommand{\varw}{\class{var var_w}{w}}$
-
 $\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
 $\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
 $\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
@@ -482,77 +188,50 @@ $\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
 $\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
 $\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
 $\newcommand{\muvar}{\class{var var_μ}{\mu}}$
-
-
-
 $\newcommand{\true}{\mathsf{true}}$
 $\newcommand{\false}{\mathsf{false}}$
-
-
-
-
-
 <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>Alternative versions of Shamir&#39;s Secret Sharing scheme</strong>
-
-  <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Alternative versions of Shamir's Secret Sharing scheme</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
 </div>
-
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#transforming-the-inputs-using-a-nonzero-function">Transforming the Inputs Using a Nonzero Function</a></li>
-        <li><a href="#avoiding-the-y-intercept">Avoiding the $y$-intercept</a></li>
-        <li><a href="#moving-away-from-the-constant-term">Moving Away from the Constant Term</a></li>
-        <li><a href="#requiring-recovery-of-the-full-polynomial">Requiring Recovery of the Full Polynomial</a></li>
-      </ul>
-    </li>
-  </ul>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#transforming-the-inputs-using-a-nonzero-function>Transforming the Inputs Using a Nonzero Function</a></li>
+<li><a href=#avoiding-the-y-intercept>Avoiding the $y$-intercept</a></li>
+<li><a href=#moving-away-from-the-constant-term>Moving Away from the Constant Term</a></li>
+<li><a href=#requiring-recovery-of-the-full-polynomial>Requiring Recovery of the Full Polynomial</a></li>
+</ul>
+</li>
+</ul>
 </nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-  <article class="markdown"><h1 id="alternative-secret-sharing-solutions">
-  Alternative Secret Sharing Solutions
-  <a class="anchor" href="#alternative-secret-sharing-solutions">#</a>
+</aside>
+</header>
+<article class=markdown><h1 id=alternative-secret-sharing-solutions>
+Alternative Secret Sharing Solutions
+<a class=anchor href=#alternative-secret-sharing-solutions>#</a>
 </h1>
-<p>There are multiple ways to prevent inadvertently sharing the secret value by evaluating the polynomial at zero. In <a href="../shamir">Shamir Secret Sharing</a>, we described defense strategies to solve that problem in classical Shamir&rsquo;s Secret Sharing scheme. Here, we describe alternative implementations of Shamir&rsquo;s scheme, which ensure that evaluating $f\left(0\right)$ does not reveal $S$.</p>
+<p>There are multiple ways to prevent inadvertently sharing the secret value by evaluating the polynomial at zero. In <a href=../shamir>Shamir Secret Sharing</a>, we described defense strategies to solve that problem in classical Shamir&rsquo;s Secret Sharing scheme. Here, we describe alternative implementations of Shamir&rsquo;s scheme, which ensure that evaluating $f\left(0\right)$ does not reveal $S$.</p>
 <blockquote class="book-hint warning">
-  These alternative schemes are certainly harder to implement (and to review), and their added complexity might not be worth the ability to mistakenly leak $f(0)$, since they can still leak the secret value by leaking other points of the polynomial.
+These alternative schemes are certainly harder to implement (and to review), and their added complexity might not be worth the ability to mistakenly leak $f(0)$, since they can still leak the secret value by leaking other points of the polynomial.
 </blockquote>
-
-<h3 id="transforming-the-inputs-using-a-nonzero-function">
-  Transforming the Inputs Using a Nonzero Function
-  <a class="anchor" href="#transforming-the-inputs-using-a-nonzero-function">#</a>
+<h3 id=transforming-the-inputs-using-a-nonzero-function>
+Transforming the Inputs Using a Nonzero Function
+<a class=anchor href=#transforming-the-inputs-using-a-nonzero-function>#</a>
 </h3>
-<p>Suppose we are working over $\z{p}$, where $p=2^{255}-19$. Consider the multiplicative group $\zns{p}$ of integers less than $p$  and relatively prime to $p$. We can define $h\left(m\right)=2^{m}\pmod{p}$. Since $0\not\in \zns{p}$, we know that $h\left(m\right)\neq 0$ for any integer $m$. Since $2$ is a generator of $\zns{p}$, we know that $h\left(m\right)$ has maximal order in $\zns{p}$.</p>
+<p>Suppose we are working over $\z{p}$, where $p=2^{255}-19$. Consider the multiplicative group $\zns{p}$ of integers less than $p$ and relatively prime to $p$. We can define $h\left(m\right)=2^{m}\pmod{p}$. Since $0\not\in \zns{p}$, we know that $h\left(m\right)\neq 0$ for any integer $m$. Since $2$ is a generator of $\zns{p}$, we know that $h\left(m\right)$ has maximal order in $\zns{p}$.</p>
 <p>During share generation, given an integer input $x$, define $x'=h\left(x\right)$. Then, generate the corresponding share according to $\left(x',f\left(x'\right)\right)$. Because $x'\neq 0$, counters and external inputs can be used without the risk of generating a zero share.</p>
 <p>This technique is compatible with the secret reconstruction using Lagrange interpolation: as far as the Lagrange interpolating polynomial goes, a share formed from the transformed values works the same as any other shares.</p>
-<h3 id="avoiding-the-y-intercept">
-  Avoiding the $y$-intercept
-  <a class="anchor" href="#avoiding-the-y-intercept">#</a>
+<h3 id=avoiding-the-y-intercept>
+Avoiding the $y$-intercept
+<a class=anchor href=#avoiding-the-y-intercept>#</a>
 </h3>
 <p>It is possible to encode the secret $S$ into a polynomial such that $f\left(t\right)=S$ for a value $t\neq 0$. The process is only a little more complicated than the standard Shamir scheme:</p>
 <ul>
@@ -561,12 +240,12 @@ $\newcommand{\false}{\mathsf{false}}$
 <li>Compute $S'=S-g\left(t\right)$</li>
 <li>Set the final polynomial to $f\left(x\right)=g\left(x\right)+S'$</li>
 </ul>
-<p>We now have $f\left(t\right)=g\left(t\right)+S'=g\left(t\right)+S-g\left(t\right)=S$. The Lagrange interpolating polynomial can compute $f\left(x\right)$ at $x=t$  just as easily as at $x=0$.</p>
+<p>We now have $f\left(t\right)=g\left(t\right)+S'=g\left(t\right)+S-g\left(t\right)=S$. The Lagrange interpolating polynomial can compute $f\left(x\right)$ at $x=t$ just as easily as at $x=0$.</p>
 <p>If shares are generated sequentially, selecting a value of $t$ larger than any reasonable number of shares $n$ (e.g., $t\gg 2^{64}$) can prevent creating an insecure share of the form $\left(t,f\left(t\right)\right)$.</p>
 <p>If shares are generated randomly, it&rsquo;s still possible to wind up with an insecure share by randomly selecting $t$. However, generating this value at random is significantly less likely than accidentally &ldquo;generating&rdquo; a zero share from a blocked read.</p>
-<h3 id="moving-away-from-the-constant-term">
-  Moving Away from the Constant Term
-  <a class="anchor" href="#moving-away-from-the-constant-term">#</a>
+<h3 id=moving-away-from-the-constant-term>
+Moving Away from the Constant Term
+<a class=anchor href=#moving-away-from-the-constant-term>#</a>
 </h3>
 <p>There is no requirement that $S$ be encoded into $f\left(x\right)$ through the manipulation of the constant coefficient. It&rsquo;s possible to encode $S$ into, say, the linear coefficient of $f\left(x\right)$. Recovering the linear coefficient is straightforward, once you realize that the linear term of $f\left(x\right)$ is the constant term of $f'\left(x \right)$, the derivative of $f\left(x\right)$.</p>
 <p>The process for generating a polynomial becomes:</p>
@@ -578,129 +257,49 @@ $\newcommand{\false}{\mathsf{false}}$
 <p>The Lagrange interpolating polynomial can be adapted to evaluate derivatives of polynomials; the equation used to compute the first derivative is below. The equation is slightly more complicated than before but certainly within the capability of a good programmer.</p>
 <p>$$f'\left(t\right)=\displaystyle\sum_{j=1}^{k}{y_{j}\left(\displaystyle\sum_{\begin{smallmatrix}i=1\\ i\neq j\end{smallmatrix}}^{k}{\left[\frac{1}{x_{j}-x_{i}}\displaystyle\prod_{\begin{smallmatrix}m=1\\ m\neq i,j\end{smallmatrix}}^{k}{\frac{t-x_{m}}{x_{j}-x_{m}}}\right]}\right)}$$</p>
 <p>Evaluating $f'\left(0\right)$ gives the linear coefficient of $f\left(x\right)$, recovering $S$.</p>
-<h3 id="requiring-recovery-of-the-full-polynomial">
-  Requiring Recovery of the Full Polynomial
-  <a class="anchor" href="#requiring-recovery-of-the-full-polynomial">#</a>
+<h3 id=requiring-recovery-of-the-full-polynomial>
+Requiring Recovery of the Full Polynomial
+<a class=anchor href=#requiring-recovery-of-the-full-polynomial>#</a>
 </h3>
-<p>Finally, it&rsquo;s possible to encode the secret across <em>all</em> coefficients of $f\left(x\right)$. Take $g\left(x\right)=\displaystyle\sum_{i=0}^{k-1}{a_{i}x^{i}}$ , where each $a_{i}$ is chosen uniformly at random (except that $a_{k-1}\neq 0$), then we can set $M=\displaystyle\sum_{i=0}^{k-1}{a_{i}}$  and $R=S - M$.  We then select a random $0\leq i\leq k-1$ and set $f\left(x\right)=g\left(x\right)+Rx^i$. Then the sum of the coefficients is equal to $S$.</p>
+<p>Finally, it&rsquo;s possible to encode the secret across <em>all</em> coefficients of $f\left(x\right)$. Take $g\left(x\right)=\displaystyle\sum_{i=0}^{k-1}{a_{i}x^{i}}$ , where each $a_{i}$ is chosen uniformly at random (except that $a_{k-1}\neq 0$), then we can set $M=\displaystyle\sum_{i=0}^{k-1}{a_{i}}$ and $R=S - M$. We then select a random $0\leq i\leq k-1$ and set $f\left(x\right)=g\left(x\right)+Rx^i$. Then the sum of the coefficients is equal to $S$.</p>
 <p>Going back to the original Lagrange interpolating polynomial equation, if $t$ is replaced with a symbol $x$, the Lagrange interpolating polynomial recovers $f\left(x\right)$ exactly. $S$ can then be recovered from the reconstructed polynomial. Symbolic computations are more expensive and slightly more complex, but for, say, $k&lt;30$, the algorithm works just fine.</p>
-
-
-  </article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-
-
-
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
 </div>
-
-
-
-  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-
-
- 
-        
-<script type="text/x-mathjax-config">
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+<script type=text/x-mathjax-config>
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
     loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
     tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
   });
   </script>
-
-  
-  
-  
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
-
-
-
-  
-  <script language="javascript" type="text/javascript" src="/js/interactive_variables.js"></script>
-
-  
-  <script>
-    MathJax.Hub.Queue(function () {
-      setupInteractiveVariables()
-    });
-  </script>
-
-
-
-
-
-
-
-
-
-  
-      
-
-      
-
-  
-
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
+<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>
+</footer>
+<div class=book-comments>
 </div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#transforming-the-inputs-using-a-nonzero-function">Transforming the Inputs Using a Nonzero Function</a></li>
-        <li><a href="#avoiding-the-y-intercept">Avoiding the $y$-intercept</a></li>
-        <li><a href="#moving-away-from-the-constant-term">Moving Away from the Constant Term</a></li>
-        <li><a href="#requiring-recovery-of-the-full-polynomial">Requiring Recovery of the Full Polynomial</a></li>
-      </ul>
-    </li>
-  </ul>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#transforming-the-inputs-using-a-nonzero-function>Transforming the Inputs Using a Nonzero Function</a></li>
+<li><a href=#avoiding-the-y-intercept>Avoiding the $y$-intercept</a></li>
+<li><a href=#moving-away-from-the-constant-term>Moving Away from the Constant Term</a></li>
+<li><a href=#requiring-recovery-of-the-full-polynomial>Requiring Recovery of the Full Polynomial</a></li>
+</ul>
+</li>
+</ul>
 </nav>
-
-
- 
-
-        
-        <br>
-        <br>
-        
-      </div>
-    </aside>
-    
-  </main>
-
-  
+<br>
+<br>
+</div>
+</aside>
+</main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

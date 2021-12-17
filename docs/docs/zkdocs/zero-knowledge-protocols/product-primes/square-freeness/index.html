@@ -1,410 +1,121 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!doctype html><html lang=en dir=ltr>
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Proves that a number is square-free.">
-<meta name="theme-color" content="#FFFFFF">
-<meta name="color-scheme" content="light dark"><meta property="og:title" content="Number is square-free" />
-<meta property="og:description" content="Proves that a number is square-free." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/" /><meta property="article:section" content="docs" />
-
-
-
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Proves that a number is square-free.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Number is square-free">
+<meta property="og:description" content="Proves that a number is square-free.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/"><meta property="article:section" content="docs">
 <title>Number is square-free | ZKDocs</title>
-<link rel="manifest" href="/manifest.json">
-<link rel="icon" href="/favicon.png" type="image/x-icon">
-<link rel="stylesheet" href="/book.min.cb29ef23964b7447b575f956b7722c60d044bd85de64b492255d7a53f41f3bcc.css" integrity="sha256-yynvI5ZLdEe1dflWt3IsYNBEvYXeZLSSJV16U/QfO8w=" crossorigin="anonymous">
-  <script defer src="/flexsearch.min.js"></script>
-  <script defer src="/en.search.min.a2da3ff1f1cdfb439cb717a2ab25cd83985879ac0fce7f3681ed5652deaecbab.js" integrity="sha256-oto/8fHN&#43;0OctxeiqyXNg5hYeawPzn82ge1WUt6uy6s=" crossorigin="anonymous"></script>
-<!--
-Made with Book Theme
-https://github.com/alex-shpak/hugo-book
--->
-  
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.cb29ef23964b7447b575f956b7722c60d044bd85de64b492255d7a53f41f3bcc.css integrity="sha256-yynvI5ZLdEe1dflWt3IsYNBEvYXeZLSSJV16U/QfO8w=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.1aa7e36cceac1796fce63cd9f5f14562ac441d7f37697c8e320f42769415b237.js integrity="sha256-GqfjbM6sF5b85jzZ9fFFYqxEHX83aXyOMg9CdpQVsjc=" crossorigin=anonymous></script>
 </head>
-<body dir="ltr">
-  <input type="checkbox" class="hidden toggle" id="menu-control" />
-  <input type="checkbox" class="hidden toggle" id="toc-control" />
-  <main class="container flex">
-    <aside class="book-menu">
-      <div class="book-menu-content">
-        
-  <nav>
-<h2 class="book-brand">
-  <a class="flex align-center" href="/"><span>ZKDocs</span>
-  </a>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><span>ZKDocs</span>
+</a>
 </h2>
-
-
-<div class="book-search">
-  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
-  <div class="book-search-spinner hidden"></div>
-  <ul id="book-search-results"></ul>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <ul>
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/" class="">Introduction</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/" class="">Notation &amp; Definitions</a>
-  
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/" class="">Zero-knowledge protocols</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/" class="">Schnorr&#39;s identification protocol</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/" class="">Variants of Schnorr&#39;s identification protocol</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/" class="">Number is product of two primes</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/" class=" active">Number is square-free</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/" class="">Two prime divisors</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/" class="">Product of two primes</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/" class="">Paillier-Blum Modulus</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/" class="">Girault&#39;s identification protocol</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/" class="">Short factoring proofs</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/" class="">Security of ZKPs</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/" class="">Using HVZKP in the wrong context</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li class="book-section-flat" >
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/" class="">Protocol primitives</a>
-  
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/" class="">Random Sampling</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/" class="">Fiat-Shamir transformation</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/" class="">Nothing-up-my-sleeve constructions</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/" class="">Shamir&#39;s Secret Sharing and its Pitfalls</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/" class="">Feldman&#39;s Verifiable Secret Sharing</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/" class="">Alternative versions of Shamir&#39;s Secret Sharing scheme</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/" class="">Bibliography</a>
-  
-
-        </li>
-      
-    
-  </ul>
-
-        </li>
-      
-    
-  </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<ul>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/>Introduction</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/>Notation & Definitions</a>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/ class=active>Number is square-free</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/>Security of ZKPs</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/>Protocol primitives</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing and its Pitfalls</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/>Bibliography</a>
+</li>
+</ul>
+</li>
+</ul>
 </nav>
-
-
-
-
-  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-
-
- 
-      </div>
-    </aside>
-
-    <div class="book-page">
-      <header class="book-header">
-        
-  $\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
 $\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
 $\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
 $\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
@@ -427,7 +138,7 @@ $\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
 $\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
 $\require{action}
 \newcommand{\sampleSymb}{
-  {\overset{\$}{\leftarrow}}
+{\overset{\$}{\leftarrow}}
 }$
 $\newcommand{\field}[1]{\mathbb{F}_{#1}}$
 $\newcommand{\sample}[1]{#1\sampleSymb\zq}$
@@ -451,12 +162,8 @@ $\newcommand{\bunch}[1]{\{ #1_i\}_{i=1}^m}$
 $\newcommand{\bunchi}[1]{\{ #1\}_{i=1}^m}$
 $\newcommand{\forb}{\text{ for }i=1,\ldots,m}$
 $\newcommand{\interval}[1]{[0, #1[}$
-
 $\newcommand{\range}[1]{[#1]}$
 $\newcommand{\rangeone}[1]{\{1, \dots,#1 -1 \}}$
-
-
-
 $\newcommand{\vara}{\class{var var_a}{a}}$
 $\newcommand{\varb}{\class{var var_b}{b}}$
 $\newcommand{\varc}{\class{var var_c}{c}}$
@@ -473,7 +180,6 @@ $\newcommand{\varp}{\class{var var_p}{p}}$
 $\newcommand{\vare}{\class{var var_e}{e}}$
 $\newcommand{\vary}{\class{var var_y}{y}}$
 $\newcommand{\varw}{\class{var var_w}{w}}$
-
 $\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
 $\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
 $\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
@@ -482,58 +188,32 @@ $\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
 $\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
 $\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
 $\newcommand{\muvar}{\class{var var_μ}{\mu}}$
-
-
-
 $\newcommand{\true}{\mathsf{true}}$
 $\newcommand{\false}{\mathsf{false}}$
-
-
-
-
-
 <div class="flex align-center justify-between">
-  <label for="menu-control">
-    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
-  </label>
-
-  <strong>Number is square-free</strong>
-
-  <label for="toc-control">
-    
-    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
-  </label>
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Number is square-free</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
 </div>
-
-
-
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#interactive-protocol-hvzk">Interactive protocol (HVZK)</a></li>
-    <li><a href="#non-interactive-protocol">Non-interactive protocol</a></li>
-    <li><a href="#security-pitfalls">Security pitfalls</a></li>
-    <li><a href="#auxiliary-functions---mathsfgen_rhovar">Auxiliary functions - $\mathsf{gen}_\rhovar$</a></li>
-    <li><a href="#choice-of-security-parameters-alpha-kappa">Choice of security parameters $\alpha$, $\kappa$</a></li>
-  </ul>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#interactive-protocol-hvzk>Interactive protocol (HVZK)</a></li>
+<li><a href=#non-interactive-protocol>Non-interactive protocol</a></li>
+<li><a href=#security-pitfalls>Security pitfalls</a></li>
+<li><a href=#auxiliary-functions---mathsfgen_rhovar>Auxiliary functions - $\mathsf{gen}_\rhovar$</a></li>
+<li><a href=#choice-of-security-parameters-alpha-kappa>Choice of security parameters $\alpha$, $\kappa$</a></li>
+</ul>
 </nav>
-
-
-
-  </aside>
-  
- 
-      </header>
-
-      
-      
-  <article class="markdown"><h1 id="number-is-square-free">
-  Number is square-free
-  <a class="anchor" href="#number-is-square-free">#</a>
+</aside>
+</header>
+<article class=markdown><h1 id=number-is-square-free>
+Number is square-free
+<a class=anchor href=#number-is-square-free>#</a>
 </h1>
 <p>To prove that a number is the product of two distinct primes, the first step is showing that the number is free of squares, i.e., that $\varN$ is
 not of the form $\varN = p^2 r$.</p>
@@ -541,10 +221,9 @@ not of the form $\varN = p^2 r$.</p>
 the set $$\sqfree = \{\varN \in \naturals : \text{there is no prime }p \text{ such that }p^2|N \}.$$</p>
 <p>The protocol uses the fact that an honest prover can calculate $\varN$-th roots of arbitrary numbers in $\z{\varN}$.</p>
 <blockquote class="book-hint info">
-  <strong>Goal:</strong>
+<strong>Goal:</strong>
 $\varprover$ convinces $\varverifier$ that $\varN$ is square-free without revealing its factorization.
 </blockquote>
-
 <ul>
 <li><strong>Public input:</strong> $\varN\in\naturals$</li>
 <li><strong>Private input:</strong> $\varprover$ knows the factorization of $\varN = \varp\varq$</li>
@@ -552,63 +231,57 @@ $\varprover$ convinces $\varverifier$ that $\varN$ is square-free without reveal
 </ul>
 <p>The protocol uses the constant $\displaystyle\Pi_\alpha = \prod_\underset{p\text{ prime}}{p&lt;\alpha} p$, the product of the primes smaller than $\alpha$.</p>
 <p>We assume that both parties agree with the security parameters $\alpha, \kappa$ and $m$ prior to the execution of the protocol.</p>
-<h2 id="interactive-protocol-hvzk">
-  Interactive protocol (HVZK)
-  <a class="anchor" href="#interactive-protocol-hvzk">#</a>
+<h2 id=interactive-protocol-hvzk>
+Interactive protocol (HVZK)
+<a class=anchor href=#interactive-protocol-hvzk>#</a>
 </h2>
 <blockquote class="book-hint danger">
-  <strong>Security note:</strong> The protocol is zero-knowledge (does not reveal the factorization of $\varN$) only when the verifier is honest and generates each $\rhovar_i$ randomly. If the verifier choses these values maliciously they can recover the factorization of $\varN$. If your attacker model takes this into consideration, use the non-interactive version. More details on <a href="../../../security-of-zkps/when-to-use-hvzk">Using HVZKP in the wrong context</a>.
+<strong>Security note:</strong> The protocol is zero-knowledge (does not reveal the factorization of $\varN$) only when the verifier is honest and generates each $\rhovar_i$ randomly. If the verifier choses these values maliciously they can recover the factorization of $\varN$. If your attacker model takes this into consideration, use the non-interactive version. More details on <a href=../../../security-of-zkps/when-to-use-hvzk>Using HVZKP in the wrong context</a>.
 </blockquote>
-
-
-
- $$
- \begin{array}{c}
- \work{\varprover}{\varverifier}
- \bobwork{\sampleN{\rhovar_i}{\varN}, \text{ for }i=1,\ldots,m}
- \bobalice{}{\{\rhovar_i\}_{i=1}^m}{}
- \alicework{\sigmavar_i = (\rhovar_i)^{\varN^{-1}\mod \varphi(\varN)} \mod \varN,}
- \alicework{\text{ for }i=1,\ldots,m}
- \alicebob{}{\{\sigmavar_i\}_{i=1}^m}{}
- \bobwork{\varN \gQ 1}
- \bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
- \bobwork{\sigmavar_i \gQ 0,}
- \bobwork{\rhovar_i \equalQ \sigmavar_i^\varN \mod \varN,}
- \bobwork{\text{ for }i=1,\ldots,m}
- \end{array}
- $$
-
+$$
+\begin{array}{c}
+\work{\varprover}{\varverifier}
+\bobwork{\sampleN{\rhovar_i}{\varN}, \text{ for }i=1,\ldots,m}
+\bobalice{}{\{\rhovar_i\}_{i=1}^m}{}
+\alicework{\sigmavar_i = (\rhovar_i)^{\varN^{-1}\mod \varphi(\varN)} \mod \varN,}
+\alicework{\text{ for }i=1,\ldots,m}
+\alicebob{}{\{\sigmavar_i\}_{i=1}^m}{}
+\bobwork{\varN \gQ 1}
+\bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
+\bobwork{\sigmavar_i \gQ 0,}
+\bobwork{\rhovar_i \equalQ \sigmavar_i^\varN \mod \varN,}
+\bobwork{\text{ for }i=1,\ldots,m}
+\end{array}
+$$
 <hr>
-<h2 id="non-interactive-protocol">
-  Non-interactive protocol
-  <a class="anchor" href="#non-interactive-protocol">#</a>
+<h2 id=non-interactive-protocol>
+Non-interactive protocol
+<a class=anchor href=#non-interactive-protocol>#</a>
 </h2>
 <p>The non-interactive version of the protocol replaces the verifier-side sampling of $\rhovar_i$ elements and generates them using the Fiat-Shamir transformation.
 The participants only exchange one message, and there is no risk of leaking the factorization of $\varN$ using maliciously chosen $\rhovar_i$ values.
-
-
- $$
- \begin{array}{c}
- \work{\varprover}{\varverifier}
- \alicework{\rhovar_i = \mathsf{gen}_\rhovar(\z{\varN}, \{\varN,i\})}
- \alicework{\sigmavar_i = (\rhovar_i)^{\varN^{-1}\mod \varphi(\varN)} \mod \varN,}
- \alicework{\text{ for }i=1,\ldots,m}
- \alicebob{}{\{\sigmavar_i\}_{i=1}^m}{}
- \bobwork{\varN \gQ 1}
- \bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
- \bobwork{\sigmavar_i \gQ 0,}
- \bobwork{\rhovar_i = \mathsf{gen}_\rhovar(\z{\varN}, \{\varN,i\})}
- \bobwork{\rhovar_i \equalQ \sigmavar_i^\varN \mod \varN,}
- \bobwork{\text{ for }i=1,\ldots,m}
- \end{array}
- $$
+$$
+\begin{array}{c}
+\work{\varprover}{\varverifier}
+\alicework{\rhovar_i = \mathsf{gen}_\rhovar(\z{\varN}, \{\varN,i\})}
+\alicework{\sigmavar_i = (\rhovar_i)^{\varN^{-1}\mod \varphi(\varN)} \mod \varN,}
+\alicework{\text{ for }i=1,\ldots,m}
+\alicebob{}{\{\sigmavar_i\}_{i=1}^m}{}
+\bobwork{\varN \gQ 1}
+\bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
+\bobwork{\sigmavar_i \gQ 0,}
+\bobwork{\rhovar_i = \mathsf{gen}_\rhovar(\z{\varN}, \{\varN,i\})}
+\bobwork{\rhovar_i \equalQ \sigmavar_i^\varN \mod \varN,}
+\bobwork{\text{ for }i=1,\ldots,m}
+\end{array}
+$$
 </p>
-<h2 id="security-pitfalls">
-  Security pitfalls
-  <a class="anchor" href="#security-pitfalls">#</a>
+<h2 id=security-pitfalls>
+Security pitfalls
+<a class=anchor href=#security-pitfalls>#</a>
 </h2>
 <ul>
-<li><strong>Using the interactive protocol in a malicious verifier context:</strong> high severity issue which allows factoring $\varN$; see <a href="/docs/zkdocs/security-of-zkps/when-to-use-hvzk/">Using HVZKP in the wrong context</a>.</li>
+<li><strong>Using the interactive protocol in a malicious verifier context:</strong> high severity issue which allows factoring $\varN$; see <a href=/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>.</li>
 <li><strong>Sampling $\rhovar_i$ values uniformly and not using honest generation:</strong> high severity issue that allows $\varprover$ to forge proofs by sampling $\sampleSet{\sigmavar_i}{\z\varN}$ and setting $\rhovar_i = \sigmavar_i^\varN\mod \varN$.</li>
 <li><strong>Verifier trusting prover on the non-interactive protocol:</strong>
 <ul>
@@ -619,16 +292,16 @@ The participants only exchange one message, and there is no risk of leaking the 
 </li>
 <li><strong>Replay attacks:</strong> After a non-interactive proof is public, it will always be valid and anyone could pretend to know how to prove the original statement. To prevent this, consider adding additional information to the generation of $\rhovar_i$ values such as an ID of both the prover and the verifier, and a timestamp. The verifier must check the validity of these values when they verify the proof.</li>
 </ul>
-<h2 id="auxiliary-functions---mathsfgen_rhovar">
-  Auxiliary functions - $\mathsf{gen}_\rhovar$
-  <a class="anchor" href="#auxiliary-functions---mathsfgen_rhovar">#</a>
+<h2 id=auxiliary-functions---mathsfgen_rhovar>
+Auxiliary functions - $\mathsf{gen}_\rhovar$
+<a class=anchor href=#auxiliary-functions---mathsfgen_rhovar>#</a>
 </h2>
 <ul>
-<li>Generate the $\rhovar_i$ values with a standard <a href="../../../protocol-primitives/nums">nothing-up-my-sleeve construction</a> in $\z{\varN}$, use binding parameters $\{\varN, i\}$, bitsize of $|\varN|$, and salt $\mathsf{&ldquo;squarefreeproof&rdquo;}$. To prevent replay attacks consider including, in the binding parameters, ID&rsquo;s unique to the prover and verifier.</li>
+<li>Generate the $\rhovar_i$ values with a standard <a href=../../../protocol-primitives/nums>nothing-up-my-sleeve construction</a> in $\z{\varN}$, use binding parameters $\{\varN, i\}$, bitsize of $|\varN|$, and salt $\mathsf{&ldquo;squarefreeproof&rdquo;}$. To prevent replay attacks consider including, in the binding parameters, ID&rsquo;s unique to the prover and verifier.</li>
 </ul>
-<h2 id="choice-of-security-parameters-alpha-kappa">
-  Choice of security parameters $\alpha$, $\kappa$
-  <a class="anchor" href="#choice-of-security-parameters-alpha-kappa">#</a>
+<h2 id=choice-of-security-parameters-alpha-kappa>
+Choice of security parameters $\alpha$, $\kappa$
+<a class=anchor href=#choice-of-security-parameters-alpha-kappa>#</a>
 </h2>
 <p>The security of the protocol depends $\alpha$ and $\kappa$ which define the number of witnesses that $\varprover$ has to give $\varverifier$. The protocol achieves a statistical soundness error of $2^{-\kappa}$, which means $\varprover$ cannot cheat except with probability $2^{-\kappa}$.</p>
 <p>Parameter $\alpha$ is tunable and controls proving and verification time. Higher $\alpha$ values will generally decrease proving time and verification time, until some limit is reached and the verification time starts increasing.</p>
@@ -642,130 +315,45 @@ The participants only exchange one message, and there is no risk of leaking the 
 <li>$m(\kappa=128, \alpha=65537) = 8$ and</li>
 <li>$m(\kappa=128, \alpha=319567) = 7$.</li>
 </ul>
-
-    <h2>References <a class="anchor" href="#references">#</a></h2>
-      
-              
-              <ul>
-                  <li>[GRSB19] <a href="https://eprint.iacr.org/2018/057.pdf" title="Goldberg, S., Reyzin, L., Sagga, O., &amp; Baldimtsi, F. (2019, December). Efficient noninteractive certification of RSA moduli and beyond. In International Conference on the Theory and Application of Cryptology and Information Security (pp. 700-727). Springer, Cham." target="_blank">Efficient noninteractive certification of RSA moduli and beyond</a> (2019).</li>
-              </ul>
-      
-    
-
-  </article>
- 
-      
-
-      <footer class="book-footer">
-        
-  <div class="flex flex-wrap justify-between">
-
-
-
-
-
+<h2>References <a class=anchor href=#references>#</a></h2>
+<ul>
+<li>[GRSB19] <a href=https://eprint.iacr.org/2018/057.pdf title="Goldberg, S., Reyzin, L., Sagga, O., & Baldimtsi, F. (2019, December). Efficient noninteractive certification of RSA moduli and beyond. In International Conference on the Theory and Application of Cryptology and Information Security (pp. 700-727). Springer, Cham." target=_blank>Efficient noninteractive certification of RSA moduli and beyond</a> (2019).</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
 </div>
-
-
-
-  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-
-
- 
-        
-<script type="text/x-mathjax-config">
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+<script type=text/x-mathjax-config>
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
     loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
     tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
   });
   </script>
-
-  
-  
-  
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
-
-
-
-  
-  <script language="javascript" type="text/javascript" src="/js/interactive_variables.js"></script>
-
-  
-  <script>
-    MathJax.Hub.Queue(function () {
-      setupInteractiveVariables()
-    });
-  </script>
-
-
-
-
-
-
-
-
-
-  
-      
-
-      
-
-  
-
-      </footer>
-
-      
-  
-  <div class="book-comments">
-
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
+<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>
+</footer>
+<div class=book-comments>
 </div>
-  
- 
-
-      <label for="menu-control" class="hidden book-menu-overlay"></label>
-    </div>
-
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#interactive-protocol-hvzk">Interactive protocol (HVZK)</a></li>
-    <li><a href="#non-interactive-protocol">Non-interactive protocol</a></li>
-    <li><a href="#security-pitfalls">Security pitfalls</a></li>
-    <li><a href="#auxiliary-functions---mathsfgen_rhovar">Auxiliary functions - $\mathsf{gen}_\rhovar$</a></li>
-    <li><a href="#choice-of-security-parameters-alpha-kappa">Choice of security parameters $\alpha$, $\kappa$</a></li>
-  </ul>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#interactive-protocol-hvzk>Interactive protocol (HVZK)</a></li>
+<li><a href=#non-interactive-protocol>Non-interactive protocol</a></li>
+<li><a href=#security-pitfalls>Security pitfalls</a></li>
+<li><a href=#auxiliary-functions---mathsfgen_rhovar>Auxiliary functions - $\mathsf{gen}_\rhovar$</a></li>
+<li><a href=#choice-of-security-parameters-alpha-kappa>Choice of security parameters $\alpha$, $\kappa$</a></li>
+</ul>
 </nav>
-
-
- 
-
-        
-        <br>
-        <br>
-        
-          <button onclick="resetVariableNames()">Reset variables names</button>
-        
-      </div>
-    </aside>
-    
-  </main>
-
-  
+<br>
+<br>
+<button onclick=resetVariableNames()>Reset variables names</button>
+</div>
+</aside>
+</main>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
