@@ -2,88 +2,88 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Introduction on ZKDocs</title>
-    <link>http://example.org/</link>
+    <link>https://expert-potato-772c18b7.pages.github.io/</link>
     <description>Recent content in Introduction on ZKDocs</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://expert-potato-772c18b7.pages.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://example.org/docs/zkdocs/protocol-primitives/random-sampling/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/protocol-primitives/random-sampling/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/</guid>
       <description>In this section, we describe how to uniformly sample from different groups using rejection sampling.</description>
     </item>
     
     <item>
       <title>A title</title>
-      <link>http://example.org/docs/zkdocs/template/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/template/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/template/</guid>
       <description>A summary that ends in a period.</description>
     </item>
     
     <item>
       <title>Notation &amp; Definitions</title>
-      <link>http://example.org/docs/zkdocs/notation/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/notation/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/</guid>
       <description>Common notation and definitions used in the documentation.</description>
     </item>
     
     <item>
       <title>Schnorr&#39;s identification protocol</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/</guid>
       <description>The zero-knowledge proof for a discrete-logarithm in a prime modulo.</description>
     </item>
     
     <item>
       <title>Variants of Schnorr&#39;s identification protocol</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/</guid>
       <description>Common variants of Schnorr&amp;rsquo;s protocol.</description>
     </item>
     
     <item>
       <title>Fiat-Shamir transformation</title>
-      <link>http://example.org/docs/zkdocs/protocol-primitives/fiat-shamir/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/protocol-primitives/fiat-shamir/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/</guid>
       <description>Here, we describe what the Fiat-Shamir transformation is, its goals, its pitfalls, and its different versions.</description>
     </item>
     
     <item>
       <title>Fujisaki-Okamoto commitments</title>
-      <link>http://example.org/docs/zkdocs/protocol-primitives/fujisaki-okamoto/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fujisaki-okamoto/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/protocol-primitives/fujisaki-okamoto/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fujisaki-okamoto/</guid>
       <description>Fujisaki-Okamoto commitments #  </description>
     </item>
     
     <item>
       <title>Number is square-free</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/</guid>
       <description>Proves that a number is square-free.</description>
     </item>
     
     <item>
       <title>ZK-STARK</title>
-      <link>http://example.org/docs/zkdocs/generic-zero-knowledge-systems/stark/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/generic-zero-knowledge-systems/stark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/generic-zero-knowledge-systems/stark/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/generic-zero-knowledge-systems/stark/</guid>
       <description>ZK-STARK #   boundary checking is important   References #    Vitalik, STARKs, Part I: Proofs with Polynomials
   Vitalik, STARKs, Part II: Thank Goodness It&amp;rsquo;s FRI-day
   STARKs, Part 3: Into the Weeds
@@ -94,148 +94,148 @@
     
     <item>
       <title>Two prime divisors</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/</guid>
       <description>Proves that a number has two prime divisors.</description>
     </item>
     
     <item>
       <title>Nothing-up-my-sleeve constructions</title>
-      <link>http://example.org/docs/zkdocs/protocol-primitives/nums/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/protocol-primitives/nums/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/</guid>
       <description>Generic, honest, and deterministic method to sample elements.</description>
     </item>
     
     <item>
       <title>Girault&#39;s identification protocol</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/girault-identification/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/girault-identification/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/</guid>
       <description>A statistical zero-knowledge proof for discrete-logarithm in a composite modulo.</description>
     </item>
     
     <item>
       <title>Paillier range proofs</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/range-proofs/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/range-proofs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/range-proofs/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/range-proofs/</guid>
       <description>Range proofs with Paillier.</description>
     </item>
     
     <item>
       <title>Product of two primes</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/</guid>
       <description>Proves that a number is the product of two distinct primes: in parallel, run the square-freeness proof together with the two-prime-divisors proof.</description>
     </item>
     
     <item>
       <title>Using HVZKP in the wrong context</title>
-      <link>http://example.org/docs/zkdocs/security-of-zkps/when-to-use-hvzk/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/security-of-zkps/when-to-use-hvzk/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/</guid>
       <description>Potential attacks when honest verifier zero-knowledge proofs are used in the context of a malicious verifier.</description>
     </item>
     
     <item>
       <title>Paillier-Blum Modulus</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/</guid>
       <description>An efficient proof that shows a number is the product of two primes congruent with 3 mod 4.</description>
     </item>
     
     <item>
       <title>Short factoring proofs</title>
-      <link>http://example.org/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/</guid>
       <description>Proof of knowledge of the factorization of an integer.</description>
     </item>
     
     <item>
       <title>Shamir&#39;s Secret Sharing and its Pitfalls</title>
-      <link>http://example.org/docs/zkdocs/protocol-primitives/shamir/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/protocol-primitives/shamir/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/</guid>
       <description>An overview of Shamir&amp;rsquo;s Secret Sharing scheme and potential security pitfalls.</description>
     </item>
     
     <item>
       <title>Feldman&#39;s Verifiable Secret Sharing</title>
-      <link>http://example.org/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/</guid>
       <description>A verifiable version of Shamir&amp;rsquo;s secret sharing scheme due to Feldman.</description>
     </item>
     
     <item>
       <title>Alternative versions of Shamir&#39;s Secret Sharing scheme</title>
-      <link>http://example.org/docs/zkdocs/protocol-primitives/alt-shamir/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/protocol-primitives/alt-shamir/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/</guid>
       <description>Secret sharing alternatives which do not hide the secret in the constant term of the polynomial.</description>
     </item>
     
     <item>
       <title>Bibliography</title>
-      <link>http://example.org/docs/zkdocs/bibliography/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/zkdocs/bibliography/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/</guid>
       <description>All references</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/docs/shortcodes/columns/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/columns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/shortcodes/columns/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/columns/</guid>
       <description>Columns #  Columns help organize shorter pieces of content horizontally for readability.
 1 2 3 4 5 6 7 8 9 10 11 12 13 14  {{&amp;lt; columns &amp;gt;}} &amp;lt;!-- begin columns block --&amp;gt; # Left Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Mid Content Lorem markdownum insigne... &amp;lt;---&amp;gt; &amp;lt;!-- magic separator, between columns --&amp;gt; # Right Content Lorem markdownum insigne... {{&amp;lt; /columns &amp;gt;}}   Example #  Left Content #  Lorem markdownum insigne.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/docs/shortcodes/details/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/details/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/shortcodes/details/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/details/</guid>
       <description>Details #  Details shortcode is a helper for details html5 element. It is going to replace expand shortcode.
 Example #  1 2 3 4  {{&amp;lt; details &amp;#34;Title&amp;#34; [open] &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}}   1 2 3 4  {{&amp;lt; details title=&amp;#34;Title&amp;#34; open=true &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /details &amp;gt;}}   Title Markdown content #  Lorem markdownum insigne&amp;hellip;   </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/docs/shortcodes/expand/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/expand/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/shortcodes/expand/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/expand/</guid>
       <description>Expand #  Expand shortcode can help to decrease clutter on screen by hiding part of text. Expand content by clicking on it.
 Example #  Default #  1 2 3 4  {{&amp;lt; expand &amp;gt;}} ## Markdown content Lorem markdownum insigne... {{&amp;lt; /expand &amp;gt;}}     Expand ↕  Markdown content Lorem markdownum insigne&amp;hellip;    With Custom Label #  1 2 3 4  {{&amp;lt; expand &amp;#34;Custom Label&amp;#34; &amp;#34;.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/docs/shortcodes/hints/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/hints/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/shortcodes/hints/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/hints/</guid>
       <description>Hints #  Hint shortcode can be used as hint/alerts/notification block.
 There are 3 colors to choose: info, warning and danger.
 1 2 3 4 5  {{&amp;lt; hint [info|warning|danger] &amp;gt;}} **Markdown content** Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa {{&amp;lt; /hint &amp;gt;}}   Example #  Markdown content
@@ -244,30 +244,30 @@ Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat str
     
     <item>
       <title></title>
-      <link>http://example.org/docs/shortcodes/section/first-page/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/first-page/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/shortcodes/section/first-page/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/first-page/</guid>
       <description>First page #  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/docs/shortcodes/section/second-page/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/second-page/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/shortcodes/section/second-page/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/second-page/</guid>
       <description>Second Page #  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/docs/shortcodes/tabs/</link>
+      <link>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/tabs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/docs/shortcodes/tabs/</guid>
+      <guid>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/tabs/</guid>
       <description>Tabs #  Tabs let you organize content by context, for example installation instructions for each supported platform.
 1 2 3 4 5  {{&amp;lt; tabs &amp;#34;uniqueid&amp;#34; &amp;gt;}} {{&amp;lt; tab &amp;#34;MacOS&amp;#34; &amp;gt;}} # MacOS Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Linux&amp;#34; &amp;gt;}} # Linux Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; tab &amp;#34;Windows&amp;#34; &amp;gt;}} # Windows Content {{&amp;lt; /tab &amp;gt;}} {{&amp;lt; /tabs &amp;gt;}}   Example #  MacOS MacOS #  This is tab MacOS content.</description>
     </item>

@@ -2,84 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/docs/zkdocs/protocol-primitives/random-sampling/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/template/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/template/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/notation/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/protocol-primitives/fiat-shamir/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/protocol-primitives/fujisaki-okamoto/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fujisaki-okamoto/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/security-of-zkps/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/generic-zero-knowledge-systems/stark/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/generic-zero-knowledge-systems/stark/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/generic-zero-knowledge-systems/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/generic-zero-knowledge-systems/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/protocol-primitives/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/protocol-primitives/nums/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/girault-identification/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/range-proofs/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/range-proofs/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/security-of-zkps/when-to-use-hvzk/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/protocol-primitives/shamir/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/protocol-primitives/alt-shamir/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/</loc>
   </url><url>
-    <loc>http://example.org/docs/zkdocs/bibliography/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/columns/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/columns/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/details/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/details/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/expand/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/expand/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/hints/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/hints/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/section/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/section/first-page/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/first-page/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/section/second-page/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/section/second-page/</loc>
   </url><url>
-    <loc>http://example.org/docs/shortcodes/tabs/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/shortcodes/tabs/</loc>
   </url><url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/categories/</loc>
   </url><url>
-    <loc>http://example.org/docs/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/docs/</loc>
   </url><url>
-    <loc>http://example.org/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/</loc>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://expert-potato-772c18b7.pages.github.io/tags/</loc>
   </url>
 </urlset>
