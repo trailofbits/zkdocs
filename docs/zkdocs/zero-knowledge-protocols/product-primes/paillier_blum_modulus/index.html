@@ -1,0 +1,392 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="An efficient proof that shows a number is the product of two primes congruent with 3 mod 4.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Paillier-Blum Modulus">
+<meta property="og:description" content="An efficient proof that shows a number is the product of two primes congruent with 3 mod 4.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/"><meta property="article:section" content="docs">
+<title>Paillier-Blum Modulus | ZKDocs</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.3b063e2d2626e2b9d003df1ce289bdf648c0aef095ec2abe2c32e53068a4f0a3.css integrity="sha256-OwY+LSYm4rnQA98c4om99kjArvCV7Cq+LDLlMGik8KM=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.9853acefc625fde8596e299c9f20d140cfb7fe6e8175c12b65a5048ad8be7477.js integrity="sha256-mFOs78Yl/ehZbimcnyDRQM+3/m6BdcErZaUEiti+dHc=" crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215689345-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>ZKDocs</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/>Introduction</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/>Notation & Definitions</a>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/ class=active>Paillier-Blum Modulus</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/>Security of ZKPs</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/>Protocol primitives</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing and its Pitfalls</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/>Bibliography</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<script type=text/x-mathjax-config>
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
+  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
+<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+$\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
+$\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
+$\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
+$\newcommand{\work}[2]{#1 & & #2\\}$
+$\newcommand{\allwork}[1]{ & #1 & \\}$
+$\newcommand{\aliceseparator}{-------&&\\}$
+$\newcommand{\bobseparator}{&&-------\\}$
+$\newcommand{\foo}{\phantom{\text{bigarrowfitsallthis}}}$
+$\newcommand{\ra}[1]{%
+\vphantom{\xrightarrow{asd}}%
+\smash{\xrightarrow[\foo]{#1}}%
+}$
+$\newcommand{\la}[1]{%
+\vphantom{\xleftarrow{asd}}%
+\smash{\xleftarrow[\foo]{#1}}%
+}$
+$\newcommand{\z}[1]{\mathbb{Z}_{#1}}$
+$\newcommand{\zq}{\mathbb{Z}_\varq}$
+$\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
+$\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
+$\require{action}
+\newcommand{\sampleSymb}{
+{\overset{\$}{\leftarrow}}
+}$
+$\newcommand{\field}[1]{\mathbb{F}_{#1}}$
+$\newcommand{\sample}[1]{#1\sampleSymb\zq}$
+$\newcommand{\sampleGeneric}[2]{#1\sampleSymb#2}$
+$\newcommand{\sampleInterval}[2]{#1\sampleSymb\interval{#2}}$
+$\newcommand{\sampleRange}[2]{#1\sampleSymb\range{#2}}$
+$\newcommand{\samplezqs}[1]{\class{hover}{#1\sampleSymb\zqs}}$
+$\newcommand{\sampleN}[2]{\class{hover}{#1\sampleSymb\z{#2}}}$
+$\newcommand{\sampleNs}[2]{\class{hover}{#1\sampleSymb\z{#2}^\ast}}$
+$\newcommand{\equalQ}{\overset{?}{=}}$
+$\newcommand{\gQ}{\overset{?}{>}}$
+$\newcommand{\inQ}{\overset{?}{\in}}$
+$\newcommand{\cgroup}{\mathbb{G}}$
+$\newcommand{\hash}[1]{\mathsf{Hash}({#1})}$
+$\newcommand{\hashbit}[2]{\mathsf{Hash}({#1})\verb+[0:#2]+}$
+$\newcommand{\naturals}{\mathbb{N}}$
+$\newcommand{\sqfree}{L_\mathsf{square-free}}$
+$\newcommand{\ceil}[1]{\lceil #1 \rceil}$
+$\newcommand{\sampleSet}[2]{\class{hover}{#1\sampleSymb#2}}$
+$\newcommand{\bunch}[1]{\{ #1_i\}_{i=1}^m}$
+$\newcommand{\bunchi}[1]{\{ #1\}_{i=1}^m}$
+$\newcommand{\forb}{\text{ for }i=1,\ldots,m}$
+$\newcommand{\interval}[1]{[0, #1[}$
+$\newcommand{\range}[1]{[#1]}$
+$\newcommand{\rangeone}[1]{\{1, \dots,#1 -1 \}}$
+$\newcommand{\vara}{\class{var var_a}{a}}$
+$\newcommand{\varb}{\class{var var_b}{b}}$
+$\newcommand{\varc}{\class{var var_c}{c}}$
+$\newcommand{\vard}{\class{var var_d}{d}}$
+$\newcommand{\varh}{\class{var var_h}{h}}$
+$\newcommand{\varg}{\class{var var_g}{g}}$
+$\newcommand{\varu}{\class{var var_u}{u}}$
+$\newcommand{\varx}{\class{var var_x}{x}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varz}{\class{var var_z}{z}}$
+$\newcommand{\varr}{\class{var var_r}{r}}$
+$\newcommand{\varq}{\class{var var_q}{q}}$
+$\newcommand{\varp}{\class{var var_p}{p}}$
+$\newcommand{\vare}{\class{var var_e}{e}}$
+$\newcommand{\vary}{\class{var var_y}{y}}$
+$\newcommand{\varw}{\class{var var_w}{w}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
+$\newcommand{\varN}{\class{var var_N}{N}}$
+$\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
+$\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
+$\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
+$\newcommand{\muvar}{\class{var var_μ}{\mu}}$
+$\newcommand{\true}{\mathsf{true}}$
+$\newcommand{\false}{\mathsf{false}}$
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Paillier-Blum Modulus</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#interactive-protocol>Interactive protocol</a></li>
+<li><a href=#non-interactive-protocol>Non-interactive protocol</a></li>
+<li><a href=#security-pitfalls>Security pitfalls</a></li>
+<li><a href=#choice-of-security-parameters>Choice of security parameters</a></li>
+<li><a href=#honest-parameter-generation-mathsfgen_vary>Honest parameter generation $\mathsf{gen}_\vary$</a></li>
+<li><a href=#auxiliary-algorithms>Auxiliary algorithms</a></li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=paillier-blum-modulus>
+Paillier-Blum Modulus
+<a class=anchor href=#paillier-blum-modulus>#</a>
+</h1>
+<p>This protocol allows the prover to show that a public modulus is the product of two $3 \; \mathsf{mod}\; 4$ prime numbers. Since <em>safe-primes</em> &ndash; primes of the form $p = 2q + 1$ where $q$ is also prime &ndash; are congruent with $3\; \mathsf{mod}\; 4$, this proof system can be used in those cases. Similar to the proof for <a href=../product-of-two-primes>Product of two primes</a>, this system also uses the proof of <a href=../square-freeness>Square freeness</a>. This proof system is also much more efficient than the one for the <a href=../product-of-two-primes>Product of two primes</a>.</p>
+<blockquote class="book-hint info">
+<strong>Goal:</strong>
+$\varprover$ convinces $\varverifier$ that $\varN$ is the product of two primes congruent with $3\; \mathsf{mod}\; 4$, and that $\gcd(\varN, \varphi(\varN)) = 1$, without revealing its factorization.
+</blockquote>
+<ul>
+<li><strong>Public input:</strong> modulus $\varN$</li>
+<li><strong>Private input:</strong> $\varprover$ knows $p,q$ such that $\varN = p q$. These are primes congruent with $3\; \mathsf{mod}\; 4$.</li>
+<li><strong>Security parameters:</strong> $m$ to achieve a cheating probability of $2^{-m}$</li>
+</ul>
+<h2 id=interactive-protocol>
+Interactive protocol
+<a class=anchor href=#interactive-protocol>#</a>
+</h2>
+<blockquote class="book-hint danger">
+<strong>Security note:</strong> The protocol is zero-knowledge (does not reveal the factorization of $\varN$) only when the verifier is honest and randomly generates each $\vary_i$. If the verifier chooses these values maliciously, they can recover the factorization of $\varN$. If your attacker model considers this, use the non-interactive version. More details on <a href=../../../security-of-zkps/when-to-use-hvzk>Using HVZKP in the wrong context</a>.
+</blockquote>
+$$
+\begin{array}{c}
+\work{\varprover}{\varverifier}
+\alicework{\sampleN{\varw}{\varN} \text{ with }J(\varw, \varN) = -1}
+\alicebob{}{\varw}{}
+\bobwork{\sampleNs{\vary_i}{\varN} }
+\bobalice{}{\bunch{\vary}}{}
+\alicework{\varz_i = \vary_i^{\varN^{-1} \mod \varphi ( \varN )}}
+\alicework{\varx_i = \sqrt[4]{\vary_i'} \mod \varN}
+\alicework{\text{where } \vary_i' = (-1)^{\vara_i} \varw^{\varb_i} \vary_i \in QR_\varN}
+\alicework{\text{and } \vara_i, \varb_i \in \{0, 1\}\enspace\;\;}
+\alicework{\text{ for }i=1,\ldots,m}
+\alicebob{}{\bunchi{(\varx_i, \vara_i, \varb_i), \varz_i}}{}
+\bobwork{\varN \gQ 1}
+\bobwork{\varN \mod 2 \equalQ 1}
+\bobwork{\mathsf{isPrime}(\varN) \equalQ false}
+\bobwork{ \varz_i ^\varN \equalQ \vary_i \mod \varN }
+\bobwork{\vara_i, \varb_i \inQ \{0, 1\} }
+\bobwork{ \varx_i ^4 \equalQ (-1)^{\vara_i} \varw^{\varb_i} \vary_i \mod \varN }
+\bobwork{\text{ for }i=1,\ldots,m}
+\end{array}
+$$
+<hr>
+<h2 id=non-interactive-protocol>
+Non-interactive protocol
+<a class=anchor href=#non-interactive-protocol>#</a>
+</h2>
+<p>The non-interactive version of the protocol replaces the verifier-side sampling of $\vary_i$ and generates them using the $\mathsf{gen}_\vary$ <a href=#honest-parameter-generation-mathsfgen_vary>function</a>.
+The participants only exchange one message and this proof can be used in the context of malicious verifiers.</p>
+$$
+\begin{array}{c}
+\work{\varprover}{\varverifier}
+\alicework{\sampleN{\varw}{\varN} \text{ with }J(\varw, \varN) = -1}
+\alicework{\vary_i = \mathsf{gen}_\vary(\zns{\varN}, \{\varN, \varw, i\})}
+\alicework{\varz_i = \vary_i^{\varN^{-1} \mod \varphi ( \varN )}}
+\alicework{\varx_i = \sqrt[4]{\vary_i'} \mod \varN}
+\alicework{\text{where } \vary_i' = (-1)^{\vara_i} \varw^{\varb_i} \vary_i \in QR_\varN}
+\alicework{\text{and } \vara_i, \varb_i \in \{0, 1\}\enspace\;\;}
+\alicework{\text{ for }i=1,\ldots,m}
+\alicebob{}{\varw, \bunchi{(\varx_i, \vara_i, \varb_i), \varz_i}}{}
+\bobwork{\varN \gQ 1}
+\bobwork{\varN \mod 2 \equalQ 1}
+\bobwork{\mathsf{isPrime}(\varN) \equalQ false}
+\bobwork{J(\varw, \varN) \equalQ -1}
+\bobwork{\vary_i = \mathsf{gen}_\vary(\zns{\varN}, \{\varN, \varw, i\})}
+\bobwork{ \varz_i ^\varN \equalQ \vary_i \mod \varN }
+\bobwork{\vara_i, \varb_i \inQ \{0, 1\} }
+\bobwork{ \varx_i ^4 \equalQ (-1)^{\vara_i} \varw^{\varb_i} \vary_i \mod \varN }
+\bobwork{\text{ for }i=1,\ldots,m}
+\end{array}
+$$
+<h2 id=security-pitfalls>
+Security pitfalls
+<a class=anchor href=#security-pitfalls>#</a>
+</h2>
+<ul>
+<li><strong>Using the interactive protocol in a malicious verifier context:</strong> high severity issue which allows factoring the modulus $\varN$; see <a href=/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>.</li>
+<li><strong>Not checking that $\varN \mod 2 \equalQ 1$ and $\varN \gQ 1$ before computing the Jacobi symbol $J(\varw, \varN)$</strong>: the Jacobi symbol is only defined when $\varN$ is an odd positive integer. Failing to verify this might lead to a program panic, as in the <a href="https://cs.opensource.google/go/go/+/refs/tags/go1.17.5:src/math/big/int.go;l=838">Go library</a>.</li>
+<li><strong>Verifier trusting prover on the non-interactive protocol:</strong>
+<ul>
+<li>$\varverifier$ does not check that $J(\varw, \varN) = -1$: high severity issue since this allows $\varprover$ to submit a proof forgery with $\varw = 0$ and $\varx_i = 0$.</li>
+</ul>
+<ul>
+<li>$\varverifier$ uses $\vary_i$ values provided by $\varprover$ instead of generating them: high severity issue since the prover can trivially forge proofs (e.g., by sending $\rhovar_i=1, \sigmavar_i=1$).</li>
+<li>$\varverifier$ does not validate $\varw, \varz_i, \varx_i$ as valid values modulo $\varN$ (between 0 and $\varN -1)$: this allows replaying the <em>same</em> proof with <em>different</em> values with $\varz_i + k\varN$.</li>
+<li>$\varverifier$ does not compare the number of received tuples $(\varx_i, \vara_i, \varb_i), \varz_i$ with $m$: this can lead to the prover bypassing proof verification by sending an empty list, or fewer than $m$ elements.</li>
+</ul>
+</li>
+<li><strong>Reusing the same $\varw$ for further proofs of $\varN$:</strong> reusing the same $\varw$ value means that for a fixed $\varN$, the $\vary_i$ values will be the same; if the algorithm that computes the fourth-root is probabilistic, it can reveal different fourth-roots for the same value $\vary_i'$, allowing an attacker to factor $\varN$. Solve this in one of two ways: either add a fresh value to the parameters of $\mathsf{gen}_\vary$ and share it with $\varverifier$, or ensure that you deterministically compute the fourth-roots.</li>
+<li><strong>Replay attacks:</strong> After a non-interactive proof is public, it will always be valid, and anyone could pretend to know how to prove the original statement. To prevent this, consider adding additional information to the generation of $\vary_i$ values, such as an ID of the prover and the verifier and a timestamp. The verifier must check the validity of these values when they verify the proof.</li>
+</ul>
+<h2 id=choice-of-security-parameters>
+Choice of security parameters
+<a class=anchor href=#choice-of-security-parameters>#</a>
+</h2>
+<p>To achieve a safe security level, choose:</p>
+<ul>
+<li>$|\varN| = 2048$</li>
+<li>$m = 80$.</li>
+</ul>
+<h2 id=honest-parameter-generation-mathsfgen_vary>
+Honest parameter generation $\mathsf{gen}_\vary$
+<a class=anchor href=#honest-parameter-generation-mathsfgen_vary>#</a>
+</h2>
+<ul>
+<li>Generate the $\vary_i$ values with a standard <a href=../../../protocol-primitives/nums>nothing-up-my-sleeve construction</a> in $\zns{\varN}$, use binding parameters $\{\varN, \varw, i\}$, bitsize of $|\varN|$, and salt $\mathsf{&ldquo;paillierblumproof&rdquo;}$. To prevent replay attacks consider including, in the binding parameters, ID&rsquo;s unique to the prover and verifier.</li>
+</ul>
+<h2 id=auxiliary-algorithms>
+Auxiliary algorithms
+<a class=anchor href=#auxiliary-algorithms>#</a>
+</h2>
+<ul>
+<li>The function $J(\varw, \varN)$ is the <a href=https://en.wikipedia.org/wiki/Jacobi_symbol>Jacobi symbol</a> of $\varw$ modulo $\varN$. To implement it use Algorithm 2.149 of the <a href=https://cacr.uwaterloo.ca/hac/>Handbook of Applied Cryptography</a>.</li>
+<li>Compute modular fourth-roots using [<a href=https://cacr.uwaterloo.ca/hac/>HOC</a> - Fact 2.160]: if $x$ is a quadratic residue modulo $\varN = p q$ (and $p,q$ are $3\mod 4$) then $\sqrt[4]{x} = x^{(\varphi + 4)/8} \mod \varN$, where $\varphi = (p-1)\cdot(q-1)$.</li>
+<li>The prover has to check if an element is a quadratic residue modulo $\varN$. To do this, use [<a href=https://cacr.uwaterloo.ca/hac/>HOC</a> - Fact 2.137]: $x$ is a quadratic residue modulo $\varN = pq$ if and only if it is a quadratic residue modulo $p$ and modulo $q$. A number $x$ is a quadratic residue modulo a prime $p$, if $x^{(p-1)/2} = 1$. Thus, $x$ is a quadratic residue modulo $\varN = pq$ if and only if $x^{(p-1)/2} = 1$ and $x^{(q-1)/2} = 1$.</li>
+<li>Most libraries will have a primality testing routine for the $\mathsf{isPrime}$ function.</li>
+</ul>
+<h2>References <a class=anchor href=#references>#</a></h2>
+<ul>
+<li>[GG21] <a href=https://eprint.iacr.org/2021/060.pdf title="Canetti, R., Gennaro, R., Goldfeder, S., Makriyannis, N., & Peled, U. (2020, October). UC non-interactive, proactive, threshold ECDSA with identifiable aborts. In Proceedings of the 2020 ACM SIGSAC Conference on Computer and Communications Security (pp. 1769-1787)." target=_blank>UC non-interactive, proactive, threshold ECDSA with identifiable aborts</a> (2020).</li>
+</ul>
+<ul>
+<li>[HOC] <a href=https://cacr.uwaterloo.ca/hac/ title="Menezes, A. J., Van Oorschot, P. C., & Vanstone, S. A. (2018). Handbook of Applied Cryptography. CRC press." target=_blank>Handbook of Applied Cryptography</a> (2018).</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+<article class=markdown>
+<br>
+<br>
+<hr>
+<div style=text-align:right>
+<a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
+<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a>
+</div>
+<div style=text-align:right>
+<small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small>
+</div>
+</article>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#interactive-protocol>Interactive protocol</a></li>
+<li><a href=#non-interactive-protocol>Non-interactive protocol</a></li>
+<li><a href=#security-pitfalls>Security pitfalls</a></li>
+<li><a href=#choice-of-security-parameters>Choice of security parameters</a></li>
+<li><a href=#honest-parameter-generation-mathsfgen_vary>Honest parameter generation $\mathsf{gen}_\vary$</a></li>
+<li><a href=#auxiliary-algorithms>Auxiliary algorithms</a></li>
+</ul>
+</nav>
+<br>
+<br>
+<button onclick=resetVariableNames()>Reset variables names</button>
+</div>
+</aside>
+</main>
+</body>
+</html>

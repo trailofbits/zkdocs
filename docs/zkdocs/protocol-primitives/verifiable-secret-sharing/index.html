@@ -1,0 +1,332 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="A verifiable version of Shamir&rsquo;s secret sharing scheme due to Feldman.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Feldman's Verifiable Secret Sharing">
+<meta property="og:description" content="A verifiable version of Shamir&rsquo;s secret sharing scheme due to Feldman.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/"><meta property="article:section" content="docs">
+<title>Feldman's Verifiable Secret Sharing | ZKDocs</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.3b063e2d2626e2b9d003df1ce289bdf648c0aef095ec2abe2c32e53068a4f0a3.css integrity="sha256-OwY+LSYm4rnQA98c4om99kjArvCV7Cq+LDLlMGik8KM=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.9853acefc625fde8596e299c9f20d140cfb7fe6e8175c12b65a5048ad8be7477.js integrity="sha256-mFOs78Yl/ehZbimcnyDRQM+3/m6BdcErZaUEiti+dHc=" crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215689345-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>ZKDocs</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/>Introduction</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/>Notation & Definitions</a>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/>Security of ZKPs</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/>Protocol primitives</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing and its Pitfalls</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/ class=active>Feldman's Verifiable Secret Sharing</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/>Bibliography</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<script type=text/x-mathjax-config>
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
+  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
+<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+$\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
+$\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
+$\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
+$\newcommand{\work}[2]{#1 & & #2\\}$
+$\newcommand{\allwork}[1]{ & #1 & \\}$
+$\newcommand{\aliceseparator}{-------&&\\}$
+$\newcommand{\bobseparator}{&&-------\\}$
+$\newcommand{\foo}{\phantom{\text{bigarrowfitsallthis}}}$
+$\newcommand{\ra}[1]{%
+\vphantom{\xrightarrow{asd}}%
+\smash{\xrightarrow[\foo]{#1}}%
+}$
+$\newcommand{\la}[1]{%
+\vphantom{\xleftarrow{asd}}%
+\smash{\xleftarrow[\foo]{#1}}%
+}$
+$\newcommand{\z}[1]{\mathbb{Z}_{#1}}$
+$\newcommand{\zq}{\mathbb{Z}_\varq}$
+$\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
+$\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
+$\require{action}
+\newcommand{\sampleSymb}{
+{\overset{\$}{\leftarrow}}
+}$
+$\newcommand{\field}[1]{\mathbb{F}_{#1}}$
+$\newcommand{\sample}[1]{#1\sampleSymb\zq}$
+$\newcommand{\sampleGeneric}[2]{#1\sampleSymb#2}$
+$\newcommand{\sampleInterval}[2]{#1\sampleSymb\interval{#2}}$
+$\newcommand{\sampleRange}[2]{#1\sampleSymb\range{#2}}$
+$\newcommand{\samplezqs}[1]{\class{hover}{#1\sampleSymb\zqs}}$
+$\newcommand{\sampleN}[2]{\class{hover}{#1\sampleSymb\z{#2}}}$
+$\newcommand{\sampleNs}[2]{\class{hover}{#1\sampleSymb\z{#2}^\ast}}$
+$\newcommand{\equalQ}{\overset{?}{=}}$
+$\newcommand{\gQ}{\overset{?}{>}}$
+$\newcommand{\inQ}{\overset{?}{\in}}$
+$\newcommand{\cgroup}{\mathbb{G}}$
+$\newcommand{\hash}[1]{\mathsf{Hash}({#1})}$
+$\newcommand{\hashbit}[2]{\mathsf{Hash}({#1})\verb+[0:#2]+}$
+$\newcommand{\naturals}{\mathbb{N}}$
+$\newcommand{\sqfree}{L_\mathsf{square-free}}$
+$\newcommand{\ceil}[1]{\lceil #1 \rceil}$
+$\newcommand{\sampleSet}[2]{\class{hover}{#1\sampleSymb#2}}$
+$\newcommand{\bunch}[1]{\{ #1_i\}_{i=1}^m}$
+$\newcommand{\bunchi}[1]{\{ #1\}_{i=1}^m}$
+$\newcommand{\forb}{\text{ for }i=1,\ldots,m}$
+$\newcommand{\interval}[1]{[0, #1[}$
+$\newcommand{\range}[1]{[#1]}$
+$\newcommand{\rangeone}[1]{\{1, \dots,#1 -1 \}}$
+$\newcommand{\vara}{\class{var var_a}{a}}$
+$\newcommand{\varb}{\class{var var_b}{b}}$
+$\newcommand{\varc}{\class{var var_c}{c}}$
+$\newcommand{\vard}{\class{var var_d}{d}}$
+$\newcommand{\varh}{\class{var var_h}{h}}$
+$\newcommand{\varg}{\class{var var_g}{g}}$
+$\newcommand{\varu}{\class{var var_u}{u}}$
+$\newcommand{\varx}{\class{var var_x}{x}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varz}{\class{var var_z}{z}}$
+$\newcommand{\varr}{\class{var var_r}{r}}$
+$\newcommand{\varq}{\class{var var_q}{q}}$
+$\newcommand{\varp}{\class{var var_p}{p}}$
+$\newcommand{\vare}{\class{var var_e}{e}}$
+$\newcommand{\vary}{\class{var var_y}{y}}$
+$\newcommand{\varw}{\class{var var_w}{w}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
+$\newcommand{\varN}{\class{var var_N}{N}}$
+$\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
+$\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
+$\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
+$\newcommand{\muvar}{\class{var var_μ}{\mu}}$
+$\newcommand{\true}{\mathsf{true}}$
+$\newcommand{\false}{\mathsf{false}}$
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Feldman's Verifiable Secret Sharing</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li><a href=#share-generation-and-verification>Share Generation and Verification</a>
+<ul>
+<li><a href=#share-generation>Share Generation</a></li>
+<li><a href=#verification-values>Verification Values</a></li>
+<li><a href=#verification-of-shares>Verification of Shares</a></li>
+</ul>
+</li>
+<li><a href=#variations>Variations</a></li>
+<li><a href=#security-pitfalls>Security pitfalls</a></li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=feldmans-verifiable-secret-sharing>
+Feldman&rsquo;s Verifiable Secret Sharing
+<a class=anchor href=#feldmans-verifiable-secret-sharing>#</a>
+</h1>
+<p>As Feldman first introduced, Verifiable secret sharing is an extension to Shamir&rsquo;s secret sharing scheme. The idea is that, when generating shares of the secret $S$, the splitting party also generates a set of public values that shareholders can use to validate their shares.</p>
+<p>For simplicity, we will use &ldquo;Sherry&rdquo; to refer to the party generating the shares of a secret $S$. We denote a share using a lower-case $s$, and a shareholder (or player) as $P$. We will assume a $\left(k, n\right)$ threshold scheme, meaning that $k$ shares are enough to recover $S$ and fewer do not obtain any information about $S$. In some protocols, the players may perform the reconstruction, independently or collaboratively.</p>
+<h2 id=share-generation-and-verification>
+Share Generation and Verification
+<a class=anchor href=#share-generation-and-verification>#</a>
+</h2>
+<h3 id=share-generation>
+Share Generation
+<a class=anchor href=#share-generation>#</a>
+</h3>
+<p>In standard Shamir secret sharing, Sherry generates a polynomial $$ f \left( x\right) = a_{0} + a_{1} x + \cdots + a_{k-1} x^{k-1} \in \mathbb{F}\left[x\right] \enspace ,$$ where $a_{0}=S$ and $\mathbb{F}$ is a finite field of characteristic $p$, where $p$ is a suitably large prime. Shares are generated as $s_{i}=\left(x_{i},f\left(x_{i}\right)\right)$ for $i=1,\ldots,n$. Sherry then sends $s_{i}$ to $P_{i}$ over a secure channel. Shares are generated the same way in Feldman&rsquo;s scheme.</p>
+<p>Feldman&rsquo;s scheme extends Shamir&rsquo;s scheme by having Sherry extend the shares to include verification values, as well as <em>publicly share</em> an additional set of values that each player $P_{i}$ can use to verify that their share $s_{i}$ is valid.</p>
+<p>The public values are generated by translating them into elements a commutative group $G$ for which the discrete logarithm problem is hard. For expository purposes, we&rsquo;ll start with $\z{q}$, the multiplicative group of integers modulo a large prime $q$, where $q-1$ is divisible by a large prime $r$, and a generator value $g\in\z{q}$ such that $\left|g\right|=r$.</p>
+<h3 id=verification-values>
+Verification Values
+<a class=anchor href=#verification-values>#</a>
+</h3>
+<p>Let $A_{j}=g^{a_{j}}\pmod{q}$ for $j=0,\ldots,k-1$. These are the verification values, and Sherry publishes all of them on a public broadcast channel.</p>
+<p>Recovering any $a_{j}$ values from the corresponding $A_{j}$ would require solving a discrete logarithm problem over $\z{q}$, which is presumed to be hard. Note that $A_{0}=g^{a_{0}}=g^{S}\pmod{q}$; solving the discrete log for $A_{0}$ would recover $S$ directly.</p>
+<h3 id=verification-of-shares>
+Verification of Shares
+<a class=anchor href=#verification-of-shares>#</a>
+</h3>
+<p>To verify their share $s_{i}=\left(x_{i},f\left(x_{i}\right)\right)$, player $P_{i}$ computes:</p>
+<p>$$
+V_{i}=\prod_{j=0}^{k-1}{A_{j}^{x_{i}^{j}}} \enspace .
+$$</p>
+<p>For each $j$, we have $A_{j}=\left(g^{a_{j}}\right)^{x_{i}^{j}}=g^{a_{j}\cdot x_{i}^{j}}$, which means</p>
+<p>$$
+V_{i}=g^{a_{0}} g^{a_{1}\cdot x_{i}} g^{a_{2}\cdot x_{i}^{2}}\cdots g^{a_{k-1}\cdot x_{i}^{k-1}}=g^{a_{0} + a_{1}\cdot x_{i} + \cdots + a_{k-1}\cdot x_{i}^{k-1}}=g^{f\left(x_{i}\right)}
+$$</p>
+<p>Since $P_{i}$ knows $f\left(x_{i}\right)$ as part of their share, they can compute $V_{i}'=g^{f\left(x_{i}\right)}$ directly from the value of $f\left(x_{i}\right)$ given in $s_{i}$. If $V_{i}'=V_{i}$, then $P_{i}$ accepts $s_{i}$ as valid; otherwise, they reject $s_{i}$.</p>
+<h2 id=variations>
+Variations
+<a class=anchor href=#variations>#</a>
+</h2>
+<p>Feldman points out that it is not necessary to use $\z{q}$ for generating the verification values. The paper discusses using elliptic curves over finite fields. Using the more familiar point multiplication notation for an elliptic curve group $G$ with a generator point $P\in G$, we have $V_{i}=\left[a_{0}\right]P+\left[a_{1}x_{i}\right]P+\cdots +\left[a_{k-1}x_{i}^{k-1}\right]P=Y_{i}$.</p>
+<h2 id=security-pitfalls>
+Security pitfalls
+<a class=anchor href=#security-pitfalls>#</a>
+</h2>
+<ul>
+<li><strong>Forgery attack:</strong> Craige describes a <a href=https://www.jcraige.com/vss-forgery>forgery attack</a> against Feldman&rsquo;s technique when broadcast channels are incorrectly implemented. If an attacker can change each player&rsquo;s view of a single $A_{j}$ value, then it is possible to forge invalid shares for each player that will pass the verification step.</li>
+<li><strong>Zero share attacks:</strong> All of the pitfalls of Shamir&rsquo;s secret sharing scheme (e.g., generation of zero shares) still apply.</li>
+<li><strong>Improper parameter choice:</strong> The $p$, $q$, and $g$ values should be selected with care. While Shamir&rsquo;s original paper suggested using $p=2^{16}-15=65521$, this will limit the coefficients to 16 bits; recovering the $a_{j}$ values from their corresponding $A_{j}$ values becomes trivial. Further, improper selection of $q$ or $g$ can lead to several discrete log attacks.</li>
+</ul>
+<h2>References <a class=anchor href=#references>#</a></h2>
+<ul>
+<li>[Sha79] <a href=https://apps.dtic.mil/sti/pdfs/ADA069397.pdf title="Shamir, A. (1979). How to share a secret. Communications of the ACM, 22(11), 612-613." target=_blank>How to Share a Secret</a> (1979).</li>
+</ul>
+<ul>
+<li>[Fel87] <a href=https://www.cs.umd.edu/~gasarch/TOPICS/secretsharing/feldmanVSS.pdf title="Feldman, P. (1987, October). A practical scheme for non-interactive verifiable secret sharing. In 28th Annual Symposium on Foundations of Computer Science (sfcs 1987) (pp. 427-438). IEEE." target=_blank>A Practical Scheme for Non-interactive Verifiable Secret Sharing</a> (1987).</li>
+</ul>
+<ul>
+<li> <a href=https://www.jcraige.com/vss-forgery title target=_blank>VSS Forgery Against Bad Broadcast Channels</a> (2019).</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+<article class=markdown>
+<br>
+<br>
+<hr>
+<div style=text-align:right>
+<a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
+<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a>
+</div>
+<div style=text-align:right>
+<small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small>
+</div>
+</article>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#share-generation-and-verification>Share Generation and Verification</a>
+<ul>
+<li><a href=#share-generation>Share Generation</a></li>
+<li><a href=#verification-values>Verification Values</a></li>
+<li><a href=#verification-of-shares>Verification of Shares</a></li>
+</ul>
+</li>
+<li><a href=#variations>Variations</a></li>
+<li><a href=#security-pitfalls>Security pitfalls</a></li>
+</ul>
+</nav>
+<br>
+<br>
+</div>
+</aside>
+</main>
+</body>
+</html>

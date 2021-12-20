@@ -1,0 +1,421 @@
+<!doctype html><html lang=en dir=ltr>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Proof of knowledge of the factorization of an integer.">
+<meta name=theme-color content="#FFFFFF">
+<meta name=color-scheme content="light dark"><meta property="og:title" content="Short factoring proofs">
+<meta property="og:description" content="Proof of knowledge of the factorization of an integer.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/"><meta property="article:section" content="docs">
+<title>Short factoring proofs | ZKDocs</title>
+<link rel=manifest href=/manifest.json>
+<link rel=icon href=/favicon.png type=image/x-icon>
+<link rel=stylesheet href=/book.min.3b063e2d2626e2b9d003df1ce289bdf648c0aef095ec2abe2c32e53068a4f0a3.css integrity="sha256-OwY+LSYm4rnQA98c4om99kjArvCV7Cq+LDLlMGik8KM=" crossorigin=anonymous>
+<script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.9853acefc625fde8596e299c9f20d140cfb7fe6e8175c12b65a5048ad8be7477.js integrity="sha256-mFOs78Yl/ehZbimcnyDRQM+3/m6BdcErZaUEiti+dHc=" crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215689345-1','auto'),ga('send','pageview'))</script>
+<script async src=https://www.google-analytics.com/analytics.js></script>
+</head>
+<body dir=ltr>
+<input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control>
+<main class="container flex">
+<aside class=book-menu>
+<div class=book-menu-content>
+<nav>
+<h2 class=book-brand>
+<a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>ZKDocs</span>
+</a>
+</h2>
+<div class=book-search>
+<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
+<div class="book-search-spinner hidden"></div>
+<ul id=book-search-results></ul>
+</div>
+<ul>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/>Introduction</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/notation/>Notation & Definitions</a>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/ class=active>Short factoring proofs</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/>Security of ZKPs</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>
+</li>
+</ul>
+</li>
+<li class=book-section-flat>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/>Protocol primitives</a>
+<ul>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing and its Pitfalls</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a>
+</li>
+</ul>
+</li>
+<li>
+<a href=https://expert-potato-772c18b7.pages.github.io/docs/zkdocs/bibliography/>Bibliography</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+</div>
+</aside>
+<div class=book-page>
+<header class=book-header>
+<script type=text/x-mathjax-config>
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
+  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+<script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
+<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+$\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
+$\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
+$\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
+$\newcommand{\work}[2]{#1 & & #2\\}$
+$\newcommand{\allwork}[1]{ & #1 & \\}$
+$\newcommand{\aliceseparator}{-------&&\\}$
+$\newcommand{\bobseparator}{&&-------\\}$
+$\newcommand{\foo}{\phantom{\text{bigarrowfitsallthis}}}$
+$\newcommand{\ra}[1]{%
+\vphantom{\xrightarrow{asd}}%
+\smash{\xrightarrow[\foo]{#1}}%
+}$
+$\newcommand{\la}[1]{%
+\vphantom{\xleftarrow{asd}}%
+\smash{\xleftarrow[\foo]{#1}}%
+}$
+$\newcommand{\z}[1]{\mathbb{Z}_{#1}}$
+$\newcommand{\zq}{\mathbb{Z}_\varq}$
+$\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
+$\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
+$\require{action}
+\newcommand{\sampleSymb}{
+{\overset{\$}{\leftarrow}}
+}$
+$\newcommand{\field}[1]{\mathbb{F}_{#1}}$
+$\newcommand{\sample}[1]{#1\sampleSymb\zq}$
+$\newcommand{\sampleGeneric}[2]{#1\sampleSymb#2}$
+$\newcommand{\sampleInterval}[2]{#1\sampleSymb\interval{#2}}$
+$\newcommand{\sampleRange}[2]{#1\sampleSymb\range{#2}}$
+$\newcommand{\samplezqs}[1]{\class{hover}{#1\sampleSymb\zqs}}$
+$\newcommand{\sampleN}[2]{\class{hover}{#1\sampleSymb\z{#2}}}$
+$\newcommand{\sampleNs}[2]{\class{hover}{#1\sampleSymb\z{#2}^\ast}}$
+$\newcommand{\equalQ}{\overset{?}{=}}$
+$\newcommand{\gQ}{\overset{?}{>}}$
+$\newcommand{\inQ}{\overset{?}{\in}}$
+$\newcommand{\cgroup}{\mathbb{G}}$
+$\newcommand{\hash}[1]{\mathsf{Hash}({#1})}$
+$\newcommand{\hashbit}[2]{\mathsf{Hash}({#1})\verb+[0:#2]+}$
+$\newcommand{\naturals}{\mathbb{N}}$
+$\newcommand{\sqfree}{L_\mathsf{square-free}}$
+$\newcommand{\ceil}[1]{\lceil #1 \rceil}$
+$\newcommand{\sampleSet}[2]{\class{hover}{#1\sampleSymb#2}}$
+$\newcommand{\bunch}[1]{\{ #1_i\}_{i=1}^m}$
+$\newcommand{\bunchi}[1]{\{ #1\}_{i=1}^m}$
+$\newcommand{\forb}{\text{ for }i=1,\ldots,m}$
+$\newcommand{\interval}[1]{[0, #1[}$
+$\newcommand{\range}[1]{[#1]}$
+$\newcommand{\rangeone}[1]{\{1, \dots,#1 -1 \}}$
+$\newcommand{\vara}{\class{var var_a}{a}}$
+$\newcommand{\varb}{\class{var var_b}{b}}$
+$\newcommand{\varc}{\class{var var_c}{c}}$
+$\newcommand{\vard}{\class{var var_d}{d}}$
+$\newcommand{\varh}{\class{var var_h}{h}}$
+$\newcommand{\varg}{\class{var var_g}{g}}$
+$\newcommand{\varu}{\class{var var_u}{u}}$
+$\newcommand{\varx}{\class{var var_x}{x}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varz}{\class{var var_z}{z}}$
+$\newcommand{\varr}{\class{var var_r}{r}}$
+$\newcommand{\varq}{\class{var var_q}{q}}$
+$\newcommand{\varp}{\class{var var_p}{p}}$
+$\newcommand{\vare}{\class{var var_e}{e}}$
+$\newcommand{\vary}{\class{var var_y}{y}}$
+$\newcommand{\varw}{\class{var var_w}{w}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
+$\newcommand{\varN}{\class{var var_N}{N}}$
+$\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
+$\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
+$\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
+$\newcommand{\muvar}{\class{var var_μ}{\mu}}$
+$\newcommand{\true}{\mathsf{true}}$
+$\newcommand{\false}{\mathsf{false}}$
+<div class="flex align-center justify-between">
+<label for=menu-control>
+<img src=/svg/menu.svg class=book-icon alt=Menu>
+</label>
+<strong>Short factoring proofs</strong>
+<label for=toc-control>
+<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
+</label>
+</div>
+<aside class="hidden clearfix">
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#vanilla-interactive-protocol>Vanilla interactive protocol</a></li>
+<li><a href=#improved-interactive-protocol>Improved interactive protocol</a></li>
+<li><a href=#non-interactive-protocol>Non-interactive protocol</a></li>
+</ul>
+</li>
+<li><a href=#choice-of-security-parameters>Choice of security parameters</a></li>
+<li><a href=#security-pitfalls>Security pitfalls</a></li>
+<li><a href=#honest-parameter-generation-mathsfgen_varz>Honest parameter generation $\mathsf{gen}_\varz$</a></li>
+<li><a href=#auxiliary-procedures>Auxiliary procedures</a></li>
+</ul>
+</nav>
+</aside>
+</header>
+<article class=markdown><h1 id=short-factoring-proofs>
+Short factoring proofs
+<a class=anchor href=#short-factoring-proofs>#</a>
+</h1>
+<p>This system proves knowledge of the factorization of an integer $\varN$. Unlike <a href=product-product-primes/product-of-two-primes>Product of two primes</a>, this is not a proof that $\varN$ has two prime factors, only that the prover knows its factorization!
+This protocol is not easy to implement securely, so we recommend special attention to sections <a href=#choice-of-security-parameters>Choice of security parameters</a> and <a href=#security-pitfalls>Security pitfalls</a>.</p>
+<blockquote class="book-hint info">
+<strong>Goal:</strong>
+$\varprover$ convinces $\varverifier$ that they know the factorization of $\varN$ without revealing it.
+</blockquote>
+<ul>
+<li><strong>Public input:</strong> An integer $\varN$</li>
+<li><strong>Private input:</strong> $\varprover$ knows the factorization of $\varN =\prod_i p_i^{e_i}$</li>
+<li><strong>Security parameters:</strong> The parameters $A, B, \ell, m$, and $K$ all depend on $k$ and the bit-size of $\varN$.</li>
+</ul>
+<h3 id=vanilla-interactive-protocol>
+Vanilla interactive protocol
+<a class=anchor href=#vanilla-interactive-protocol>#</a>
+</h3>
+<blockquote class="book-hint danger">
+<strong>Note:</strong>
+This version assumes that $\varverifier$ is honest. A dishonest one would send $\vare$ with similar size to $B$ and factor $\varN$ using <a href=#security-pitfalls>this attack</a>.
+</blockquote>
+<p>The following diagram shows one of the protocol&rsquo;s $\ell$ iterations.
+$$
+\begin{array}{c}
+\work{\varprover}{\varverifier}
+\alicework{\sampleRange{\varr}{A}}
+\alicework{\varz_i = \mathsf{gen}_\varz(\zns{\varN}, \{\varN, i\})}
+\alicework{\varx_i = \varz_i^\varr \mod \varN}
+\alicework{\forb}
+\alicebob{}{\bunch{\varx}, \bunch{\varz}}{}
+\bobwork{\sampleRange{\vare}{B}}
+\bobalice{}{\vare}{}
+\alicework{\vary = \varr + (\varN - \varphi(\varN))\cdot \vare \in \naturals}
+\alicebob{}{\vary}{}
+\bobwork{\vary \inQ \range{A}}
+\bobwork{\varx_i \equalQ \varz_i^{\vary- \vare\cdot\varN} \mod \varN \forb}
+\end{array}
+$$
+</p>
+<hr>
+<h3 id=improved-interactive-protocol>
+Improved interactive protocol
+<a class=anchor href=#improved-interactive-protocol>#</a>
+</h3>
+<blockquote class="book-hint danger">
+<strong>Note:</strong>
+This version assumes that $\varverifier$ is honest. A dishonest one would send $\vare$ with similar size to $B$ and factor $\varN$ using <a href=#security-pitfalls>this attack</a>.
+</blockquote>
+$$
+\begin{array}{c}
+\work{\varprover}{\varverifier}
+\alicework{\sampleRange{\varr}{A}}
+\alicework{\varz_i = \mathsf{gen}_\varz(\zns{\varN}, \{\varN, i\})}
+\alicework{\varX = \hash{\bunchi{\varz_i^\varr \mod \varN}}}
+\alicebob{}{\varX, \bunch{\varz}}{}
+\bobwork{\sampleRange{\vare}{B}}
+\bobalice{}{\vare}{}
+\alicework{\vary = \varr + (\varN - \varphi(\varN))\cdot \vare \in \naturals}
+\alicebob{}{\vary}{}
+\bobwork{\vary \inQ \range{A}}
+\bobwork{\varX \equalQ \hash{\bunchi{\varz_i^{\vary- \vare\cdot\varN} \mod \varN}}}
+\end{array}
+$$
+<hr>
+<h3 id=non-interactive-protocol>
+Non-interactive protocol
+<a class=anchor href=#non-interactive-protocol>#</a>
+</h3>
+<p>We use the Fiat-Shamir heuristic, and the prover creates $\vare$ using a $|B|$-bit sized hash function $\hashbit{\cdot}{|B|}$ and past public values.
+$$
+\begin{array}{c}
+\work{\varprover}{\varverifier}
+\alicework{\sampleRange{\varr}{A}}
+\alicework{\varz_i = \mathsf{gen}_\varz(\zns{\varN}, \{\varN, i\})}
+\alicework{\varX = \hash{\bunchi{\varz_i^\varr \mod \varN}}}
+\alicework{\vare = \hashbit{\varN, \bunch{\varz},\varX}{|B|}}
+\alicework{\vary = \varr + (\varN - \varphi(\varN))\cdot \vare \in \naturals}
+\alicebob{}{\vare, \vary, \varX}{}
+\bobwork{\vary \inQ \range{A}}
+\bobwork{\varz_i = \mathsf{gen}_\varz(\zns{\varN}, \{\varN, i\})}
+\bobwork{\vare = \hashbit{\varN, \bunch{\varz},\varX}{|B|}}
+\bobwork{\varX \equalQ \hash{\bunchi{\varz_i^{\vary- \vare\cdot\varN} \mod \varN}}}
+\end{array}
+$$
+</p>
+<h2 id=choice-of-security-parameters>
+Choice of security parameters
+<a class=anchor href=#choice-of-security-parameters>#</a>
+</h2>
+<p>We detail the choice of security parameters based on the bit-size of $\varN$:</p>
+<ul>
+<li>$k$ &ndash; <strong>the</strong> security parameter; the cheating probability of the protocol is $2^{-k}$. Choose 80, 128 or 256.</li>
+<li>$B$ and $\ell$ &ndash; the size of the challenge space and number of iterations; $B$ and $\ell$ should satisfy $\ell\cdot \log B = \theta(k)$, so chose $\ell=1$ and $B=2^k$ in the non-interactive protocol.</li>
+<li>$A$ &ndash; the size of the commit space; $A$ must be smaller than $\varN$ and satisfy $(\varN - \varphi(\varN) ) \ell B \ll A &lt; \varN$. If you are sure that public moduli are of a fixed size &ndash;like $|\varN| = 2048$&ndash; chose $A=2^{|\varN|}$. If the public modulus can have smaller bit-size but never below $|\varN| - 4$, chose $A=2^{|\varN| - 4}$.</li>
+</ul>
+<h2 id=security-pitfalls>
+Security pitfalls
+<a class=anchor href=#security-pitfalls>#</a>
+</h2>
+<ul>
+<li>
+<p>The two interactive protocols assume an honest verifier. To use this protocol in the context of malicious verifiers, use the non-interactive version. See <a href=../../../security-of-zkps/when-to-use-hvzk>Using HVZKP in the wrong context</a>.</p>
+</li>
+<li>
+<p>Implementers of this proof system need to carefully choose the security parameters since failing to do it correctly leaks $\varphi(\varN)$:
+<blockquote class="book-hint danger">
+<p>Consider the example where $\varN$ is 2048 bits, the product of two 1024 bit primes. $\varprover$ computes over $\naturals$ the value $$\vary = \varr + (\varN - \varphi(\varN))\cdot \vare$$ where $\sampleRange{\varr}{A}$ and $\sampleRange{\vare}{B}$. If $A$ and $B$ have similar size then $\frac{r}{e}$ will be very small and $\varverifier$ can compute $$-\left\lfloor \frac{\vary}{e} \right \rfloor + \varN = \left\lfloor \frac{r}{e} \right \rfloor + \varphi (\varN) \approx \varphi(\varN) \enspace ,$$ recovering $\varphi(\varN)$.</p>
+<p>A variant of this attack happens when $|\frac{r}{e}| &lt; \frac{|\varphi(\varN)|}{4}$: in this case, a quarter of the least significant bits of $\varphi(\varN)$ are unknown, but this still allows an attacker to factor $\varN$ using Coppersmith&rsquo;s attack.</p>
+</blockquote>
+</p>
+</li>
+<li>
+<p><strong>Using high security parameters with small modulus allows proof forgery:</strong> the security parameters $A=2^{2048}$, $B=2^{128}$ are configured to be used with modulus of size 2048 but the verification routine does not check the size of the modulus. A dishonest prover can send a proof of knowledge for a 1024 modulus and $$\vary = \varN \cdot \vare$$ will still be in the set $\range{A}$ since $\varN\cdot \vare &lt; 2^{1025 + 129} &lt; 2^{2048} = A$.</p>
+</li>
+<li>
+<p><strong>Verifier trusting prover on the non-interactive protocol:</strong> The $\varverifier$ does not generate the $\varz_i$ values and parses them from the proof without proper validation. The $\varz_i$ values should be generated as described <a href=#honest-parameter-generation-mathsfgen_varz>here</a>. Failing to do so, and not checking that $\varz_i\in\zns{\varN}$, $\varz_i \mod \varN \not\in \{ -1 , 0, 1\}$ leads to trivial proofs: when $\varz_i \equiv -1, 0, 1 \mod \varN$, all proofs are valid as long as $y\in \range{A}$.</p>
+</li>
+<li>
+<p><strong>Weak Fiat-Shamir transformation:</strong> In the non-interactive protocol, it is a common mistake to not include all values in the hash computation $\hashbit{\varN, \bunch{\varz},\varX}{|B|}$. If any of these values are not included in this computation, it could lead to a high severity issue where the prover can forge proofs. See <a href=/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a> for more details.</p>
+</li>
+</ul>
+<ul>
+<li><strong>Replay attacks:</strong> After a non-interactive proof is public, it will always be valid, and anyone could pretend to know how to prove it. To prevent this, consider adding additional information to the generation of the $\varz$ values, such as an ID of the prover and the verifier and a timestamp. The verifier must check the validity of these values when they verify the proof.</li>
+</ul>
+<h2 id=honest-parameter-generation-mathsfgen_varz>
+Honest parameter generation $\mathsf{gen}_\varz$
+<a class=anchor href=#honest-parameter-generation-mathsfgen_varz>#</a>
+</h2>
+<ul>
+<li>Generate the $\varz_i$ values with a standard <a href=../../../protocol-primitives/nums>nothing-up-my-sleeve construction</a> in $\zns{\varN}$, use binding parameters $\{\varN, i\}$, bitsize of $|\varN|$, and salt $\mathsf{&ldquo;shortfactoringproofs&rdquo;}$. To prevent replay attacks consider including, in the binding parameters, ID&rsquo;s unique to the prover and verifier.</li>
+</ul>
+<h2 id=auxiliary-procedures>
+Auxiliary procedures
+<a class=anchor href=#auxiliary-procedures>#</a>
+</h2>
+<ul>
+<li><strong>Hash function $\hashbit{\cdot}{|B|}$:</strong> this hash function should be domain-separated and have a specific output size of $|B|$-bits. $\mathsf{TupleHash}$ satisfies these restrictions.</li>
+</ul>
+<h2>References <a class=anchor href=#references>#</a></h2>
+<ul>
+<li>[PS00] <a href=https://link.springer.com/content/pdf/10.1007%2F978-3-540-46588-1_11.pdf title="Poupard, G., & Stern, J. (2000, January). Short proofs of knowledge for factoring. In International Workshop on Public Key Cryptography (pp. 147-166). Springer, Berlin, Heidelberg." target=_blank>Short proofs of knowledge for factoring</a> (2000).</li>
+</ul>
+</article>
+<footer class=book-footer>
+<div class="flex flex-wrap justify-between">
+</div>
+<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+<article class=markdown>
+<br>
+<br>
+<hr>
+<div style=text-align:right>
+<a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
+<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a>
+</div>
+<div style=text-align:right>
+<small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small>
+</div>
+</article>
+</footer>
+<div class=book-comments>
+</div>
+<label for=menu-control class="hidden book-menu-overlay"></label>
+</div>
+<aside class=book-toc>
+<div class=book-toc-content>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#vanilla-interactive-protocol>Vanilla interactive protocol</a></li>
+<li><a href=#improved-interactive-protocol>Improved interactive protocol</a></li>
+<li><a href=#non-interactive-protocol>Non-interactive protocol</a></li>
+</ul>
+</li>
+<li><a href=#choice-of-security-parameters>Choice of security parameters</a></li>
+<li><a href=#security-pitfalls>Security pitfalls</a></li>
+<li><a href=#honest-parameter-generation-mathsfgen_varz>Honest parameter generation $\mathsf{gen}_\varz$</a></li>
+<li><a href=#auxiliary-procedures>Auxiliary procedures</a></li>
+</ul>
+</nav>
+<br>
+<br>
+<button onclick=resetVariableNames()>Reset variables names</button>
+</div>
+</aside>
+</main>
+</body>
+</html>
