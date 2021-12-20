@@ -1,11 +1,11 @@
 ---
 weight: 9
 bookFlatSection: true
-title: "Shamir's Secret Sharing and its Pitfalls"
+title: "Shamir's Secret Sharing Scheme"
 summary: "An overview of Shamir's Secret Sharing scheme and potential security pitfalls."
 references: ["shamir"]
 ---
-# The Secret Sharing Pitfall
+# Shamir’s Secret Sharing Scheme
 [Shamir's Secret Sharing Scheme](https://en.wikipedia.org/wiki/Shamir%27s_Secret_Sharing) is a way of splitting a secret value $S$ into $n$ "pieces" (or "shares") in such a way that any combination of $k$ pieces can be used to recover $S$, but any $k-1$ or fewer pieces provide _no_ information about $S$.
 
 ## Overview of Secret Sharing
