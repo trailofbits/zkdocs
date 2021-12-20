@@ -242,14 +242,16 @@ function setEditableAndConfigureHandlers() {
             o.addEventListener('keydown', (function (o) {
                 return function (evt) {
                     // pressed enter
-                    if (evt.keyCode === 13) {
-                        console.log("pressed enter. Gonna blur the element", evt.keyCode)
+                    if (evt.keyCode === 13 || evt.keyCode === 27) {
+                        // console.log("pressed enter or escape. Gonna blur the element", evt.keyCode)
                         o.blur()
+                        // unselect text
+                        window.getSelection().removeAllRanges();
                         evt.preventDefault()
                     }
                     // press delete or backspace on "empty" label
                     else if (o.innerText.trim().length == 0 && (evt.keyCode === 8 || evt.keyCode === 46)) {
-                        console.log("blocking event", evt.keyCode)
+                        // console.log("blocking event", evt.keyCode)
                         evt.preventDefault();
                     }
                 }
