@@ -44,4 +44,4 @@ Interactivity features:
 ### Contribute
 We will continue to add more proof systems like Range proofs, STARK, and Bulletproofs.
 
-Feel free to open issues and suggest new protocols that you would like to see added in ZKDocs.
+Feel free to [open issues](https://github.com/trailofbits/zkdocs/issues) and suggest new protocols that you would like to see added in [ZKDocs](https://github.com/trailofbits/zkdocs).
