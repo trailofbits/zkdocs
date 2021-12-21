@@ -16,21 +16,6 @@ function getAllVariables() {
     return s
 }
 
-// function buildLittleBoxes() {
-//   variableNames = getAllVariables()
-//   renamer = document.getElementsByClassName("renamer")
-//   if (renamer.length == 0) {
-//     return
-//   }
-//   renamer = renamer[0]
-
-//   for (varName of variableNames) {
-//     textarea = document.createElement("TEXTAREA");
-
-//     renamer.append(textarea)
-//   }
-// }
-
 
 /**
  * Get the variable name
@@ -54,7 +39,7 @@ function getVariableName(obj) {
  */
 function selectElementContents(el) {
     var range = document.createRange();
-    range.selectNodeContents(el);
+    range.selectNodeContents(el.children[0]);
     var sel = window.getSelection();
     sel.removeAllRanges();
     sel.addRange(range);
@@ -125,7 +110,8 @@ function onInputAction(elemsWithClassName, cur, name) {
         }
 
         if (elem != cur) {
-            elem.innerHTML = cur.innerHTML
+            var innerSpan = elem.children[0];
+            innerSpan.textContent = text;
         }
     }
     // if (cur.innerText.trim().length == 0) {
@@ -143,14 +129,15 @@ function onInputAction(elemsWithClassName, cur, name) {
  */
 function updateLocalStorage(variable_name, new_name) {
     URL_s = window.location.pathname
-    data = localStorage.getItem(URL_s)
+    data = window.localStorage.getItem(URL_s)
     if (data == null) {
         data = {}
     } else {
         data = JSON.parse(data);
     }
     data[variable_name] = new_name
-    localStorage.setItem(URL_s, JSON.stringify(data));
+    window.localStorage.setItem(URL_s, JSON.stringify(data));
+
 }
 
 /**
@@ -158,7 +145,7 @@ function updateLocalStorage(variable_name, new_name) {
  */
 function renameWithLocalStorage() {
     URL_s = window.location.pathname
-    data = localStorage.getItem(URL_s)
+    data = window.localStorage.getItem(URL_s)
     if (data == null) {
         return
     }
@@ -182,7 +169,7 @@ function renameWithLocalStorage() {
  */
 function resetVariableNames() {
     url = window.location.pathname
-    data = localStorage.getItem(url)
+    data = window.localStorage.getItem(url)
     if (data == null) {
         return
     }
@@ -199,7 +186,7 @@ function resetVariableNames() {
         }
     }
 
-    localStorage.removeItem(url)
+    window.localStorage.removeItem(url)
 }
 
 /**
