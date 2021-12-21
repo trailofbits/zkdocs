@@ -34,6 +34,17 @@ a {
   color: var(--color-link);
 }
 
+button {
+  color: black;
+  background-color: gray;
+}
+
+.button:hover {
+  background-color: white;
+  cursor: pointer
+}
+
+
 img {
   vertical-align: baseline;
 }

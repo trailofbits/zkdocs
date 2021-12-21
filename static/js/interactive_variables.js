@@ -143,14 +143,15 @@ function onInputAction(elemsWithClassName, cur, name) {
  */
 function updateLocalStorage(variable_name, new_name) {
     URL_s = window.location.pathname
-    data = localStorage.getItem(URL_s)
+    data = window.localStorage.getItem(URL_s)
     if (data == null) {
         data = {}
     } else {
         data = JSON.parse(data);
     }
     data[variable_name] = new_name
-    localStorage.setItem(URL_s, JSON.stringify(data));
+    window.localStorage.setItem(URL_s, JSON.stringify(data));
+
 }
 
 /**
@@ -158,7 +159,7 @@ function updateLocalStorage(variable_name, new_name) {
  */
 function renameWithLocalStorage() {
     URL_s = window.location.pathname
-    data = localStorage.getItem(URL_s)
+    data = window.localStorage.getItem(URL_s)
     if (data == null) {
         return
     }
@@ -182,7 +183,7 @@ function renameWithLocalStorage() {
  */
 function resetVariableNames() {
     url = window.location.pathname
-    data = localStorage.getItem(url)
+    data = window.localStorage.getItem(url)
     if (data == null) {
         return
     }
@@ -199,7 +200,7 @@ function resetVariableNames() {
         }
     }
 
-    localStorage.removeItem(url)
+    window.localStorage.removeItem(url)
 }
 
 /**
