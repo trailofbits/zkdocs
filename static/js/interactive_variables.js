@@ -16,21 +16,6 @@ function getAllVariables() {
     return s
 }
 
-// function buildLittleBoxes() {
-//   variableNames = getAllVariables()
-//   renamer = document.getElementsByClassName("renamer")
-//   if (renamer.length == 0) {
-//     return
-//   }
-//   renamer = renamer[0]
-
-//   for (varName of variableNames) {
-//     textarea = document.createElement("TEXTAREA");
-
-//     renamer.append(textarea)
-//   }
-// }
-
 
 /**
  * Get the variable name
@@ -54,7 +39,7 @@ function getVariableName(obj) {
  */
 function selectElementContents(el) {
     var range = document.createRange();
-    range.selectNodeContents(el);
+    range.selectNodeContents(el.children[0]);
     var sel = window.getSelection();
     sel.removeAllRanges();
     sel.addRange(range);
@@ -125,7 +110,8 @@ function onInputAction(elemsWithClassName, cur, name) {
         }
 
         if (elem != cur) {
-            elem.innerHTML = cur.innerHTML
+            var innerSpan = elem.children[0];
+            innerSpan.textContent = text;
         }
     }
     // if (cur.innerText.trim().length == 0) {
