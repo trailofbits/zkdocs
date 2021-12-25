@@ -1,16 +1,13 @@
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
-  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
-  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+    loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action']},
+    tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] }}
 });
 </script>
 
 <!-- mathjax 2 -->
-<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> -->
-<!-- <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
-
-
 
 <!-- load variable renamer library -->
 <script language="javascript" type="text/javascript" src="{{ " /js/interactive_variables.js" | urlize | relURL }}"></script>
@@ -22,19 +19,6 @@
   });
 </script>
 
-
-<!-- mathjax3 -->
-    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
-
-    <!-- <script>
-      console.log(window.MathJax)
-      window.MathJax = {
-      loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
-      tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
-    };
-
-  </script> -->
 
 $\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
 $\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
