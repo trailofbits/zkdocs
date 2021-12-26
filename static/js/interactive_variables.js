@@ -18,8 +18,8 @@ function getAllVariables() {
 
 
 /**
- * Get the variable name
- * @param {Object} obj
+ * Get the variable name of an object
+ * @param {Object} obj the object
  * @returns {String} the variable name of the object
  */
 function getVariableName(obj) {
@@ -49,8 +49,8 @@ function selectElementContents(el) {
  * Handler for clicking an editable variable.
  * Underlines all objects and selects the content of the current on.
  *
- * @param {*} listObjs
- * @param {*} obj
+ * @param {*} listObjs list of objects to underline
+ * @param {*} obj current object to select
  */
 function onClickAction(listObjs, obj) {
     text = obj.innerText.trim()
@@ -90,6 +90,7 @@ function onBlurAction(listObjs) {
 /**
  * Input handler -- underlines and changes the text of all relate objects to the current one.
  * Also updates the local storage.
+ *
  * @param {*} elemsWithClassName iterable with the objects of a certain class name
  * @param {*} cur currently edited text
  * @param {*} name variable name
@@ -118,7 +119,6 @@ function onInputAction(elemsWithClassName, cur, name) {
     //     cur.setAttribute("style", "border: 2px solid #aaa;")
     // }
 
-
     updateLocalStorage(name, cur.textContent.trim())
 }
 
@@ -137,7 +137,6 @@ function updateLocalStorage(variable_name, new_name) {
     }
     data[variable_name] = new_name
     window.localStorage.setItem(URL_s, JSON.stringify(data));
-
 }
 
 /**
@@ -185,7 +184,6 @@ function resetVariableNames() {
             innerSpan.textContent = key.split("_")[1];
         }
     }
-
     window.localStorage.removeItem(url)
 }
 
@@ -243,9 +241,6 @@ function setEditableAndConfigureHandlers() {
                     }
                 }
             })(o))
-
-
-
         }
     }
 }
@@ -259,5 +254,4 @@ function setupInteractiveVariables() {
     renameWithLocalStorage()
 
     setEditableAndConfigureHandlers()
-
 }

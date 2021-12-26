@@ -76,22 +76,6 @@
     }
   }
 
-  // {{< button >}}
-  a.book-btn {
-    display: inline-block;
-    font-size: $font-size-14;
-    color: var(--color-link);
-    line-height: $padding-16 * 2;
-    padding: 0 $padding-16;
-    border: $padding-1 solid var(--color-link);
-    border-radius: $border-radius;
-    cursor: pointer;
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
   // {{< hint >}}
   .book-hint {
     @each $name, $color in $hint-colors {
@@ -107,5 +91,29 @@
       border-color: grey;
       background-color: rgba(grey, 0.1);
       border: $padding-1 solid var(--gray-200);
+  }
+}
+
+// {{< button >}}
+.book-btn {
+  display: inline-block;
+  font-size: $font-size-14;
+  color: black;
+  line-height: $padding-16 * 1;
+  padding: 0 $padding-16;
+  border: $padding-1 solid black;
+  border-radius: $border-radius;
+  background-color: rgba(gray, 0.4);
+  cursor: pointer;
+  box-shadow: 0 1px #999;
+  outline: none;
+
+  &:hover {
+    background-color: rgba(gray, 0.2);
+  }
+
+  &:active {
+    box-shadow: 0 0;
+    transform: translateY(1px);
   }
 }
