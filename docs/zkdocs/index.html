@@ -12,9 +12,9 @@ At Trail of Bits, we audit many implementations of non-standardized cryptographi
 <title>Introduction | ZKDocs</title>
 <link rel=manifest href=/manifest.json>
 <link rel=icon href=/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/book.min.c8710a7ee94192e48449fd4ec6671dcefe3aa106844b835a6a46d1754d1839ec.css integrity="sha256-yHEKfulBkuSESf1Oxmcdzv46oQaES4NaakbRdU0YOew=" crossorigin=anonymous>
+<link rel=stylesheet href=/book.min.d83e3ff82bb33cc5f05f4b4e878f8b0a942a09d007560e17a15903c8cfc8b6fc.css integrity="sha256-2D4/+CuzPMXwX0tOh4+LCpQqCdAHVg4XoVkDyM/Itvw=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.8bbc0f9a49877bd2477f0bc1ab044c8d4228a6b06cb4338d6fcd6bf5cffbabc3.js integrity="sha256-i7wPmkmHe9JHfwvBqwRMjUIoprBstDONb81r9c/7q8M=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.db832da75d07acaf6e0c99e5d85b6db28f0f7ca0c27f34c1bc169f4aeec9f4c5.js integrity="sha256-24Mtp10HrK9uDJnl2Fttso8PfKDCfzTBvBafSu7J9MU=" crossorigin=anonymous></script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215689345-1','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 <link rel=alternate type=application/rss+xml href=https://www.zkdocs.com/docs/zkdocs/index.xml title=ZKDocs>
@@ -120,9 +120,10 @@ At Trail of Bits, we audit many implementations of non-standardized cryptographi
 <div class=book-page>
 <header class=book-header>
 <script type=text/x-mathjax-config>
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
-  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
-  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
+  MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+    loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action']},
+    tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] }}
 });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
@@ -262,7 +263,7 @@ Interactive
 <li>Click on $\varX$ to highlight the variable across the document. Try it!</li>
 <li>Type or paste with $\varX$ highlighted to edit $\varX$&rsquo;s name. Press <code>Enter</code> or <code>Escape</code> to stop editing.</li>
 <li>Press the
-<button onclick=resetVariableNames()>Reset variables names</button> button to reset the names of all variables on the current page (variable names are independent across different pages)</li>
+<button class=book-btn onclick=resetVariableNames()>Reset variables names</button> button to reset the names of all variables on the current page (variable names are independent across different pages)</li>
 </ul>
 <blockquote class=book-box>
 <img src=/figs/demo.gif alt="Basic interactivity usage">
