@@ -4,7 +4,7 @@ bookFlatSection: true
 title: "Schnorr's identification protocol"
 summary: "The zero-knowledge proof for a discrete-logarithm in a prime modulo."
 needsVariableResetButton: true
-references: ["Sch91", "schnorr-lecture", "shake", "safe-primes"]
+references: ["Sch91", "schnorr-lecture", "shake", "nist-key-management-1", "ICWiki"]
 ---
 # Schnorr's identification protocol
   Schnorr's identification protocol is the simplest example of a zero-knowledge protocol. With it,
@@ -122,6 +122,5 @@ We can transform this identification scheme into a non-interactive protocol usin
 
 ## Security assumptions
  * __Hash function:__ The hash function should be either [TupleHash](https://www.nist.gov/publications/sha-3-derived-functions-cshake-kmac-tuplehash-and-parallelhash) or SHA-256 where each input is domain separated with a unique string together with the length of each element.
- * __Hardness of the discrete logarithm:__ The order of the cyclic group $\cgroup$ should be at least $\varq>2^{K}$ where $K=256$, and $\varq-1$ should have a large factor. For this, choose
-$\varq$ as a [safe-prime](https://en.wikipedia.org/wiki/Safe_and_Sophie_Germain_primes), i.e., $\varq=2p + 1$ where $p$ is also prime. This guarantees that the discrete-log problem is hard to solve in $\cgroup$.
+ * __Hardness of the discrete logarithm:__ The order of the cyclic group $\cgroup$ should be at least $\varq>2^{K}$ where $K=256$, for a generic group $\cgroup$. If $\cgroup$ is a (prime-order) subgroup of $\zps$, then $p$ should be greater than $2^{\kappa}$ for $\kappa=3072$ to avoid [subexponential attacks](https://en.wikipedia.org/wiki/Index_calculus_algorithm) based on the extra structure of $\zps$. Note that this requires $p - 1 = q\cdot r$ with some potentially composite number $r$. Refer to table 2 (pp. 54-55) of [the NIST recommendations](https://doi.org/10.6028/NIST.SP.800-57pt1r5) for an overview of different bit security levels for finite field discrete logarithms.
 
