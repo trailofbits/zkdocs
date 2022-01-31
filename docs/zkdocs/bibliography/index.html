@@ -13,7 +13,7 @@
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.d83e3ff82bb33cc5f05f4b4e878f8b0a942a09d007560e17a15903c8cfc8b6fc.css integrity="sha256-2D4/+CuzPMXwX0tOh4+LCpQqCdAHVg4XoVkDyM/Itvw=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.db832da75d07acaf6e0c99e5d85b6db28f0f7ca0c27f34c1bc169f4aeec9f4c5.js integrity="sha256-24Mtp10HrK9uDJnl2Fttso8PfKDCfzTBvBafSu7J9MU=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.a38b8feac792568f5b437cc8a0a9d40e575240e77948dbd6c6fa06db60fd0c51.js integrity="sha256-o4uP6seSVo9bQ3zIoKnUDldSQOd5SNvWxvoG22D9DFE=" crossorigin=anonymous></script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215689345-1','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
@@ -147,6 +147,7 @@ $\newcommand{\la}[1]{%
 $\newcommand{\z}[1]{\mathbb{Z}_{#1}}$
 $\newcommand{\zq}{\mathbb{Z}_\varq}$
 $\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
+$\newcommand{\zps}{\mathbb{Z}_p^\ast}$
 $\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
 $\require{action}
 \newcommand{\sampleSymb}{
@@ -245,10 +246,10 @@ References
 <li>[BPW12] <a href=https://eprint.iacr.org/2016/771.pdf title="Bernhard, D., Pereira, O., & Warinschi, B. (2012, December). How not to prove yourself: Pitfalls of the Fiat-Shamir heuristic and applications to Helios. In International Conference on the Theory and Application of Cryptology and Information Security (pp. 626-643). Springer, Berlin, Heidelberg" target=_blank>Bernhard, D., Pereira, O., & Warinschi, B. (2012, December). How not to prove yourself: Pitfalls of the Fiat-Shamir heuristic and applications to Helios. In International Conference on the Theory and Application of Cryptology and Information Security (pp. 626-643). Springer, Berlin, Heidelberg</a> (2012).</li>
 </ul>
 <ul>
-<li>[GGN16] <a href=https://eprint.iacr.org/2016/013.pdf title="Gennaro, R., Goldfeder, S., & Narayanan, A. (2016, June). Threshold-optimal DSA/ECDSA signatures and an application to Bitcoin wallet security. In International Conference on Applied Cryptography and Network Security (pp. 156-174). Springer, Cham." target=_blank>Gennaro, R., Goldfeder, S., & Narayanan, A. (2016, June). Threshold-optimal DSA/ECDSA signatures and an application to Bitcoin wallet security. In International Conference on Applied Cryptography and Network Security (pp. 156-174). Springer, Cham.</a> (2016).</li>
+<li>[SHA3] <a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-185.pdf title="Kelsey, J., Chang, S. J., & Perlner, R. (2016). SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash. NIST special publication, 800, 185." target=_blank>Kelsey, J., Chang, S. J., & Perlner, R. (2016). SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash. NIST special publication, 800, 185.</a> (2016).</li>
 </ul>
 <ul>
-<li>[SHA3] <a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-185.pdf title="Kelsey, J., Chang, S. J., & Perlner, R. (2016). SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash. NIST special publication, 800, 185." target=_blank>Kelsey, J., Chang, S. J., & Perlner, R. (2016). SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash. NIST special publication, 800, 185.</a> (2016).</li>
+<li>[GGN16] <a href=https://eprint.iacr.org/2016/013.pdf title="Gennaro, R., Goldfeder, S., & Narayanan, A. (2016, June). Threshold-optimal DSA/ECDSA signatures and an application to Bitcoin wallet security. In International Conference on Applied Cryptography and Network Security (pp. 156-174). Springer, Cham." target=_blank>Gennaro, R., Goldfeder, S., & Narayanan, A. (2016, June). Threshold-optimal DSA/ECDSA signatures and an application to Bitcoin wallet security. In International Conference on Applied Cryptography and Network Security (pp. 156-174). Springer, Cham.</a> (2016).</li>
 </ul>
 <ul>
 <li>[RFC] <a href=https://www.rfc-editor.org/rfc/rfc8235.html title="RFC: Schnorr Non-interactive Zero-Knowledge Proof" target=_blank>RFC: Schnorr Non-interactive Zero-Knowledge Proof</a> (2017).</li>
@@ -264,6 +265,9 @@ References
 </ul>
 <ul>
 <li>[GG21] <a href=https://eprint.iacr.org/2021/060.pdf title="Canetti, R., Gennaro, R., Goldfeder, S., Makriyannis, N., & Peled, U. (2020, October). UC non-interactive, proactive, threshold ECDSA with identifiable aborts. In Proceedings of the 2020 ACM SIGSAC Conference on Computer and Communications Security (pp. 1769-1787)." target=_blank>Canetti, R., Gennaro, R., Goldfeder, S., Makriyannis, N., & Peled, U. (2020, October). UC non-interactive, proactive, threshold ECDSA with identifiable aborts. In Proceedings of the 2020 ACM SIGSAC Conference on Computer and Communications Security (pp. 1769-1787).</a> (2020).</li>
+</ul>
+<ul>
+<li>[NSPUE2] <a href=https://doi.org/10.6028/NIST.SP.800-57pt1r5 title="National Institute of Standards and Technology (2020, May). Recommendation for Key Management: Part 1 — General. Special Publication 800-57 Part 1, Revision 5" target=_blank>National Institute of Standards and Technology (2020, May). Recommendation for Key Management: Part 1 — General. Special Publication 800-57 Part 1, Revision 5</a> (2020).</li>
 </ul>
 </article>
 <footer class=book-footer>

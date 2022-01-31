@@ -13,7 +13,7 @@
 <link rel=icon href=/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/book.min.d83e3ff82bb33cc5f05f4b4e878f8b0a942a09d007560e17a15903c8cfc8b6fc.css integrity="sha256-2D4/+CuzPMXwX0tOh4+LCpQqCdAHVg4XoVkDyM/Itvw=" crossorigin=anonymous>
 <script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.db832da75d07acaf6e0c99e5d85b6db28f0f7ca0c27f34c1bc169f4aeec9f4c5.js integrity="sha256-24Mtp10HrK9uDJnl2Fttso8PfKDCfzTBvBafSu7J9MU=" crossorigin=anonymous></script>
+<script defer src=/en.search.min.a38b8feac792568f5b437cc8a0a9d40e575240e77948dbd6c6fa06db60fd0c51.js integrity="sha256-o4uP6seSVo9bQ3zIoKnUDldSQOd5SNvWxvoG22D9DFE=" crossorigin=anonymous></script>
 <script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215689345-1','auto'),ga('send','pageview'))</script>
 <script async src=https://www.google-analytics.com/analytics.js></script>
 </head>
@@ -147,6 +147,7 @@ $\newcommand{\la}[1]{%
 $\newcommand{\z}[1]{\mathbb{Z}_{#1}}$
 $\newcommand{\zq}{\mathbb{Z}_\varq}$
 $\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
+$\newcommand{\zps}{\mathbb{Z}_p^\ast}$
 $\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
 $\require{action}
 \newcommand{\sampleSymb}{
@@ -334,8 +335,7 @@ Security assumptions
 </h2>
 <ul>
 <li><strong>Hash function:</strong> The hash function should be either <a href=https://www.nist.gov/publications/sha-3-derived-functions-cshake-kmac-tuplehash-and-parallelhash>TupleHash</a> or SHA-256 where each input is domain separated with a unique string together with the length of each element.</li>
-<li><strong>Hardness of the discrete logarithm:</strong> The order of the cyclic group $\cgroup$ should be at least $\varq>2^{K}$ where $K=256$, and $\varq-1$ should have a large factor. For this, choose
-$\varq$ as a <a href=https://en.wikipedia.org/wiki/Safe_and_Sophie_Germain_primes>safe-prime</a>, i.e., $\varq=2p + 1$ where $p$ is also prime. This guarantees that the discrete-log problem is hard to solve in $\cgroup$.</li>
+<li><strong>Hardness of the discrete logarithm:</strong> The order of the cyclic group $\cgroup$ should be at least $\varq>2^{K}$ where $K=256$, for a generic group $\cgroup$. If $\cgroup$ is a (prime-order) subgroup of $\zps$, then $p$ should be greater than $2^{\kappa}$ for $\kappa=3072$ to avoid <a href=https://en.wikipedia.org/wiki/Index_calculus_algorithm>subexponential attacks</a> based on the extra structure of $\zps$. Note that this requires $p - 1 = q\cdot r$ with some potentially composite number $r$. Refer to table 2 (pp. 54-55) of <a href=https://doi.org/10.6028/NIST.SP.800-57pt1r5>the NIST recommendations</a> for an overview of different bit security levels for finite field discrete logarithms.</li>
 </ul>
 <h2>References <a class=anchor href=#references>#</a></h2>
 <ul>
@@ -348,7 +348,10 @@ $\varq$ as a <a href=https://en.wikipedia.org/wiki/Safe_and_Sophie_Germain_prime
 <li>[SHA3] <a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-185.pdf title="Kelsey, J., Chang, S. J., & Perlner, R. (2016). SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash. NIST special publication, 800, 185." target=_blank>SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash</a> (2016).</li>
 </ul>
 <ul>
-<li> <a href=https://en.wikipedia.org/wiki/Safe_and_Sophie_Germain_primes title target=_blank>Safe primes</a>.</li>
+<li>[NSPUE2] <a href=https://doi.org/10.6028/NIST.SP.800-57pt1r5 title="National Institute of Standards and Technology (2020, May). Recommendation for Key Management: Part 1 — General. Special Publication 800-57 Part 1, Revision 5" target=_blank>Recommendation for Key Management: Part 1 — General</a> (2020).</li>
+</ul>
+<ul>
+<li> <a href=https://en.wikipedia.org/wiki/Index_calculus_algorithm title target=_blank>Index calculus algorithm</a>.</li>
 </ul>
 </article>
 <footer class=book-footer>
