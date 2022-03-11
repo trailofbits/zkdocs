@@ -1,133 +1,16 @@
-<!doctype html><html lang=en dir=ltr>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Generic, honest, and deterministic method to sample elements.">
-<meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Nothing-up-my-sleeve constructions">
-<meta property="og:description" content="Generic, honest, and deterministic method to sample elements.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/"><meta property="article:section" content="docs">
-<title>Nothing-up-my-sleeve constructions | ZKDocs</title>
-<link rel=manifest href=/manifest.json>
-<link rel=icon href=/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/book.min.d83e3ff82bb33cc5f05f4b4e878f8b0a942a09d007560e17a15903c8cfc8b6fc.css integrity="sha256-2D4/+CuzPMXwX0tOh4+LCpQqCdAHVg4XoVkDyM/Itvw=" crossorigin=anonymous>
-<script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.a38b8feac792568f5b437cc8a0a9d40e575240e77948dbd6c6fa06db60fd0c51.js integrity="sha256-o4uP6seSVo9bQ3zIoKnUDldSQOd5SNvWxvoG22D9DFE=" crossorigin=anonymous></script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215689345-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body dir=ltr>
-<input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control>
-<main class="container flex">
-<aside class=book-menu>
-<div class=book-menu-content>
-<nav>
-<h2 class=book-brand>
-<a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>ZKDocs</span>
-</a>
-</h2>
-<div class=book-search>
-<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div>
-<ul id=book-search-results></ul>
-</div>
-<ul>
-<li class=book-section-flat>
-<a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a>
-</li>
-<li class=book-section-flat>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a>
-</li>
-</ul>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/ class=active>Nothing-up-my-sleeve constructions</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a>
-</li>
-</ul>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div>
-</aside>
-<div class=book-page>
-<header class=book-header>
-<script type=text/x-mathjax-config>
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Generic, honest, and deterministic method to sample elements."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Nothing-up-my-sleeve constructions"><meta property="og:description" content="Generic, honest, and deterministic method to sample elements."><meta property="og:type" content="article"><meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/"><meta property="article:section" content="docs"><title>Nothing-up-my-sleeve constructions | ZKDocs</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.d83e3ff82bb33cc5f05f4b4e878f8b0a942a09d007560e17a15903c8cfc8b6fc.css integrity="sha256-2D4/+CuzPMXwX0tOh4+LCpQqCdAHVg4XoVkDyM/Itvw=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.599c92b1d3d2597230a593cba1a6a13939e35fdbabfe80953986e484df118692.js integrity="sha256-WZySsdPSWXIwpZPLoaahOTnjX9ur/oCVOYbkhN8RhpI=" crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-215689345-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script>
+<script defer data-domain=zkdocs.com src=https://plausible.io/js/plausible.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>ZKDocs</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/ class=active>Nothing-up-my-sleeve constructions</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><script type=text/x-mathjax-config>
   MathJax.Hub.Config({
     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
     loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action']},
     tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] }}
 });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
 <script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
-<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>
-$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
 $\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
 $\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
 $\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
@@ -202,145 +85,59 @@ $\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
 $\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
 $\newcommand{\muvar}{\class{var var_μ}{\mu}}$
 $\newcommand{\true}{\mathsf{true}}$
-$\newcommand{\false}{\mathsf{false}}$
-<div class="flex align-center justify-between">
-<label for=menu-control>
-<img src=/svg/menu.svg class=book-icon alt=Menu>
-</label>
+$\newcommand{\false}{\mathsf{false}}$<div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Nothing-up-my-sleeve constructions</strong>
-<label for=toc-control>
-<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
-</label>
-</div>
-<aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#hash-function-choice>Hash function choice</a></li>
-</ul>
-</nav>
-</aside>
-</header>
-<article class=markdown><h1 id=nothing-up-my-sleeve-constructions>
-Nothing-up-my-sleeve constructions
-<a class=anchor href=#nothing-up-my-sleeve-constructions>#</a>
-</h1>
-<p>Protocols often require using public but random group elements or alternative generators. If these were simply randomly sampled, other participants could be suspicious that the party did not honestly generate them.</p>
-<p>To generate the elements you require:</p>
-<ul>
-<li><strong>membership:</strong> know how to check membership in the sample space</li>
-<li><strong>bit-size:</strong> know the bit-size of the elements</li>
-<li><strong>binding parameters:</strong> the protocol&rsquo;s public values other binding parameters like an index</li>
-<li><strong>salt</strong></li>
-</ul>
-<blockquote class="book-hint info">
-<p><strong>Example:</strong> In the <a href=/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/#non-interactive-protocol>Short factoring proofs</a> non-interactive protocol, we need to generate values $\varz_i \in \zns{\varN}$. Our ingredients are:</p>
-<ul>
-<li><strong>membership:</strong> to check if an element $e$ is in $\zns{\varN}$, we check that $\gcd(e, \varN) = 1$</li>
-<li><strong>bit-size:</strong> the element bit-size will be $|\varN|$</li>
-<li><strong>binding parameters:</strong> $\varN$ and $i$</li>
-<li><strong>salt:</strong> the salt can be $\mathsf{&ldquo;shortfactoringproof&rdquo;}$</li>
-</ul>
-</blockquote>
-<p>The construction is generic: start a counter and sample an element with an extendible-output hash function over the binding parameters and the counter; if the generated element is in the sample space, we return it; otherwise, we increment the counter and sample again.</p>
-<div class=highlight><div style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4>
-<table style=border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block><tr><td style=vertical-align:top;padding:0;margin:0;border:0>
-<pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
-</span><span style="margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
-</span></code></pre></td>
-<td style=vertical-align:top;padding:0;margin:0;border:0;width:100%>
-<pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>DS <span style=color:#666>=</span> <span style=color:#4070a0>&#39;|&#39;</span>
-
-<span style=color:#60a0b0;font-style:italic># Rejection sampling using a counter and binding parameters of the protocol</span>
-<span style=color:#007020;font-weight:700>def</span> <span style=color:#06287e>gen_element</span>(sample_space_predicate, bitsize, param_list, salt):
-  counter <span style=color:#666>=</span> <span style=color:#40a070>0</span>
-  <span style=color:#007020;font-weight:700>while</span> <span style=color:#007020;font-weight:700>True</span>:
-
-    <span style=color:#60a0b0;font-style:italic># elements to hash</span>
-    elements <span style=color:#666>=</span> param_list <span style=color:#666>+</span> [salt, counter]
-
-    <span style=color:#60a0b0;font-style:italic># add each element&#39;s length</span>
-    to_hash <span style=color:#666>=</span> [<span style=color:#007020>len</span>(s) <span style=color:#666>+</span> s <span style=color:#007020;font-weight:700>for</span> s <span style=color:#007020;font-weight:700>in</span> elements]
-
-    <span style=color:#60a0b0;font-style:italic># domain separated elements</span>
-    to_hash <span style=color:#666>=</span> DS <span style=color:#666>+</span> DS<span style=color:#666>.</span>join(to_hash)
-
-    <span style=color:#60a0b0;font-style:italic># generate bitsize element with extendible-output hash function</span>
-    e <span style=color:#666>=</span> hash_xof(to_hash, bitsize)
-
-    <span style=color:#60a0b0;font-style:italic># check that e is in sample_space</span>
-    <span style=color:#007020;font-weight:700>if</span> sample_space_predicate(e):
-      <span style=color:#007020;font-weight:700>return</span> e
-
-    <span style=color:#60a0b0;font-style:italic># increment counter</span>
-    counter <span style=color:#666>+=</span> <span style=color:#40a070>1</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id=hash-function-choice>
-Hash function choice
-<a class=anchor href=#hash-function-choice>#</a>
-</h2>
-<p>The hash function used here must be an extendible-output function (XOF). These hash functions can generate an output of arbitrary length. We must use these functions since the elements we are sampling can have an arbitrary number of bits, and failing to achieve that size can cause security issues. An example is $\mathsf{SHAKE256}$, which provides 256-bit security against collision attacks when at least 512 bits are sampled.</p>
-<p>An alternative is using $\mathsf{TupleHash}$ which does not require manually domain-separating the elements to be hashed.</p>
-<h2>References <a class=anchor href=#references>#</a></h2>
-<ul>
-<li>[SHA3] <a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-185.pdf title="Kelsey, J., Chang, S. J., & Perlner, R. (2016). SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash. NIST special publication, 800, 185." target=_blank>SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash</a> (2016).</li>
-</ul>
-</article>
-<footer class=book-footer>
-<div class="flex flex-wrap justify-between">
-</div>
-<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-<article class=markdown>
-<br>
-<br>
-<hr>
-<div style=text-align:right>
-<a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
-<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a>
-</div>
-<div style=text-align:right>
-<small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small>
-</div>
-</article>
-</footer>
-<div class=book-comments>
-</div>
-<label for=menu-control class="hidden book-menu-overlay"></label>
-</div>
-<aside class=book-toc>
-<div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#hash-function-choice>Hash function choice</a></li>
-</ul>
-</nav>
-<br>
-<br>
-</div>
-</aside>
-</main>
-</body>
-</html>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#hash-function-choice>Hash function choice</a></li></ul></nav></aside></header><article class=markdown><h1 id=nothing-up-my-sleeve-constructions>Nothing-up-my-sleeve constructions
+<a class=anchor href=#nothing-up-my-sleeve-constructions>#</a></h1><p>Protocols often require using public but random group elements or alternative generators. If these were simply randomly sampled, other participants could be suspicious that the party did not honestly generate them.</p><p>To generate the elements you require:</p><ul><li><strong>membership:</strong> know how to check membership in the sample space</li><li><strong>bit-size:</strong> know the bit-size of the elements</li><li><strong>binding parameters:</strong> the protocol&rsquo;s public values other binding parameters like an index</li><li><strong>salt</strong></li></ul><blockquote class="book-hint info"><p><strong>Example:</strong> In the <a href=/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/#non-interactive-protocol>Short factoring proofs</a> non-interactive protocol, we need to generate values $\varz_i \in \zns{\varN}$. Our ingredients are:</p><ul><li><strong>membership:</strong> to check if an element $e$ is in $\zns{\varN}$, we check that $\gcd(e, \varN) = 1$</li><li><strong>bit-size:</strong> the element bit-size will be $|\varN|$</li><li><strong>binding parameters:</strong> $\varN$ and $i$</li><li><strong>salt:</strong> the salt can be $\mathsf{&ldquo;shortfactoringproof&rdquo;}$</li></ul></blockquote><p>The construction is generic: start a counter and sample an element with an extendible-output hash function over the binding parameters and the counter; if the generated element is in the sample space, we return it; otherwise, we increment the counter and sample again.</p><div class=highlight><div style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">25
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>DS <span style=color:#666>=</span> <span style=color:#4070a0>&#39;|&#39;</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#60a0b0;font-style:italic># Rejection sampling using a counter and binding parameters of the protocol</span>
+</span></span><span style=display:flex><span><span style=color:#007020;font-weight:700>def</span> <span style=color:#06287e>gen_element</span>(sample_space_predicate, bitsize, param_list, salt):
+</span></span><span style=display:flex><span>  counter <span style=color:#666>=</span> <span style=color:#40a070>0</span>
+</span></span><span style=display:flex><span>  <span style=color:#007020;font-weight:700>while</span> <span style=color:#007020;font-weight:700>True</span>:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># elements to hash</span>
+</span></span><span style=display:flex><span>    elements <span style=color:#666>=</span> param_list <span style=color:#666>+</span> [salt, counter]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># add each element&#39;s length</span>
+</span></span><span style=display:flex><span>    to_hash <span style=color:#666>=</span> [<span style=color:#007020>len</span>(s) <span style=color:#666>+</span> s <span style=color:#007020;font-weight:700>for</span> s <span style=color:#007020;font-weight:700>in</span> elements]
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># domain separated elements</span>
+</span></span><span style=display:flex><span>    to_hash <span style=color:#666>=</span> DS <span style=color:#666>+</span> DS<span style=color:#666>.</span>join(to_hash)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># generate bitsize element with extendible-output hash function</span>
+</span></span><span style=display:flex><span>    e <span style=color:#666>=</span> hash_xof(to_hash, bitsize)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># check that e is in sample_space</span>
+</span></span><span style=display:flex><span>    <span style=color:#007020;font-weight:700>if</span> sample_space_predicate(e):
+</span></span><span style=display:flex><span>      <span style=color:#007020;font-weight:700>return</span> e
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#60a0b0;font-style:italic># increment counter</span>
+</span></span><span style=display:flex><span>    counter <span style=color:#666>+=</span> <span style=color:#40a070>1</span>
+</span></span></code></pre></td></tr></table></div></div><h2 id=hash-function-choice>Hash function choice
+<a class=anchor href=#hash-function-choice>#</a></h2><p>The hash function used here must be an extendible-output function (XOF). These hash functions can generate an output of arbitrary length. We must use these functions since the elements we are sampling can have an arbitrary number of bits, and failing to achieve that size can cause security issues. An example is $\mathsf{SHAKE256}$, which provides 256-bit security against collision attacks when at least 512 bits are sampled.</p><p>An alternative is using $\mathsf{TupleHash}$ which does not require manually domain-separating the elements to be hashed.</p><h2>References <a class=anchor href=#references>#</a></h2><ul><li>[SHA3] <a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-185.pdf title="Kelsey, J., Chang, S. J., & Perlner, R. (2016). SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash. NIST special publication, 800, 185." target=_blank>SHA-3 derived functions: cSHAKE, KMAC, TupleHash and ParallelHash</a> (2016).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><article class=markdown><br><br><hr><div style=text-align:right><a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
+<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a></div><div style=text-align:right><small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small></div></article></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#hash-function-choice>Hash function choice</a></li></ul></nav><br><br></div></aside></main></body></html>

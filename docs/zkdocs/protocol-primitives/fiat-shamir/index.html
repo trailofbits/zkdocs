@@ -1,133 +1,16 @@
-<!doctype html><html lang=en dir=ltr>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Here, we describe what the Fiat-Shamir transformation is, its goals, its pitfalls, and its different versions.">
-<meta name=theme-color content="#FFFFFF">
-<meta name=color-scheme content="light dark"><meta property="og:title" content="Fiat-Shamir transformation">
-<meta property="og:description" content="Here, we describe what the Fiat-Shamir transformation is, its goals, its pitfalls, and its different versions.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/"><meta property="article:section" content="docs">
-<title>Fiat-Shamir transformation | ZKDocs</title>
-<link rel=manifest href=/manifest.json>
-<link rel=icon href=/favicon.png type=image/x-icon>
-<link rel=stylesheet href=/book.min.d83e3ff82bb33cc5f05f4b4e878f8b0a942a09d007560e17a15903c8cfc8b6fc.css integrity="sha256-2D4/+CuzPMXwX0tOh4+LCpQqCdAHVg4XoVkDyM/Itvw=" crossorigin=anonymous>
-<script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.a38b8feac792568f5b437cc8a0a9d40e575240e77948dbd6c6fa06db60fd0c51.js integrity="sha256-o4uP6seSVo9bQ3zIoKnUDldSQOd5SNvWxvoG22D9DFE=" crossorigin=anonymous></script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga('create','UA-215689345-1','auto'),ga('send','pageview'))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head>
-<body dir=ltr>
-<input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control>
-<main class="container flex">
-<aside class=book-menu>
-<div class=book-menu-content>
-<nav>
-<h2 class=book-brand>
-<a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>ZKDocs</span>
-</a>
-</h2>
-<div class=book-search>
-<input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/>
-<div class="book-search-spinner hidden"></div>
-<ul id=book-search-results></ul>
-</div>
-<ul>
-<li class=book-section-flat>
-<a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a>
-</li>
-<li class=book-section-flat>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a>
-</li>
-</ul>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a>
-</li>
-</ul>
-</li>
-<li class=book-section-flat>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a>
-<ul>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/ class=active>Fiat-Shamir transformation</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a>
-</li>
-</ul>
-</li>
-<li>
-<a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a>
-</li>
-</ul>
-</li>
-</ul>
-</nav>
-<script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
-</div>
-</aside>
-<div class=book-page>
-<header class=book-header>
-<script type=text/x-mathjax-config>
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Here, we describe what the Fiat-Shamir transformation is, its goals, its pitfalls, and its different versions."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Fiat-Shamir transformation"><meta property="og:description" content="Here, we describe what the Fiat-Shamir transformation is, its goals, its pitfalls, and its different versions."><meta property="og:type" content="article"><meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/"><meta property="article:section" content="docs"><title>Fiat-Shamir transformation | ZKDocs</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.d83e3ff82bb33cc5f05f4b4e878f8b0a942a09d007560e17a15903c8cfc8b6fc.css integrity="sha256-2D4/+CuzPMXwX0tOh4+LCpQqCdAHVg4XoVkDyM/Itvw=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
+<script defer src=/en.search.min.599c92b1d3d2597230a593cba1a6a13939e35fdbabfe80953986e484df118692.js integrity="sha256-WZySsdPSWXIwpZPLoaahOTnjX9ur/oCVOYbkhN8RhpI=" crossorigin=anonymous></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-215689345-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script>
+<script defer data-domain=zkdocs.com src=https://plausible.io/js/plausible.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/><img src=/logo.png alt=Logo><span>ZKDocs</span></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/ class=active>Fiat-Shamir transformation</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><script type=text/x-mathjax-config>
   MathJax.Hub.Config({
     tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
     loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action']},
     tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] }}
 });
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
 <script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
-<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>
-$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
 $\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
 $\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
 $\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
@@ -202,147 +85,13 @@ $\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
 $\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
 $\newcommand{\muvar}{\class{var var_μ}{\mu}}$
 $\newcommand{\true}{\mathsf{true}}$
-$\newcommand{\false}{\mathsf{false}}$
-<div class="flex align-center justify-between">
-<label for=menu-control>
-<img src=/svg/menu.svg class=book-icon alt=Menu>
-</label>
+$\newcommand{\false}{\mathsf{false}}$<div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
 <strong>Fiat-Shamir transformation</strong>
-<label for=toc-control>
-<img src=/svg/toc.svg class=book-icon alt="Table of Contents">
-</label>
-</div>
-<aside class="hidden clearfix">
-<nav id=TableOfContents>
-<ul>
-<li><a href=#overview>Overview</a></li>
-<li><a href=#what-can-go-wrong>What can go wrong?</a></li>
-<li><a href=#recommendations>Recommendations</a>
-<ul>
-<li><a href=#rule-of-thumb>Rule of thumb</a></li>
-<li><a href=#preventing-replay-attacks>Preventing replay attacks</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</aside>
-</header>
-<article class=markdown><h1 id=fiat-shamir-transformation>
-Fiat-Shamir transformation
-<a class=anchor href=#fiat-shamir-transformation>#</a>
-</h1>
-<h2 id=overview>
-Overview
-<a class=anchor href=#overview>#</a>
-</h2>
-<p>It turns out that in practice, most zero-knowledge proofs tend to have the same three-step structure:</p>
-<ol>
-<li>The prover first generates some random value, the commitment, and sends it to the verifier.</li>
-<li>The verifier responds with a challenge value generated uniformly at random.</li>
-<li>The prover computes the final proof based on both the commitment and challenge.</li>
-</ol>
-<p>As you can tell, this structure is interactive, meaning that the prover requires a response from the verifier before they can complete their proof, which is not ideal for most applications. Fortunately, provers can avoid this by using the <a href=https://en.wikipedia.org/wiki/Fiat%E2%80%93Shamir_heuristic>Fiat-Shamir heuristic</a> (sometimes referred to as the Fiat-Shamir transformation), <a href=https://link.springer.com/content/pdf/10.1007%2F3-540-47721-7_12.pdf>developed by Amos Fiat and Adi Shamir</a>.</p>
-<p>The idea behind the Fiat-Shamir transformation is that instead of having the verifier send a random challenge value to the prover, the prover can compute this value themselves by using a random function, such as a cryptographic hash function.</p>
-<blockquote class="book-hint info">
-<strong>Example:</strong> In the <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr protocol</a>, we have an interactive and non-interactive version. In the interactive version, the prover sends their random commitment, $u = g^r$, and the verifier responds with a challenge value, $c$, that they generate uniformly at random. In the non-interactive version, the prover generates $c$ themselves by computing a hash over all of the public values, $c = \hash{g,q,h,u}$. As we will discuss, the hash must include all of these values.
-</blockquote>
-<p>If you&rsquo;d like to read more about this, we&rsquo;ve written a <a href=https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs/>blog post describing how they work in more detail</a>.</p>
-<h2 id=what-can-go-wrong>
-What can go wrong?
-<a class=anchor href=#what-can-go-wrong>#</a>
-</h2>
-<p>This transformation may seem straightforward, but unfortunately, it tends to be very tricky in practice. In particular, the prover generates the random challenge value using a cryptographic hash function- but what are the inputs? It turns out that if you choose the wrong inputs, it usually means your proof system is broken. To see this, let&rsquo;s look at <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr&rsquo;s protocol</a> as an example.</p>
-<blockquote class="book-hint danger">
-<p><strong>Bad example, NEVER DO THIS:</strong> Recall that in the <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr protocol</a>, the prover generates their random commitment, $u = g^r$, computes the challenge value, $c$, and then computes the final proof $z = r + x\cdot c$, where $x$ is the secret value corresponding to their public key, $h = g^x$. Let&rsquo;s say the implementation is incorrect, and the challenge value, $c$, is not computed using the public key, $h$, and instead it&rsquo;s computed as $c = \hash{g,q,u}$. It turns out that malicious provers can now forge proofs by doing the following attack:</p>
-<ul>
-<li>Set the commitment value, $u$, to be some public key that you do not know the secret key for.</li>
-<li>Compute the challenge value $c = \hash{g,q,u}$.</li>
-<li>Set the proof $z$ to be a random value, and then compute your public key to be $h = (\frac{g^z}{u})^{\frac{1}{c}}$</li>
-<li>Send $u,c,z$ to the verifier.</li>
-</ul>
-<p>The verifier then performs their two checks: $c \equalQ \hash{g,q,u}$ and $g^z \equalQ u\cdot h^c$. The first check will pass as they are both the same, and the second check will pass because of how we constructed $z$, $u$, and $h$.</p>
-<p>Since we set $u$ to be some value we do not know the secret key for, we also will not know the secret key for $h$, which means we have forged our proof of knowledge.</p>
-<p><strong>Note:</strong> This attack does not allow you to forge proofs for any public key, this only works for random public keys. This tends not to be problematic when Schnorr proofs as a proof of knowledge in the typical public-key model. However, this can be very problematic when these proofs are used in other scenarios, such as a <a href=https://eprint.iacr.org/2016/771.pdf>cryptographic voting system</a>.</p>
-</blockquote>
-<h2 id=recommendations>
-Recommendations
-<a class=anchor href=#recommendations>#</a>
-</h2>
-<h3 id=rule-of-thumb>
-Rule of thumb
-<a class=anchor href=#rule-of-thumb>#</a>
-</h3>
-<p>The exact inputs required for the hash function will be different for every zero-knowledge proof system. The general rule of thumb to follow is to include all of the public information and all elements in the proof transcript up until that point inside the hash function.</p>
-<blockquote class="book-hint info">
-In the <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr protocol</a>, the public information is the public key, $h$, and the parameters related to the group being used, $g$ and $q$, and the proof transcript also includes the commitment value, $u$, and so we include all of those values in our hash computation.
-</blockquote>
-<blockquote class="book-hint info">
-<p>For <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>short factoring proof protocol</a>, it&rsquo;s a bit more complicated. The public information is the number the prover can factor, $N$, so this must be included. What about transcript values? In this scheme, the prover does a bit more work before computing the challenge compared to the <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr protocol</a>. Specifically, they generate a random value ($r$), a series of values ($z_i$) using the <a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>nothing-up-my-sleeve construction</a>, and then they compute $X = \hash{\bunchi{z_i^r \mod N}}$ (this is not the Fiat-Shamir challenge). Since both the $X$ value and the set of $z_i$ values will be known to the verifier (i.e., they are part of the transcript), these must also be included in the hash computation. So, the correct challenge computation is $e = \hash{N, \bunchi{z_i}, X}$.</p>
-<p><strong>Note:</strong> In the short factoring proof and in <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault&rsquo;s scheme</a>, the Fiat-Shamir challenge needs to additionally be of a specific bit-size. So, the correct computation is actually $e = \hashbit{N, \bunchi{z_i}, X}{k}$.</p>
-</blockquote>
-<p><strong>Remember:</strong> Always include all public information and all transcript values. When in doubt, consult ZKDocs!</p>
-<h3 id=preventing-replay-attacks>
-Preventing replay attacks
-<a class=anchor href=#preventing-replay-attacks>#</a>
-</h3>
-<p>Just like digital signatures, zero-knowledge proofs can also be susceptible to <a href=https://en.wikipedia.org/wiki/Replay_attack>replay attacks</a>. As is the case for other replay attacks, the severity of these replay attacks will be highly application and context-specific.</p>
-<p>If you believe replay attacks could be severe for your application, you might be able to use the Fiat-Shamir transformation to protect yourself. Specifically, suppose your application has some notion of identity tied to each party (a unique party ID, for example). In that case, you should include the ID of the prover and the verifier inside of the Fiat-Shamir hash computation. Then, when the verifier verifies the proof, they should also check that the IDs used in the hash function match the ID of themself and the prover. This will prevent other malicious parties from replaying any proof that they did not produce themselves.</p>
-<h2>References <a class=anchor href=#references>#</a></h2>
-<ul>
-<li> <a href=https://en.wikipedia.org/wiki/Fiat%E2%80%93Shamir_heuristic title target=_blank>Fiat-Shamir heuristic</a>.</li>
-</ul>
-<ul>
-<li>[FS87] <a href=https://link.springer.com/content/pdf/10.1007/3-540-47721-7_12.pdf title target=_blank>How to Prove Yourself: Practical Solutions to Identification and Signature Problems</a> (1987).</li>
-</ul>
-<ul>
-<li> <a href=https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs/ title target=_blank>Serving Up Zero-Knowledge proofs</a>.</li>
-</ul>
-<ul>
-<li>[BPW12] <a href=https://eprint.iacr.org/2016/771.pdf title="Bernhard, D., Pereira, O., & Warinschi, B. (2012, December). How not to prove yourself: Pitfalls of the Fiat-Shamir heuristic and applications to Helios. In International Conference on the Theory and Application of Cryptology and Information Security (pp. 626-643). Springer, Berlin, Heidelberg" target=_blank>How not to prove yourself: Pitfalls of the Fiat-Shamir heuristic and applications to Helios.</a> (2012).</li>
-</ul>
-<ul>
-<li> <a href=https://en.wikipedia.org/wiki/Replay_attack title target=_blank>Replay attack</a>.</li>
-</ul>
-</article>
-<footer class=book-footer>
-<div class="flex flex-wrap justify-between">
-</div>
-<script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
-<article class=markdown>
-<br>
-<br>
-<hr>
-<div style=text-align:right>
-<a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
-<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a>
-</div>
-<div style=text-align:right>
-<small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small>
-</div>
-</article>
-</footer>
-<div class=book-comments>
-</div>
-<label for=menu-control class="hidden book-menu-overlay"></label>
-</div>
-<aside class=book-toc>
-<div class=book-toc-content>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#overview>Overview</a></li>
-<li><a href=#what-can-go-wrong>What can go wrong?</a></li>
-<li><a href=#recommendations>Recommendations</a>
-<ul>
-<li><a href=#rule-of-thumb>Rule of thumb</a></li>
-<li><a href=#preventing-replay-attacks>Preventing replay attacks</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-<br>
-<br>
-</div>
-</aside>
-</main>
-</body>
-</html>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#overview>Overview</a></li><li><a href=#what-can-go-wrong>What can go wrong?</a></li><li><a href=#recommendations>Recommendations</a><ul><li><a href=#rule-of-thumb>Rule of thumb</a></li><li><a href=#preventing-replay-attacks>Preventing replay attacks</a></li></ul></li></ul></nav></aside></header><article class=markdown><h1 id=fiat-shamir-transformation>Fiat-Shamir transformation
+<a class=anchor href=#fiat-shamir-transformation>#</a></h1><h2 id=overview>Overview
+<a class=anchor href=#overview>#</a></h2><p>It turns out that in practice, most zero-knowledge proofs tend to have the same three-step structure:</p><ol><li>The prover first generates some random value, the commitment, and sends it to the verifier.</li><li>The verifier responds with a challenge value generated uniformly at random.</li><li>The prover computes the final proof based on both the commitment and challenge.</li></ol><p>As you can tell, this structure is interactive, meaning that the prover requires a response from the verifier before they can complete their proof, which is not ideal for most applications. Fortunately, provers can avoid this by using the <a href=https://en.wikipedia.org/wiki/Fiat%E2%80%93Shamir_heuristic>Fiat-Shamir heuristic</a> (sometimes referred to as the Fiat-Shamir transformation), <a href=https://link.springer.com/content/pdf/10.1007%2F3-540-47721-7_12.pdf>developed by Amos Fiat and Adi Shamir</a>.</p><p>The idea behind the Fiat-Shamir transformation is that instead of having the verifier send a random challenge value to the prover, the prover can compute this value themselves by using a random function, such as a cryptographic hash function.</p><blockquote class="book-hint info"><strong>Example:</strong> In the <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr protocol</a>, we have an interactive and non-interactive version. In the interactive version, the prover sends their random commitment, $u = g^r$, and the verifier responds with a challenge value, $c$, that they generate uniformly at random. In the non-interactive version, the prover generates $c$ themselves by computing a hash over all of the public values, $c = \hash{g,q,h,u}$. As we will discuss, the hash must include all of these values.</blockquote><p>If you&rsquo;d like to read more about this, we&rsquo;ve written a <a href=https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs/>blog post describing how they work in more detail</a>.</p><h2 id=what-can-go-wrong>What can go wrong?
+<a class=anchor href=#what-can-go-wrong>#</a></h2><p>This transformation may seem straightforward, but unfortunately, it tends to be very tricky in practice. In particular, the prover generates the random challenge value using a cryptographic hash function- but what are the inputs? It turns out that if you choose the wrong inputs, it usually means your proof system is broken. To see this, let&rsquo;s look at <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr&rsquo;s protocol</a> as an example.</p><blockquote class="book-hint danger"><p><strong>Bad example, NEVER DO THIS:</strong> Recall that in the <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr protocol</a>, the prover generates their random commitment, $u = g^r$, computes the challenge value, $c$, and then computes the final proof $z = r + x\cdot c$, where $x$ is the secret value corresponding to their public key, $h = g^x$. Let&rsquo;s say the implementation is incorrect, and the challenge value, $c$, is not computed using the public key, $h$, and instead it&rsquo;s computed as $c = \hash{g,q,u}$. It turns out that malicious provers can now forge proofs by doing the following attack:</p><ul><li>Set the commitment value, $u$, to be some public key that you do not know the secret key for.</li><li>Compute the challenge value $c = \hash{g,q,u}$.</li><li>Set the proof $z$ to be a random value, and then compute your public key to be $h = (\frac{g^z}{u})^{\frac{1}{c}}$</li><li>Send $u,c,z$ to the verifier.</li></ul><p>The verifier then performs their two checks: $c \equalQ \hash{g,q,u}$ and $g^z \equalQ u\cdot h^c$. The first check will pass as they are both the same, and the second check will pass because of how we constructed $z$, $u$, and $h$.</p><p>Since we set $u$ to be some value we do not know the secret key for, we also will not know the secret key for $h$, which means we have forged our proof of knowledge.</p><p><strong>Note:</strong> This attack does not allow you to forge proofs for any public key, this only works for random public keys. This tends not to be problematic when Schnorr proofs as a proof of knowledge in the typical public-key model. However, this can be very problematic when these proofs are used in other scenarios, such as a <a href=https://eprint.iacr.org/2016/771.pdf>cryptographic voting system</a>.</p></blockquote><h2 id=recommendations>Recommendations
+<a class=anchor href=#recommendations>#</a></h2><h3 id=rule-of-thumb>Rule of thumb
+<a class=anchor href=#rule-of-thumb>#</a></h3><p>The exact inputs required for the hash function will be different for every zero-knowledge proof system. The general rule of thumb to follow is to include all of the public information and all elements in the proof transcript up until that point inside the hash function.</p><blockquote class="book-hint info">In the <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr protocol</a>, the public information is the public key, $h$, and the parameters related to the group being used, $g$ and $q$, and the proof transcript also includes the commitment value, $u$, and so we include all of those values in our hash computation.</blockquote><blockquote class="book-hint info"><p>For <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>short factoring proof protocol</a>, it&rsquo;s a bit more complicated. The public information is the number the prover can factor, $N$, so this must be included. What about transcript values? In this scheme, the prover does a bit more work before computing the challenge compared to the <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr protocol</a>. Specifically, they generate a random value ($r$), a series of values ($z_i$) using the <a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>nothing-up-my-sleeve construction</a>, and then they compute $X = \hash{\bunchi{z_i^r \mod N}}$ (this is not the Fiat-Shamir challenge). Since both the $X$ value and the set of $z_i$ values will be known to the verifier (i.e., they are part of the transcript), these must also be included in the hash computation. So, the correct challenge computation is $e = \hash{N, \bunchi{z_i}, X}$.</p><p><strong>Note:</strong> In the short factoring proof and in <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault&rsquo;s scheme</a>, the Fiat-Shamir challenge needs to additionally be of a specific bit-size. So, the correct computation is actually $e = \hashbit{N, \bunchi{z_i}, X}{k}$.</p></blockquote><p><strong>Remember:</strong> Always include all public information and all transcript values. When in doubt, consult ZKDocs!</p><h3 id=preventing-replay-attacks>Preventing replay attacks
+<a class=anchor href=#preventing-replay-attacks>#</a></h3><p>Just like digital signatures, zero-knowledge proofs can also be susceptible to <a href=https://en.wikipedia.org/wiki/Replay_attack>replay attacks</a>. As is the case for other replay attacks, the severity of these replay attacks will be highly application and context-specific.</p><p>If you believe replay attacks could be severe for your application, you might be able to use the Fiat-Shamir transformation to protect yourself. Specifically, suppose your application has some notion of identity tied to each party (a unique party ID, for example). In that case, you should include the ID of the prover and the verifier inside of the Fiat-Shamir hash computation. Then, when the verifier verifies the proof, they should also check that the IDs used in the hash function match the ID of themself and the prover. This will prevent other malicious parties from replaying any proof that they did not produce themselves.</p><h2>References <a class=anchor href=#references>#</a></h2><ul><li><a href=https://en.wikipedia.org/wiki/Fiat%E2%80%93Shamir_heuristic title target=_blank>Fiat-Shamir heuristic</a>.</li></ul><ul><li>[FS87] <a href=https://link.springer.com/content/pdf/10.1007/3-540-47721-7_12.pdf title target=_blank>How to Prove Yourself: Practical Solutions to Identification and Signature Problems</a> (1987).</li></ul><ul><li><a href=https://blog.trailofbits.com/2021/02/19/serving-up-zero-knowledge-proofs/ title target=_blank>Serving Up Zero-Knowledge proofs</a>.</li></ul><ul><li>[BPW12] <a href=https://eprint.iacr.org/2016/771.pdf title="Bernhard, D., Pereira, O., & Warinschi, B. (2012, December). How not to prove yourself: Pitfalls of the Fiat-Shamir heuristic and applications to Helios. In International Conference on the Theory and Application of Cryptology and Information Security (pp. 626-643). Springer, Berlin, Heidelberg" target=_blank>How not to prove yourself: Pitfalls of the Fiat-Shamir heuristic and applications to Helios.</a> (2012).</li></ul><ul><li><a href=https://en.wikipedia.org/wiki/Replay_attack title target=_blank>Replay attack</a>.</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(n){const e=window.getSelection(),t=document.createRange();t.selectNodeContents(n),e.removeAllRanges(),e.addRange(t)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><article class=markdown><br><br><hr><div style=text-align:right><a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
+<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a></div><div style=text-align:right><small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small></div></article></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#overview>Overview</a></li><li><a href=#what-can-go-wrong>What can go wrong?</a></li><li><a href=#recommendations>Recommendations</a><ul><li><a href=#rule-of-thumb>Rule of thumb</a></li><li><a href=#preventing-replay-attacks>Preventing replay attacks</a></li></ul></li></ul></nav><br><br></div></aside></main></body></html>
