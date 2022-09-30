@@ -102,7 +102,7 @@ To achieve a safe security level, choose:
 
 ## Auxiliary algorithms
  - The function $J(\varw, \varN)$ is the [Jacobi symbol](https://en.wikipedia.org/wiki/Jacobi_symbol) of $\varw$ modulo $\varN$. To implement it use Algorithm 2.149 of the [Handbook of Applied Cryptography](https://cacr.uwaterloo.ca/hac/).
- - Compute modular fourth-roots using [[HOC] - Fact 2.160]: if $x$ is a quadratic residue modulo $\varN = p q$ (and $p,q$ are $3\mod 4$) then $\sqrt[4]{x} = x^{(\varphi + 4)/8} \mod \varN$, where $\varphi = (p-1)\cdot(q-1)$.
+ - Compute modular fourth-roots using [[HOC] - Fact 2.160]: if $x$ is a quadratic residue modulo $\varN = p q$ (and $p,q$ are $3\mod 4$) then $\sqrt[2]{x} = x^{(\varphi + 4)/8} \mod \varN$, where $\varphi = (p-1)\cdot(q-1)$. Applying this computation twice yields the modular fourth-root.
  - The prover has to check if an element is a quadratic residue modulo $\varN$. To do this, use [[HOC] - Fact 2.137]: $x$ is a quadratic residue modulo $\varN = pq$ if and only if it is a quadratic residue modulo $p$ and modulo $q$. A number $x$ is a quadratic residue modulo a prime $p$, if $x^{(p-1)/2} = 1$. Thus, $x$ is a quadratic residue modulo $\varN = pq$ if and only if $x^{(p-1)/2} = 1$ and $x^{(q-1)/2} = 1$.
  - Most libraries will have a primality testing routine for the $\mathsf{isPrime}$ function.
 
