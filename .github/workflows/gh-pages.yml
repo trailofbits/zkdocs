@@ -28,5 +28,8 @@ jobs:
         if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
           cname: www.zkdocs.com
+          publish_dir: ./public
+
+permissions:
+   contents: write
