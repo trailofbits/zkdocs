@@ -104,7 +104,7 @@ For different $\kappa$ values, we obtain
  - $m(\kappa=128) = 2840$
 
 ## Honest parameter generation $\mathsf{gen}_\rhovar$
-- Generate the $\rhovar_i$ values with a standard [nothing-up-my-sleeve construction](../../../protocol-primitives/nums) in $J_{\varN}$, use binding parameters $\\{\varN, i, F\\}$, bitsize of $|\varN|$, and salt $\mathsf{"twoprimedivisorsproof"}$. To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.
+- Generate the $\rhovar_i$ values with a standard [nothing-up-my-sleeve construction]({{< relref "/docs/zkdocs/protocol-primitives/nums.md" >}}) in $J_{\varN}$, use binding parameters $\\{\varN, i, F\\}$, bitsize of $|\varN|$, and salt $\mathsf{"twoprimedivisorsproof"}$. To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.
 
 ## Auxiliary algorithms
 - To calculate the [Jacobi symbol](https://en.wikipedia.org/wiki/Jacobi_symbol) use Algorithm 2.149 of the [Handbook of Applied Cryptography](https://cacr.uwaterloo.ca/hac/).

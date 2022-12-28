@@ -9,10 +9,10 @@ references: ["GRSB19", "jacobi", "AP18", "hoc"]
 
 To show that a number is the product of two distinct primes, we make use of the previous protocols to show that:
  - $\varN$ is [square-free](../square-freeness)
- - $\varN$ [only has two divisors](#number-has-exactly-two-prime-divisors)
+ - $\varN$ [only has two divisors](../two-prime-divisors)
 
 Formally, we show that $\varN$ is in the set $$L_{pp} = \\{N \in \naturals | N \text{ is odd and is the product of two distinct primes}\\} = L_{ppp} \cap \sqfree.$$
-For this, we run the protocols from [Square-free](../square-freeness) and [Two prime divisors](#number-has-exactly-two-prime-divisors) in parallel for the same $N$.
+For this, we run the protocols from [Square-free](../square-freeness) and [Two prime divisors](../two-prime-divisors) in parallel for the same $N$.
 
 {{< hint info >}}
 **Goal:**
@@ -81,7 +81,7 @@ This protocol suffers from the same pitfalls as the [Square-free](../square-free
 For the desired security level of $\kappa=128$, we need to generate 2840 $\muvar_i$ elements. Because of this, this proof system can be very computationally expensive. If this dramatically affects the performance of your protocol, and your $\varN$ is the product of two primes congruent with $3\mod 4$, we recommend using an alternative proof system, the [Paillier-Blum modulus](../paillier_blum_modulus) proof.
 
 ## Honest parameter generation $\mathsf{gen}_\rhovar$
-- Generate the $\rhovar_i$ and $\thetavar_i$ values with a standard [nothing-up-my-sleeve construction](../../../protocol-primitives/nums):
+- Generate the $\rhovar_i$ and $\thetavar_i$ values with a standard [nothing-up-my-sleeve construction]({{< relref "/docs/zkdocs/protocol-primitives/nums.md" >}}):
   - $\rhovar_i$ in $\z{\varN}$, use binding parameters $\\{\varN, i\\}$, bitsize of $|\varN|$, and salt $\mathsf{"productoftwoprimesproof"}$.
   - $\thetavar_i$ in $J_{\varN}$, use binding parameters $\\{\varN, i, F\\}$, bitsize of $|\varN|$, and salt $\mathsf{"productoftwoprimesproof"}$. $F$ should be a fresh value unique to the current proof.
 - To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.

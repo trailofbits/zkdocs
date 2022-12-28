@@ -7,7 +7,7 @@ needsVariableResetButton: true
 references: ["girault", "giraultref"]
 ---
 # Girault's identification protocol
-This scheme is a zero-knowledge proof for a discrete logarithm, like [Schnorr's](schnorr.md) [protocol](schnorr-variants.md), but over a composite modulus instead of a prime modulus.
+This scheme is a zero-knowledge proof for a discrete logarithm, like [Schnorr's]({{< ref "schnorr.md" >}}) [protocol]({{< ref "schnorr-variants.md" >}}), but over a composite modulus instead of a prime modulus.
 
 
 {{< hint info >}}

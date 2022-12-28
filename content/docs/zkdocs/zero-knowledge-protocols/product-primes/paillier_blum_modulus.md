@@ -97,7 +97,7 @@ To achieve a safe security level, choose:
  - $m = 80$.
 
 ## Honest parameter generation $\mathsf{gen}_\vary$
- - Generate the $\vary_i$ values with a standard [nothing-up-my-sleeve construction](../../../protocol-primitives/nums) in $\zns{\varN}$, use binding parameters $\\{\varN, \varw, i\\}$, bitsize of $|\varN|$, and salt $\mathsf{"paillierblumproof"}$. To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.
+ - Generate the $\vary_i$ values with a standard [nothing-up-my-sleeve construction]({{< relref "/docs/zkdocs/protocol-primitives/nums.md" >}}) in $\zns{\varN}$, use binding parameters $\\{\varN, \varw, i\\}$, bitsize of $|\varN|$, and salt $\mathsf{"paillierblumproof"}$. To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.
 
 
 ## Auxiliary algorithms

@@ -4,7 +4,8 @@ languageCode = 'en-us'
 title = 'ZKDocs'
 theme = "book"
 [params]
-  BookLogo = 'logo.png'
+  BookLogo = 'TOB_Black.svg'
+  BookIconLogo = 'logo.png'
 
 [markup]
   [markup.highlight]
