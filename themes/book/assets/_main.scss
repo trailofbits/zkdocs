@@ -16,6 +16,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   box-sizing: border-box;
+
   * {
     box-sizing: inherit;
   }
@@ -99,11 +100,22 @@ ul.pagination {
   margin-top: 0;
   margin-bottom: $padding-16;
 
-  img {
+  #icon {
+    height: 4.5em;
+    width: 4.5em;
+    margin-left: auto;
+    display: block;
+    margin-right: auto;
+    // margin-bottom: -0.5em;
+    margin-top: -0.7em;
+  }
+
+  #logo {
     height: 1.5em;
     width: 1.5em;
     margin-inline-end: $padding-8;
   }
+
 }
 
 .book-menu {
@@ -129,30 +141,30 @@ ul.pagination {
     color: var(--color-link);
   }
 
-  input.toggle + label + ul {
+  input.toggle+label+ul {
     display: none;
   }
 
-  input.toggle:checked + label + ul {
+  input.toggle:checked+label+ul {
     display: block;
   }
 
-  input.toggle + label::after {
+  input.toggle+label::after {
     content: "▸";
   }
 
-  input.toggle:checked + label::after {
+  input.toggle:checked+label::after {
     content: "▾";
   }
 }
 
 // for RTL support
 body[dir="rtl"] .book-menu {
-  input.toggle + label::after {
+  input.toggle+label::after {
     content: "◂";
   }
 
-  input.toggle:checked + label::after {
+  input.toggle:checked+label::after {
     content: "▾";
   }
 }
@@ -160,13 +172,13 @@ body[dir="rtl"] .book-menu {
 .book-section-flat {
   margin: $padding-16 * 2 0;
 
-  > a,
-  > span,
-  > label {
+  >a,
+  >span,
+  >label {
     font-weight: bolder;
   }
 
-  > ul {
+  >ul {
     padding-inline-start: 0;
   }
 }
@@ -210,7 +222,7 @@ body[dir="rtl"] .book-menu {
     background: var(--gray-100);
     color: var(--body-font-color);
 
-    &:required + .book-search-spinner {
+    &:required+.book-search-spinner {
       display: block;
     }
   }
@@ -252,7 +264,7 @@ body[dir="rtl"] .book-menu {
     width: 1em;
   }
 
-  nav > ul > li:first-child {
+  nav>ul>li:first-child {
     margin-top: 0;
   }
 }
@@ -298,6 +310,7 @@ body[dir="rtl"] .book-menu {
 }
 
 @media screen and (max-width: $mobile-breakpoint) {
+
   #menu-control,
   #toc-control {
     display: inline;
@@ -318,11 +331,11 @@ body[dir="rtl"] .book-menu {
     display: block;
   }
 
-  #menu-control:focus ~ main label[for="menu-control"] {
+  #menu-control:focus~main label[for="menu-control"] {
     @include outline;
   }
 
-  #menu-control:checked ~ main {
+  #menu-control:checked~main {
     .book-menu {
       visibility: initial;
     }
@@ -346,18 +359,18 @@ body[dir="rtl"] .book-menu {
     }
   }
 
-  #toc-control:focus ~ main label[for="toc-control"] {
+  #toc-control:focus~main label[for="toc-control"] {
     @include outline;
   }
 
-  #toc-control:checked ~ main {
+  #toc-control:checked~main {
     .book-header aside {
       display: block;
     }
   }
 
   // for RTL support
-  body[dir="rtl"] #menu-control:checked ~ main {
+  body[dir="rtl"] #menu-control:checked~main {
     .book-menu .book-menu-content {
       transform: translateX(-$menu-width);
     }
@@ -366,6 +379,7 @@ body[dir="rtl"] .book-menu {
 
 // Extra space for big screens
 @media screen and (min-width: $container-max-width) {
+
   .book-page,
   .book-menu .book-menu-content,
   .book-toc .book-toc-content {
@@ -385,7 +399,8 @@ body[dir="rtl"] .book-menu {
   width: 300px;
   text-align: center;
 }
-a:hover + div {
+
+a:hover+div {
   display: block;
   float: right;
 }

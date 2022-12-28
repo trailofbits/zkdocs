@@ -7,7 +7,7 @@ needsVariableResetButton: true
 references: ["PS00"]
 ---
 # Short factoring proofs
-This system proves knowledge of the factorization of an integer $\varN$. Unlike [Product of two primes](product-product-primes/product-of-two-primes), this is not a proof that $\varN$ has two prime factors, only that the prover knows its factorization!
+This system proves knowledge of the factorization of an integer $\varN$. Unlike [Product of two primes]({{< relref "/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes.md" >}}), this is not a proof that $\varN$ has two prime factors, only that the prover knows its factorization!
 This protocol is not easy to implement securely, so we recommend special attention to sections [Choice of security parameters](#choice-of-security-parameters) and [Security pitfalls](#security-pitfalls).
 
 {{< hint info >}}
@@ -105,7 +105,7 @@ We detail the choice of security parameters based on the bit-size of $\varN$:
  * $A$ -- the size of the commit space; $A$ must be smaller than $\varN$ and satisfy $(\varN - \varphi(\varN) ) \ell B \ll A < \varN$. If you are sure that public moduli are of a fixed size --like $|\varN| = 2048$-- chose $A=2^{|\varN|}$. If the public modulus can have smaller bit-size but never below $|\varN| - 4$, chose $A=2^{|\varN| - 4}$.
 
 ## Security pitfalls
-- The two interactive protocols assume an honest verifier. To use this protocol in the context of malicious verifiers, use the non-interactive version. See [Using HVZKP in the wrong context](../../../security-of-zkps/when-to-use-hvzk).
+- The two interactive protocols assume an honest verifier. To use this protocol in the context of malicious verifiers, use the non-interactive version. See [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk" >}}).
 - Implementers of this proof system need to carefully choose the security parameters since failing to do it correctly leaks $\varphi(\varN)$:
 {{< hint danger >}}
 Consider the example where $\varN$ is 2048 bits, the product of two 1024 bit primes. $\varprover$ computes over $\naturals$ the value $$\vary = \varr + (\varN - \varphi(\varN))\cdot \vare$$ where $\sampleRange{\varr}{A}$ and $\sampleRange{\vare}{B}$. If $A$ and $B$ have similar size then $\frac{r}{e}$ will be very small and $\varverifier$ can compute $$-\left\lfloor \frac{\vary}{e} \right \rfloor + \varN = \left\lfloor \frac{r}{e} \right \rfloor + \varphi (\varN) \approx \varphi(\varN) \enspace ,$$ recovering $\varphi(\varN)$.
@@ -119,7 +119,7 @@ A variant of this attack happens when $|\frac{r}{e}| < \frac{|\varphi(\varN)|}{4
  * __Replay attacks:__ After a non-interactive proof is public, it will always be valid, and anyone could pretend to know how to prove it. To prevent this, consider adding additional information to the generation of the $\varz$ values, such as an ID of the prover and the verifier and a timestamp. The verifier must check the validity of these values when they verify the proof.
 
 ## Honest parameter generation $\mathsf{gen}_\varz$
- - Generate the $\varz_i$ values with a standard [nothing-up-my-sleeve construction](../../../protocol-primitives/nums) in $\zns{\varN}$, use binding parameters $\\{\varN, i\\}$, bitsize of $|\varN|$, and salt $\mathsf{"shortfactoringproofs"}$. To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.
+ - Generate the $\varz_i$ values with a standard [nothing-up-my-sleeve construction]({{< relref "/docs/zkdocs/protocol-primitives/nums.md" >}}) in $\zns{\varN}$, use binding parameters $\\{\varN, i\\}$, bitsize of $|\varN|$, and salt $\mathsf{"shortfactoringproofs"}$. To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.
 
 ## Auxiliary procedures
  - __Hash function $\hashbit{\cdot}{|B|}$:__ this hash function should be domain-separated and have a specific output size of $|B|$-bits. $\mathsf{TupleHash}$ satisfies these restrictions.

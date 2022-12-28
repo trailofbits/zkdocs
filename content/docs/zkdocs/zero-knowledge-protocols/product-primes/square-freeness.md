@@ -87,7 +87,7 @@ The participants only exchange one message, and there is no risk of leaking the 
 
 
 ## Auxiliary functions - $\mathsf{gen}_\rhovar$
-- Generate the $\rhovar_i$ values with a standard [nothing-up-my-sleeve construction](../../../protocol-primitives/nums) in $\z{\varN}$, use binding parameters $\\{\varN, i\\}$, bitsize of $|\varN|$, and salt $\mathsf{"squarefreeproof"}$. To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.
+- Generate the $\rhovar_i$ values with a standard [nothing-up-my-sleeve construction]({{< relref "/docs/zkdocs/protocol-primitives/nums.md" >}}) in $\z{\varN}$, use binding parameters $\\{\varN, i\\}$, bitsize of $|\varN|$, and salt $\mathsf{"squarefreeproof"}$. To prevent replay attacks consider including, in the binding parameters, ID's unique to the prover and verifier.
 
 
 
