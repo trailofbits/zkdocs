@@ -181,7 +181,11 @@ function resetVariableNames() {
                 continue
             }
             var innerSpan = elem.children[0];
-            innerSpan.textContent = key.split("_")[1];
+            if (key.startsWith("var_vec_")) {
+                innerSpan.textContent = key.split("_")[2];
+            } else if (key.startsWith("var_")) {
+                innerSpan.textContent = key.split("_")[1];
+            }
         }
     }
     window.localStorage.removeItem(url)

@@ -45,7 +45,8 @@ We assume that both parties agree with the security parameters $\alpha, \kappa$ 
  \alicebob{}{\{\sigmavar_i\}_{i=1}^m}{}
  \bobwork{\varN \gQ 1}
  \bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
- \bobwork{\sigmavar_i \gQ 0,}
+ \bobwork{\sigmavar_i \mod \varN \gQ 0,}
+ \bobseparator
  \bobwork{\rhovar_i \equalQ \sigmavar_i^\varN \mod \varN,}
  \bobwork{\text{ for }i=1,\ldots,m}
  \end{array}
@@ -68,7 +69,8 @@ The participants only exchange one message, and there is no risk of leaking the 
  \alicebob{}{\{\sigmavar_i\}_{i=1}^m}{}
  \bobwork{\varN \gQ 1}
  \bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
- \bobwork{\sigmavar_i \gQ 0,}
+ \bobwork{\sigmavar_i \mod \varN \gQ 0 ,}
+ \bobseparator
  \bobwork{\rhovar_i = \mathsf{gen}_\rhovar(\z{\varN}, \{\varN,i\})}
  \bobwork{\rhovar_i \equalQ \sigmavar_i^\varN \mod \varN,}
  \bobwork{\text{ for }i=1,\ldots,m}
@@ -77,6 +79,7 @@ The participants only exchange one message, and there is no risk of leaking the 
 {{< /rawhtml >}}
 
 ## Security pitfalls
+ * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
  * __Using the interactive protocol in a malicious verifier context:__ high severity issue which allows factoring $\varN$; see [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk" >}}).
  * **Sampling $\rhovar_i$ values uniformly and not using honest generation:** high severity issue that allows $\varprover$ to forge proofs by sampling $\sampleSet{\sigmavar_i}{\z\varN}$ and setting $\rhovar_i = \sigmavar_i^\varN\mod \varN$.
  * __Verifier trusting prover on the non-interactive protocol:__

@@ -37,6 +37,10 @@ The interactive identification protocol assumes an honest verifier and should no
  \bobalice{}{\vare}{}
  \alicework{\varz = \varr + \varx\cdot \vare \in \naturals}
  \alicebob{}{\varz}{}
+ \bobwork{\varu \neq 0 \mod \varN}
+ \bobwork{\varh \neq 0 \mod \varN}
+ \bobwork{\varz \neq 0 \mod \varN}
+ \bobseparator
  \bobwork{\varu \equalQ \varg^{\varz} \cdot \varh^\vare \mod \varN}
  \end{array}
  $$
@@ -58,6 +62,10 @@ creates the random $k$-bit challenge $\vare$ using domain-separated hash functio
  \alicework{\vare = \hashbit{\varg, \varN, \varh, \varu}{k}}
  \alicework{\varz = \varr + \varx\cdot \vare \in \naturals}
  \alicebob{}{\varu, \vare, \varz}{}
+ \bobwork{\varu \neq 0 \mod \varN}
+ \bobwork{\varh \neq 0 \mod \varN}
+ \bobwork{\varz \neq 0 \mod \varN}
+ \bobseparator
  \bobwork{\vare \equalQ \hashbit{\varg, \varN, \varh, \varu}{k}}
  \bobwork{\varu \equalQ \varg^{\varz} \cdot \varh^\vare \mod \varN}
  \end{array}
@@ -65,6 +73,7 @@ creates the random $k$-bit challenge $\vare$ using domain-separated hash functio
 {{< /rawhtml >}}
 
 ## Security pitfalls
+ * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
  * **Parameter choice:** Implementers must pay special attention to the choice of parameter values, in particular the relation between $2^k$ and $R$. If these were of similar size, since $\varz$ is computed over the naturals, $\varx$ would be approximately $\lfloor \varz/\vare\rfloor$.
  * __Using the interactive protocol in a malicious verifier context:__ high severity issue which allows recovering the secret $\varx$; see [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk" >}}).
  * __Verifier trusting prover on the non-interactive protocol:__

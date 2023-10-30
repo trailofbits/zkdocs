@@ -33,6 +33,9 @@ We present all variants in their non-interactive version.
  \alicework{\varc = \hash{\varg, \varq, \varh, \varu}}
  \alicework{\varz = \varr + \varx\cdot \varc}
  \alicebob{}{\varu, \varc, \varz}{}
+ \bobwork{\schnorrvalidate(\varu, \varh)}
+ \bobwork{\varz \neq 0 \mod \varq}
+ \bobseparator
  \bobwork{\varc \equalQ \hash{\varg, \varq, \varh, \varu}}
  \bobwork{\varg^\varz \equalQ \varu \cdot \varh ^\varc }
  \end{array}
@@ -51,6 +54,9 @@ In this variant, the prover does not send the value of $\varc$ which has to be c
  \alicework{\varc = \hash{\varg, \varq, \varh, \varu}}
  \alicework{\varz = \varr + \varx\cdot \varc}
  \alicebob{}{\varu, \varz}{}
+ \bobwork{\schnorrvalidate(\varu, \varh)}
+ \bobwork{\varz \neq 0 \mod \varq}
+ \bobseparator
  \bobwork{\bar{\varc} = \hash{\varg, \varq, \varh, \varu}}
  \bobwork{\varg^\varz \equalQ \varu \cdot \varh ^\overline{\varc} }
  \end{array}
@@ -71,6 +77,9 @@ In this variant, the prover uses a subtraction to compute the value of $\varz$.
  \alicework{\varc = \hash{\varg, \varq, \varh, \varu}}
  \alicework{\varz = \varr - \varx\cdot \varc}
  \alicebob{}{\varu, \varc, \varz}{}
+ \bobwork{\schnorrvalidate(\varu, \varh)}
+ \bobwork{\varz \neq 0 \mod \varq}
+ \bobseparator
  \bobwork{\varc \equalQ \hash{\varg, \varq, \varh, \varu}}
  \bobwork{\varg^\varz \cdot \varh ^\varc \equalQ \varu  }
  \end{array}
@@ -91,6 +100,9 @@ In this variant, the prover uses a subtraction to compute the value of $\varz$ a
  \alicework{\varc = \hash{\varg, \varq, \varh, \varu}}
  \alicework{\varz = \varr - \varx\cdot \varc}
  \alicebob{}{\varc, \varz}{}
+ \bobwork{\schnorrvalidate(\varh)}
+ \bobwork{\varz \neq 0 \mod \varq}
+ \bobseparator
  \bobwork{\bar{\varu} = \varg^\varz \cdot \varh^\varc}
  \bobwork{\bar{\varc} = \hash{\varg, \varq, \varh, \bar{\varu}}}
  \bobwork{\varc \equalQ \bar{\varc} }
@@ -98,11 +110,18 @@ In this variant, the prover uses a subtraction to compute the value of $\varz$ a
  $$
 {{< /rawhtml >}}
 
+
+where $\schnorrvalidate(\varh)$ aborts if any of the following conditions are not met:
+ * $\varh \neq 0 \text{ (point at infinity for EC groups)}$ and
+ * $\varh \inQ \cgroup\text{ (on curve check for EC groups)}$. If called with two arguments, $\schnorrvalidate(\varu, \varh)$ will abort if any of the following conditions are not met by either argument.
+
+
 ## Security pitfalls
 These variants suffer from the same pitfalls as the original Schnorr scheme, with some adjustments when $\varz$ is computed with a subtraction:
+ * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
  * __Verifier trusts prover:__
    * $\varverifier$ uses $g$ and $q$ provided in the proof instead of using publicly known values.
-   * When the $\varprover$ sends $\varc$, if the $\varverifier$ assumes that the hash $\varc$ is correctly computed and does not compute it themself. Both are high severity issues since $\varprover$ can forge proofs.
+   * When the $varprover$ sends $\varc$, if the $\varverifier$ assumes that the hash $\varc$ is correctly computed and does not compute it themself. Both are high severity issues since $\varprover$ can forge proofs.
  * __Weak Fiat-Shamir transformation:__ It is a common issue that some parameters are missing on the hash computation $\hash{\varg, \varq, \varh, \varu}$:
    * $\varh$ or $\varu$ missing: high severity issue. Read [Fiat-Shamir transformation]({{< ref "../protocol-primitives/fiat-shamir.md" >}}) for more details.
    * $\varg$ or $\varq$ missing: usually no issue, but it might be one if the Verifier uses these parameters directly from the proof structure. This way, the prover can provide bad generators or orders to forge the proof.

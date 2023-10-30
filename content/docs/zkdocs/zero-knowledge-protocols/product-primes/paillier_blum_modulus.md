@@ -41,8 +41,13 @@ $\varprover$ convinces $\varverifier$ that $\varN$ is the product of two primes 
  \bobwork{\varN \gQ 1}
  \bobwork{\varN \mod 2 \equalQ 1}
  \bobwork{\mathsf{isPrime}(\varN) \equalQ false}
- \bobwork{ \varz_i ^\varN \equalQ \vary_i \mod \varN  }
+ \bobwork{\varw \mod \varN \gQ 0}
+ \bobwork{\varx_i \mod \varN \gQ 0}
+ \bobwork{\varz_i \mod \varN \gQ 0}
  \bobwork{\vara_i, \varb_i \inQ \{0, 1\}  }
+ \bobwork{\text{ for }i=1,\ldots,m}
+ \bobseparator
+ \bobwork{ \varz_i ^\varN \equalQ \vary_i \mod \varN  }
  \bobwork{ \varx_i ^4 \equalQ (-1)^{\vara_i} \varw^{\varb_i} \vary_i \mod \varN  }
  \bobwork{\text{ for }i=1,\ldots,m}
  \end{array}
@@ -71,9 +76,14 @@ The participants only exchange one message and this proof can be used in the con
  \bobwork{\varN \mod 2 \equalQ 1}
  \bobwork{\mathsf{isPrime}(\varN) \equalQ false}
  \bobwork{J(\varw, \varN) \equalQ -1}
+ \bobwork{\varw \mod \varN \gQ 0}
+ \bobwork{\varx_i \mod \varN \gQ 0}
+ \bobwork{\varz_i \mod \varN \gQ 0}
+ \bobwork{\vara_i, \varb_i \inQ \{0, 1\}  }
+ \bobwork{\text{ for }i=1,\ldots,m}
+ \bobseparator
  \bobwork{\vary_i = \mathsf{gen}_\vary(\zns{\varN}, \{\varN, \varw, i\})}
  \bobwork{ \varz_i ^\varN \equalQ \vary_i \mod \varN  }
- \bobwork{\vara_i, \varb_i \inQ \{0, 1\}  }
  \bobwork{ \varx_i ^4 \equalQ (-1)^{\vara_i} \varw^{\varb_i} \vary_i \mod \varN  }
  \bobwork{\text{ for }i=1,\ldots,m}
  \end{array}
@@ -81,6 +91,7 @@ The participants only exchange one message and this proof can be used in the con
 {{< /rawhtml >}}
 
 ## Security pitfalls
+ * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
  * __Using the interactive protocol in a malicious verifier context:__ high severity issue which allows factoring the modulus $\varN$; see [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk" >}}).
  * **Not checking that $\varN \mod 2 \equalQ 1$ and $\varN \gQ 1$ before computing the Jacobi symbol $J(\varw, \varN)$**: the Jacobi symbol is only defined when $\varN$ is an odd positive integer. Failing to verify this might lead to a program panic, as in the [Go library](https://cs.opensource.google/go/go/+/refs/tags/go1.17.5:src/math/big/int.go;l=838).
  * __Verifier trusting prover on the non-interactive protocol:__

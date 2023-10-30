@@ -149,3 +149,104 @@ nist-key-management-1:
 ICWiki:
   title: Index calculus algorithm
   link: https://en.wikipedia.org/wiki/Index_calculus_algorithm
+
+Pedersen91:
+  title: "Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing"
+  year: 1991
+  link: https://www.cs.cornell.edu/courses/cs754/2001fa/129.PDF
+  tag: Pedersen91
+
+Blum81:
+  title: "Coin Flipping by Telephone: A Protocol for Solving Impossible Problems"
+  year: 1981
+  link: http://users.cms.caltech.edu/~vidick/teaching/101_crypto/Blum81_CoinFlipping.pdf
+  tag: Blum81
+
+ANSIX962:
+  title: "ANS X9.62-1998, Public Key Cryptography for the Financial Services Industry: The Elliptic Curve Digital Signature Algorithm (ECDSA)"
+  year: 1998
+  link: https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.202.2977&rep=rep1&type=pdf
+  tag: ANSIX962
+
+KZG2010:
+  title: "Polynomial Commitments"
+  apa: Kate, A., Zaverucha, G. M., & Goldberg, I. (2010, December). Constant-size commitments to polynomials and their applications. In International conference on the theory and application of cryptology and information security (pp. 177-194). Springer, Berlin, Heidelberg."
+  year: 2010
+  link: https://cacr.uwaterloo.ca/techreports/2010/cacr2010-10.pdf
+  tag: KZG2010
+
+pairing-curves:
+  title: "Pairing-Friendly Curves"
+  link: https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-pairing-friendly-curves-10
+  tag: "Pairing-Friendly Curves"
+
+BN05:
+  title: "Pairing-Friendly elliptic curves of prime order"
+  apa: "Paulo S. L. M. Barreto and Michael Naehrig. 2005. Pairing-Friendly elliptic curves of prime order. In Proceedings of the 12th international conference on Selected Areas in Cryptography (SAC'05). Springer-Verlag, Berlin, Heidelberg, 319–331. https://doi.org/10.1007/11693383_22"
+  link: https://dl.acm.org/doi/10.1007/11693383_22
+  tag: BN05
+
+BLS12-381:
+  title: "BLS12-381: New zk-SNARK Elliptic Curve Construction"
+  link: "https://electriccoin.co/blog/new-snark-curve/"
+  tag: BLS12-381
+
+
+pairing-based-crypto:
+  title: "Pairing-based cryptography"
+  link: https://en.wikipedia.org/wiki/Pairing-based_cryptography
+  tag: PBC
+
+verkle:
+  title: "Verkle trees"
+  link: https://vitalik.ca/general/2021/06/18/verkle.html
+  tag: "Verkle Trees"
+
+PLONK:
+  title: "PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge"
+  year: 2019
+  link: https://eprint.iacr.org/2019/953
+  tag: PLONK
+  apa: "Gabizon, A., Williamson, Z. J., & Ciobotaru, O. (2019). Plonk: Permutations over lagrange-bases for oecumenical noninteractive arguments of knowledge. Cryptology ePrint Archive."
+
+Groth16:
+  apa: "Groth, J. (2016, May). On the size of pairing-based non-interactive arguments. In Annual international conference on the theory and applications of cryptographic techniques (pp. 305-326). Springer, Berlin, Heidelberg."
+  year: 2016
+  link: https://eprint.iacr.org/2016/260
+  tag: Groth16
+  title: "On the size of pairing-based non-interactive arguments"
+
+Bootleproofs:
+  title: "Efficient Zero-Knowledge Arguments for Arithmetic Circuits in the Discrete Log Setting"
+  year: 2016
+  link: https://eprint.iacr.org/2016/263
+  tag: BCCGP16
+  apa: "Bootle, J., Cerulli, A., Chaidos, P., Groth, J., & Petit, C. (2016). Efficient zero-knowledge arguments for arithmetic circuits in the discrete log setting. In Advances in Cryptology-EUROCRYPT 2016: 35th Annual International Conference on the Theory and Applications of Cryptographic Techniques, Vienna, Austria, May 8-12, 2016, Proceedings, Part II 35 (pp. 327-357). Springer Berlin Heidelberg."
+
+Bulletproofs:
+  title: "Bulletproofs: Short Proofs for Confidential Transactions and More"
+  year: 2018
+  link: https://eprint.iacr.org/2017/1066
+  tag: BBBPWM18
+  apa: "Bünz, B., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., & Maxwell, G. (2018, May). Bulletproofs: Short proofs for confidential transactions and more. In 2018 IEEE symposium on security and privacy (SP) (pp. 315-334). IEEE."
+
+Halo:
+  title: "Recursive Proof Composition without a Trusted Setup"
+  year: 2019
+  link: https://eprint.iacr.org/2019/1021
+  tag: BGH19
+  apa: "Bowe, S., Grigg, J., & Hopwood, D. (2019). Recursive proof composition without a trusted setup. Cryptology ePrint Archive."
+
+Halo2:
+  title: "The halo2 Book: Comparison to other work"
+  year: 2022
+  link: https://github.com/zcash/halo2/blob/76b3f892a9d598923bbb5a747701fff44ae4c0ea/book/src/design/proving-system/comparison.md
+  tag: GBHL22
+  apa: "Grigg, J., Bowe, S., Hopwood, D., & Lai Y.T. (2022). The halo2 Book."
+
+ProofCarryingData:
+  title: "Proof-Carrying Data from Accumulation Schemes"
+  year: 2020
+  link: https://eprint.iacr.org/2020/499
+  tag: BCMS20
+  apa: "Bünz, B., Chiesa, A., Mishra, P., & Spooner, N. (2020). Recursive proof composition from accumulation schemes. In Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC, USA, November 16-19, 2020, Proceedings, Part II 18 (pp. 1-18). Springer International Publishing."

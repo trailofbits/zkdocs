@@ -42,6 +42,8 @@ The following diagram shows one of the protocol's $\ell$ iterations.
  \alicework{\vary = \varr + (\varN - \varphi(\varN))\cdot \vare \in \naturals}
  \alicebob{}{\vary}{}
  \bobwork{\vary \inQ \range{A}}
+ \bobwork{\varN \gQ 1}
+ \bobseparator
  \bobwork{\varx_i \equalQ \varz_i^{\vary- \vare\cdot\varN} \mod \varN \forb}
  \end{array}
  $$
@@ -69,6 +71,8 @@ This version assumes that $\varverifier$ is honest. A dishonest one would send $
  \alicework{\vary = \varr + (\varN - \varphi(\varN))\cdot \vare \in \naturals}
  \alicebob{}{\vary}{}
  \bobwork{\vary \inQ \range{A}}
+ \bobwork{\varN \gQ 1}
+ \bobseparator
  \bobwork{\varX \equalQ \hash{\bunchi{\varz_i^{\vary- \vare\cdot\varN} \mod \varN}}}
  \end{array}
  $$
@@ -90,6 +94,8 @@ We use the Fiat-Shamir heuristic, and the prover creates $\vare$ using a $|B|$-b
  \alicework{\vary = \varr + (\varN - \varphi(\varN))\cdot \vare \in \naturals}
  \alicebob{}{\vare, \vary, \varX}{}
  \bobwork{\vary \inQ \range{A}}
+ \bobwork{\varN \gQ 1}
+ \bobseparator
  \bobwork{\varz_i = \mathsf{gen}_\varz(\zns{\varN}, \{\varN, i\})}
  \bobwork{\vare = \hashbit{\varN, \bunch{\varz},\varX}{|B|}}
  \bobwork{\varX \equalQ \hash{\bunchi{\varz_i^{\vary- \vare\cdot\varN} \mod \varN}}}
@@ -105,6 +111,7 @@ We detail the choice of security parameters based on the bit-size of $\varN$:
  * $A$ -- the size of the commit space; $A$ must be smaller than $\varN$ and satisfy $(\varN - \varphi(\varN) ) \ell B \ll A < \varN$. If you are sure that public moduli are of a fixed size --like $|\varN| = 2048$-- chose $A=2^{|\varN|}$. If the public modulus can have smaller bit-size but never below $|\varN| - 4$, chose $A=2^{|\varN| - 4}$.
 
 ## Security pitfalls
+- **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
 - The two interactive protocols assume an honest verifier. To use this protocol in the context of malicious verifiers, use the non-interactive version. See [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk" >}}).
 - Implementers of this proof system need to carefully choose the security parameters since failing to do it correctly leaks $\varphi(\varN)$:
 {{< hint danger >}}
