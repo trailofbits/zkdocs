@@ -62,7 +62,7 @@ This scheme will be both _hiding_ and _binding_ due to the properties of the $\m
 
 It's possible to create a commitment scheme that is hiding but not binding. Suppose the commitment $c\_{A}$ above only included the lowest 16 bits of the HMAC output. It would take a fraction of a second for Bob to find $r'\neq r$ such that $c=\hmac{r'}{call'}$.
 
-Conversely, it's possible to have a commitment scheme that is binding but hiding. The easiest example would be for Bob to simply send $call$ to Alice, as in the original, insecure coin flip protocol. Bob can't change his mind after sending $c$, but nothing is hidden from Alice.
+Conversely, it's possible to have a commitment scheme that is binding but not hiding. The easiest example would be for Bob to simply send $call$ to Alice, as in the original, insecure coin flip protocol. Bob can't change his mind after sending $c$, but nothing is hidden from Alice.
 
 Some specialized commitment schemes provide features beyond simple binding and hiding. The KZG polynomial commitment scheme, for instance, enables Bob to commit to a polynomial $f$ while allowing him to prove that a pair $\left(x, y=f\left(x\right)\right)$ represents a correct evaluation of $f$.
 
