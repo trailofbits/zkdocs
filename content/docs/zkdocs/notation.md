@@ -20,6 +20,11 @@ This page is a glossary for notation and concepts present in the documentation.
  - $\varphi(n)$ is Euler's [totient function](https://en.wikipedia.org/wiki/Euler%27s_totient_function); for $n\geq 1$, it is the number of integers in $\\{1,\ldots, n\\}$ coprime with $n.$
  - $|S|$ is the *order* of a set $S$, i.e., its number of elements. For example, $|\zns{n}| = \varphi(n)$, and for a prime $n$, $|\zns{n}| = n-1$.
 
+## Vectors
+ - $\vec{a} \in \z{q}^n$ is a vector $(a_1,\dots,a_n)$ with $a_i \in \z{q}$ for all $i$.
+ - $c \cdot \vec{a}$ denotes the scalar product $(c \cdot a_1,\dots,c \cdot a_n)$.
+ - $\ip{\vec{a}}{\vec{b}}$ denotes the inner product $\sum_{i=1}^n a_i \cdot b_i$.
+
 ## Number-theory
  - $J(w, n)\in \\{-1, 0, 1\\}$ is the [Jacobi symbol](https://en.wikipedia.org/wiki/Jacobi_symbol) of $w$ modulo $n$, only defined for positive and odd $n$.
  - $J_n$ is the set of elements of $\zns{n}$ with Jacobi symbol $1$.

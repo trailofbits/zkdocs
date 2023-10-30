@@ -48,14 +48,14 @@ We only present the non-interactive version of this protocol, suitable to use in
  \bobwork{\mathsf{isPrime}(\varN) \equalQ false}
  \bobwork{\mathsf{isPrimePower}(\varN) \equalQ false}
  \bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
- \bobwork{\sigmavar_i \gQ 0,}
+ \bobwork{\sigmavar_i \mod \varN \gQ 0,}
+ \bobseparator
  \bobwork{\rhovar_i = \mathsf{gen}_\rhovar(\z{\varN}, \{\varN,i\})}
  \bobwork{\rhovar_i \equalQ \sigmavar_i^\varN \mod \varN,}
  \bobwork{\text{ for }i=1,\ldots,m_1}
-\bobseparator
  \bobwork{\thetavar_i = \mathsf{gen}_\rhovar(J_\varN, \{\varN, m_1 + i, F\})}
- \bobwork{|\{\muvar_i \text{ for }i=1,\ldots,m| \muvar_i \neq 0\}| \gQ 3m_2/8}
- \bobwork{\text{if } \muvar_i \neq 0 \text{ then }\thetavar_i \equalQ \muvar_i^2 \mod \varN}
+ \bobwork{|\{\muvar_i \text{ for }i=1,\ldots,m| \muvar_i \neq 0 \mod \varN\}| \gQ 3m_2/8}
+ \bobwork{\text{if } \muvar_i \neq 0 \mod \varN \text{ then }\thetavar_i \equalQ \muvar_i^2 \mod \varN}
  \bobwork{\text{ for }i=1,\ldots,m_2}
  \end{array}
  $$
@@ -68,6 +68,7 @@ We only present the non-interactive version of this protocol, suitable to use in
 
 ## Security pitfalls
 This protocol suffers from the same pitfalls as the [Square-free](../square-freeness#security-pitfalls) and [Two prime divisors](../two-prime-divisors#security-pitfalls) protocols. We include them here for clarity:
+ * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
  * **Sampling the $\rhovar_i$ or $\thetavar_i$ values uniformly and not using honest generation:** high severity issue that allows $\varprover$ to forge proofs by sampling $\sampleSet{\sigmavar_i,\muvar_i}{\z\varN}$, and setting $\rhovar_i = \sigmavar_i^\varN\mod \varN$ and $\thetavar_i = \muvar_i^2\mod \varN$ .
  * **Failing to include a fresh value in $\mathsf{gen}_\rhovar$ to generate $\thetavar_i$:** potential high severity issue since this means that all proofs for the same $\varN$ will have the same $\thetavar_i$ values; if the prover uses a probabilistic algorithm to compute square-roots, he can leak two different square-roots of the same value, allowing an attacker to factor $\varN$ using the same attack as [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk#the-case-of-the-two-prime-divisor-proof" >}}). If the square-root algorithm always returns the same square-root for a given $\rhovar_i$ this is not an issue.
  * __Verifier trusting prover on the non-interactive protocol:__

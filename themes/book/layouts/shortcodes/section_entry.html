@@ -1,0 +1,7 @@
+<dl>
+{{ $name := .Get 0 }}
+{{ $t := .Site.GetPage $name }}
+  <dt>
+    <a href="{{ $t.RelPermalink }}">{{ partial "docs/title" $t }}</a>
+  </dt>
+</dl>

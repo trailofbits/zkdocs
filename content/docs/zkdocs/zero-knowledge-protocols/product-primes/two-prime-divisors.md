@@ -47,8 +47,9 @@ Both parties have to agree on the security parameter $\kappa$ prior to the execu
  \bobwork{\mathsf{isPrime}(\varN) \equalQ false}
  \bobwork{\mathsf{isPrimePower}(\varN) \equalQ false}
  \bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
- \bobwork{|\{\sigmavar_i \text{ for }i=1,\ldots,m| \sigmavar_i \neq 0\}| \gQ 3m/8}
- \bobwork{\text{if } \sigmavar_i \neq 0 \text{ then }\rhovar_i \equalQ \sigmavar_i^2 \mod \varN}
+ \bobseparator
+ \bobwork{|\{\sigmavar_i \text{ for }i=1,\ldots,m| \sigmavar_i \neq 0 \mod \varN\}| \gQ 3m/8}
+ \bobwork{\text{if } \sigmavar_i \neq 0 \mod \varN \text{ then }\rhovar_i \equalQ \sigmavar_i^2 \mod \varN}
  \end{array}
  $$
 {{< /rawhtml >}}
@@ -78,14 +79,16 @@ The participants only exchange one message and this proof can be used in the con
  \bobwork{\mathsf{isPrime}(\varN) \equalQ false}
  \bobwork{\mathsf{isPrimePower}(\varN) \equalQ false}
  \bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
+ \bobseparator
  \bobwork{\rhovar_i = \mathsf{gen}_\rhovar(J_\varN, \{\varN,i, F\})}
- \bobwork{|\{\sigmavar_i \text{ for }i=1,\ldots,m| \sigmavar_i \neq 0\}| \gQ 3m/8}
- \bobwork{\text{if } \sigmavar_i \neq 0 \text{ then }\rhovar_i \equalQ \sigmavar_i^2 \mod \varN}
+ \bobwork{|\{\sigmavar_i \text{ for }i=1,\ldots,m| \sigmavar_i \neq 0 \mod \varN\}| \gQ 3m/8}
+ \bobwork{\text{if } \sigmavar_i \neq 0 \mod \varN \text{ then }\rhovar_i \equalQ \sigmavar_i^2 \mod \varN}
  \end{array}
  $$
 {{< /rawhtml >}}
 
 ## Security pitfalls
+ * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
  * __Using the interactive protocol in a malicious verifier context:__ high severity issue which allows factoring $\varN$; see [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk" >}}).
  * **Sampling $\rhovar_i$ values uniformly and not using honest generation:** high severity issue, allows $\varprover$ to forge proofs by sampling $\sampleSet{\sigmavar_i}{\z\varN}$ and setting $\rhovar_i = \sigmavar_i^2\mod \varN$.
  * **Failing to include a fresh value in $\mathsf{gen}_\rhovar$:** potential high severity issue since this means that all proofs for the same $\varN$ will have the same $\rhovar_i$; if the prover uses a probabilistic algorithm to compute square-roots, he can leak two different square-roots of the same value, allowing an attacker to factor $\varN$ using the same attack as [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk#the-case-of-the-two-prime-divisor-proof" >}}). If the square-root algorithm always returns the same square-root for a given $\rhovar_i$ this is not an issue.

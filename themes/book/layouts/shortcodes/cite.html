@@ -1,0 +1,5 @@
+{{ $ref := .Get 0}}
+{{ $details := index $.Site.Data.references $ref }}
+{{if $details }}
+    <a href="{{$details.link}}" title="{{$details.apa}}" target="_blank">[{{$details.tag}}]</a>
+{{end}}
