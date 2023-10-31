@@ -121,7 +121,7 @@ These variants suffer from the same pitfalls as the original Schnorr scheme, wit
  * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
  * __Verifier trusts prover:__
    * $\varverifier$ uses $g$ and $q$ provided in the proof instead of using publicly known values.
-   * When the $varprover$ sends $\varc$, if the $\varverifier$ assumes that the hash $\varc$ is correctly computed and does not compute it themself. Both are high severity issues since $\varprover$ can forge proofs.
+   * When the $\varprover$ sends $\varc$, if the $\varverifier$ assumes that the hash $\varc$ is correctly computed and does not compute it themself. Both are high severity issues since $\varprover$ can forge proofs.
  * __Weak Fiat-Shamir transformation:__ It is a common issue that some parameters are missing on the hash computation $\hash{\varg, \varq, \varh, \varu}$:
    * $\varh$ or $\varu$ missing: high severity issue. Read [Fiat-Shamir transformation]({{< ref "../protocol-primitives/fiat-shamir.md" >}}) for more details.
    * $\varg$ or $\varq$ missing: usually no issue, but it might be one if the Verifier uses these parameters directly from the proof structure. This way, the prover can provide bad generators or orders to forge the proof.
