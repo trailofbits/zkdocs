@@ -1,21 +1,21 @@
-<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Proves that a number is the product of two distinct primes: in parallel, run the square-freeness proof together with the two-prime-divisors proof."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Product of two primes"><meta property="og:description" content="Proves that a number is the product of two distinct primes: in parallel, run the square-freeness proof together with the two-prime-divisors proof."><meta property="og:type" content="article"><meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/"><meta property="article:section" content="docs"><title>Product of two primes | ZKDocs</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.6aece0f96007af353373ec1c05beb9d415830db47ac294f964054d8382bbb1e3.css integrity="sha256-auzg+WAHrzUzc+wcBb651BWDDbR6wpT5ZAVNg4K7seM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.f59d5509dd75169142820ff592c8e2fd128569e87ba6827e64cf7e761c483753.js integrity="sha256-9Z1VCd11FpFCgg/1ksji/RKFaeh7poJ+ZM9+dhxIN1M=" crossorigin=anonymous></script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-215689345-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script>
-<script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/22554992.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class=align-center href=/><img id=icon src=/TOB_Black.svg alt=Logo><div class="flex align-center"><img id=logo src=/logo.png alt=Logo><span>ZKDocs</span></div></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/ class=active>Product of two primes</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><script type=text/x-mathjax-config>
-  MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
-    loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action']},
-    tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] }}
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Proves that a number is the product of two distinct primes: in parallel, run the square-freeness proof together with the two-prime-divisors proof."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Product of two primes"><meta property="og:description" content="Proves that a number is the product of two distinct primes: in parallel, run the square-freeness proof together with the two-prime-divisors proof."><meta property="og:type" content="article"><meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/"><meta property="article:section" content="docs"><title>Product of two primes | ZKDocs</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.6aece0f96007af353373ec1c05beb9d415830db47ac294f964054d8382bbb1e3.css integrity="sha256-auzg+WAHrzUzc+wcBb651BWDDbR6wpT5ZAVNg4K7seM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.efb8dda88c29c848a340ea08957296610e56a3fd40e2b12ef92e19a7cabeac93.js integrity="sha256-77jdqIwpyEijQOoIlXKWYQ5Wo/1A4rEu+S4Zp8q+rJM=" crossorigin=anonymous></script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-215689345-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/22554992.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class=align-center href=/><img id=icon src=/TOB_Black.svg alt=Logo><div class="flex align-center"><img id=logo src=/logo.png alt=Logo><span>ZKDocs</span></div></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/ class=active>Product of two primes</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/ipa/>Inner Product Argument</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/commitments/>Commitment Schemes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/pedersen/>Pedersen Commitments</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/kzg_polynomial_commitment/>KZG Polynomial Commitments</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/ipa-pcs/>IPA Polynomial Commitment</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><script type=text/x-mathjax-config>
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
+  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
 });
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
-<script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
-<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script><script language=javascript type=text/javascript src=/js/interactive_variables.js></script><script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>$\newcommand{\coinheads}{\mathsf{HEADS}}$
+$\newcommand{\cointails}{\mathsf{TAILS}}$
+$\newcommand{\varalice}{\class{var var_Alice}{\text{Alice}}}$
+$\newcommand{\varbob}{\class{var var_Bob}{\text{Bob}}}$
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
 $\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
 $\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
 $\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
 $\newcommand{\work}[2]{#1 & & #2\\}$
 $\newcommand{\allwork}[1]{ & #1 & \\}$
+$\newcommand{\dupwork}[1]{#1 & & #1\\}$
 $\newcommand{\aliceseparator}{-------&&\\}$
 $\newcommand{\bobseparator}{&&-------\\}$
 $\newcommand{\foo}{\phantom{\text{bigarrowfitsallthis}}}$
@@ -41,6 +41,7 @@ $\newcommand{\sample}[1]{#1\sampleSymb\zq}$
 $\newcommand{\sampleGeneric}[2]{#1\sampleSymb#2}$
 $\newcommand{\sampleInterval}[2]{#1\sampleSymb\interval{#2}}$
 $\newcommand{\sampleRange}[2]{#1\sampleSymb\range{#2}}$
+$\newcommand{\sampleCgroup}[1]{#1\sampleSymb\cgroup}$
 $\newcommand{\samplezqs}[1]{\class{hover}{#1\sampleSymb\zqs}}$
 $\newcommand{\sampleN}[2]{\class{hover}{#1\sampleSymb\z{#2}}}$
 $\newcommand{\sampleNs}[2]{\class{hover}{#1\sampleSymb\z{#2}^\ast}}$
@@ -48,8 +49,14 @@ $\newcommand{\equalQ}{\overset{?}{=}}$
 $\newcommand{\gQ}{\overset{?}{>}}$
 $\newcommand{\inQ}{\overset{?}{\in}}$
 $\newcommand{\cgroup}{\mathbb{G}}$
-$\newcommand{\hash}[1]{\mathsf{Hash}({#1})}$
+$\newcommand{\Hash}{\mathsf{Hash}}$
+$\newcommand{\hash}[1]{\Hash({#1})}$
+$\newcommand{\HashToField}{\mathsf{HashToField}}$
+$\newcommand{\hashtofield}[1]{\HashToField({#1})}$
+$\newcommand{\HashToGroup}{\mathsf{HashToGroup}}$
+$\newcommand{\hashtogroup}[1]{\HashToGroup({#1})}$
 $\newcommand{\hashbit}[2]{\mathsf{Hash}({#1})\verb+[0:#2]+}$
+$\newcommand{\hmac}[2]{\mathsf{HMAC}_{#1}\left(#2\right)}$
 $\newcommand{\naturals}{\mathbb{N}}$
 $\newcommand{\sqfree}{L_\mathsf{square-free}}$
 $\newcommand{\ceil}[1]{\lceil #1 \rceil}$
@@ -65,8 +72,18 @@ $\newcommand{\varb}{\class{var var_b}{b}}$
 $\newcommand{\varc}{\class{var var_c}{c}}$
 $\newcommand{\vard}{\class{var var_d}{d}}$
 $\newcommand{\varh}{\class{var var_h}{h}}$
+$\newcommand{\varH}{\class{var var_H}{H}}$
 $\newcommand{\varg}{\class{var var_g}{g}}$
+$\newcommand{\varG}{\class{var var_G}{G}}$
+$\newcommand{\vari}{\class{var var_i}{i}}$
+$\newcommand{\varj}{\class{var var_j}{j}}$
+$\newcommand{\vars}{\class{var var_s}{s}}$
+$\newcommand{\vart}{\class{var var_t}{t}}$
 $\newcommand{\varu}{\class{var var_u}{u}}$
+$\newcommand{\varU}{\class{var var_U}{U}}$
+$\newcommand{\varl}{\class{var var_l}{l}}$
+$\newcommand{\varm}{\class{var var_m}{m}}$
+$\newcommand{\varn}{\class{var var_n}{n}}$
 $\newcommand{\varx}{\class{var var_x}{x}}$
 $\newcommand{\varX}{\class{var var_X}{X}}$
 $\newcommand{\varz}{\class{var var_z}{z}}$
@@ -75,7 +92,19 @@ $\newcommand{\varq}{\class{var var_q}{q}}$
 $\newcommand{\varp}{\class{var var_p}{p}}$
 $\newcommand{\vare}{\class{var var_e}{e}}$
 $\newcommand{\vary}{\class{var var_y}{y}}$
+$\newcommand{\varv}{\class{var var_v}{v}}$
 $\newcommand{\varw}{\class{var var_w}{w}}$
+$\newcommand{\varC}{\class{var var_C}{C}}$
+$\newcommand{\varf}{\class{var var_f}{f}}$
+$\newcommand{\varA}{\class{var var_A}{A}}$
+$\newcommand{\varB}{\class{var var_B}{B}}$
+$\newcommand{\varC}{\class{var var_C}{C}}$
+$\newcommand{\varL}{\class{var var_L}{L}}$
+$\newcommand{\varP}{\class{var var_P}{P}}$
+$\newcommand{\varR}{\class{var var_R}{R}}$
+$\newcommand{\varT}{\class{var var_T}{T}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varalpha}{\class{var var_alpha}{\alpha}}$
 $\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
 $\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
 $\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
@@ -84,9 +113,32 @@ $\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
 $\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
 $\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
 $\newcommand{\muvar}{\class{var var_μ}{\mu}}$
+$\renewcommand{\vec}[1]{\mathbf{#1}}$
+$\newcommand{\veca}{\vec{\class{var var_vec_a}{a}}}$
+$\newcommand{\vecb}{\vec{\class{var var_vec_b}{b}}}$
+$\newcommand{\vecc}{\vec{\class{var var_vec_c}{c}}}$
+$\newcommand{\vecs}{\vec{\class{var var_vec_s}{s}}}$
+$\newcommand{\vecG}{\vec{\class{var var_vec_G}{G}}}$
+$\newcommand{\vecH}{\vec{\class{var var_vec_H}{H}}}$
+$\newcommand{\vecg}{\vec{\class{var var_vec_g}{g}}}$
+$\newcommand{\vech}{\vec{\class{var var_vec_h}{h}}}$
 $\newcommand{\true}{\mathsf{true}}$
-$\newcommand{\false}{\mathsf{false}}$<div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
-<strong>Product of two primes</strong>
+$\newcommand{\false}{\mathsf{false}}$
+$\newcommand{\ctx}{\mathsf{ctx}}$
+$\newcommand{\coloneqq}{&#8788;}$
+$\newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}$
+$\newcommand{\uwork}[2]{\underline{#1} & & \underline{#2}\\}$
+
+$\newcommand{\aliceworks}[1]{#1 & &\\[-2pt]}$
+$\newcommand{\bobworks}[1]{ & & #1\\[-2pt]}$
+
+$\newcommand{\Halving}{\text{Halving}}$
+$\newcommand{\HalveProof}{\text{HalveProof}}$
+$\newcommand{\HalveVerify}{\text{HalveVerify}}$
+$\newcommand{\indent}{\qquad}$
+$\newcommand{\append}{\mathrm{append}}$
+$\newcommand{\schnorrvalidate}{\mathsf{schnorr}\_\mathsf{validate}}$<div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>Product of two primes</strong>
 <label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#number-is-the-product-of-two-primes>Number is the product of two primes</a></li><li><a href=#non-interactive-protocol>Non-interactive protocol</a></li><li><a href=#security-parameters>Security parameters</a></li><li><a href=#security-pitfalls>Security pitfalls</a></li><li><a href=#performance-considerations>Performance considerations</a></li><li><a href=#honest-parameter-generation-mathsfgen_rhovar>Honest parameter generation $\mathsf{gen}_\rhovar$</a></li><li><a href=#auxiliary-algorithms>Auxiliary algorithms</a></li></ul></nav></aside></header><article class=markdown><h2 id=number-is-the-product-of-two-primes>Number is the product of two primes
 <a class=anchor href=#number-is-the-product-of-two-primes>#</a></h2><p>To show that a number is the product of two distinct primes, we make use of the previous protocols to show that:</p><ul><li>$\varN$ is <a href=../square-freeness>square-free</a></li><li>$\varN$ <a href=../two-prime-divisors>only has two divisors</a></li></ul><p>Formally, we show that $\varN$ is in the set $$L_{pp} = \{N \in \naturals | N \text{ is odd and is the product of two distinct primes}\} = L_{ppp} \cap \sqfree.$$
 For this, we run the protocols from <a href=../square-freeness>Square-free</a> and <a href=../two-prime-divisors>Two prime divisors</a> in parallel for the same $N$.</p><blockquote class="book-hint info"><strong>Goal:</strong>
@@ -111,19 +163,19 @@ $\varprover$ convinces $\varverifier$ that $\varN$ is the product of two distinc
 \bobwork{\mathsf{isPrime}(\varN) \equalQ false}
 \bobwork{\mathsf{isPrimePower}(\varN) \equalQ false}
 \bobwork{\gcd(\varN, \Pi_\alpha) \equalQ 1}
-\bobwork{\sigmavar_i \gQ 0,}
+\bobwork{\sigmavar_i \mod \varN \gQ 0,}
+\bobseparator
 \bobwork{\rhovar_i = \mathsf{gen}_\rhovar(\z{\varN}, \{\varN,i\})}
 \bobwork{\rhovar_i \equalQ \sigmavar_i^\varN \mod \varN,}
 \bobwork{\text{ for }i=1,\ldots,m_1}
-\bobseparator
 \bobwork{\thetavar_i = \mathsf{gen}_\rhovar(J_\varN, \{\varN, m_1 + i, F\})}
-\bobwork{|\{\muvar_i \text{ for }i=1,\ldots,m| \muvar_i \neq 0\}| \gQ 3m_2/8}
-\bobwork{\text{if } \muvar_i \neq 0 \text{ then }\thetavar_i \equalQ \muvar_i^2 \mod \varN}
+\bobwork{|\{\muvar_i \text{ for }i=1,\ldots,m| \muvar_i \neq 0 \mod \varN\}| \gQ 3m_2/8}
+\bobwork{\text{if } \muvar_i \neq 0 \mod \varN \text{ then }\thetavar_i \equalQ \muvar_i^2 \mod \varN}
 \bobwork{\text{ for }i=1,\ldots,m_2}
 \end{array}
 $$<h2 id=security-parameters>Security parameters
 <a class=anchor href=#security-parameters>#</a></h2><ul><li>$\kappa = 128$</li><li>$m_1(\kappa=128, \alpha=65537) = 8$</li><li>$m_2(\kappa=128) = 2840$</li></ul><h2 id=security-pitfalls>Security pitfalls
-<a class=anchor href=#security-pitfalls>#</a></h2><p>This protocol suffers from the same pitfalls as the <a href=../square-freeness#security-pitfalls>Square-free</a> and <a href=../two-prime-divisors#security-pitfalls>Two prime divisors</a> protocols. We include them here for clarity:</p><ul><li><strong>Sampling the $\rhovar_i$ or $\thetavar_i$ values uniformly and not using honest generation:</strong> high severity issue that allows $\varprover$ to forge proofs by sampling $\sampleSet{\sigmavar_i,\muvar_i}{\z\varN}$, and setting $\rhovar_i = \sigmavar_i^\varN\mod \varN$ and $\thetavar_i = \muvar_i^2\mod \varN$ .</li><li><strong>Failing to include a fresh value in $\mathsf{gen}_\rhovar$ to generate $\thetavar_i$:</strong> potential high severity issue since this means that all proofs for the same $\varN$ will have the same $\thetavar_i$ values; if the prover uses a probabilistic algorithm to compute square-roots, he can leak two different square-roots of the same value, allowing an attacker to factor $\varN$ using the same attack as <a href=/docs/zkdocs/security-of-zkps/when-to-use-hvzk/#the-case-of-the-two-prime-divisor-proof>Using HVZKP in the wrong context</a>. If the square-root algorithm always returns the same square-root for a given $\rhovar_i$ this is not an issue.</li><li><strong>Verifier trusting prover on the non-interactive protocol:</strong><ul><li>$\varverifier$ uses $\rhovar_i$ or $\thetavar_i$ values provided by $\varprover$ instead of generating them: this is a high severity issue since the prover can trivially forge proofs (e.g., by sending $\rhovar_i=1, \sigmavar_i=1$ and $\thetavar_i = 1, \muvar_i=1$).</li><li>$\varverifier$ does not validate $\sigmavar_i$, $\muvar_i$ as valid values modulo $\varN$ (between 0 and $\varN -1)$: this allows replaying the same proof with <em>different</em> values with $\sigmavar_i + k\varN$, $\muvar_i + k&rsquo;\varN$.</li><li>$\varverifier$ does not compare the number of received $\sigmavar_i$ with $m_1$ and $\muvar_i$ with $m_2$: this can lead to the prover bypassing proof verification by sending an empty list, or fewer than $m_1$ or $m_2$ elements.</li></ul></li><li><strong>Replay attacks:</strong> After a non-interactive proof is public, it will always be valid and anyone could pretend to know how to prove the original statement. To prevent this, consider adding additional information to the generation of $\rhovar_i$ and $\thetavar_i$ values such as an ID of both the prover and the verifier, and a timestamp. The verifier must check the validity of these values when they verify the proof.</li></ul><h2 id=performance-considerations>Performance considerations
+<a class=anchor href=#security-pitfalls>#</a></h2><p>This protocol suffers from the same pitfalls as the <a href=../square-freeness#security-pitfalls>Square-free</a> and <a href=../two-prime-divisors#security-pitfalls>Two prime divisors</a> protocols. We include them here for clarity:</p><ul><li><strong>Verifier input validation:</strong> Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.</li><li><strong>Sampling the $\rhovar_i$ or $\thetavar_i$ values uniformly and not using honest generation:</strong> high severity issue that allows $\varprover$ to forge proofs by sampling $\sampleSet{\sigmavar_i,\muvar_i}{\z\varN}$, and setting $\rhovar_i = \sigmavar_i^\varN\mod \varN$ and $\thetavar_i = \muvar_i^2\mod \varN$ .</li><li><strong>Failing to include a fresh value in $\mathsf{gen}_\rhovar$ to generate $\thetavar_i$:</strong> potential high severity issue since this means that all proofs for the same $\varN$ will have the same $\thetavar_i$ values; if the prover uses a probabilistic algorithm to compute square-roots, he can leak two different square-roots of the same value, allowing an attacker to factor $\varN$ using the same attack as <a href=/docs/zkdocs/security-of-zkps/when-to-use-hvzk/#the-case-of-the-two-prime-divisor-proof>Using HVZKP in the wrong context</a>. If the square-root algorithm always returns the same square-root for a given $\rhovar_i$ this is not an issue.</li><li><strong>Verifier trusting prover on the non-interactive protocol:</strong><ul><li>$\varverifier$ uses $\rhovar_i$ or $\thetavar_i$ values provided by $\varprover$ instead of generating them: this is a high severity issue since the prover can trivially forge proofs (e.g., by sending $\rhovar_i=1, \sigmavar_i=1$ and $\thetavar_i = 1, \muvar_i=1$).</li><li>$\varverifier$ does not validate $\sigmavar_i$, $\muvar_i$ as valid values modulo $\varN$ (between 0 and $\varN -1)$: this allows replaying the same proof with <em>different</em> values with $\sigmavar_i + k\varN$, $\muvar_i + k&rsquo;\varN$.</li><li>$\varverifier$ does not compare the number of received $\sigmavar_i$ with $m_1$ and $\muvar_i$ with $m_2$: this can lead to the prover bypassing proof verification by sending an empty list, or fewer than $m_1$ or $m_2$ elements.</li></ul></li><li><strong>Replay attacks:</strong> After a non-interactive proof is public, it will always be valid and anyone could pretend to know how to prove the original statement. To prevent this, consider adding additional information to the generation of $\rhovar_i$ and $\thetavar_i$ values such as an ID of both the prover and the verifier, and a timestamp. The verifier must check the validity of these values when they verify the proof.</li></ul><h2 id=performance-considerations>Performance considerations
 <a class=anchor href=#performance-considerations>#</a></h2><p>For the desired security level of $\kappa=128$, we need to generate 2840 $\muvar_i$ elements. Because of this, this proof system can be very computationally expensive. If this dramatically affects the performance of your protocol, and your $\varN$ is the product of two primes congruent with $3\mod 4$, we recommend using an alternative proof system, the <a href=../paillier_blum_modulus>Paillier-Blum modulus</a> proof.</p><h2 id=honest-parameter-generation-mathsfgen_rhovar>Honest parameter generation $\mathsf{gen}_\rhovar$
 <a class=anchor href=#honest-parameter-generation-mathsfgen_rhovar>#</a></h2><ul><li>Generate the $\rhovar_i$ and $\thetavar_i$ values with a standard <a href=/docs/zkdocs/protocol-primitives/nums/>nothing-up-my-sleeve construction</a>:<ul><li>$\rhovar_i$ in $\z{\varN}$, use binding parameters $\{\varN, i\}$, bitsize of $|\varN|$, and salt $\mathsf{&ldquo;productoftwoprimesproof&rdquo;}$.</li><li>$\thetavar_i$ in $J_{\varN}$, use binding parameters $\{\varN, i, F\}$, bitsize of $|\varN|$, and salt $\mathsf{&ldquo;productoftwoprimesproof&rdquo;}$. $F$ should be a fresh value unique to the current proof.</li></ul></li><li>To prevent replay attacks consider including, in the binding parameters, ID&rsquo;s unique to the prover and verifier.</li></ul><h2 id=auxiliary-algorithms>Auxiliary algorithms
 <a class=anchor href=#auxiliary-algorithms>#</a></h2><ul><li><p>To calculate the <a href=https://en.wikipedia.org/wiki/Jacobi_symbol>Jacobi symbol</a> use Algorithm 2.149 of the <a href=https://cacr.uwaterloo.ca/hac/>Handbook of Applied Cryptography</a>.</p></li><li><p>To calculate square-roots modulo $\varN$ use Algorithm 3.44 of the <a href=https://cacr.uwaterloo.ca/hac/>Handbook of Applied Cryptography</a>.</p></li><li><p>To implement $\mathsf{isPrimePower}$, a simple algorithm is <a href=https://cstheory.stackexchange.com/questions/2077/how-to-check-if-a-number-is-a-perfect-power-in-polynomial-time>here</a> and also explained on page 3 of the <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.532.7639&amp;rep=rep1&amp;type=pdf">AKS paper</a>. Note 3.6 of the <a href=https://cacr.uwaterloo.ca/hac/about/chap3.pdf>Handbook of Applied Cryptography</a> also has a description.</p></li><li><p>Most libraries will have a primality testing routine for the $\mathsf{isPrime}$ function.</p></li></ul><h2>References <a class=anchor href=#references>#</a></h2><ul><li>[GRSB19] <a href=https://eprint.iacr.org/2018/057.pdf title="Goldberg, S., Reyzin, L., Sagga, O., & Baldimtsi, F. (2019, December). Efficient noninteractive certification of RSA moduli and beyond. In International Conference on the Theory and Application of Cryptology and Information Security (pp. 700-727). Springer, Cham." target=_blank>Efficient noninteractive certification of RSA moduli and beyond</a> (2019).</li></ul><ul><li><a href=https://en.wikipedia.org/wiki/Jacobi_symbol title target=_blank>Jacobi symbol</a>.</li></ul><ul><li>[AP18] <a href=https://eprint.iacr.org/2018/013.pdf title="Auerbach, B., & Poettering, B. (2018, March). Hashing solutions instead of generating problems: on the interactive certification of RSA moduli. In IACR International Workshop on Public Key Cryptography (pp. 403-430). Springer, Cham." target=_blank>Hashing solutions instead of generating problems: on the interactive certification of RSA moduli.</a> (2018).</li></ul><ul><li>[HOC] <a href=https://cacr.uwaterloo.ca/hac/ title="Menezes, A. J., Van Oorschot, P. C., & Vanstone, S. A. (2018). Handbook of Applied Cryptography. CRC press." target=_blank>Handbook of Applied Cryptography</a> (2018).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><article class=markdown><br><br><hr><div style=text-align:right><a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |

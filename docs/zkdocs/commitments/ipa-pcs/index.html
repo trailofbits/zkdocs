@@ -1,0 +1,271 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="An overview of the Inner Product Argument polynomial commitment scheme"><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="IPA Polynomial Commitment"><meta property="og:description" content="An overview of the Inner Product Argument polynomial commitment scheme"><meta property="og:type" content="article"><meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/commitments/ipa-pcs/"><meta property="article:section" content="docs"><title>IPA Polynomial Commitment | ZKDocs</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.6aece0f96007af353373ec1c05beb9d415830db47ac294f964054d8382bbb1e3.css integrity="sha256-auzg+WAHrzUzc+wcBb651BWDDbR6wpT5ZAVNg4K7seM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.efb8dda88c29c848a340ea08957296610e56a3fd40e2b12ef92e19a7cabeac93.js integrity="sha256-77jdqIwpyEijQOoIlXKWYQ5Wo/1A4rEu+S4Zp8q+rJM=" crossorigin=anonymous></script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-215689345-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/22554992.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class=align-center href=/><img id=icon src=/TOB_Black.svg alt=Logo><div class="flex align-center"><img id=logo src=/logo.png alt=Logo><span>ZKDocs</span></div></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/ipa/>Inner Product Argument</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/commitments/>Commitment Schemes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/pedersen/>Pedersen Commitments</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/kzg_polynomial_commitment/>KZG Polynomial Commitments</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/ipa-pcs/ class=active>IPA Polynomial Commitment</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><script type=text/x-mathjax-config>
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
+  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script><script language=javascript type=text/javascript src=/js/interactive_variables.js></script><script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>$\newcommand{\coinheads}{\mathsf{HEADS}}$
+$\newcommand{\cointails}{\mathsf{TAILS}}$
+$\newcommand{\varalice}{\class{var var_Alice}{\text{Alice}}}$
+$\newcommand{\varbob}{\class{var var_Bob}{\text{Bob}}}$
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+$\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
+$\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
+$\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
+$\newcommand{\work}[2]{#1 & & #2\\}$
+$\newcommand{\allwork}[1]{ & #1 & \\}$
+$\newcommand{\dupwork}[1]{#1 & & #1\\}$
+$\newcommand{\aliceseparator}{-------&&\\}$
+$\newcommand{\bobseparator}{&&-------\\}$
+$\newcommand{\foo}{\phantom{\text{bigarrowfitsallthis}}}$
+$\newcommand{\ra}[1]{%
+\vphantom{\xrightarrow{asd}}%
+\smash{\xrightarrow[\foo]{#1}}%
+}$
+$\newcommand{\la}[1]{%
+\vphantom{\xleftarrow{asd}}%
+\smash{\xleftarrow[\foo]{#1}}%
+}$
+$\newcommand{\z}[1]{\mathbb{Z}_{#1}}$
+$\newcommand{\zq}{\mathbb{Z}_\varq}$
+$\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
+$\newcommand{\zps}{\mathbb{Z}_p^\ast}$
+$\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
+$\require{action}
+\newcommand{\sampleSymb}{
+{\overset{\$}{\leftarrow}}
+}$
+$\newcommand{\field}[1]{\mathbb{F}_{#1}}$
+$\newcommand{\sample}[1]{#1\sampleSymb\zq}$
+$\newcommand{\sampleGeneric}[2]{#1\sampleSymb#2}$
+$\newcommand{\sampleInterval}[2]{#1\sampleSymb\interval{#2}}$
+$\newcommand{\sampleRange}[2]{#1\sampleSymb\range{#2}}$
+$\newcommand{\sampleCgroup}[1]{#1\sampleSymb\cgroup}$
+$\newcommand{\samplezqs}[1]{\class{hover}{#1\sampleSymb\zqs}}$
+$\newcommand{\sampleN}[2]{\class{hover}{#1\sampleSymb\z{#2}}}$
+$\newcommand{\sampleNs}[2]{\class{hover}{#1\sampleSymb\z{#2}^\ast}}$
+$\newcommand{\equalQ}{\overset{?}{=}}$
+$\newcommand{\gQ}{\overset{?}{>}}$
+$\newcommand{\inQ}{\overset{?}{\in}}$
+$\newcommand{\cgroup}{\mathbb{G}}$
+$\newcommand{\Hash}{\mathsf{Hash}}$
+$\newcommand{\hash}[1]{\Hash({#1})}$
+$\newcommand{\HashToField}{\mathsf{HashToField}}$
+$\newcommand{\hashtofield}[1]{\HashToField({#1})}$
+$\newcommand{\HashToGroup}{\mathsf{HashToGroup}}$
+$\newcommand{\hashtogroup}[1]{\HashToGroup({#1})}$
+$\newcommand{\hashbit}[2]{\mathsf{Hash}({#1})\verb+[0:#2]+}$
+$\newcommand{\hmac}[2]{\mathsf{HMAC}_{#1}\left(#2\right)}$
+$\newcommand{\naturals}{\mathbb{N}}$
+$\newcommand{\sqfree}{L_\mathsf{square-free}}$
+$\newcommand{\ceil}[1]{\lceil #1 \rceil}$
+$\newcommand{\sampleSet}[2]{\class{hover}{#1\sampleSymb#2}}$
+$\newcommand{\bunch}[1]{\{ #1_i\}_{i=1}^m}$
+$\newcommand{\bunchi}[1]{\{ #1\}_{i=1}^m}$
+$\newcommand{\forb}{\text{ for }i=1,\ldots,m}$
+$\newcommand{\interval}[1]{[0, #1[}$
+$\newcommand{\range}[1]{[#1]}$
+$\newcommand{\rangeone}[1]{\{1, \dots,#1 -1 \}}$
+$\newcommand{\vara}{\class{var var_a}{a}}$
+$\newcommand{\varb}{\class{var var_b}{b}}$
+$\newcommand{\varc}{\class{var var_c}{c}}$
+$\newcommand{\vard}{\class{var var_d}{d}}$
+$\newcommand{\varh}{\class{var var_h}{h}}$
+$\newcommand{\varH}{\class{var var_H}{H}}$
+$\newcommand{\varg}{\class{var var_g}{g}}$
+$\newcommand{\varG}{\class{var var_G}{G}}$
+$\newcommand{\vari}{\class{var var_i}{i}}$
+$\newcommand{\varj}{\class{var var_j}{j}}$
+$\newcommand{\vars}{\class{var var_s}{s}}$
+$\newcommand{\vart}{\class{var var_t}{t}}$
+$\newcommand{\varu}{\class{var var_u}{u}}$
+$\newcommand{\varU}{\class{var var_U}{U}}$
+$\newcommand{\varl}{\class{var var_l}{l}}$
+$\newcommand{\varm}{\class{var var_m}{m}}$
+$\newcommand{\varn}{\class{var var_n}{n}}$
+$\newcommand{\varx}{\class{var var_x}{x}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varz}{\class{var var_z}{z}}$
+$\newcommand{\varr}{\class{var var_r}{r}}$
+$\newcommand{\varq}{\class{var var_q}{q}}$
+$\newcommand{\varp}{\class{var var_p}{p}}$
+$\newcommand{\vare}{\class{var var_e}{e}}$
+$\newcommand{\vary}{\class{var var_y}{y}}$
+$\newcommand{\varv}{\class{var var_v}{v}}$
+$\newcommand{\varw}{\class{var var_w}{w}}$
+$\newcommand{\varC}{\class{var var_C}{C}}$
+$\newcommand{\varf}{\class{var var_f}{f}}$
+$\newcommand{\varA}{\class{var var_A}{A}}$
+$\newcommand{\varB}{\class{var var_B}{B}}$
+$\newcommand{\varC}{\class{var var_C}{C}}$
+$\newcommand{\varL}{\class{var var_L}{L}}$
+$\newcommand{\varP}{\class{var var_P}{P}}$
+$\newcommand{\varR}{\class{var var_R}{R}}$
+$\newcommand{\varT}{\class{var var_T}{T}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varalpha}{\class{var var_alpha}{\alpha}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
+$\newcommand{\varN}{\class{var var_N}{N}}$
+$\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
+$\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
+$\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
+$\newcommand{\muvar}{\class{var var_μ}{\mu}}$
+$\renewcommand{\vec}[1]{\mathbf{#1}}$
+$\newcommand{\veca}{\vec{\class{var var_vec_a}{a}}}$
+$\newcommand{\vecb}{\vec{\class{var var_vec_b}{b}}}$
+$\newcommand{\vecc}{\vec{\class{var var_vec_c}{c}}}$
+$\newcommand{\vecs}{\vec{\class{var var_vec_s}{s}}}$
+$\newcommand{\vecG}{\vec{\class{var var_vec_G}{G}}}$
+$\newcommand{\vecH}{\vec{\class{var var_vec_H}{H}}}$
+$\newcommand{\vecg}{\vec{\class{var var_vec_g}{g}}}$
+$\newcommand{\vech}{\vec{\class{var var_vec_h}{h}}}$
+$\newcommand{\true}{\mathsf{true}}$
+$\newcommand{\false}{\mathsf{false}}$
+$\newcommand{\ctx}{\mathsf{ctx}}$
+$\newcommand{\coloneqq}{&#8788;}$
+$\newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}$
+$\newcommand{\uwork}[2]{\underline{#1} & & \underline{#2}\\}$
+
+$\newcommand{\aliceworks}[1]{#1 & &\\[-2pt]}$
+$\newcommand{\bobworks}[1]{ & & #1\\[-2pt]}$
+
+$\newcommand{\Halving}{\text{Halving}}$
+$\newcommand{\HalveProof}{\text{HalveProof}}$
+$\newcommand{\HalveVerify}{\text{HalveVerify}}$
+$\newcommand{\indent}{\qquad}$
+$\newcommand{\append}{\mathrm{append}}$
+$\newcommand{\schnorrvalidate}{\mathsf{schnorr}\_\mathsf{validate}}$<div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>IPA Polynomial Commitment</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#overview-of-ipa-polynomial-commitment>Overview of IPA Polynomial Commitment</a></li><li><a href=#polynomial-commitment-from-ipa>Polynomial Commitment from IPA</a><ul><li><a href=#version-1-a-simple-non-hiding-construction>Version 1: A Simple, Non-Hiding Construction</a></li><li><a href=#version-2-hiding-construction>Version 2: Hiding Construction</a></li></ul></li><li><a href=#security-assumptions>Security Assumptions</a></li><li><a href=#security-pitfalls>Security Pitfalls</a></li><li><a href=#see-also>See also</a></li></ul></nav></aside></header><article class=markdown><h1 id=ipa-polynomial-commitment>IPA Polynomial Commitment
+<a class=anchor href=#ipa-polynomial-commitment>#</a></h1><h2 id=overview-of-ipa-polynomial-commitment>Overview of IPA Polynomial Commitment
+<a class=anchor href=#overview-of-ipa-polynomial-commitment>#</a></h2><p>The inner product argument was introduced by Bootle et al.
+<a href=https://eprint.iacr.org/2016/263 title="Bootle, J., Cerulli, A., Chaidos, P., Groth, J., & Petit, C. (2016). Efficient zero-knowledge arguments for arithmetic circuits in the discrete log setting. In Advances in Cryptology-EUROCRYPT 2016: 35th Annual International Conference on the Theory and Applications of Cryptographic Techniques, Vienna, Austria, May 8-12, 2016, Proceedings, Part II 35 (pp. 327-357). Springer Berlin Heidelberg." target=_blank>[BCCGP16]</a>
+, and refined in Bulletproofs
+<a href=https://eprint.iacr.org/2017/1066 title="Bünz, B., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., & Maxwell, G. (2018, May). Bulletproofs: Short proofs for confidential transactions and more. In 2018 IEEE symposium on security and privacy (SP) (pp. 315-334). IEEE." target=_blank>[BBBPWM18]</a>
+. This protocol was specialized to polynomial commitments in
+<a href=https://eprint.iacr.org/2019/1021 title="Bowe, S., Grigg, J., & Hopwood, D. (2019). Recursive proof composition without a trusted setup. Cryptology ePrint Archive." target=_blank>[BGH19]</a>
+then further studied and refined in
+<a href=https://eprint.iacr.org/2020/499 title="Bünz, B., Chiesa, A., Mishra, P., & Spooner, N. (2020). Recursive proof composition from accumulation schemes. In Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC, USA, November 16-19, 2020, Proceedings, Part II 18 (pp. 1-18). Springer International Publishing." target=_blank>[BCMS20]</a>
+.</p><blockquote class="book-hint info"><strong>Goal:</strong>
+$\varprover$ convinces $\varverifier$ that they know a secret polynomial $\varf$ such that $\varf(\varx) = \varv$, for evaluation point $\varx$ and evaluation $\varv$; and this satisfies the polynomial commitment $\varC_{\varP}$.</blockquote><ul><li><p><strong>Public input:</strong> a cyclic additive group $\cgroup$ of prime order $\varq$ and $n+1$ random $\cgroup$ generators $\vecG = (\varG_1,\dots,\varG_n)$ and $\varH$; polynomial commitment $\varC_{\varP} \in \cgroup$, scalar $\varx \in \zq$, and scalar $\varv \in \zq$.</p></li><li><p><strong>Private input:</strong> $\varprover$ knows secret polynomial $\varf$ that satisfies the polynomial commitment $\varC_P$ and $\varf(\varx) = \varv$.</p></li></ul><p><strong>Comparison with <a href=https://www.zkdocs.com/docs/zkdocs/commitments/kzg_polynomial_commitment/>KZG Polynomial Commitments</a>.</strong>
+IPA PCS requires fewer assumptions but is less efficient. IPA does not require a trusted setup and only assumes discrete log, whereas KZG requires a trusted setup and assumes pairings. But, IPA proofs are $O(\log \varn)$ and the verifier needs to do $O(n)$ work, whereas KZG proofs are $O(1)$ and the verifier only needs to do $O(1)$ work. That said, the verification time for IPA proofs can be amortized over multiple runs.</p><h2 id=polynomial-commitment-from-ipa>Polynomial Commitment from IPA
+<a class=anchor href=#polynomial-commitment-from-ipa>#</a></h2><p>In this section, we build polynomial commitments from IPA over two successive versions.</p><h3 id=version-1-a-simple-non-hiding-construction>Version 1: A Simple, Non-Hiding Construction
+<a class=anchor href=#version-1-a-simple-non-hiding-construction>#</a></h3><p>The most straightforward way to do polynomial commitments is to interpret the polynomial $f(\varX) = \vara_1 + \vara_2 \varX + \vara_3 \varX^2 + \cdots + \vara_{\varn} \varX^{\varn-1}$ as a vector of coefficients $(a_1,\dots,a_{\varn})$ and fix the other vector to be powers of the evaluation point $\vecb = (1, \varx, \varx^2, \dots, \varx^{\varn-1})$. Then their inner product
+$$
+\ip{\veca}{\vecb} = \vara_1 + \vara_2 \varx + \vara_3 \varx^2 + \cdots + \vara_{\varn} \varx^{\varn-1}
+$$
+is the evaluation $f(x)$.</p><p>Since $\vecb$ is now public, the prover no longer has to commit to it. So, the verifier can compute the reduced value $\vecb_{\varm}$ similar to how it computes $\vecG_{\varm}$ in the Inner Product Argument using the polynomial $\varg(\varX) \coloneqq \prod_{i=0}^{\varm-1} (1 + \varu_{\varm-i} \varX^{2^i})$:
+$$
+\begin{align}
+\vecG_{\varm} &= \varG_1 + \varu_{\varm} \varG_2 + \cdots + \varu_1 \varu_2 \cdots \varu_{\varm} \cdot \varG_n = \ip{\vecg}{\vecG}\\
+\vecb_{\varm} &= 1 + \varu_{\varm} \varx + \cdots + \varu_1 \varu_2 \cdots \varu_{\varm} \cdot \varx^{\varn-1} = \ip{\vecg}{\vecb}\\
+\end{align}
+$$</p><p>The full protocol, adapted from Version 4 in <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/ipa/>Inner Product Argument</a> is as follows:</p>$$
+\begin{array}{lcl}
+\uwork{\varprover}{\varverifier}
+\aliceworks{\veca \coloneqq (\vara_1,\dots,\vara_{\varn})}
+\dupwork{\vecb \coloneqq (1, \varx, \varx^2, \dots, \varx^{\varn-1})}
+\aliceworks{\varC_P \coloneqq \ip{\veca}{\vecG}}
+\aliceworks{\varU \coloneqq \hashtogroup{\vecG, \varx, \varv, \varC_P}}
+\aliceworks{\varC_0 \coloneqq \varC_P + \ip{\veca}{\vecb} \cdot \varU}
+\aliceworks{\ctx \gets (\vecG, \varx, \varv, \varC_P, \varU, \varC_0)}
+\aliceworks{\veca_0 \coloneqq \veca;\; \vecb_0 \coloneqq \vecb;\; \vecG_0 \coloneqq \vecG}
+\aliceworks{\text{For $i \coloneqq 1$ to $\varm$:}}
+\aliceworks{\indent \varL_i \coloneqq \ip{\veca_{i-1,R}}{\vecG_{i-1,L}} + \ip{\veca_{i-1,R}}{\vecb_{i-1,L}} \cdot \varU}
+\aliceworks{\indent \varR_i \coloneqq \ip{\veca_{i-1,L}}{\vecG_{i-1,R}} + \ip{\veca_{i-1,L}}{\vecb_{i-1,R}} \cdot \varU}
+\aliceworks{\indent \ctx.\append(\varL_i, \varR_i)}
+\aliceworks{\indent \varu_i \coloneqq \hashtofield{\ctx}}
+\aliceworks{\indent \vecG_i \coloneqq \vecG_{i-1, L} + \varu_i \cdot \vecG_{i-1,R}}
+\aliceworks{\indent \veca_i \coloneqq \veca_{i-1,L} + \varu_i^{-1} \cdot \veca_{i-1,R}}
+\aliceworks{\indent \vecb_i \coloneqq \vecb_{i-1,L} + \varu_i \cdot \vecb_{i-1,R}}
+\alicebob{}{\varC_P, (\varL_1,\varR_1),\dots,(\varL_{\varm}, \varR_{\varm})}{}
+\alicebob{}{\veca_{\varm}}{}
+\bobworks{\varU \coloneqq \hashtogroup{\vecG, \varx, \varv, \varC_P}}
+\bobworks{\varC_0 \coloneqq \varC_P + \varv \cdot \varU}
+\bobworks{\ctx \gets (\vecG, \varx, \varv, \varC_P, \varU, \varC_0)}
+\bobworks{\text{For $i \coloneqq 1$ to $\varm$:}}
+\bobworks{\indent \ctx.\append(\varL_i, \varR_i)}
+\bobworks{\indent \varu_i \coloneqq \hashtofield{\ctx}}
+\bobworks{\indent \varC_{i} \coloneqq \varu_{i}^{-1} \cdot \varL_{i} + \varC_{i-1} + \varu_{i} \cdot \varR_{i}}
+\bobworks{\vecg \coloneqq \varg(X) \coloneqq \prod_{i=0}^{m-1} (1 + \varu_{m-i} X^{2^i})}
+\bobworks{\vecG_{\varm} \coloneqq \ip{\vecg}{\vecG}}
+\bobworks{\vecb_{\varm} \coloneqq \ip{\vecg}{\vecb}}
+\bobworks{\varC_{\varm} \equalQ \ip{\veca_{\varm}}{\vecG_{\varm}} + \ip{\veca_{\varm}}{\vecb_{\varm}} \cdot \varU}
+\end{array}
+$$<blockquote class="book-hint warning"><strong>This construction is not hiding.</strong> This construction reveals $\veca_{\varm}$ which in turns leaks at least one bit of information about $\veca = \varf$.</blockquote><blockquote class="book-hint info"><strong>Amortization.</strong> The computation of $\vecG_{\varm}$ and $\vecb_{\varm}$ (the only linear time computations the verifier needs to do) can be amortized over multiple runs, see &ldquo;Amortization&rdquo; in <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/ipa/>Inner Product Argument</a> for details.</blockquote><h3 id=version-2-hiding-construction>Version 2: Hiding Construction
+<a class=anchor href=#version-2-hiding-construction>#</a></h3><p>Version 1 did not hide the polynomial $\varf$ and thus was not zero-knowledge. This version remedies that by using hiding commitments and an intermediate random-looking polynomial.</p><p>First, we compute a hiding commitment $\varC_P$ to the polynomial $\varf$. Let $\veca$ and $\vecb$ be the coefficients of $\varf$ and powers of the evaluation point $\varx$, respectively, as before. The prover samples a random blinding factor $\sample{\vart}$ and computes
+$$
+\varC_P \coloneqq \ip{\veca}{\vecG} + \vart \cdot \varH
+$$</p><p>Second, we compute a random-looking polynomial. Sample a random polynomial $p_r(\varX) \coloneqq \vars_1 + \vars_2 \varX + \vars_3 \varX^2 + \cdots + \vars_{\varn} \varX^{\varn-1}$ of the same degree as $\varf$ by picking random coefficients $\vars_1,\dots,\vars_{\varn}$. Construct $\bar{\varf} \coloneqq p_r - p_r(\varx)$ so that $\bar{\varf}$ looks random and has a root at the evaluation point $\varx$; that is, $\bar{\varf}(\varx) = 0$.</p><p>Third, we compute a hiding commitment to the random-looking polynomial. Let $\bar{\veca} \coloneqq (\varw_{1},\dots,\varw_{\varn})$ be the coefficients of $\bar{\varf}$. The prover samples a random blinding factor $\sample{\bar{\vart}}$ and computes the commitment
+$$
+\bar{\varC}_P \coloneqq \ip{\bar{\veca}}{\vecG} + \bar{\vart} \cdot \varH
+$$</p><p>Fourth, we blind the polynomial $\varf$ using the random-looking polynomial $\bar{\varf}$. After receiving these commitments, the verifier samples some randomness $\varalpha$ and the prover uses it to compute the blinded polynomial $\varf&rsquo; \coloneqq \varf + \varalpha \cdot \bar{\varf}$. Let $\vecc = (\varc_1,\dots,\varc_n)$ be the coefficients of $\varf&rsquo;$. The prover computes the corresponding randomness $\vart&rsquo; \coloneqq \vart + \varalpha \cdot \bar{\vart}$ and uses it to compute a non-hiding commitment to $\varf&rsquo;$ as $\varC_P&rsquo; \coloneqq \varC_P + \varalpha \cdot \bar{\varC}_P - \vart&rsquo; \cdot \varH = \ip{\vecc}{\vecG}$.</p><p>Now we continue with the halving like Version 1, except using the blinded polynomial $\varf&rsquo;$ in place of the original polynomial $\varf$. The full protocol is below.</p>$$
+\begin{array}{lcl}
+\uwork{\varprover}{\varverifier}
+\aliceworks{\veca \coloneqq (\vara_1,\dots,\vara_{\varn})}
+\dupwork{\vecb \coloneqq (1, \varx, \varx^2, \dots, \varx^{\varn-1})}
+\aliceworks{\sample{\vart}}
+\aliceworks{\varC_P \coloneqq \ip{\veca}{\vecG} + \vart \cdot \varH}
+\aliceworks{\sampleGeneric{\varp_r}{\zq^{\varn}}}
+\aliceworks{\bar{\varf} \coloneqq \varp_r - \varp_r(\varx)}
+\aliceworks{\bar{\veca} \coloneqq (\varw_1,\dots,\varw_n) = \bar{\varf}}
+\aliceworks{\sample{\bar{\vart}}}
+\aliceworks{\bar{\varC}_P \coloneqq \ip{\bar{\veca}}{\vecG} + \bar{\vart} \cdot \varH}
+\aliceworks{\ctx \gets (\vecG, \varH, \varx, \varv, \varC_P, \bar{\varC}_P)}
+\aliceworks{\varalpha \coloneqq \hashtofield{\ctx}}
+\aliceworks{\vecc \coloneqq \veca + \alpha \cdot \bar{\veca} = \varf'}
+\aliceworks{\vart' \coloneqq \vart + \varalpha \cdot \bar{\vart}}
+\aliceworks{\varC_P' \coloneqq \varC_P + \varalpha \cdot \bar{\varC}_P - \vart' \cdot \varH = \ip{\vecc}{\vecG}}
+\aliceworks{\ctx.\append(\varC_P')}
+\aliceworks{\varU \coloneqq \hashtogroup{\ctx}}
+\aliceworks{\varC_0 \coloneqq \varC_P + \ip{\veca}{\vecb} \cdot \varU}
+\aliceworks{\ctx.\append(\varC_0)}
+\aliceworks{\vecc_0 \coloneqq \vecc;\; \vecb_0 \coloneqq \vecb;\; \vecG_0 \coloneqq \vecG}
+\aliceworks{\text{For $i \coloneqq 1$ to $\varm$:}}
+\aliceworks{\indent \varL_i \coloneqq \ip{\veca_{i-1,R}}{\vecG_{i-1,L}} + \ip{\veca_{i-1,R}}{\vecb_{i-1,L}} \cdot \varU}
+\aliceworks{\indent \varR_i \coloneqq \ip{\veca_{i-1,L}}{\vecG_{i-1,R}} + \ip{\veca_{i-1,L}}{\vecb_{i-1,R}} \cdot \varU}
+\aliceworks{\indent \ctx.\append(\varL_i, \varR_i)}
+\aliceworks{\indent \varu_i \coloneqq \hashtofield{\ctx}}
+\aliceworks{\indent \vecG_i \coloneqq \vecG_{i-1, L} + \varu_i \cdot \vecG_{i-1,R}}
+\aliceworks{\indent \vecc_i \coloneqq \vecc_{i-1,L} + \varu_i^{-1} \cdot \vecc_{i-1,R}}
+\aliceworks{\indent \vecb_i \coloneqq \vecb_{i-1,L} + \varu_i \cdot \vecb_{i-1,R}}
+\alicebob{}{\varC_P, (\varL_1,\varR_1),\dots,(\varL_{\varm}, \varR_{\varm})}{}
+\alicebob{}{\bar{\varC}_P, \veca_{\varm}, \vart'}{}
+\bobworks{\varv \mod \varq \gQ 0}
+\bobworks{\varx \mod \varq \gQ 0}
+\bobworks{\vart' \mod \varq \gQ 0}
+\bobworks{\varC_P \neq 0 \text{ (point at infinity for EC groups)}}
+\bobworks{\varC_P \inQ \cgroup \text{ (on curve check for EC groups)}}
+\bobworks{\bar{\varC}_P \neq 0 \text{ (point at infinity for EC groups)}}
+\bobworks{\bar{\varC}_P \inQ \cgroup \text{ (on curve check for EC groups)}}
+\bobworks{\varL_i, \varR_i \neq 0 \text{ (point at infinity for EC groups)}}
+\bobworks{\varL_i, \varR_i \inQ \cgroup \text{ (on curve check for EC groups)}}
+\bobworks{\vara_i \mod \varq \neq 0}
+\bobwork{\text{ for }i=1,\ldots,m}
+\bobseparator
+\bobworks{\ctx \gets (\vecG, \varH, \varx, \varv, \varC_P, \bar{\varC}_P)}
+\bobworks{\varalpha \coloneqq \hashtofield{\ctx}}
+\bobworks{\varC_P' \coloneqq \varC_P + \varalpha \cdot \bar{\varC}_P - \vart' \cdot \varH}
+\bobworks{\ctx.\append(\varC_P')}
+\bobworks{\varU \coloneqq \hashtogroup{\ctx}}
+\bobworks{\varC_0 \coloneqq \varC' + \varv \cdot \varU}
+\bobworks{\ctx.\append(\varC_0)}
+\bobworks{\text{For $i \coloneqq 1$ to $\varm$:}}
+\bobworks{\indent \ctx.\append(\varL_i, \varR_i)}
+\bobworks{\indent \varu_i \coloneqq \hashtofield{\ctx}}
+\bobworks{\indent \varC_{i} \coloneqq \varu_{i}^{-1} \cdot \varL_{i} + \varC_{i-1} + \varu_{i} \cdot \varR_{i}}
+\bobworks{\vecg \coloneqq \varg(X) \coloneqq \prod_{i=0}^{m-1} (1 + \varu_{m-i} X^{2^i})}
+\bobworks{\vecG_{\varm} \coloneqq \ip{\vecg}{\vecG}}
+\bobworks{\vecb_{\varm} \coloneqq \ip{\vecg}{\vecb}}
+\bobworks{\varC_{\varm} \equalQ \ip{\veca_{\varm}}{\vecG_{\varm}} + \ip{\veca_{\varm}}{\vecb_{\varm}} \cdot \varU}
+\end{array}
+$$<blockquote class="book-hint info"><strong>Comparison with <a href=https://eprint.iacr.org/2020/499>[BCMS20]</a>.</strong> Rather than compute $\varU \coloneqq \xi_0 \cdot \varH$ using a challenge field element $\xi_0$, we directly ask for the challenge group element $\varU$. These approaches are equivalent.</blockquote><blockquote class="book-hint info"><strong>Comparison with <a href=https://eprint.iacr.org/2019/1021>[BGH19]</a>.</strong> Rather than run halving with the original polynomial and blind the outputs, $\varL_i$, $\varR_i$, and $\veca_{\varm}$, we instead run halving with a blinded polynomial $\bar{\varf}$.</blockquote><p>This construction has perfect completeness and, as outlined above, computational soundness. See Appendix A.3 of
+<a href=https://eprint.iacr.org/2020/499 title="Bünz, B., Chiesa, A., Mishra, P., & Spooner, N. (2020). Recursive proof composition from accumulation schemes. In Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC, USA, November 16-19, 2020, Proceedings, Part II 18 (pp. 1-18). Springer International Publishing." target=_blank>[BCMS20]</a>
+for a proof.</p><h2 id=security-assumptions>Security Assumptions
+<a class=anchor href=#security-assumptions>#</a></h2><ul><li><strong>Discrete logarithm:</strong> The security of this protocol relies on the hardness of discrete logarithm in the group $\cgroup$. Specifically, it assumes that there are no known discrete log relations between the random generators. Concretely, for 128-bit security consider elliptic curve groups of size greater than $2^{256}$.</li></ul><h2 id=security-pitfalls>Security Pitfalls
+<a class=anchor href=#security-pitfalls>#</a></h2><ul><li><strong>Verifier input validation:</strong> Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.</li><li><strong>Weak Fiat-Shamir transform:</strong> When transforming the interactive protocol into a non-interactive protocol with the Fiat-Shamir transform, care needs to be taken to ensure that all parameters are included in the hash. See <a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a>.</li><li><strong>Replay attacks:</strong> This construction does not provide replay protection; i.e., proofs can be replayed. But, replay protection can be achieved by adding more information to the $\Hash$ invocations, see <a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/#preventing-replay-attacks>Preventing replay attacks</a>.</li><li><strong>Verifier trusting the prover:</strong> All version of this protocol assume that the verifier does not trust the prover beyond the protocol. See the warning in Section 2 of <a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/ipa/>Inner Product Argument</a>.</li></ul><h2 id=see-also>See also
+<a class=anchor href=#see-also>#</a></h2><ul><li><dl><dt><a href=/docs/zkdocs/zero-knowledge-protocols/ipa/>Inner Product Argument</a></dt></dl></li></ul><h2>References <a class=anchor href=#references>#</a></h2><ul><li>[BCCGP16] <a href=https://eprint.iacr.org/2016/263 title="Bootle, J., Cerulli, A., Chaidos, P., Groth, J., & Petit, C. (2016). Efficient zero-knowledge arguments for arithmetic circuits in the discrete log setting. In Advances in Cryptology-EUROCRYPT 2016: 35th Annual International Conference on the Theory and Applications of Cryptographic Techniques, Vienna, Austria, May 8-12, 2016, Proceedings, Part II 35 (pp. 327-357). Springer Berlin Heidelberg." target=_blank>Efficient Zero-Knowledge Arguments for Arithmetic Circuits in the Discrete Log Setting</a> (2016).</li></ul><ul><li>[BBBPWM18] <a href=https://eprint.iacr.org/2017/1066 title="Bünz, B., Bootle, J., Boneh, D., Poelstra, A., Wuille, P., & Maxwell, G. (2018, May). Bulletproofs: Short proofs for confidential transactions and more. In 2018 IEEE symposium on security and privacy (SP) (pp. 315-334). IEEE." target=_blank>Bulletproofs: Short Proofs for Confidential Transactions and More</a> (2018).</li></ul><ul><li>[BGH19] <a href=https://eprint.iacr.org/2019/1021 title="Bowe, S., Grigg, J., & Hopwood, D. (2019). Recursive proof composition without a trusted setup. Cryptology ePrint Archive." target=_blank>Recursive Proof Composition without a Trusted Setup</a> (2019).</li></ul><ul><li>[BCMS20] <a href=https://eprint.iacr.org/2020/499 title="Bünz, B., Chiesa, A., Mishra, P., & Spooner, N. (2020). Recursive proof composition from accumulation schemes. In Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC, USA, November 16-19, 2020, Proceedings, Part II 18 (pp. 1-18). Springer International Publishing." target=_blank>Proof-Carrying Data from Accumulation Schemes</a> (2020).</li></ul><ul><li>[GBHL22] <a href=https://github.com/zcash/halo2/blob/76b3f892a9d598923bbb5a747701fff44ae4c0ea/book/src/design/proving-system/comparison.md title="Grigg, J., Bowe, S., Hopwood, D., & Lai Y.T. (2022). The halo2 Book." target=_blank>The halo2 Book: Comparison to other work</a> (2022).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><article class=markdown><br><br><hr><div style=text-align:right><a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
+<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a></div><div style=text-align:right><small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small></div></article></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#overview-of-ipa-polynomial-commitment>Overview of IPA Polynomial Commitment</a></li><li><a href=#polynomial-commitment-from-ipa>Polynomial Commitment from IPA</a><ul><li><a href=#version-1-a-simple-non-hiding-construction>Version 1: A Simple, Non-Hiding Construction</a></li><li><a href=#version-2-hiding-construction>Version 2: Hiding Construction</a></li></ul></li><li><a href=#security-assumptions>Security Assumptions</a></li><li><a href=#security-pitfalls>Security Pitfalls</a></li><li><a href=#see-also>See also</a></li></ul></nav><br><br><button class=book-btn onclick=resetVariableNames()>Reset variables names</button></div></aside></main></body></html>

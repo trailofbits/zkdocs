@@ -1,0 +1,218 @@
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Kate et. al&rsquo;s Pairing-Based Polynomial Commitments"><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="KZG Polynomial Commitments"><meta property="og:description" content="Kate et. al&rsquo;s Pairing-Based Polynomial Commitments"><meta property="og:type" content="article"><meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/commitments/kzg_polynomial_commitment/"><meta property="article:section" content="docs"><title>KZG Polynomial Commitments | ZKDocs</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.6aece0f96007af353373ec1c05beb9d415830db47ac294f964054d8382bbb1e3.css integrity="sha256-auzg+WAHrzUzc+wcBb651BWDDbR6wpT5ZAVNg4K7seM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.efb8dda88c29c848a340ea08957296610e56a3fd40e2b12ef92e19a7cabeac93.js integrity="sha256-77jdqIwpyEijQOoIlXKWYQ5Wo/1A4rEu+S4Zp8q+rJM=" crossorigin=anonymous></script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-215689345-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/22554992.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class=align-center href=/><img id=icon src=/TOB_Black.svg alt=Logo><div class="flex align-center"><img id=logo src=/logo.png alt=Logo><span>ZKDocs</span></div></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/>Variants of Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/ipa/>Inner Product Argument</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/commitments/>Commitment Schemes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/pedersen/>Pedersen Commitments</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/kzg_polynomial_commitment/ class=active>KZG Polynomial Commitments</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/ipa-pcs/>IPA Polynomial Commitment</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><script type=text/x-mathjax-config>
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
+  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
+});
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script><script language=javascript type=text/javascript src=/js/interactive_variables.js></script><script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>$\newcommand{\coinheads}{\mathsf{HEADS}}$
+$\newcommand{\cointails}{\mathsf{TAILS}}$
+$\newcommand{\varalice}{\class{var var_Alice}{\text{Alice}}}$
+$\newcommand{\varbob}{\class{var var_Bob}{\text{Bob}}}$
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+$\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
+$\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
+$\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
+$\newcommand{\work}[2]{#1 & & #2\\}$
+$\newcommand{\allwork}[1]{ & #1 & \\}$
+$\newcommand{\dupwork}[1]{#1 & & #1\\}$
+$\newcommand{\aliceseparator}{-------&&\\}$
+$\newcommand{\bobseparator}{&&-------\\}$
+$\newcommand{\foo}{\phantom{\text{bigarrowfitsallthis}}}$
+$\newcommand{\ra}[1]{%
+\vphantom{\xrightarrow{asd}}%
+\smash{\xrightarrow[\foo]{#1}}%
+}$
+$\newcommand{\la}[1]{%
+\vphantom{\xleftarrow{asd}}%
+\smash{\xleftarrow[\foo]{#1}}%
+}$
+$\newcommand{\z}[1]{\mathbb{Z}_{#1}}$
+$\newcommand{\zq}{\mathbb{Z}_\varq}$
+$\newcommand{\zqs}{\mathbb{Z}_q^\ast}$
+$\newcommand{\zps}{\mathbb{Z}_p^\ast}$
+$\newcommand{\zns}[1]{\mathbb{Z}_{#1}^\ast}$
+$\require{action}
+\newcommand{\sampleSymb}{
+{\overset{\$}{\leftarrow}}
+}$
+$\newcommand{\field}[1]{\mathbb{F}_{#1}}$
+$\newcommand{\sample}[1]{#1\sampleSymb\zq}$
+$\newcommand{\sampleGeneric}[2]{#1\sampleSymb#2}$
+$\newcommand{\sampleInterval}[2]{#1\sampleSymb\interval{#2}}$
+$\newcommand{\sampleRange}[2]{#1\sampleSymb\range{#2}}$
+$\newcommand{\sampleCgroup}[1]{#1\sampleSymb\cgroup}$
+$\newcommand{\samplezqs}[1]{\class{hover}{#1\sampleSymb\zqs}}$
+$\newcommand{\sampleN}[2]{\class{hover}{#1\sampleSymb\z{#2}}}$
+$\newcommand{\sampleNs}[2]{\class{hover}{#1\sampleSymb\z{#2}^\ast}}$
+$\newcommand{\equalQ}{\overset{?}{=}}$
+$\newcommand{\gQ}{\overset{?}{>}}$
+$\newcommand{\inQ}{\overset{?}{\in}}$
+$\newcommand{\cgroup}{\mathbb{G}}$
+$\newcommand{\Hash}{\mathsf{Hash}}$
+$\newcommand{\hash}[1]{\Hash({#1})}$
+$\newcommand{\HashToField}{\mathsf{HashToField}}$
+$\newcommand{\hashtofield}[1]{\HashToField({#1})}$
+$\newcommand{\HashToGroup}{\mathsf{HashToGroup}}$
+$\newcommand{\hashtogroup}[1]{\HashToGroup({#1})}$
+$\newcommand{\hashbit}[2]{\mathsf{Hash}({#1})\verb+[0:#2]+}$
+$\newcommand{\hmac}[2]{\mathsf{HMAC}_{#1}\left(#2\right)}$
+$\newcommand{\naturals}{\mathbb{N}}$
+$\newcommand{\sqfree}{L_\mathsf{square-free}}$
+$\newcommand{\ceil}[1]{\lceil #1 \rceil}$
+$\newcommand{\sampleSet}[2]{\class{hover}{#1\sampleSymb#2}}$
+$\newcommand{\bunch}[1]{\{ #1_i\}_{i=1}^m}$
+$\newcommand{\bunchi}[1]{\{ #1\}_{i=1}^m}$
+$\newcommand{\forb}{\text{ for }i=1,\ldots,m}$
+$\newcommand{\interval}[1]{[0, #1[}$
+$\newcommand{\range}[1]{[#1]}$
+$\newcommand{\rangeone}[1]{\{1, \dots,#1 -1 \}}$
+$\newcommand{\vara}{\class{var var_a}{a}}$
+$\newcommand{\varb}{\class{var var_b}{b}}$
+$\newcommand{\varc}{\class{var var_c}{c}}$
+$\newcommand{\vard}{\class{var var_d}{d}}$
+$\newcommand{\varh}{\class{var var_h}{h}}$
+$\newcommand{\varH}{\class{var var_H}{H}}$
+$\newcommand{\varg}{\class{var var_g}{g}}$
+$\newcommand{\varG}{\class{var var_G}{G}}$
+$\newcommand{\vari}{\class{var var_i}{i}}$
+$\newcommand{\varj}{\class{var var_j}{j}}$
+$\newcommand{\vars}{\class{var var_s}{s}}$
+$\newcommand{\vart}{\class{var var_t}{t}}$
+$\newcommand{\varu}{\class{var var_u}{u}}$
+$\newcommand{\varU}{\class{var var_U}{U}}$
+$\newcommand{\varl}{\class{var var_l}{l}}$
+$\newcommand{\varm}{\class{var var_m}{m}}$
+$\newcommand{\varn}{\class{var var_n}{n}}$
+$\newcommand{\varx}{\class{var var_x}{x}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varz}{\class{var var_z}{z}}$
+$\newcommand{\varr}{\class{var var_r}{r}}$
+$\newcommand{\varq}{\class{var var_q}{q}}$
+$\newcommand{\varp}{\class{var var_p}{p}}$
+$\newcommand{\vare}{\class{var var_e}{e}}$
+$\newcommand{\vary}{\class{var var_y}{y}}$
+$\newcommand{\varv}{\class{var var_v}{v}}$
+$\newcommand{\varw}{\class{var var_w}{w}}$
+$\newcommand{\varC}{\class{var var_C}{C}}$
+$\newcommand{\varf}{\class{var var_f}{f}}$
+$\newcommand{\varA}{\class{var var_A}{A}}$
+$\newcommand{\varB}{\class{var var_B}{B}}$
+$\newcommand{\varC}{\class{var var_C}{C}}$
+$\newcommand{\varL}{\class{var var_L}{L}}$
+$\newcommand{\varP}{\class{var var_P}{P}}$
+$\newcommand{\varR}{\class{var var_R}{R}}$
+$\newcommand{\varT}{\class{var var_T}{T}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varalpha}{\class{var var_alpha}{\alpha}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
+$\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
+$\newcommand{\varN}{\class{var var_N}{N}}$
+$\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
+$\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
+$\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
+$\newcommand{\muvar}{\class{var var_μ}{\mu}}$
+$\renewcommand{\vec}[1]{\mathbf{#1}}$
+$\newcommand{\veca}{\vec{\class{var var_vec_a}{a}}}$
+$\newcommand{\vecb}{\vec{\class{var var_vec_b}{b}}}$
+$\newcommand{\vecc}{\vec{\class{var var_vec_c}{c}}}$
+$\newcommand{\vecs}{\vec{\class{var var_vec_s}{s}}}$
+$\newcommand{\vecG}{\vec{\class{var var_vec_G}{G}}}$
+$\newcommand{\vecH}{\vec{\class{var var_vec_H}{H}}}$
+$\newcommand{\vecg}{\vec{\class{var var_vec_g}{g}}}$
+$\newcommand{\vech}{\vec{\class{var var_vec_h}{h}}}$
+$\newcommand{\true}{\mathsf{true}}$
+$\newcommand{\false}{\mathsf{false}}$
+$\newcommand{\ctx}{\mathsf{ctx}}$
+$\newcommand{\coloneqq}{&#8788;}$
+$\newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}$
+$\newcommand{\uwork}[2]{\underline{#1} & & \underline{#2}\\}$
+
+$\newcommand{\aliceworks}[1]{#1 & &\\[-2pt]}$
+$\newcommand{\bobworks}[1]{ & & #1\\[-2pt]}$
+
+$\newcommand{\Halving}{\text{Halving}}$
+$\newcommand{\HalveProof}{\text{HalveProof}}$
+$\newcommand{\HalveVerify}{\text{HalveVerify}}$
+$\newcommand{\indent}{\qquad}$
+$\newcommand{\append}{\mathrm{append}}$
+$\newcommand{\schnorrvalidate}{\mathsf{schnorr}\_\mathsf{validate}}$<div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>KZG Polynomial Commitments</strong>
+<label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#overview-of-polynomial-commitments>Overview of Polynomial Commitments</a></li><li><a href=#applications-of-polynomial-commitments>Applications of Polynomial Commitments</a><ul><li></li></ul></li><li><a href=#the-kzg-construction>The KZG Construction</a><ul><li><a href=#bilinear-pairings>Bilinear Pairings</a></li><li><a href=#trusted-setup>Trusted Setup</a></li><li><a href=#commit>Commit</a></li><li><a href=#open>Open</a></li><li><a href=#verify>Verify</a></li></ul></li><li><a href=#hardness-assumptions>Hardness Assumptions</a><ul><li><a href=#discrete-logarithm>Discrete Logarithm</a></li><li><a href=#t-strong-diffie-hellman>$t$-Strong Diffie Hellman</a></li></ul></li><li><a href=#kzg-variants>KZG Variants</a><ul><li><a href=#indistinguishable-and-unconditionally-hiding-pedersen-variants>Indistinguishable and Unconditionally hiding (&ldquo;Pedersen&rdquo;) variants</a></li></ul></li><li><a href=#security-pitfalls>Security Pitfalls</a></li></ul></nav></aside></header><article class=markdown><h1 id=kzg-polynomial-commitments>KZG Polynomial Commitments
+<a class=anchor href=#kzg-polynomial-commitments>#</a></h1><h2 id=overview-of-polynomial-commitments>Overview of Polynomial Commitments
+<a class=anchor href=#overview-of-polynomial-commitments>#</a></h2><p>Polynomial commitment schemes allow one party to prove to another the correct evaluation of a polynomial at some set of points,
+without revealing any other information about the polynomial. A generalization of scalar commitment schemes such as <a href=https://www.zkdocs.com/docs/zkdocs/commitments/pedersen/>Pedersen commitments</a>,
+polynomial commitments are an important building block in zero-knowledge protocols; once the prover has committed to a polynomial, the verifier can query the value of the polynomial at one or many points
+and be assured that the responses are consistent with some predetermined polynomial which was selected without knowledge of the challenge queries.</p><p>Kate et. al.&rsquo;s polynomial commitment scheme
+<a href=https://cacr.uwaterloo.ca/techreports/2010/cacr2010-10.pdf title='Kate, A., Zaverucha, G. M., & Goldberg, I. (2010, December). Constant-size commitments to polynomials and their applications. In International conference on the theory and application of cryptology and information security (pp. 177-194). Springer, Berlin, Heidelberg."' target=_blank>[KZG2010]</a>
+consists, similarly to <a href=https://www.zkdocs.com/docs/zkdocs/commitments/pedersen/>Pedersen commitments</a>, of two phases.</p><ul><li>During the <em>commit</em> phase, $\varprover$ generates a commitment to some polynomial $\varf(\varx)$ and shares it with $\varverifier$.</li><li>During the <em>open</em> phase, $\varprover$ evaluates $\varf$ at some point $\varx_0$ and sends $\langle \varx_0, \varf(\varx_0), \varw\rangle$, where $\varw$ is a proof (or &ldquo;witness&rdquo;) such that $\varverifier$ can check the correct evaluation of $\varf$ at $\varx_0$.</li></ul><p>The commitment satisfies certain security properties:</p><ul><li><em>Hiding</em>: Given a commitment to an unknown degree-$t$ polynomial $\varf$ and up to $t$ openings $\langle \varx_1, \varf(\varx_1), \varw_1\rangle, \dots, \langle \varx_t, \varf(\varx_t), \varw_t\rangle$, one cannot find the value of $\varf$ at any point not already queried.</li><li><em>Binding</em>: It is computationally infeasible to construct a commitment $\varC$ and two distinct valid openings $\langle\varx_0, \vary, \varw\rangle, \langle\varx_0, \vary&rsquo;, \varw&rsquo;\rangle$ at the same point $\varx_0$.</li></ul><hr><h2 id=applications-of-polynomial-commitments>Applications of Polynomial Commitments
+<a class=anchor href=#applications-of-polynomial-commitments>#</a></h2><p>Polynomial commitments serve as an important component of several modern noninteractive proof systems.</p><h4 id=vector-commitments>Vector Commitments
+<a class=anchor href=#vector-commitments>#</a></h4><p>Given a vector $\vec{v} = [v_1, v_2, \dots, v_n]$ we can create a succinct commitment to the whole vector $\vec{v}$ by interpolating a degree-$(n-1)$ polynomial $\varf$ such that $\varf(i) = v_i$. This enables provers to commit to a vector of field elements such that openings prove the value at a specific index. Vector commitments can in turn be used as a building block for <a href=https://vitalik.ca/general/2021/06/18/verkle.html>Verkle Trees</a>, a variant of Merkle trees with extremely small proof sizes.</p><h4 id=zksnarks>zkSNARKs
+<a class=anchor href=#zksnarks>#</a></h4><p>Polynomial commitment schemes are a core primitive in zkSNARKs such as
+<a href=https://eprint.iacr.org/2019/953 title="Gabizon, A., Williamson, Z. J., & Ciobotaru, O. (2019). Plonk: Permutations over lagrange-bases for oecumenical noninteractive arguments of knowledge. Cryptology ePrint Archive." target=_blank>[PLONK]</a>
+and
+<a href=https://eprint.iacr.org/2016/260 title="Groth, J. (2016, May). On the size of pairing-based non-interactive arguments. In Annual international conference on the theory and applications of cryptographic techniques (pp. 305-326). Springer, Berlin, Heidelberg." target=_blank>[Groth16]</a>
+. These general-purpose zero knowledge proofs encode computations as polynomial identity constraints and then use openings of polynomial commitments at random points to verify polynomial equality. The power of polynomial commitments here comes from the fact that two distinct degree-$t$ polynomials over a field of order $q > t$ may intersect in at most $t$ points, and thus agree at a random point with probability at most $\frac{t}{q}$.</p><hr><h2 id=the-kzg-construction>The KZG Construction
+<a class=anchor href=#the-kzg-construction>#</a></h2><h3 id=bilinear-pairings>Bilinear Pairings
+<a class=anchor href=#bilinear-pairings>#</a></h3><p>KZG is a pairing-based protocol, meaning it works over a group with an efficiently computable bilinear pairing.</p><p>Let $\cgroup_1$, $\cgroup_2$ and $\cgroup_T$ be abelian groups of prime order $\varq$. $\cgroup_1$ and $\cgroup_2$ will be written additively while $\cgroup_T$ will be multiplicative.
+A bilinear pairing is an efficiently computable function $e: \cgroup_1 \times \cgroup_2 \rightarrow \cgroup_T$ such that</p><p>$$
+e(a\cdot x, b \cdot y) = e(x, y)^{ab}
+$$
+for all $x \in \cgroup_1, y \in \cgroup_2$. We generally assume that $e$ is non-degenerate, meaning that $e$ is not the trivial function mapping all pairs to $1_{\cgroup_T}$.</p><p>The KZG commitment scheme was originally presented in the &ldquo;type-1&rdquo; setting, where $\cgroup_1 = \cgroup_2$. In practice, and in our presentation here, the scheme is generally implemented in the &ldquo;type-3&rdquo; setting, where $\cgroup_1 \neq \cgroup_2$ in the sense that there is no efficiently computable isomorphism between the two groups.</p><p>Common choices of pairing-friendly groups are the Barreto-Naehrig
+<a href=https://dl.acm.org/doi/10.1007/11693383_22 title="Paulo S. L. M. Barreto and Michael Naehrig. 2005. Pairing-Friendly elliptic curves of prime order. In Proceedings of the 12th international conference on Selected Areas in Cryptography (SAC'05). Springer-Verlag, Berlin, Heidelberg, 319–331. https://doi.org/10.1007/11693383_22" target=_blank>[BN05]</a>
+and Barreto-Lynn-Scott curves
+<a href=https://electriccoin.co/blog/new-snark-curve/ title target=_blank>[BLS12-381]</a>
+.</p><h3 id=trusted-setup>Trusted Setup
+<a class=anchor href=#trusted-setup>#</a></h3><p>KZG requires a setup procedure to be carried out by a trusted third party. In practice this setup is often performed as a distributed multiparty computation, such that as long as one participant is honest the setup is secure.</p><p>The public parameters are $\cgroup_1$, $\cgroup_2$ and $\cgroup_T$, with generators $g_1 \in \cgroup_1, g_2 \in \cgroup_2$ and
+$e: \cgroup_1 \times \cgroup_2 \rightarrow \cgroup_T$ a nondegenerate bilinear pairing. Let $t \in \mathbb{N}$ also be publicly chosen; $t$ will be the maximum degree of committed polynomials.</p><p>The setup procedure then computes</p><p>$$
+\begin{align*}
+\mathbf{SK} &= \sample{\alpha}\\
+\mathbf{PK} &= \langle g_1, \alpha\cdot g_1, \alpha^2 \cdot g_1, \dots, \alpha^t \cdot g_1, g_2, \alpha \cdot g_2\rangle
+\end{align*}
+$$
+and publishes $\mathbf{PK}$.</p><blockquote class="book-hint info">This pre-generated $\mathbf{PK}$ is sometimes known as a &ldquo;Structured Reference String&rdquo;</blockquote><blockquote class="book-hint danger"><p>$\mathbf{SK}$ <strong>must be kept secret and destroyed</strong>.</p><p>If a party knows the value $\alpha$ then they can forge openings of a commitment to $\varf$ at $\varx_0$ with putative value $\vary$ by computing</p><p>$\varw = (\varf(\alpha) / (\alpha - \varx_0) - \vary) \cdot g_1$</p></blockquote><h3 id=commit>Commit
+<a class=anchor href=#commit>#</a></h3><p>A commitment to a polynomial $\varf$ is simply the group element $\varf(\alpha) \cdot g_1$. Because the prover does not know $\alpha$ and thus cannot compute
+the value $\varf(\alpha)$ directly, the evaluation is carried out in the exponent as follows:</p>Given $\mathbf{PK}$, to form a commitment to $\varf \in \mathbb{Z}_q[X]$ with $\varf(X) = \sum_{i = 0}^{t} c_i X^i$, compute and publish
+$$\varC = \sum_{i=0}^t c_i \cdot (\alpha^i \cdot g_1)$$<h3 id=open>Open
+<a class=anchor href=#open>#</a></h3><p>For any degree-$t$ polynomial $\varf$, the polynomial $(\varf(X) - \varf(x_0))$ has a root at $x_0$ and thus can be factored as $$\varf(X) - \varf(x_0) = (X - \varx_0) \varf_{\varx_0}(X)$$
+for some degree-$(t-1)$ polynomial $\varf_{\varx_0}$. The witness to an opening of $\varf$ at
+$\varx_0$ is then $\varw = \varf_{\varx_0}(\alpha) \cdot g_1$.</p><p>More concretely, to open a commitment $\varC$ to polynomial $\varf$ at point $\varx_0$, compute the quotient
+$$\varf_{\varx_0}(X) = \frac{\varf(X) - \varf(\varx_0)}{X - \varx_0} = \sum_{i = 0}^{t} c_i X^i$$
+and compute the witness as
+$$\varw = \varf_{\varx_0}(\alpha)\cdot g_1 = \sum_{i=0}^t c_i \cdot (\alpha^i \cdot g_1)$$</p><p>Reveal $\langle \varx_0, \varf(\varx_0), \varw \rangle$.</p><h3 id=verify>Verify
+<a class=anchor href=#verify>#</a></h3><p>Verification of an opening of $\varf$ at $\varx_0$ with witness $\varw = \varf_{\varx_0}(\alpha)\cdot g_1$ amounts to checking in the exponent that
+$\varf(\alpha) \equalQ (X- \varx_0)(\alpha) \cdot \varf_{\varx_0}(\alpha) + \varf(\varx_0)$. Since the prover does not know the value of $\alpha$,
+we can think of the check as happening at a random point and thus with high probability succeeds only if the polynomial identity
+$\varf(X) \equalQ (X- \varx_0) \cdot \varf_{\varx_0}(X) + \varf(\varx_0)$ holds at all points.</p><p>Concretely, to verify an evaluation $\langle \varx_0, \varf(\varx_0), \varw \rangle$ on commitment $\varC$,
+check $$e(\varC, g_2) \equalQ e(\varw, \alpha \cdot g_2 - \varx_0 \cdot g_2) \cdot e(g_1, g_2)^{\varf(\varx_0)}$$</p><p>To see that the scheme is <em>complete</em> in the sense that every correctly computed opening passes verification, we compute</p>$$
+\begin{align*}
+&e(\varw, \alpha \cdot g_2 - \varx_0 \cdot g_2) \cdot e(g_1, g_2)^{\varf(\varx_0)}\\
+&= e(\varf_{\varx_0}(\alpha)\cdot g_1, (\alpha - \varx_0)\cdot g_2) \cdot e(g_1, g_2)^{\varf(\varx_0)}\\
+&= e(g_1, g_2)^{\varf_{\varx_0}(\alpha)\cdot (\alpha - \varx_0) + \varf(\varx_0)}\\
+&= e(g_1, g_2)^{\frac{\varf(\alpha) - \varf(\varx_0)}{\alpha - \varx_0} \cdot (\alpha - \varx_0) + \varf(\varx_0)}\\
+&= e(g_1, g_2)^{\varf(\alpha)}\\
+&= e(\varf(\alpha)\cdot g_1, g_2)\\
+&= e(\varC, g_2)
+\end{align*}
+$$
+<hr><h2 id=hardness-assumptions>Hardness Assumptions
+<a class=anchor href=#hardness-assumptions>#</a></h2><h3 id=discrete-logarithm>Discrete Logarithm
+<a class=anchor href=#discrete-logarithm>#</a></h3><p>The <em>hiding</em> property of KZG commitments relies on the hardness of the discrete logarithm in the group $\cgroup_1$.</p><h3 id=t-strong-diffie-hellman>$t$-Strong Diffie Hellman
+<a class=anchor href=#t-strong-diffie-hellman>#</a></h3><p>The <em>binding</em> property requires the $t$-Strong Diffie Hellman ($t$-SDH) assumption: Given $g, \alpha \cdot g, \dots, \alpha^t \cdot g$ it is hard to find a pair $\langle c, \frac{1}{\alpha + c} \cdot g \rangle$. This is a slightly stronger form of the $t$-Polynomial Diffie Hellman assumption that, given $g, \alpha \cdot g, \dots, \alpha^t \cdot g$, it is hard to find $\alpha^{t+1}\cdot g$.</p><p>$t$-SDH implies the computational Diffie Hellman assumption, as well as the hardness of the discrete logarithm problem.</p><hr><h2 id=kzg-variants>KZG Variants
+<a class=anchor href=#kzg-variants>#</a></h2><h3 id=indistinguishable-and-unconditionally-hiding-pedersen-variants>Indistinguishable and Unconditionally hiding (&ldquo;Pedersen&rdquo;) variants
+<a class=anchor href=#indistinguishable-and-unconditionally-hiding-pedersen-variants>#</a></h3><p>The KZG commitment scheme as presented above can be viewed as a generalization of the Discrete Log commitment $\varC(\varx) = \varx \cdot g$. This scheme is binding and is hiding against a computationally-bounded adversary when $\varx$ is chosen uniformly at random, but lacks <em>indistinguishability</em>: if $\varx$ is drawn from a small set known to the adversary then the adversary can distinguish which of the elements was committed. For example, if Alice wants to commit to a single bit $b \in \{0, 1\}$ then she will either publish $0 \cdot g = 0$ or $1 \cdot g = g$ and Bob can clearly learn which bit was committed. <a href=https://www.zkdocs.com/docs/zkdocs/commitments/pedersen/>Pedersen commitments</a> solve this problem by adding a random masking value $r$ and an extra random public generator $h$ such that $\varC_r(\varx) = \varx \cdot g + r \cdot h$. This commitment is now <em>indistinguishable</em> and <em>unconditionally hiding</em>: for any value $y$ there exists some unique $s$ such that $C_r(x) = x \cdot g + r\cdot h = y \cdot g + s \cdot h = C_s(y)$, so even a computationally-unbounded adversary cannot learn $x$ from $C_r(x)$, if $r$ is unknown.</p><p>In a similar vein, let $\varf(\varx)$ be a degree-$t$ polynomial.</p><ul><li>An adversary capable of solving the Discrete Log problem can find the discrete log of $\varC(\varf) = {\varf(\alpha)} \cdot g_1$ and acquire $\langle \alpha, \varf(\alpha)\rangle$. Thus the scheme is only computationally hiding.</li><li>If $\varf(\varx_0)$ is chosen from a small set, say $\{0,1\}$, then given $t$ openings an adversary can &ldquo;guess and check&rdquo; the value of $\varf(\varx_0)$. Thus the scheme does not possess indistinguishablity.</li></ul><p>There are two common approaches to resolve these issues:</p><ol><li>Choose one extra point on $f$ at random: if you want to commit to $t$ &ldquo;useful&rdquo; points, instead commit to $t+1$ points, where the last point is chosen uniformly at random. Then, any subset of the $t$ useful points may be revealed without breaking indistinguishablity.</li><li>Use the &ldquo;Pedersen Variant&rdquo;: let $h_1$ be an agreed-upon random generator of $\cgroup_1$. To commit to a degree-$t$ polynomial $\varf$, choose a random degree-$t$ polynomial $\hat{\varf}$ and publish ${\varf(\alpha)}\cdot g_1 + {\hat{\varf}(\alpha)} \cdot h_1$. To open at a point $\varx_0$, let
+$$
+w = {\frac{\varf(\alpha) - \varf(\varx_0)}{\alpha - \varx_0}}\cdot g_1 + {\frac{\hat{\varf}(\alpha) - \hat{\varf}(\varx_0)}{\alpha - \varx_0}}\cdot h_1
+$$
+reveal $\varf(\varx_0), \hat{\varf}(\varx_0), wI$</li></ol><blockquote class="book-hint danger"><p><strong>Security note:</strong> $h_1$ must be chosen independently from $g_1$, i.e., no one may know the discrete log of $h_1$ with respect to $g_1$. If Alice knows $s$ such that $h_1 = s \cdot g_1$ then the commitment scheme fails to be binding:</p><p>If $h_1 = s \cdot g_1$ then
+$$\begin{align*}
+\varC_r(x) &= x \cdot g_1 + r \cdot h_1\\
+&= x\cdot g_1 + {(s \cdot r)}\cdot g_1\\
+&= (x + (y - x) + s(r - \frac{y - x}{s}))\cdot g_1\\
+&= y\cdot g_1 + (r - \frac{y - x}{s})\cdot h_1\\
+&= C_{r-\frac{(y - x)}{s}}(y)
+\end{align*}
+$$</p></blockquote><hr><h2 id=security-pitfalls>Security Pitfalls
+<a class=anchor href=#security-pitfalls>#</a></h2><ul><li><strong>Small-order elements:</strong> Pairing based cryptography often involves elliptic curve groups of composite order. Any elliptic curve points accepted from untrusted parties must be verified to reside in the proper large prime-order subgroup.</li><li><strong>Polynomial interpolation:</strong> If $t+1$ points on a degree-$t$ polynomial are revealed, then all further points can be recovered.</li><li><strong>Trusted setup:</strong> If using a trusted setup, $\mathbf{SK}$ must be generated with strong randomness and erased immediately after generating $\mathbf{PK}$.</li></ul><h2>References <a class=anchor href=#references>#</a></h2><ul><li>[KZG2010] <a href=https://cacr.uwaterloo.ca/techreports/2010/cacr2010-10.pdf title='Kate, A., Zaverucha, G. M., & Goldberg, I. (2010, December). Constant-size commitments to polynomials and their applications. In International conference on the theory and application of cryptology and information security (pp. 177-194). Springer, Berlin, Heidelberg."' target=_blank>Polynomial Commitments</a> (2010).</li></ul><ul><li>[Verkle Trees] <a href=https://vitalik.ca/general/2021/06/18/verkle.html title target=_blank>Verkle trees</a>.</li></ul><ul><li>[PLONK] <a href=https://eprint.iacr.org/2019/953 title="Gabizon, A., Williamson, Z. J., & Ciobotaru, O. (2019). Plonk: Permutations over lagrange-bases for oecumenical noninteractive arguments of knowledge. Cryptology ePrint Archive." target=_blank>PLONK: Permutations over Lagrange-bases for Oecumenical Noninteractive arguments of Knowledge</a> (2019).</li></ul><ul><li>[Groth16] <a href=https://eprint.iacr.org/2016/260 title="Groth, J. (2016, May). On the size of pairing-based non-interactive arguments. In Annual international conference on the theory and applications of cryptographic techniques (pp. 305-326). Springer, Berlin, Heidelberg." target=_blank>On the size of pairing-based non-interactive arguments</a> (2016).</li></ul><ul><li>[Pairing-Friendly Curves] <a href=https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-pairing-friendly-curves-10 title target=_blank>Pairing-Friendly Curves</a>.</li></ul><ul><li>[PBC] <a href=https://en.wikipedia.org/wiki/Pairing-based_cryptography title target=_blank>Pairing-based cryptography</a>.</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><article class=markdown><br><br><hr><div style=text-align:right><a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
+<a href=https://blog.trailofbits.com/ target=_blank>Trail of Bits Blog</a></div><div style=text-align:right><small>ZKDocs content is licensed under a <a href=https://creativecommons.org/licenses/by/4.0/ target=_blank>Creative Commons Attribution 4.0 International license.</a></small></div></article></footer><div class=book-comments></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#overview-of-polynomial-commitments>Overview of Polynomial Commitments</a></li><li><a href=#applications-of-polynomial-commitments>Applications of Polynomial Commitments</a><ul><li></li></ul></li><li><a href=#the-kzg-construction>The KZG Construction</a><ul><li><a href=#bilinear-pairings>Bilinear Pairings</a></li><li><a href=#trusted-setup>Trusted Setup</a></li><li><a href=#commit>Commit</a></li><li><a href=#open>Open</a></li><li><a href=#verify>Verify</a></li></ul></li><li><a href=#hardness-assumptions>Hardness Assumptions</a><ul><li><a href=#discrete-logarithm>Discrete Logarithm</a></li><li><a href=#t-strong-diffie-hellman>$t$-Strong Diffie Hellman</a></li></ul></li><li><a href=#kzg-variants>KZG Variants</a><ul><li><a href=#indistinguishable-and-unconditionally-hiding-pedersen-variants>Indistinguishable and Unconditionally hiding (&ldquo;Pedersen&rdquo;) variants</a></li></ul></li><li><a href=#security-pitfalls>Security Pitfalls</a></li></ul></nav><br><br><button class=book-btn onclick=resetVariableNames()>Reset variables names</button></div></aside></main></body></html>

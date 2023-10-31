@@ -1,21 +1,21 @@
-<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Common variants of Schnorr&rsquo;s protocol."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Variants of Schnorr's identification protocol"><meta property="og:description" content="Common variants of Schnorr&rsquo;s protocol."><meta property="og:type" content="article"><meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/"><meta property="article:section" content="docs"><title>Variants of Schnorr's identification protocol | ZKDocs</title><link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.6aece0f96007af353373ec1c05beb9d415830db47ac294f964054d8382bbb1e3.css integrity="sha256-auzg+WAHrzUzc+wcBb651BWDDbR6wpT5ZAVNg4K7seM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script>
-<script defer src=/en.search.min.f59d5509dd75169142820ff592c8e2fd128569e87ba6827e64cf7e761c483753.js integrity="sha256-9Z1VCd11FpFCgg/1ksji/RKFaeh7poJ+ZM9+dhxIN1M=" crossorigin=anonymous></script>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-215689345-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script>
-<script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/22554992.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class=align-center href=/><img id=icon src=/TOB_Black.svg alt=Logo><div class="flex align-center"><img id=logo src=/logo.png alt=Logo><span>ZKDocs</span></div></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/ class=active>Variants of Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><script type=text/x-mathjax-config>
-  MathJax.Hub.Config({
-    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
-    loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action']},
-    tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] }}
+<!doctype html><html lang=en dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Common variants of Schnorr&rsquo;s protocol."><meta name=theme-color content="#FFFFFF"><meta name=color-scheme content="light dark"><meta property="og:title" content="Variants of Schnorr's identification protocol"><meta property="og:description" content="Common variants of Schnorr&rsquo;s protocol."><meta property="og:type" content="article"><meta property="og:url" content="https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/"><meta property="article:section" content="docs"><title>Variants of Schnorr's identification protocol | ZKDocs</title>
+<link rel=manifest href=/manifest.json><link rel=icon href=/favicon.png type=image/x-icon><link rel=stylesheet href=/book.min.6aece0f96007af353373ec1c05beb9d415830db47ac294f964054d8382bbb1e3.css integrity="sha256-auzg+WAHrzUzc+wcBb651BWDDbR6wpT5ZAVNg4K7seM=" crossorigin=anonymous><script defer src=/flexsearch.min.js></script><script defer src=/en.search.min.efb8dda88c29c848a340ea08957296610e56a3fd40e2b12ef92e19a7cabeac93.js integrity="sha256-77jdqIwpyEijQOoIlXKWYQ5Wo/1A4rEu+S4Zp8q+rJM=" crossorigin=anonymous></script><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-215689345-1","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script><script type=text/javascript id=hs-script-loader async defer src=//js.hs-scripts.com/22554992.js></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class=align-center href=/><img id=icon src=/TOB_Black.svg alt=Logo><div class="flex align-center"><img id=logo src=/logo.png alt=Logo><span>ZKDocs</span></div></a></h2><div class=book-search><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><ul><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/>Introduction</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/notation/>Notation & Definitions</a></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/>Zero-knowledge protocols</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr/>Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/schnorr-variants/ class=active>Variants of Schnorr's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/>Number is product of two primes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/square-freeness/>Number is square-free</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/two-prime-divisors/>Two prime divisors</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/product-of-two-primes/>Product of two primes</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/product-primes/paillier_blum_modulus/>Paillier-Blum Modulus</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/girault-identification/>Girault's identification protocol</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/short-factoring-proofs/>Short factoring proofs</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/zero-knowledge-protocols/ipa/>Inner Product Argument</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/>Security of ZKPs</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/security-of-zkps/when-to-use-hvzk/>Using HVZKP in the wrong context</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/>Protocol primitives</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/random-sampling/>Random Sampling</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/nums/>Nothing-up-my-sleeve constructions</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/shamir/>Shamir's Secret Sharing Scheme</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/verifiable-secret-sharing/>Feldman's Verifiable Secret Sharing</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/alt-shamir/>Alternative versions of Shamir's Secret Sharing scheme</a></li></ul></li><li class=book-section-flat><a href=https://www.zkdocs.com/docs/zkdocs/commitments/>Commitment Schemes</a><ul><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/pedersen/>Pedersen Commitments</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/kzg_polynomial_commitment/>KZG Polynomial Commitments</a></li><li><a href=https://www.zkdocs.com/docs/zkdocs/commitments/ipa-pcs/>IPA Polynomial Commitment</a></li></ul></li><li><a href=https://www.zkdocs.com/docs/zkdocs/bibliography/>Bibliography</a></li></ul></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><script type=text/x-mathjax-config>
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]},SVG: {addMMLclasses: true},
+  loader: { load: ['[tex]/textmacros','[tex]/newcommand','[tex]/action'] },
+  tex: { packages: { '[+]': ['newcommand','action', 'textmacros'] } }
 });
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script>
-<script language=javascript type=text/javascript src=/js/interactive_variables.js></script>
-<script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML-full"></script><script language=javascript type=text/javascript src=/js/interactive_variables.js></script><script>MathJax.Hub.Queue(function(){setupInteractiveVariables()})</script>$\newcommand{\coinheads}{\mathsf{HEADS}}$
+$\newcommand{\cointails}{\mathsf{TAILS}}$
+$\newcommand{\varalice}{\class{var var_Alice}{\text{Alice}}}$
+$\newcommand{\varbob}{\class{var var_Bob}{\text{Bob}}}$
+$\newcommand{\alicebob}[3]{#1 & \ra{#2} & #3\\[-5pt]}$
 $\newcommand{\bobalice}[3]{#1 & \la{#2} & #3\\[-5pt]}$
 $\newcommand{\alicework}[1]{#1 & &\\[-5pt]}$
 $\newcommand{\bobwork}[1]{ & & #1\\[-5pt]}$
 $\newcommand{\work}[2]{#1 & & #2\\}$
 $\newcommand{\allwork}[1]{ & #1 & \\}$
+$\newcommand{\dupwork}[1]{#1 & & #1\\}$
 $\newcommand{\aliceseparator}{-------&&\\}$
 $\newcommand{\bobseparator}{&&-------\\}$
 $\newcommand{\foo}{\phantom{\text{bigarrowfitsallthis}}}$
@@ -41,6 +41,7 @@ $\newcommand{\sample}[1]{#1\sampleSymb\zq}$
 $\newcommand{\sampleGeneric}[2]{#1\sampleSymb#2}$
 $\newcommand{\sampleInterval}[2]{#1\sampleSymb\interval{#2}}$
 $\newcommand{\sampleRange}[2]{#1\sampleSymb\range{#2}}$
+$\newcommand{\sampleCgroup}[1]{#1\sampleSymb\cgroup}$
 $\newcommand{\samplezqs}[1]{\class{hover}{#1\sampleSymb\zqs}}$
 $\newcommand{\sampleN}[2]{\class{hover}{#1\sampleSymb\z{#2}}}$
 $\newcommand{\sampleNs}[2]{\class{hover}{#1\sampleSymb\z{#2}^\ast}}$
@@ -48,8 +49,14 @@ $\newcommand{\equalQ}{\overset{?}{=}}$
 $\newcommand{\gQ}{\overset{?}{>}}$
 $\newcommand{\inQ}{\overset{?}{\in}}$
 $\newcommand{\cgroup}{\mathbb{G}}$
-$\newcommand{\hash}[1]{\mathsf{Hash}({#1})}$
+$\newcommand{\Hash}{\mathsf{Hash}}$
+$\newcommand{\hash}[1]{\Hash({#1})}$
+$\newcommand{\HashToField}{\mathsf{HashToField}}$
+$\newcommand{\hashtofield}[1]{\HashToField({#1})}$
+$\newcommand{\HashToGroup}{\mathsf{HashToGroup}}$
+$\newcommand{\hashtogroup}[1]{\HashToGroup({#1})}$
 $\newcommand{\hashbit}[2]{\mathsf{Hash}({#1})\verb+[0:#2]+}$
+$\newcommand{\hmac}[2]{\mathsf{HMAC}_{#1}\left(#2\right)}$
 $\newcommand{\naturals}{\mathbb{N}}$
 $\newcommand{\sqfree}{L_\mathsf{square-free}}$
 $\newcommand{\ceil}[1]{\lceil #1 \rceil}$
@@ -65,8 +72,18 @@ $\newcommand{\varb}{\class{var var_b}{b}}$
 $\newcommand{\varc}{\class{var var_c}{c}}$
 $\newcommand{\vard}{\class{var var_d}{d}}$
 $\newcommand{\varh}{\class{var var_h}{h}}$
+$\newcommand{\varH}{\class{var var_H}{H}}$
 $\newcommand{\varg}{\class{var var_g}{g}}$
+$\newcommand{\varG}{\class{var var_G}{G}}$
+$\newcommand{\vari}{\class{var var_i}{i}}$
+$\newcommand{\varj}{\class{var var_j}{j}}$
+$\newcommand{\vars}{\class{var var_s}{s}}$
+$\newcommand{\vart}{\class{var var_t}{t}}$
 $\newcommand{\varu}{\class{var var_u}{u}}$
+$\newcommand{\varU}{\class{var var_U}{U}}$
+$\newcommand{\varl}{\class{var var_l}{l}}$
+$\newcommand{\varm}{\class{var var_m}{m}}$
+$\newcommand{\varn}{\class{var var_n}{n}}$
 $\newcommand{\varx}{\class{var var_x}{x}}$
 $\newcommand{\varX}{\class{var var_X}{X}}$
 $\newcommand{\varz}{\class{var var_z}{z}}$
@@ -75,7 +92,19 @@ $\newcommand{\varq}{\class{var var_q}{q}}$
 $\newcommand{\varp}{\class{var var_p}{p}}$
 $\newcommand{\vare}{\class{var var_e}{e}}$
 $\newcommand{\vary}{\class{var var_y}{y}}$
+$\newcommand{\varv}{\class{var var_v}{v}}$
 $\newcommand{\varw}{\class{var var_w}{w}}$
+$\newcommand{\varC}{\class{var var_C}{C}}$
+$\newcommand{\varf}{\class{var var_f}{f}}$
+$\newcommand{\varA}{\class{var var_A}{A}}$
+$\newcommand{\varB}{\class{var var_B}{B}}$
+$\newcommand{\varC}{\class{var var_C}{C}}$
+$\newcommand{\varL}{\class{var var_L}{L}}$
+$\newcommand{\varP}{\class{var var_P}{P}}$
+$\newcommand{\varR}{\class{var var_R}{R}}$
+$\newcommand{\varT}{\class{var var_T}{T}}$
+$\newcommand{\varX}{\class{var var_X}{X}}$
+$\newcommand{\varalpha}{\class{var var_alpha}{\alpha}}$
 $\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
 $\newcommand{\varprover}{\class{var var_Prover}{\text{Prover}}}$
 $\newcommand{\varverifier}{\class{var var_Verifier}{\text{Verifier}}}$
@@ -84,9 +113,32 @@ $\newcommand{\rhovar}{\class{var var_ρ}{\rho}}$
 $\newcommand{\sigmavar}{\class{var var_σ}{\sigma}}$
 $\newcommand{\thetavar}{\class{var var_θ}{\theta}}$
 $\newcommand{\muvar}{\class{var var_μ}{\mu}}$
+$\renewcommand{\vec}[1]{\mathbf{#1}}$
+$\newcommand{\veca}{\vec{\class{var var_vec_a}{a}}}$
+$\newcommand{\vecb}{\vec{\class{var var_vec_b}{b}}}$
+$\newcommand{\vecc}{\vec{\class{var var_vec_c}{c}}}$
+$\newcommand{\vecs}{\vec{\class{var var_vec_s}{s}}}$
+$\newcommand{\vecG}{\vec{\class{var var_vec_G}{G}}}$
+$\newcommand{\vecH}{\vec{\class{var var_vec_H}{H}}}$
+$\newcommand{\vecg}{\vec{\class{var var_vec_g}{g}}}$
+$\newcommand{\vech}{\vec{\class{var var_vec_h}{h}}}$
 $\newcommand{\true}{\mathsf{true}}$
-$\newcommand{\false}{\mathsf{false}}$<div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu></label>
-<strong>Variants of Schnorr's identification protocol</strong>
+$\newcommand{\false}{\mathsf{false}}$
+$\newcommand{\ctx}{\mathsf{ctx}}$
+$\newcommand{\coloneqq}{&#8788;}$
+$\newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}$
+$\newcommand{\uwork}[2]{\underline{#1} & & \underline{#2}\\}$
+
+$\newcommand{\aliceworks}[1]{#1 & &\\[-2pt]}$
+$\newcommand{\bobworks}[1]{ & & #1\\[-2pt]}$
+
+$\newcommand{\Halving}{\text{Halving}}$
+$\newcommand{\HalveProof}{\text{HalveProof}}$
+$\newcommand{\HalveVerify}{\text{HalveVerify}}$
+$\newcommand{\indent}{\qquad}$
+$\newcommand{\append}{\mathrm{append}}$
+$\newcommand{\schnorrvalidate}{\mathsf{schnorr}\_\mathsf{validate}}$<div class="flex align-center justify-between"><label for=menu-control><img src=/svg/menu.svg class=book-icon alt=Menu>
+</label><strong>Variants of Schnorr's identification protocol</strong>
 <label for=toc-control><img src=/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#non-interactive-protocols>Non-interactive protocols</a><ul><li><a href=#original>Original</a></li><li><a href=#slim-original>Slim Original</a></li><li><a href=#subtract>Subtract</a></li><li><a href=#subtract--derive>Subtract + Derive</a></li></ul></li><li><a href=#security-pitfalls>Security pitfalls</a></li></ul></nav></aside></header><article class=markdown><h1 id=variants-of-schnorrs-identification-protocol>Variants of Schnorr&rsquo;s identification protocol
 <a class=anchor href=#variants-of-schnorrs-identification-protocol>#</a></h1><p>All variants of Schnorr&rsquo;s protocol prove the knowledge of an $\varx$ such that $\varh = \varg^\varx$ for a public $\varh$.</p><p>The differences are tradeoffs between the size of the proof statements and a more costly proof verification, and smaller communication overhead.</p><blockquote class="book-hint info"><strong>Goal:</strong>
 $\varprover$ convinces $\varverifier$ that they know $\varx$ such that $\varh = \varg^\varx$</blockquote><ul><li><strong>Public input:</strong> cyclic group $\cgroup$ of prime order $\varq$, a $\cgroup$ generator $\varg$ and $\varh\in \cgroup$.</li><li><strong>Private input:</strong> $\varprover$ knows secret $\varx\in\zq$ such that $\varh = \varg^\varx$.</li></ul><p>We present all variants in their non-interactive version.</p><h2 id=non-interactive-protocols>Non-interactive protocols
@@ -99,6 +151,9 @@ $\varprover$ convinces $\varverifier$ that they know $\varx$ such that $\varh = 
 \alicework{\varc = \hash{\varg, \varq, \varh, \varu}}
 \alicework{\varz = \varr + \varx\cdot \varc}
 \alicebob{}{\varu, \varc, \varz}{}
+\bobwork{\schnorrvalidate(\varu, \varh)}
+\bobwork{\varz \neq 0 \mod \varq}
+\bobseparator
 \bobwork{\varc \equalQ \hash{\varg, \varq, \varh, \varu}}
 \bobwork{\varg^\varz \equalQ \varu \cdot \varh ^\varc }
 \end{array}
@@ -112,6 +167,9 @@ $$
 \alicework{\varc = \hash{\varg, \varq, \varh, \varu}}
 \alicework{\varz = \varr + \varx\cdot \varc}
 \alicebob{}{\varu, \varz}{}
+\bobwork{\schnorrvalidate(\varu, \varh)}
+\bobwork{\varz \neq 0 \mod \varq}
+\bobseparator
 \bobwork{\bar{\varc} = \hash{\varg, \varq, \varh, \varu}}
 \bobwork{\varg^\varz \equalQ \varu \cdot \varh ^\overline{\varc} }
 \end{array}
@@ -124,6 +182,9 @@ $$</p><hr><h3 id=subtract>Subtract
 \alicework{\varc = \hash{\varg, \varq, \varh, \varu}}
 \alicework{\varz = \varr - \varx\cdot \varc}
 \alicebob{}{\varu, \varc, \varz}{}
+\bobwork{\schnorrvalidate(\varu, \varh)}
+\bobwork{\varz \neq 0 \mod \varq}
+\bobseparator
 \bobwork{\varc \equalQ \hash{\varg, \varq, \varh, \varu}}
 \bobwork{\varg^\varz \cdot \varh ^\varc \equalQ \varu }
 \end{array}
@@ -136,12 +197,15 @@ $$<hr><h3 id=subtract--derive>Subtract + Derive
 \alicework{\varc = \hash{\varg, \varq, \varh, \varu}}
 \alicework{\varz = \varr - \varx\cdot \varc}
 \alicebob{}{\varc, \varz}{}
+\bobwork{\schnorrvalidate(\varh)}
+\bobwork{\varz \neq 0 \mod \varq}
+\bobseparator
 \bobwork{\bar{\varu} = \varg^\varz \cdot \varh^\varc}
 \bobwork{\bar{\varc} = \hash{\varg, \varq, \varh, \bar{\varu}}}
 \bobwork{\varc \equalQ \bar{\varc} }
 \end{array}
-$$<h2 id=security-pitfalls>Security pitfalls
-<a class=anchor href=#security-pitfalls>#</a></h2><p>These variants suffer from the same pitfalls as the original Schnorr scheme, with some adjustments when $\varz$ is computed with a subtraction:</p><ul><li><strong>Verifier trusts prover:</strong><ul><li>$\varverifier$ uses $g$ and $q$ provided in the proof instead of using publicly known values.</li><li>When the $\varprover$ sends $\varc$, if the $\varverifier$ assumes that the hash $\varc$ is correctly computed and does not compute it themself. Both are high severity issues since $\varprover$ can forge proofs.</li></ul></li><li><strong>Weak Fiat-Shamir transformation:</strong> It is a common issue that some parameters are missing on the hash computation $\hash{\varg, \varq, \varh, \varu}$:<ul><li>$\varh$ or $\varu$ missing: high severity issue. Read <a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a> for more details.</li><li>$\varg$ or $\varq$ missing: usually no issue, but it might be one if the Verifier uses these parameters directly from the proof structure. This way, the prover can provide bad generators or orders to forge the proof.</li></ul></li><li><strong>Weak randomness:</strong> Bad randomness may cause the secret $\varx$ to leak. If $\varr$ is reused twice with two different non-interactive challenges then:
+$$<p>where $\schnorrvalidate(\varh)$ aborts if any of the following conditions are not met:</p><ul><li>$\varh \neq 0 \text{ (point at infinity for EC groups)}$ and</li><li>$\varh \inQ \cgroup\text{ (on curve check for EC groups)}$. If called with two arguments, $\schnorrvalidate(\varu, \varh)$ will abort if any of the following conditions are not met by either argument.</li></ul><h2 id=security-pitfalls>Security pitfalls
+<a class=anchor href=#security-pitfalls>#</a></h2><p>These variants suffer from the same pitfalls as the original Schnorr scheme, with some adjustments when $\varz$ is computed with a subtraction:</p><ul><li><strong>Verifier input validation:</strong> Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.</li><li><strong>Verifier trusts prover:</strong><ul><li>$\varverifier$ uses $g$ and $q$ provided in the proof instead of using publicly known values.</li><li>When the $\varprover$ sends $\varc$, if the $\varverifier$ assumes that the hash $\varc$ is correctly computed and does not compute it themself. Both are high severity issues since $\varprover$ can forge proofs.</li></ul></li><li><strong>Weak Fiat-Shamir transformation:</strong> It is a common issue that some parameters are missing on the hash computation $\hash{\varg, \varq, \varh, \varu}$:<ul><li>$\varh$ or $\varu$ missing: high severity issue. Read <a href=https://www.zkdocs.com/docs/zkdocs/protocol-primitives/fiat-shamir/>Fiat-Shamir transformation</a> for more details.</li><li>$\varg$ or $\varq$ missing: usually no issue, but it might be one if the Verifier uses these parameters directly from the proof structure. This way, the prover can provide bad generators or orders to forge the proof.</li></ul></li><li><strong>Weak randomness:</strong> Bad randomness may cause the secret $\varx$ to leak. If $\varr$ is reused twice with two different non-interactive challenges then:
 $$ \frac{\varz - \varz&rsquo;}{\varc-\varc&rsquo;} = \frac{\varr -\varr + \varx\cdot(\varc - \varc&rsquo;)}{\varc-\varc&rsquo;} = \varx \enspace,$$
 or when $\varz$ is computed with a subtraction:
 $$ \frac{\varz - \varz&rsquo;}{\varc&rsquo;-\varc} = \frac{\varr -\varr + \varx\cdot(\varc&rsquo; - \varc)}{\varc&rsquo;-\varc} = \varx \enspace.$$</li><li><strong>Replay attacks:</strong> After a non-interactive proof is public, it will always be valid and anyone could pretend to know the secret value. To prevent this, consider adding the ID of both the prover and the verifier inside of the Fiat-Shamir hash computation.</li></ul><h2>References <a class=anchor href=#references>#</a></h2><ul><li>[RFC] <a href=https://www.rfc-editor.org/rfc/rfc8235.html title="RFC: Schnorr Non-interactive Zero-Knowledge Proof" target=_blank>Informational RFC: Schnorr Non-interactive Zero-Knowledge Proof</a> (2017).</li></ul></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><article class=markdown><br><br><hr><div style=text-align:right><a href=https://github.com/trailofbits/zkdocs target=_blank>View on Github</a> | <a href=https://www.trailofbits.com/ target=_blank>Trail of Bits</a> |
