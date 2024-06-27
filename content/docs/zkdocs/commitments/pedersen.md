@@ -35,7 +35,7 @@ Suppose Alice has sent Bob a commitment $c=C\left(s,t\right)$ to a value $s$. Sh
 
 That means Alice has to find $t'$ such that $g^{s'}h^{t'}=c$. Since $g^{s'}$ and $c$ are already fixed, Alice is left to solve $h^{t'}=cg^{-s'}$. In other words, she needs to compute $t'=\log\_{h}\left(cg^{-s'}\right)$. Since the discrete logarithm problem is supposed to be hard in $G$, Alice will have a difficult time finding $t'$.
 
-Before committing to a value, Alice can also look for distinct pairs $\left(s,t\right),\left(s',t'\right)$ such that $C\left(s,t\right)=C\left(s',t'\right)$, without regard for the specific values of $s$ and $s'$. This is _also_ equivalent to computing a discrete logarithm in $G$. As the Pedersen paper points out: given $C\left(s,t\right)=C\left(s',s'\right)$, where $s'\neq s$, then $t'\neq t$, and it is possible to compute the discrete logarithm of $h$ with respect to $g$:
+Before committing to a value, Alice can also look for distinct pairs $\left(s,t\right),\left(s',t'\right)$ such that $C\left(s,t\right)=C\left(s',t'\right)$, without regard for the specific values of $s$ and $s'$. This is _also_ equivalent to computing a discrete logarithm in $G$. As the Pedersen paper points out: given $C\left(s,t\right)=C\left(s',t'\right)$, where $s'\neq s$, then $t'\neq t$, and it is possible to compute the discrete logarithm of $h$ with respect to $g$:
 
 $$
     \log\_{g}\left(h\right)=\frac{s-s'}{t'-t}\pmod{q}
