@@ -31,7 +31,7 @@ We assume that both parties agree with the security parameters $\alpha, \kappa$ 
 
 ## Interactive protocol (HVZK)
 {{< hint danger >}}
-**Security note:** The protocol is zero-knowledge (does not reveal the factorization of $\varN$) only when the verifier is honest and generates each $\rhovar_i$ randomly. If the verifier choses these values maliciously they can recover the factorization of $\varN$. If your attacker model takes this into consideration, use the non-interactive version. More details on [Using HVZKP in the wrong context](../../../security-of-zkps/when-to-use-hvzk).
+**Security note:** The protocol is zero-knowledge (does not reveal the factorization of $\varN$) only when the verifier is honest and generates each $\rhovar_i$ randomly. If the verifier chooses these values maliciously they can recover the factorization of $\varN$. If your attacker model takes this into consideration, use the non-interactive version. More details on [Using HVZKP in the wrong context](../../../security-of-zkps/when-to-use-hvzk).
 {{< /hint >}}
 
 {{< rawhtml >}}
