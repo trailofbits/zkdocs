@@ -54,7 +54,7 @@ We will construct the commitment as a combination of commitments to vector $\vec
 $$
 \varC_P \coloneqq \ip{\veca}{\vecG} + \ip{\vecb}{\vecH}.
 $$
-Then, the verifier samples a random group element $\sampleCgroup{\varU}$ and sends it the prover. The prover and the verifier independently compute the full commitment
+Then, the verifier samples a random group element $\sampleCgroup{\varU}$ and sends it to the prover. The prover and the verifier independently compute the full commitment
 $$
 \varC \coloneqq \ip{\veca}{\vecG} + \ip{\vecb}{\vecH} + \ip{\veca}{\vecb} \cdot \varU.
 $$

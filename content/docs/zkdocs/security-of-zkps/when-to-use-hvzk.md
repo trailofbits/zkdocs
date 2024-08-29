@@ -31,7 +31,7 @@ Recall that in [Short factoring proofs](../../zero-knowledge-protocols/short-fac
  $$
 {{< /rawhtml >}}
 
-After the initial commit, the verifier responds with a challenge $e$ supposedly sampled from $\range{B}$. However, being malicious, the verifier choses $\vare=A$, the maximum value that $\varr$ can be. So, that after receiving $\vary = \varr + (\varN - \varphi(\varN))\cdot \vare$, they can compute $\varN - \vary//\vare$ which will reveal $\varphi(\varN)$.
+After the initial commit, the verifier responds with a challenge $e$ supposedly sampled from $\range{B}$. However, being malicious, the verifier chooses $\vare=A$, the maximum value that $\varr$ can be. So, that after receiving $\vary = \varr + (\varN - \varphi(\varN))\cdot \vare$, they can compute $\varN - \vary//\vare$ which will reveal $\varphi(\varN)$.
 
 
 ## The case of the Two-Prime-Divisor proof

@@ -152,10 +152,10 @@ The KZG commitment scheme as presented above can be viewed as a generalization o
 
 In a similar vein, let $\varf(\varx)$ be a degree-$t$ polynomial.
 * An adversary capable of solving the Discrete Log problem can find the discrete log of $\varC(\varf) = {\varf(\alpha)} \cdot g_1$ and acquire $\langle \alpha, \varf(\alpha)\rangle$. Thus the scheme is only computationally hiding.
-* If $\varf(\varx_0)$ is chosen from a small set, say $\\{0,1\\}$, then given $t$ openings an adversary can "guess and check" the value of $\varf(\varx_0)$. Thus the scheme does not possess indistinguishablity.
+* If $\varf(\varx_0)$ is chosen from a small set, say $\\{0,1\\}$, then given $t$ openings an adversary can "guess and check" the value of $\varf(\varx_0)$. Thus the scheme does not possess indistinguishability.
 
 There are two common approaches to resolve these issues:
-1. Choose one extra point on $f$ at random: if you want to commit to $t$ "useful" points, instead commit to $t+1$ points, where the last point is chosen uniformly at random. Then, any subset of the $t$ useful points may be revealed without breaking indistinguishablity.
+1. Choose one extra point on $f$ at random: if you want to commit to $t$ "useful" points, instead commit to $t+1$ points, where the last point is chosen uniformly at random. Then, any subset of the $t$ useful points may be revealed without breaking indistinguishability.
 2. Use the "Pedersen Variant": let $h_1$ be an agreed-upon random generator of $\cgroup_1$. To commit to a degree-$t$ polynomial $\varf$, choose a random degree-$t$ polynomial $\hat{\varf}$ and publish ${\varf(\alpha)}\cdot g_1 +  {\hat{\varf}(\alpha)} \cdot h_1$. To open at a point $\varx_0$, let 
 $$
 w = {\frac{\varf(\alpha) - \varf(\varx_0)}{\alpha - \varx_0}}\cdot g_1 + {\frac{\hat{\varf}(\alpha) - \hat{\varf}(\varx_0)}{\alpha - \varx_0}}\cdot h_1
