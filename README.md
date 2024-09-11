@@ -72,7 +72,7 @@ Interactivity features:
  - `hugo server --minify --theme book`
 
 ## How to contribute
- - The file [schnorr.md](content/docs/example/zero-knowledge-protocols/schnorr.md) is an example of a complete protocol.
+ - The file [schnorr.md](content/docs/zkdocs/zero-knowledge-protocols/schnorr.md) is an example of a complete protocol.
  - [interactive_variables.js](static/js/interactive_variables.js) has all the variable renaming logic.
  - The Sigma protocols are structured in latex in 3 columns: Alice column, arrow_column, Verifier column. To write the protocols, you can use helpful latex macros:
    - `\work{Work for Alice}{Work for Bob}` - writes work in both Alice's and Bob's column
