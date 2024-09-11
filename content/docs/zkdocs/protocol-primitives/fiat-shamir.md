@@ -34,9 +34,9 @@ This transformation may seem straightforward, but unfortunately, it tends to be 
  - Set the commitment value, $u$, to be some public key that you do not know the secret key for.
  - Compute the challenge value $c = \hash{g,q,u}$.
  - Set the proof $z$ to be a random value, and then compute your public key to be $h = (\frac{g^z}{u})^{\frac{1}{c}}$
- - Send $u,c,z$ to the verifier.
+ - Send $u,c,z,h$ to the verifier.
 
- The verifier then performs their two checks: $c \equalQ \hash{g,q,u}$ and $g^z \equalQ u\cdot h^c$. The first check will pass as they are both the same, and the second check will pass because of how we constructed $z$, $u$, and $h$.
+The verifier then performs their two checks: $c \equalQ \hash{g,q,u}$ and $g^z \equalQ u\cdot h^c$. The first check will pass as they are both the same, and the second check will pass because of how we constructed $z$, $u$, and $h$.
 
 Since we set $u$ to be some value we do not know the secret key for, we also will not know the secret key for $h$, which means we have forged our proof of knowledge.
 
