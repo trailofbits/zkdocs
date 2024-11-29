@@ -152,7 +152,7 @@ The KZG commitment scheme as presented above can be viewed as a generalization o
 
 In a similar vein, let $\varf(\varx)$ be a degree-$t$ polynomial.
 * An adversary capable of solving the Discrete Log problem can find the discrete log of $\varC(\varf) = {\varf(\alpha)} \cdot g_1$ and acquire $\langle \alpha, \varf(\alpha)\rangle$. Thus the scheme is only computationally hiding.
-* If $\varf(\varx_0)$ is chosen from a small set, say $\\{0,1\\}$, then given $t$ openings an adversary can "guess and check" the value of $\varf(\varx_0)$. Thus the scheme does not possess indistinguishablity.
+* If $\varf(\varx_0)$ is chosen from a small set, say $\\{0,1\\}$, then given $t$ openings an adversary can "guess and check" the value of $\varf(\varx_0)$. Thus the scheme does not possess indistinguishability.
 
 There are two common approaches to resolve these issues:
 1. Choose one extra point on $f$ at random: if you want to commit to $t$ "useful" points, instead commit to $t+1$ points, where the last point is chosen uniformly at random. Then, any subset of the $t$ useful points may be revealed without breaking indistinguishablity.
