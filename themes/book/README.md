@@ -134,7 +134,7 @@ And Enable it by setting `BookMenuBundle: /menu` in Site configuration.
 ## Blog
 
 A simple blog is supported in the section `posts`.  
-A blog is not the primary usecase of this theme, so it has only minimal features.
+A blog is not the primary use case of this theme, so it has only minimal features.
 
 ## Configuration
 
@@ -292,7 +292,7 @@ In addition to this, there are several empty partials you can override to easily
 
 ### Plugins
 
-There are a few features implemented as plugable `scss` styles. Usually these are features that don't make it to the core but can still be useful.
+There are a few features implemented as pluggable `scss` styles. Usually these are features that don't make it to the core but can still be useful.
 
 | Plugin                            | Description                                                 |
 | --------------------------------- | ----------------------------------------------------------- |
