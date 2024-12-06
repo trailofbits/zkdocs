@@ -22,7 +22,7 @@ The protocol descriptions are interactive, letting you modify variable names. Th
 Interactivity features:
  - Click on a variable to highlight it across the document.
  - Type or paste with a variable highlighted to edit its name. Press `Enter` or `Escape` to stop editing.
- - Press the `Reset variables names` button to reset the names of all variables on the current page (variable names are independent across different pages)
+ - Press the `Reset variable names` button to reset the names of all variables on the current page (variable names are independent across different pages)
 
 ----
 

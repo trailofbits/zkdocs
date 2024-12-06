@@ -33,7 +33,7 @@ The protocol descriptions are interactive, letting you modify variable names. Th
 Interactivity features:
  - Click on $\varX$ to highlight the variable across the document. Try it!
  - Type or paste with $\varX$ highlighted to edit $\varX$'s name. Press `Enter` or `Escape` to stop editing.
- - Press the {{< rawhtml >}}<button class="book-btn" onclick="resetVariableNames()">Reset variables names</button>{{< /rawhtml>}} button to reset the names of all variables on the current page (variable names are independent across different pages)
+ - Press the {{< rawhtml >}}<button class="book-btn" onclick="resetVariableNames()">Reset variable names</button>{{< /rawhtml>}} button to reset the names of all variables on the current page (variable names are independent across different pages)
 
 
 {{< box >}}
