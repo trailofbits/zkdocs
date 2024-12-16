@@ -28,7 +28,7 @@ The commitment satisfies certain security properties:
 Polynomial commitments serve as an important component of several modern noninteractive proof systems.
 
 #### Vector Commitments
-Given a vector $\vec{v} = [v_1, v_2, \dots, v_n]$ we can create a succinct commitment to the whole vector $\vec{v}$ by interpolating a degree-$(n-1)$ polynomial $\varf$ such that $\varf(i) = v_i$. This enables provers to commit to a vector of field elements such that openings prove the value at a specific index. Vector commitments can in turn be used as a building block for [Verkle Trees](https://vitalik.ca/general/2021/06/18/verkle.html), a variant of Merkle trees with extremely small proof sizes.
+Given a vector $\vec{v} = [v_1, v_2, \dots, v_n]$ we can create a succinct commitment to the whole vector $\vec{v}$ by interpolating a degree-$(n-1)$ polynomial $\varf$ such that $\varf(i) = v_i$. This enables provers to commit to a vector of field elements such that openings prove the value at a specific index. Vector commitments can in turn be used as a building block for [Verkle Trees](https://vitalik.eth.limo/general/2021/06/18/verkle.html), a variant of Merkle trees with extremely small proof sizes.
 
 #### zkSNARKs
 Polynomial commitment schemes are a core primitive in zkSNARKs such as {{< cite PLONK >}} and {{< cite Groth16 >}}. These general-purpose zero knowledge proofs encode computations as polynomial identity constraints and then use openings of polynomial commitments at random points to verify polynomial equality. The power of polynomial commitments here comes from the fact that two distinct degree-$t$ polynomials over a field of order $q > t$ may intersect in at most $t$ points, and thus agree at a random point with probability at most $\frac{t}{q}$.
