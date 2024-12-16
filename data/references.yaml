@@ -199,7 +199,7 @@ pairing-based-crypto:
 
 verkle:
   title: "Verkle trees"
-  link: https://vitalik.ca/general/2021/06/18/verkle.html
+  link: https://vitalik.eth.limo/general/2021/06/18/verkle.html
   tag: "Verkle Trees"
 
 PLONK:
