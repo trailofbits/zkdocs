@@ -59,7 +59,7 @@ An attacker can:
 -  select random numbers $r_i$
 -  send their square $r^2_i \mod \varN$ to the prover,
 
-The prover will compute their square roots, $\sigma_i$ which can be different than $\pm \varr_i$ since there are four different square-roots modulo $\varN = p q$. When $\sigma_i\neq \pm \varr_i$, computing $\gcd (\varN, \sigma_i - r_i)$ will reveal one of the factors of $\varN$. This is because
+The prover will compute their square roots, $\sigma_i$ which can be different from $\pm \varr_i$ since there are four different square-roots modulo $\varN = p q$. When $\sigma_i\neq \pm \varr_i$, computing $\gcd (\varN, \sigma_i - r_i)$ will reveal one of the factors of $\varN$. This is because
 
 $\begin{align*}
 \sigma_i^2 &\equiv r_i^2 \mod \varN \\\\
