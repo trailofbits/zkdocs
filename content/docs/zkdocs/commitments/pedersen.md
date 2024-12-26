@@ -163,7 +163,7 @@ Once $c\_{1}$ has been generated, Alice can easily generate $c\_{2}$, provide bo
 
 ### Generator Selection
 
-Suppose that a Alice knows $l=\log\_{g}\left(h\right)$ and has a commitment $c=C\left(s,t\right)=g^{s}h^{t}$.
+Suppose that an Alice knows $l=\log\_{g}\left(h\right)$ and has a commitment $c=C\left(s,t\right)=g^{s}h^{t}$.
 
 Then Alice can rewrite the commitment as $c=g^{s}h^{t}$ as $c=g^{s}\left(g^{l}\right)^{t}=g^{s}g^{tl}=g^{s+tl}$. Let $s'=s+l$ and $t'=t-1$. She can the fraudulently "open" the commitment $c$ by sending $\left(s',t'\right)$. This will appear as a valid opening to Bob, since:
 
