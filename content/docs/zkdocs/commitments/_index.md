@@ -32,7 +32,7 @@ Lots of cryptographic protocols rely on this sort of exchange. For instance, thi
 
 To see an example of how this might be done using cryptography, consider the following process. Bob randomly selects $\sampleGeneric{call}{\{\coinheads,\cointails\}}$ as his call. Then he selects a 256-bit random value $r$ and computes, $c=\hmac{r}{call}$, then sends $c$ to Alice. Alice flips her coin, and announces either $\coinheads$ or $\cointails$. Bob then sends Alice $\left(r,call\right)$. Alice verifies that $c=\hmac{r}{call}$. If the two match, she accepts Bob's call as valid; otherwise, she rejects Bob's call as invalid.
 
-We call $c$ Bobs's _commitment_ to his call, and we call $\left(r,call\right)$ the _opening_ of $c$.
+We call $c$ Bob's _commitment_ to his call, and we call $\left(r,call\right)$ the _opening_ of $c$.
 
 In protocol terms, we have:
 
