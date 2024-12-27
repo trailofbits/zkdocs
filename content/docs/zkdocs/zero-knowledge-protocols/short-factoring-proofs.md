@@ -107,8 +107,8 @@ We use the Fiat-Shamir heuristic, and the prover creates $\vare$ using a $|B|$-b
 ## Choice of security parameters
 We detail the choice of security parameters based on the bit-size of $\varN$:
  * $k$ -- __the__ security parameter; the cheating probability of the protocol is $2^{-k}$. Choose 80, 128 or 256.
- * $B$ and $\ell$ -- the size of the challenge space and number of iterations; $B$ and $\ell$ should satisfy $\ell\cdot \log B = \theta(k)$, so chose $\ell=1$ and $B=2^k$ in the non-interactive protocol.
- * $A$ -- the size of the commit space; $A$ must be smaller than $\varN$ and satisfy $(\varN - \varphi(\varN) ) \ell B \ll A < \varN$. If you are sure that public moduli are of a fixed size --like $|\varN| = 2048$-- chose $A=2^{|\varN|}$. If the public modulus can have smaller bit-size but never below $|\varN| - 4$, chose $A=2^{|\varN| - 4}$.
+ * $B$ and $\ell$ -- the size of the challenge space and number of iterations; $B$ and $\ell$ should satisfy $\ell\cdot \log B = \theta(k)$, so choose $\ell=1$ and $B=2^k$ in the non-interactive protocol.
+ * $A$ -- the size of the commit space; $A$ must be smaller than $\varN$ and satisfy $(\varN - \varphi(\varN) ) \ell B \ll A < \varN$. If you are sure that public moduli are of a fixed size --like $|\varN| = 2048$-- choose $A=2^{|\varN|}$. If the public modulus can have smaller bit-size but never below $|\varN| - 4$, choose $A=2^{|\varN| - 4}$.
 
 ## Security pitfalls
 - **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
