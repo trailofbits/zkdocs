@@ -11,7 +11,7 @@ This page is a glossary for notation and concepts present in the documentation.
 
 ## Sets, Groups, and Special Functions
  - $\mathbb{Z}$ is the set of integers, $\\{\ldots, -2, -1, 0, 1, 2, \ldots\\}$.
- - $\naturals$ is the set of integers greater of equal than 0, $\\{0, 1, 2, \ldots\\}$.
+ - $\naturals$ is the set of integers greater than or equal to 0, $\\{0, 1, 2, \ldots\\}$.
  - $\range{b}$ is the finite set of integers $\\{0, \ldots, b-1\\}$.
  - $\gcd(n, m)$ is the nonnegative [greatest common divisor](https://en.wikipedia.org/wiki/Greatest_common_divisor) of integers $n$ and $m$; when $\gcd(n, m) = 1$, $n$ and $m$ are said to be *coprime*.
  - $\z{n}$ are the integers modulo $n$, a set associated with the equivalence classes of integers $\\{0, 1, \ldots, n-1\\}$.
