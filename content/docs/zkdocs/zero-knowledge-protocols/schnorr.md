@@ -90,7 +90,7 @@ The Schnorr interactive identification protocol
  \alicebob{}{\varz}{}
  \bobwork{\varz \neq 0 \mod \varq}
  \bobseparator
- \bobwork{\varg^{\varz} \equalQ \varu \cdot \varh^\varc }
+ \bobwork{\varz \cdot \varg \equalQ \varu + \varc\cdot\varh}
  \end{array}
  $$
 
