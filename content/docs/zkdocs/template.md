@@ -41,7 +41,7 @@ $\varprover$ convinces $\varverifier$ that they know
 
 ### Non-interactive protocol
 We can transform this identification scheme into a non-interactive protocol using the Fiat-Shamir heuristic, where the prover
-creates themself the random challenge $c$. To do this, we need to hash together *all* elements of the public set $\\{\varg, \varq, \varh\\}$ as well as the public values of the interaction.
+creates itself the random challenge $c$. To do this, we need to hash together *all* elements of the public set $\\{\varg, \varq, \varh\\}$ as well as the public values of the interaction.
 {{< rawhtml >}}
  $$
  \begin{array}{c}
