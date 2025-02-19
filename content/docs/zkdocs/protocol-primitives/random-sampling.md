@@ -7,7 +7,7 @@ summary: "In this section, we describe how to uniformly sample from different gr
 
 In most protocols, it is necessary to sample uniformly from groups like $\zq$ or $\zqs$. Here we will describe how to sample in these specific groups, and a general procedure to sample via rejection sampling.
 
-When available it is advisable to use a cryptographic random number library to securely sample at uniform from a range. For example, to sample uniformly from $\zq$ (or equivalently $\range{q}$) in Python, use the [secrets](https://docs.python.org/3/library/secrets.html) library.
+When available it is advisable to use a cryptographic random number library to securely sample uniformly from a range. For example, to sample uniformly from $\zq$ (or equivalently $\range{q}$) in Python, use the [secrets](https://docs.python.org/3/library/secrets.html) library.
 
 ```python
 import secrets
@@ -74,7 +74,7 @@ In practice, if $q$ is $n$ bits then typically $\lambda \leq n$, so it suffices 
 
 #### Statistical Distance
 
-The *statistical distance*, also known as the "total variational distance" of the distribution of a random variable $X$ from that of another random variable $Y$ both with support $[q]$ is defined as
+The *statistical distance*, also known as the "total variation distance" of the distribution of a random variable $X$ from that of another random variable $Y$ both with support $[q]$ is defined as
 $$
 \Delta(X,Y) = \frac{1}{2}\sum_{a = 0}^q |\Pr[X = a] - \Pr[Y = a]|
 $$
