@@ -193,7 +193,7 @@ This construction has perfect completeness and, as outlined above, computational
 * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
 * **Weak Fiat-Shamir transform:** When transforming the interactive protocol into a non-interactive protocol with the Fiat-Shamir transform, care needs to be taken to ensure that all parameters are included in the hash. See [Fiat-Shamir transformation]({{< ref "./../protocol-primitives/fiat-shamir.md" >}}).
 * **Replay attacks:** This construction does not provide replay protection; i.e., proofs can be replayed. But, replay protection can be achieved by adding more information to the $\Hash$ invocations, see [Preventing replay attacks]({{< ref "./../protocol-primitives/fiat-shamir.md#preventing-replay-attacks" >}}).
-* **Verifier trusting the prover:** All version of this protocol assume that the verifier does not trust the prover beyond the protocol. See the warning in Section 2 of [Inner Product Argument]({{< ref "./../zero-knowledge-protocols/ipa/_index.md" >}}).
+* **Verifier trusting the prover:** All versions of this protocol assume that the verifier does not trust the prover beyond the protocol. See the warning in Section 2 of [Inner Product Argument]({{< ref "./../zero-knowledge-protocols/ipa/_index.md" >}}).
 
 ## See also
  - {{< section_entry "docs/zkdocs/zero-knowledge-protocols/ipa" >}}
