@@ -22,7 +22,7 @@ Given a secret $S$, a number of desired shares $n$, and a threshold $k$, splitti
 
 ####  Encoding $S$ in a Polynomial
 
-Shamir proposed a straightforward method for encoding secrets into polynomials: set the constant term of random polynomial to the secret $S$, and select all other coefficients uniformly at random. For a degree-$(k-1)$  polynomial, there would be $k-1$ random coefficients $r_i$, and the constant coefficient of $S$:
+Shamir proposed a straightforward method for encoding secrets into polynomials: set the constant term of a random polynomial to the secret $S$, and select all other coefficients uniformly at random. For a degree-$(k-1)$  polynomial, there would be $k-1$ random coefficients $r_i$, and the constant coefficient of $S$:
 $$f(x) = S + r_1 x + \ldots + r_{k-1} x^{k-1} \enspace.$$
 
 {{< hint info>}}
