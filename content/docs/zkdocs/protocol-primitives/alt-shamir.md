@@ -14,7 +14,7 @@ These alternative schemes are certainly harder to implement (and to review), and
 
 ### Transforming the Inputs Using a Nonzero Function
 
-Suppose we are working over $\z{p}$, where $p=2^{255}-19$. Consider the multiplicative group $\zns{p}$ of integers less than $p$  and relatively prime to $p$. We can define $h\left(m\right)=2^{m}\pmod{p}$. Since $0\not\in \zns{p}$, we know that $h\left(m\right)\neq 0$ for any integer $m$. Since $2$ is a generator of $\zns{p}$, we know that $h\left(m\right)$ has maximal order in $\zns{p}$.
+Suppose we are working over $\z{p}$, where $p=2^{255}-19$. Consider the multiplicative group $\zns{p}$ of integers less than $p$  and relatively prime to $p$. We can define $h\left(m\right)=2^{m}\pmod{p}$. Since $0\notin \zns{p}$, we know that $h\left(m\right)\neq 0$ for any integer $m$. Since $2$ is a generator of $\zns{p}$, we know that $h\left(m\right)$ has maximal order in $\zns{p}$.
 
 During share generation, given an integer input $x$, define $x'=h\left(x\right)$. Then, generate the corresponding share according to $\left(x',f\left(x'\right)\right)$. Because $x'\neq 0$, counters and external inputs can be used without the risk of generating a zero share.
 
