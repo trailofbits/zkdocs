@@ -15,7 +15,7 @@ The inner product argument was introduced by Bootle et al. {{< cite Bootleproofs
 
 {{< hint info >}}
 **Goal:**
-$\varprover$ convinces $\varverifier$ that they know vectors $\veca$ and $\vecb$ such that they have the inner product $\ip{\veca}{\vecb} = \varz$, and they open the commitment $\varC_P = \ip{\veca}{\vecG} + \ip{\vecb}{\vecH}$.
+$\varprover$ convinces $\varverifier$ that they know the vectors $\veca$ and $\vecb$ such that they have the inner product $\ip{\veca}{\vecb} = \varz$, and they open the commitment $\varC_P = \ip{\veca}{\vecG} + \ip{\vecb}{\vecH}$.
 {{< /hint >}}
 
  * __Public input:__ a cyclic additive group $\cgroup$ of prime order $\varq$ and $2n$ random $\cgroup$ generators $\vecG = (\varG_1,\dots,\varG_n)$ and $\vecH = (\varH_1,\dots,\varH_n)$; vector commitment $\varC_P \in \cgroup$ and scalar $\varz \in \zq$.
@@ -202,7 +202,7 @@ Putting it all together, we can define a new protocol as follows:
 **$\varC$, $\vecG'$, $\vecH'$, and $\varC'$ must be honestly computed by the verifier.** If the verifier accepts these values directly from the prover, then the prover can cheat by picking these values such that they are satisfied by some arbitrary vectors, unrelated to the original commitment; i.e., it would make the statement trivially satisfiable.
 {{< /hint >}}
 
-This construction has perfect completeness and, as outline above, computational soundness. See Appendix B of {{< cite Bulletproofs >}} for a formal proof.
+This construction has perfect completeness and, as outlined above, computational soundness. See Appendix B of {{< cite Bulletproofs >}} for a formal proof.
 
 This construction requires the prover and verifier to exchange four group elements ($\varC_P$, $\varU$, $\varL$ and $\varR$), a scalar ($\varu$), and two $n/2$-size vectors ($\veca'$ and $\vecb'$), giving total communication of size $n + 5$. This is about half the communication cost of Version 1.
 
@@ -338,7 +338,7 @@ This construction requires the prover to send $2m + 1$ group elements ($\varC_P,
 * **Weak Fiat-Shamir transform:** When transforming the interactive protocol into a non-interactive protocol with the Fiat-Shamir transform, care needs to be taken to ensure that all parameters are included in the hash. See [Fiat-Shamir transformation]({{< ref "./../protocol-primitives/fiat-shamir.md" >}}).
 * **Replay attacks:** This construction does not provide replay protection; i.e., proofs can be replayed. But, replay protection can be achieved by adding more information to the $\Hash$ invocations, see [Preventing replay attacks]({{< ref "./../protocol-primitives/fiat-shamir.md#preventing-replay-attacks" >}}).
 * **Malicious verifiers in interactive protocol:** The interactive version of the halving protocol (Version 2) assumes an honest verifier. If the verifier deviates from the protocol, then security may no longer hold. See the warning in Section 2, and [Using HVZKP in the wrong context]({{< ref "./../security-of-zkps/when-to-use-hvzk.md" >}}).
-* **Verifier trusting the prover:** All version of this protocol assume that the verifier does not trust the prover beyond the protocol. See the warning in Section 2.
+* **Verifier trusting the prover:** All versions of this protocol assume that the verifier does not trust the prover beyond the protocol. See the warning in Section 2.
 
 
 ## See also
