@@ -100,9 +100,9 @@ $\varx_0$ is then $\varw = \varf_{\varx_0}(\alpha) \cdot g_1$.
 
 
 More concretely, to open a commitment $\varC$ to polynomial $\varf$ at point $\varx_0$, compute the quotient
-$$\varf_{\varx_0}(X) = \frac{\varf(X) - \varf(\varx_0)}{X - \varx_0} = \sum_{i = 0}^{t} c_i X^i$$
+$$\varf_{\varx_0}(X) = \frac{\varf(X) - \varf(\varx_0)}{X - \varx_0} = \sum_{i = 0}^{t-1} d_i X^i$$
 and compute the witness as 
-$$\varw = \varf_{\varx_0}(\alpha)\cdot g_1 = \sum_{i=0}^t c_i \cdot (\alpha^i \cdot g_1)$$
+$$\varw = \varf_{\varx_0}(\alpha)\cdot g_1 = \sum_{i=0}^{t-1} d_i \cdot (\alpha^i \cdot g_1)$$
 
 Reveal $\langle \varx_0, \varf(\varx_0), \varw \rangle$.
 
