@@ -28,7 +28,7 @@ $$f(x) = S + r_1 x + \ldots + r_{k-1} x^{k-1} \enspace.$$
 {{< hint info>}}
 **Example:** We want to share our secret number 42 with three players so that any two of them can recover it. We define the degree-1 polynomial over $\field{73}$ as
 $$f(x) = 42 + 13 \cdot x \enspace,$$
-where 13 was randomly sampled over $\field{73}$. We evaluate the polynomial at different points obtaining the shares $(x_i, f(x_i))$. Then, we can share 1 point of the coefficient to the three players, each getting one of $(1, 55), (2, 68), (3, 8)$. Since the polynomial is a line, any two of them could meet and recover the secret value 42!
+where 13 was randomly sampled over $\field{73}$. We evaluate the polynomial at different points obtaining the shares $(x_i, f(x_i))$. Then, we can share 1 point of the coefficient to the three players, each getting one of $(1, 55), (2, 68), (3, 81)$. Since the polynomial is a line, any two of them could meet and recover the secret value 42!
 {{< /hint >}}
 
 This choice has the advantage of relative simplicity; there is no need to use oddball sampling techniques to select the coefficients of $f\left(x\right)$.
