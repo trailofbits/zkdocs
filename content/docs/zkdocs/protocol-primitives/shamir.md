@@ -25,19 +25,29 @@ Given a secret $S$, a number of desired shares $n$, and a threshold $k$, splitti
 Shamir proposed a straightforward method for encoding secrets into polynomials: set the constant term of a random polynomial to the secret $S$, and select all other coefficients uniformly at random. For a degree-$(k-1)$  polynomial, there would be $k-1$ random coefficients $r_i$, and the constant coefficient of $S$:
 $$f(x) = S + r_1 x + \ldots + r_{k-1} x^{k-1} \enspace.$$
 
+This method ensures that an actor who holds $k-1$ or fewer shares learns nothing about $S$. For any possible value of $S$, there is a corresponding polynomial of degree at most $k-1$ that could have generated the shares, so the shares do not provide any information about the secret.
+
 {{< hint info>}}
 **Example:** We want to share our secret number 42 with three players so that any two of them can recover it. We define the degree-1 polynomial over $\field{73}$ as
 $$f(x) = 42 + 13 \cdot x \enspace,$$
 where 13 was randomly sampled over $\field{73}$. We evaluate the polynomial at different points obtaining the shares $(x_i, f(x_i))$. Then, we can share 1 point of the coefficient to the three players, each getting one of $(1, 55), (2, 68), (3, 8)$. Since the polynomial is a line, any two of them could meet and recover the secret value 42!
 {{< /hint >}}
 
-This choice has the advantage of relative simplicity; there is no need to use oddball sampling techniques to select the coefficients of $f\left(x\right)$.
+{{< hint danger>}}
+**Choosing the leading coefficient:** The leading coefficient of the polynomial should be chosen in the same manner as other coefficients - uniformly at random from the full field $\field{p}$. Many implementations incorrectly use rejection sampling to ensure that the leading coefficient is nonzero. This breaks the information-theoretic security of the scheme, as the set of possible polynomials is no longer in one-to-one correspondence with the set of possible shares. 
+
+For example, if the field is GF(3) and we have a 2-of-2 sharing (i.e. a line), then an attacker who sees the share $(1, 0)$ can immediately rule out the possibility that the shared secret value is 1, since the line would have to be $f(x) = 1 + 0 \cdot x$ which has a leading coefficient of zero. In contrast, if the leading coefficient is chosen uniformly at random from GF(3), then an attacker who holds the share $(1, 0)$ learns nothing about the secret, which could be (0, 1, or 2) with equal probability.
+
+This flaw is most dangerous when sharing over a small field, such as $\field{256}$, where the bias induced by rejection sampling is non-negligible. It is especially dangerous when a single secret may be share many times, as a process of elimination may be used to 
+eventually determine the exact secret. In large prime fields, the bias is negligible and not a practical concern.
+{{< /hint >}}
+
 
 ##### A Note on Selecting $p$
 In the _general_ case, the specific prime $p$ does not matter much. Shamir's original paper proposed using 16-bit primes (the largest of which would be $p=2^{16}-15=65521$) for performance reasons. By limiting intermediate results to 32 bits, multi-precision arithmetic routines could be avoided on any 32-bit processor. Large secrets could be broken into blocks of 16 bits or less and shared with distinct polynomials. One limitation imposed by such a small $p$ is that only about 65000 distinct shares can be generated.
 
-In practice, $p$ should be reasonably large. Breaking $S$ into multiple parts introduces complexity and opportunities for malicious actors. Also, in some verifiable secret sharing schemes, a large $p$ is needed to prevent discrete log attacks.
-
+Common choices are the field $\field{256}$, which allows for byte-oriented implementations, and large prime fields based on the 
+scalar group of an elliptic curve, which allows for verifiable secret sharing.
 #### Generating the Shares
 
 Shares $s_{1},s_{2},\ldots,s_{n}$ of $S$ are ordered pairs $\left(x_{i}, f\left(x_{i}\right)\right)$. The $x_{i}$ values can be picked in several ways, but a counter starting in 1 is the most common method.
@@ -61,9 +71,7 @@ As mentioned above, there are several ways to select the $x_{i}$ values during t
 
 The most common approach, and the one we recommend, is to use a counter, setting $x_{i}=i$ for $i=1,2,\ldots,n$. This has the advantage of simplicity and speed. No user-generated inputs are necessary, and evaluating $f\left(x\right)$ when $x$ is small can be faster than for arbitrary-selected values in the field.
 
-Another approach is to use unique values associated with shareholders, such as userid values from a database, or users' provided values.
-
-Finally, some implementations select $x_{i}$ by selecting them randomly from $\field{p}$.
+Another approach when sharing over a large prime field is to use unique values associated with shareholders, such as userid values from a database or PKI-based identifiers. These arbitrary-length identifiers can be transformed into field elements by hashing them and reducing the hash output modulo $p-1$, then adding 1. This technique should only be used in fields where the probability of a collision is negligible.
 
 ### What Can Go Wrong?
 
