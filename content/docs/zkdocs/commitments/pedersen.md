@@ -17,7 +17,7 @@ Pedersen's original proposal described the commitment in terms of order-$q$ subg
 
 ## Definition
 
-Start with a finite group $G$ of prime order $q$, where $q$ is suitably large. For instance, we can use an order-$q$ subgroup the multiplicative group $\zps$ where $q$ divides $p$, or an elliptic curve group or subgroup. Select two generators $g,h$ of $G$ such that $\log\_{g}\left(h\right)$ is not known. The parameters of the commitment scheme are $\left(G,q,g,h\right)$.
+Start with a finite group $G$ of prime order $q$, where $q$ is suitably large. For instance, we can use an order-$q$ subgroup of the multiplicative group $\zps$ where $q$ divides $p$, or an elliptic curve group or subgroup. Select two generators $g,h$ of $G$ such that $\log\_{g}\left(h\right)$ is not known. The parameters of the commitment scheme are $\left(G,q,g,h\right)$.
 
 To generate a commitment $c\in G$ to a secret integer $s$, where $0 < s < q$, randomly sample $\sampleN{t}{\varq}$ and compute:
 
