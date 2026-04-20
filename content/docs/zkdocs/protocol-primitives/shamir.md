@@ -34,11 +34,11 @@ where 13 was randomly sampled over $\field{73}$. We evaluate the polynomial at d
 {{< /hint >}}
 
 {{< hint danger>}}
-**Choosing the leading coefficient:** The leading coefficient of the polynomial should be chosen in the same manner as other coefficients - uniformly at random from the full field $\field{p}$. Many implementations incorrectly use rejection sampling to ensure that the leading coefficient is nonzero. This breaks the information-theoretic security of the scheme, as the set of possible polynomials is no longer in one-to-one correspondence with the set of possible shares. 
+**Choosing the leading coefficient:** The leading coefficient of the polynomial should be chosen in the same manner as other coefficients - uniformly at random from the full field $\field{p}$. Many implementations incorrectly use rejection sampling to ensure that the leading coefficient is nonzero. This breaks the information-theoretic security of the scheme, as the set of possible polynomials is no longer in one-to-one correspondence with the set of possible shares.
 
-For example, if the field is GF(3) and we have a 2-of-2 sharing (i.e. a line), then an attacker who sees the share $(1, 2)$ can immediately rule out the possibility that the shared secret value is 2, since the line would have to be $f(x) = 2 + 0 \cdot x$ which has a leading coefficient of zero. In contrast, if the leading coefficient is chosen uniformly at random from GF(3), then an attacker who holds the share $(1, 2)$ learns nothing about the secret, which could be (0, 1, or 2) with equal probability.
+For example, if the field is GF(3) and we have a 2-of-2 sharing (i.e., a line), then an attacker who sees the share $(1, 2)$ can immediately rule out the possibility that the shared secret value is 2, since the line would have to be $f(x) = 2 + 0 \cdot x$ which has a leading coefficient of zero. In contrast, if the leading coefficient is chosen uniformly at random from GF(3), then an attacker who holds the share $(1, 2)$ learns nothing about the secret, which could be (0, 1, or 2) with equal probability.
 
-This flaw is most dangerous when sharing over a small field, such as $\field{256}$, where the bias induced by rejection sampling is non-negligible. It is especially dangerous when a single secret may be share many times, as a process of elimination may be used to 
+This flaw is most dangerous when sharing over a small field, such as $\field{256}$, where the bias induced by rejection sampling is non-negligible. It is especially dangerous when a single secret may be shared many times, as a process of elimination may be used to
 eventually determine the exact secret. In large prime fields, the bias is negligible and not a practical concern.
 {{< /hint >}}
 
@@ -46,7 +46,7 @@ eventually determine the exact secret. In large prime fields, the bias is neglig
 ##### A Note on Selecting $p$
 In the _general_ case, the specific prime $p$ does not matter much. Shamir's original paper proposed using 16-bit primes (the largest of which would be $p=2^{16}-15=65521$) for performance reasons. By limiting intermediate results to 32 bits, multi-precision arithmetic routines could be avoided on any 32-bit processor. Large secrets could be broken into blocks of 16 bits or less and shared with distinct polynomials. One limitation imposed by such a small $p$ is that only about 65000 distinct shares can be generated.
 
-Common choices are the field $\field{256}$, which allows for byte-oriented implementations, and large prime fields based on the 
+Common choices are the field $\field{256}$, which allows for byte-oriented implementations, and large prime fields based on the
 scalar group of an elliptic curve, which allows for verifiable secret sharing.
 #### Generating the Shares
 
