@@ -23,7 +23,7 @@ To generate the elements you require:
 - **salt:** the salt can be $\mathsf{"shortfactoringproof"}$
 {{< /hint >}}
 
-The construction is generic: start a counter and sample an element with an extendible-output hash function over the binding parameters and the counter; if the generated element is in the sample space, we return it; otherwise, we increment the counter and sample again.
+The construction is generic: start a counter and sample an element with an extendable-output hash function over the binding parameters and the counter; if the generated element is in the sample space, we return it; otherwise, we increment the counter and sample again.
 
 ```python
 DS = '|'
@@ -42,7 +42,7 @@ def gen_element(sample_space_predicate, bitsize, param_list, salt):
     # domain separated elements
     to_hash = DS + DS.join(to_hash)
 
-    # generate bitsize element with extendible-output hash function
+    # generate bitsize element with extendable-output hash function
     e = hash_xof(to_hash, bitsize)
 
     # check that e is in sample_space
@@ -54,7 +54,7 @@ def gen_element(sample_space_predicate, bitsize, param_list, salt):
 ```
 
 ## Hash function choice
-The hash function used here must be an extendible-output function (XOF). These hash functions can generate an output of arbitrary length. We must use these functions since the elements we are sampling can have an arbitrary number of bits, and failing to achieve that size can cause security issues. An example is $\mathsf{SHAKE256}$, which provides 256-bit security against collision attacks when at least 512 bits are sampled.
+The hash function used here must be an extendable-output function (XOF). These hash functions can generate an output of arbitrary length. We must use these functions since the elements we are sampling can have an arbitrary number of bits, and failing to achieve that size can cause security issues. An example is $\mathsf{SHAKE256}$, which provides 256-bit security against collision attacks when at least 512 bits are sampled.
 
 An alternative is using $\mathsf{TupleHash}$ which does not require manually domain-separating the elements to be hashed.
 
