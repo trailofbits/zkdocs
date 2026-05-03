@@ -31,7 +31,7 @@ We assume that both parties agree with the security parameters $\alpha, \kappa$ 
 
 ## Interactive protocol (HVZK)
 {{< hint danger >}}
-**Security note:** The protocol is zero-knowledge (does not reveal the factorization of $\varN$) only when the verifier is honest and generates each $\rhovar_i$ randomly. If the verifier chooses these values maliciously they can recover the factorization of $\varN$. If your attacker model takes this into consideration, use the non-interactive version. More details on [Using HVZKP in the wrong context](../../../security-of-zkps/when-to-use-hvzk).
+**Security note:** The protocol is zero-knowledge (does not reveal the factorization of $\varN$) only when the verifier is honest and generates each $\rhovar_i$ randomly. If the verifier chooses these values maliciously they can recover the factorization of $\varN$. If your attacker model takes this into consideration, use the non-interactive version. More details on [Using HVZK in the wrong context](../../../security-of-zkps/when-to-use-hvzk).
 {{< /hint >}}
 
 {{< rawhtml >}}
@@ -80,11 +80,11 @@ The participants only exchange one message, and there is no risk of leaking the 
 
 ## Security pitfalls
  * **Verifier input validation:** Each of the items above the dotted line for the $\varverifier$ is essential to the security of the protocol. If any of these checks are missing or insufficient it is likely a severe security issue.
- * __Using the interactive protocol in a malicious verifier context:__ high severity issue which allows factoring $\varN$; see [Using HVZKP in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk" >}}).
+ * __Using the interactive protocol in a malicious verifier context:__ high severity issue which allows factoring $\varN$; see [Using HVZK in the wrong context]({{< relref "/docs/zkdocs/security-of-zkps/when-to-use-hvzk" >}}).
  * **Sampling $\rhovar_i$ values uniformly and not using honest generation:** high severity issue that allows $\varprover$ to forge proofs by sampling $\sampleSet{\sigmavar_i}{\z\varN}$ and setting $\rhovar_i = \sigmavar_i^\varN\mod \varN$.
  * __Verifier trusting prover on the non-interactive protocol:__
    * $\varverifier$ uses $\rhovar_i$ values provided by $\varprover$ instead of generating them: this is a high severity issue since the prover can trivially forge proofs (e.g., by sending $\rhovar_i=1, \sigmavar_i=1$).
-   * $\varverifier$ does not validate $\sigmavar_i$ as valid values modulo $\varN$ (between 0 and $\varN -1)$: this allows replaying the same proof with *different* values with $\sigmavar_i + k\varN$.
+   * $\varverifier$ does not validate $\sigmavar_i$ as valid values modulo $\varN$ (between 0 and $\varN -1$): this allows replaying the same proof with *different* values with $\sigmavar_i + k\varN$.
    * $\varverifier$ does not compare the number of received $\sigmavar_i$ with $m$: this can lead to the prover bypassing proof verification by sending an empty list, or fewer than $m$ elements.
  * __Replay attacks:__ After a non-interactive proof is public, it will always be valid and anyone could pretend to know how to prove the original statement. To prevent this, consider adding additional information to the generation of $\rhovar_i$ values such as an ID of both the prover and the verifier, and a timestamp. The verifier must check the validity of these values when they verify the proof.
 
