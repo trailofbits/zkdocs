@@ -129,4 +129,4 @@ These variants suffer from the same pitfalls as the original Schnorr scheme, wit
   $$ \frac{\varz - \varz'}{\varc-\varc'} = \frac{\varr -\varr + \varx\cdot(\varc - \varc')}{\varc-\varc'} = \varx  \enspace,$$
   or when $\varz$ is computed with a subtraction:
   $$ \frac{\varz - \varz'}{\varc'-\varc} = \frac{\varr -\varr + \varx\cdot(\varc' - \varc)}{\varc'-\varc} = \varx  \enspace.$$
- * __Replay attacks:__ After a non-interactive proof is public, it will always be valid and anyone could pretend to know the secret value. To prevent this, consider adding the ID of both the prover and the verifier inside of the Fiat-Shamir hash computation.
+ * __Replay attacks:__ A non-interactive proof remains valid after it has been published because the Fiat–Shamir challenge is deterministically derived from the proof inputs. An attacker who obtains a valid proof can therefore replay it in another authentication session without knowing the secret value. The verifier may accept the replayed proof as fresh evidence of knowledge of the secret. To prevent this, consider adding the ID of both the prover and the verifier inside of the Fiat-Shamir hash computation.

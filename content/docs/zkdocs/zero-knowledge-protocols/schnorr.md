@@ -135,7 +135,7 @@ where $\schnorrvalidate(\varu, \varh)$ aborts if any of the following conditions
    * $\varg$ or $\varq$ missing: usually no issue, but it might be one if the Verifier uses these parameters directly from the proof structure. This way, the prover can provide bad generators or orders to forge the proof.
  * __Weak randomness:__ Bad randomness may cause the secret $\varx$ to leak. If $\varr$ is reused twice with two different interactive challenges, or different data on the non-interactive version then
   $$ \frac{\varz - \varz'}{\varc-\varc'} = \frac{\varr -\varr + \varx\cdot(\varc - \varc')}{\varc-\varc'} = \varx  $$
- * __Replay attacks:__ After a non-interactive proof is public, it will always be valid and anyone could pretend to know the secret value. To prevent this, consider adding the ID of both the prover and the verifier inside of the Fiat-Shamir hash computation.
+ * __Replay attacks:__ In the non-interactive version, a valid proof remains valid because the Fiat–Shamir challenge is deterministically derived from the public proof inputs. An attacker who records a valid proof can therefore replay it in another authentication session without knowing the secret value. The verifier cannot distinguish the replayed proof from a fresh proof unless the proof is bound to the intended protocol context and session. To prevent this, consider adding the ID of both the prover and the verifier inside of the Fiat-Shamir hash computation.
 
 
 ## Security assumptions

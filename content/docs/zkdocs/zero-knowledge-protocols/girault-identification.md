@@ -79,7 +79,7 @@ creates the random $k$-bit challenge $\vare$ using domain-separated hash functio
  * __Verifier trusting prover on the non-interactive protocol:__
    * $\varverifier$ uses a $\varg$ value provided by $\varprover$ instead of using the standard generator: this is a high severity issue since the prover can trivially forge proofs (e.g., by sending $\varu=0, \varg=0$).
    * $\varverifier$ does not validate $\varu,\varh$ as valid elements of $\zns{\varN}$ (between 1 and $\varN-1$ and with $\gcd(k, \varN) = 1$): this allows replaying the *same* proof with *different* values adding multiples of $\varN$.
- * __Replay attacks:__ After a non-interactive proof is public, it will always be valid, and anyone could pretend to know how to prove the original statement. To prevent this, consider adding additional information to the computation of the hash function: values such as an ID unique to the prover and verifier, and a timestamp. The verifier must use these values and check their validity to verify the proof.
+ * __Replay attacks:__ The non-interactive protocol does not provide freshness by itself. Once a valid proof is public, the same proof can be replayed because the Fiat–Shamir challenge is deterministically derived from the proof’s public inputs. An attacker who obtains a valid proof can therefore present that proof in another authentication context without knowing the secret $\varx$. The verifier may accept the replay as fresh evidence of the prover’s knowledge. To prevent this, consider adding additional information to the computation of the hash function: values such as an ID unique to the prover and verifier, and a timestamp. The verifier must use these values and check their validity to verify the proof.
 
 
 ## Choice of parameter values
