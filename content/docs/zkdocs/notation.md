@@ -34,7 +34,7 @@ This page is a glossary for notation and concepts present in the documentation.
 In protocol specifications, we will often need to uniformly sample elements from sets. We will use the following notation:
  - $\sampleGeneric{x}{X}$, where $x$ is uniformly sampled from the set $X$.
 
-Consider reading the section on [Random Sampling]({{< relref "/docs/zkdocs/protocol-primitives/random-sampling" >}}) to learn how to correctly sample a number uniformly  using rejection sampling, avoiding the modulo-bias issue.
+Consider reading the section on [Uniform Sampling]({{< relref "/docs/zkdocs/protocol-primitives/uniform-sampling" >}}) to learn how to correctly sample a number uniformly  using rejection sampling, avoiding the modulo-bias issue.
 
 ## Assertions
 We will use assertions in protocol descriptions. When the assertions do not hold, the protocol must abort to avoid leaking secret information.

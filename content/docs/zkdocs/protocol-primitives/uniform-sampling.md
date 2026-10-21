@@ -3,7 +3,7 @@ weight: 1
 bookFlatSection: true
 summary: "In this section, we describe how to uniformly sample from different groups."
 ---
-# Random sampling
+# Uniform sampling
 
 In most protocols, it is necessary to sample uniformly from groups like $\zq$ or $\zqs$. Here we will describe how to sample in these specific groups, and a general procedure to sample via rejection sampling.
 
