@@ -250,3 +250,10 @@ ProofCarryingData:
   link: https://eprint.iacr.org/2020/499
   tag: BCMS20
   apa: "Bünz, B., Chiesa, A., Mishra, P., & Spooner, N. (2020). Recursive proof composition from accumulation schemes. In Theory of Cryptography: 18th International Conference, TCC 2020, Durham, NC, USA, November 16-19, 2020, Proceedings, Part II 18 (pp. 1-18). Springer International Publishing."
+
+stark:
+  title: "Scalable, transparent, and post-quantum secure computational integrity"
+  year: 2018
+  link: https://eprint.iacr.org/2018/046
+  tag: BBHR18
+  apa: "Ben-Sasson, E., Bentov, I., Horesh, Y., & Riabzev, M. (2018). Scalable, transparent, and post-quantum secure computational integrity. Cryptology ePrint Archive."
